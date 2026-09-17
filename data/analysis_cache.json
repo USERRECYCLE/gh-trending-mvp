@@ -9383,5 +9383,2642 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-09-17T08:37:14+00:00",
     "readme_available": true
+  },
+  "tencent/browserskill": {
+    "analysis": {
+      "one_liner": "让 AI 智能体借用你已登录的真实浏览器执行自动化任务，且不打断你的正常工作。",
+      "core_features": [
+        "复用真实登录状态，无需单独测试账号",
+        "任务在独立的可见 Agent Window 中运行，不干扰用户自己的浏览器",
+        "通过 bsk CLI 支持任意能调用 shell 的 AI 智能体，无框架锁定",
+        "内置 human-in-loop，遇到验证码、登录或确认弹窗时可请求用户接管后继续",
+        "支持全页长截图等快捷操作"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "bsk CLI/daemon",
+        "Chromium 浏览器扩展",
+        "Chrome",
+        "Microsoft Edge"
+      ],
+      "highlights": "以 CLI + 浏览器扩展的方式把已登录的真实浏览器安全地借给 AI 智能体使用，显式借用与归还标签页，兼容多种 Agent 且不锁定模型或框架。",
+      "target_audience": "使用 Cursor、Claude Code、Codex 等 shell 型 AI 智能体并希望其操作真实登录浏览器的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 3697,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "apache/gravitino": {
+    "analysis": {
+      "one_liner": "Apache Gravitino 是一个高性能、地理分布式、联邦化的元数据湖，统一管理多源元数据。",
+      "core_features": [
+        "统一元数据管理，通过单一模型和 API 管理 Hive、MySQL、MariaDB、HDFS、S3 等异构元数据源",
+        "端到端数据治理，提供访问控制、审计和资产发现能力",
+        "直接元数据集成，底层系统变更通过连接器即时反映",
+        "地理分布式支持，跨区域和跨云共享元数据",
+        "多引擎兼容，无缝集成 Trino、Spark 等查询引擎，无需修改 SQL 方言"
+      ],
+      "tech_stack": [
+        "Java",
+        "Gradle",
+        "Docker Compose",
+        "Iceberg REST Catalog",
+        "Lance REST Catalog",
+        "Trino Connector"
+      ],
+      "highlights": "作为 Apache 顶级项目，提供联邦化元数据湖方案，支持地理分布式部署与多引擎无缝集成，并原生支持 Iceberg 和 Lance REST Catalog 服务。",
+      "target_audience": "适合构建数据湖、数据仓库及多区域元数据治理平台的数据工程师、平台架构师和开源贡献者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 3229,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "arnegiacomo/fugleramme": {
+    "analysis": {
+      "one_liner": "基于树莓派的电子墨水鸟框，通过音频实时识别花园鸟类并展示19世纪手绘鸟类插画。",
+      "core_features": [
+        "通过麦克风音频实时检测鸟类物种",
+        "将检测到的物种匹配到手绘鸟类插画并排版显示",
+        "在电子墨水屏上渲染，仅在鸟类变化时重绘",
+        "提供网页端管理页面与同视图的网页 kiosk",
+        "支持对接已有的 BirdNET-Go 检测服务"
+      ],
+      "tech_stack": [
+        "Python",
+        "BirdNET-Go",
+        "Raspberry Pi 5",
+        "Inky Impression 电子墨水屏",
+        "Docker",
+        "systemd",
+        "uv"
+      ],
+      "highlights": "完全本地运行的 AI 音频识别，配合 800 多张来自真实图版、人工筛选的公共领域 1800 年代鸟类插画，按体重排布成纸质质感页面，兼具实用与美学。",
+      "target_audience": "对树莓派硬件、本地 AI 音频识别、电子墨水屏展示以及自然观察感兴趣的开发者与爱好者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 2772,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "prettier/prettier": {
+    "analysis": {
+      "one_liner": "一个固执己见的代码格式化工具，解析代码并按统一规则重新输出，支持多种语言。",
+      "core_features": [
+        "解析代码并按自身规则重新打印，自动考虑最大行宽并换行",
+        "支持 JavaScript、TypeScript、Flow、JSX、JSON、CSS、SCSS、Less、HTML、Vue、Angular、GraphQL、Markdown、YAML 等语言",
+        "可在编辑器中保存时运行、作为 pre-commit 钩子或集成到 CI 环境",
+        "提供 CLI、API 与在线 Playground",
+        "通过插件机制支持更多语言"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Node.js",
+        "npm",
+        "CI",
+        "Codecov"
+      ],
+      "highlights": "固执己见的设计消除了团队关于代码风格的争论，无需在代码审查中纠结格式细节，且支持极广泛的语言生态。",
+      "target_audience": "希望统一团队代码风格、减少格式争议的前端及多语言开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 52352,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "multica-ai/multica": {
+    "analysis": {
+      "one_liner": "把 AI 编码代理当作团队成员，在统一看板上分配任务、跟踪进度并审核交付。",
+      "core_features": [
+        "支持 26 种代理 CLI（Claude Code、Codex、Cursor、Copilot、Kimi 等）作为团队成员",
+        "以 Issue 形式向代理派活，代理自动接单、汇报进度、提出阻塞并交回审核",
+        "提供执行日志、Token 消耗统计、重试与超时机制，可回放每次工具调用",
+        "支持自托管（Docker Compose / Helm）与任意 Git 托管（GitHub、GitLab、Gitea、Forgejo）",
+        "集成 Slack、Lark、DingTalk、WeCom、Telegram 及 Web、桌面、移动端"
+      ],
+      "tech_stack": [
+        "Go",
+        "Docker Compose",
+        "Helm",
+        "CLI 与 API",
+        "多代理 CLI 运行时（Claude Code、Codex、Cursor 等）"
+      ],
+      "highlights": "将多个异构 AI 编码代理统一纳入类项目管理的工作空间，任务意图、运行过程、决策与代码差异都挂在同一个 Issue 上，且代码运行在用户自控的运行时中，支持完全自托管，避免厂商锁定。",
+      "target_audience": "希望把 AI 编码代理纳入团队协作流程的工程团队、需要自托管与数据可控的开发者，以及同时使用多种代理 CLI 的个人开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 50272,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "nvidia/openshell": {
+    "analysis": {
+      "one_liner": "NVIDIA 推出的自主 AI 智能体安全私有运行时，通过沙箱与声明式策略隔离执行环境。",
+      "core_features": [
+        "基于容器与 MicroVM 的沙箱化执行环境，隔离文件、凭证与基础设施",
+        "声明式 YAML 策略引擎，覆盖文件系统、网络、进程与凭证四大防护域",
+        "网络出口策略支持 HTTP 方法与路径级别的 L7 拦截，可运行时热更新",
+        "Provider 凭证管理，按端点绑定注入凭证，避免凭证落入沙箱文件系统",
+        "内置 Claude、Codex、OpenCode、Copilot 等智能体工具与 Python SDK"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Python SDK",
+        "Docker",
+        "Podman",
+        "MicroVM",
+        "Kubernetes/Helm",
+        "YAML 策略"
+      ],
+      "highlights": "以声明式策略在应用层到内核层实施纵深防御，网络策略可热加载且精确到 HTTP 方法与路径，凭证按端点绑定注入而不落盘。",
+      "target_audience": "构建与部署自主 AI 智能体的开发者、需要为智能体提供安全隔离运行环境的基础设施与平台工程师",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 8670,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "opendataloader-project/opendataloader-pdf": {
+    "analysis": {
+      "one_liner": "面向 AI 数据管道的 PDF 解析器，同时开源实现 PDF 无障碍自动打标签。",
+      "core_features": [
+        "将 PDF 提取为 Markdown、JSON（含边界框）和 HTML，支持确定性本地模式与 AI 混合模式",
+        "内置 OCR（80+ 语言）、复杂/无边框表格、LaTeX 公式与图表描述",
+        "自动将未打标签 PDF 转换为 Tagged PDF，作为 PDF/UA 工作流基础",
+        "提供 Python、Node.js、Java 三种 SDK，支持批量转换与 LangChain 集成",
+        "AI 安全过滤（提示注入过滤）与页眉页脚水印过滤"
+      ],
+      "tech_stack": [
+        "Java 11+",
+        "Python",
+        "Node.js",
+        "Apache-2.0",
+        "veraPDF",
+        "LangChain"
+      ],
+      "highlights": "在 200 份真实 PDF 基准测试中综合准确率排名第一（0.907），表格准确率 0.928；是首个端到端开源生成 Tagged PDF 的工具，并与 PDF Association、Dual Lab（veraPDF）合作遵循 Well-Tagged PDF 规范。",
+      "target_audience": "构建 RAG/LLM 数据管道的开发者，以及需要批量处理 PDF 无障碍合规（EAA、ADA、Section 508）的团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 29305,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "joooook/12306-mcp": {
+    "analysis": {
+      "one_liner": "基于 MCP 协议的 12306 火车票查询服务器，让大模型能直接搜索购票信息。",
+      "core_features": [
+        "查询 12306 购票信息",
+        "过滤列车信息",
+        "过站查询",
+        "中转查询",
+        "支持 stdio 与 HTTP 两种运行模式"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Node.js",
+        "Model Context Protocol SDK",
+        "Docker",
+        "npm/npx"
+      ],
+      "highlights": "把 12306 余票查询能力封装成标准 MCP 工具，可被大模型直接调用，并支持过站与中转查询等实用场景。",
+      "target_audience": "对大模型工具调用、MCP 协议感兴趣，或想为 AI 助手接入出行查询能力的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 1599,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "strands-agents/harness-sdk": {
+    "analysis": {
+      "one_liner": "开源 SDK，用 Python 和 TypeScript 构建并端到端控制生产级 AI 智能体。",
+      "core_features": [
+        "模型无关的智能体循环，支持 Bedrock、Anthropic、OpenAI、Gemini 等多家模型提供商",
+        "内置工具调用、MCP 支持与结构化输出",
+        "多智能体模式、记忆与会话管理",
+        "生命周期控制：轮次限制、Token 预算、取消与停止原因",
+        "流式输出、护栏、追踪与评估能力"
+      ],
+      "tech_stack": [
+        "Python",
+        "TypeScript",
+        "Amazon Bedrock",
+        "MCP",
+        "Astro/Starlight",
+        "Hatch",
+        "npm"
+      ],
+      "highlights": "无需自建托管控制平面，智能体在自身进程中运行；默认追踪智能体循环的每一步决策，并可通过钩子拦截、校验或重定向任意步骤。",
+      "target_audience": "需要构建生产级 AI 智能体、希望避免手写智能体循环的 Python 与 TypeScript 开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 7311,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "codebuffai/freebuff": {
+    "analysis": {
+      "one_liner": "免费的多智能体编程助手，覆盖终端、桌面、网页、云端与聊天五种形态。",
+      "core_features": [
+        "提供 CLI、桌面、Web、Cloud、Chat 五种免费产品形态",
+        "内置多款精选大模型目录，无需订阅、额度或 API Key",
+        "专用智能体分工完成代码库检索、实现、审查与浏览器研究",
+        "桌面端支持并行智能体在隔离工作区本地运行",
+        "Web 与 Cloud 提供沙箱、预览、终端与部署流程"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Bun",
+        "Docker",
+        "Codebuff 多智能体框架",
+        "@codebuff/sdk"
+      ],
+      "highlights": "以文本广告支撑免费模型访问，用专用智能体替代单一模型单提示流程，并基于开源 Codebuff 框架构建。",
+      "target_audience": "希望零成本使用 AI 编程智能体的个人开发者，以及想基于多智能体框架做二次开发的工程师。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 12269,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "synthetichealth/synthea": {
+    "analysis": {
+      "one_liner": "生成逼真但非真实的合成患者人口及其完整健康记录，支持多种医疗数据格式导出。",
+      "core_features": [
+        "从出生到死亡的全生命周期患者模拟",
+        "基于配置的统计与人口学数据（默认马萨诸塞州人口普查数据）",
+        "模块化规则系统，支持通用模块与自定义 Java 规则",
+        "涵盖就诊、症状、疾病、过敏、用药、疫苗、检验、护理计划等记录",
+        "支持 HL7 FHIR、C-CDA、CSV、CPCDS、Bulk FHIR 等多种导出格式"
+      ],
+      "tech_stack": [
+        "Java",
+        "Gradle",
+        "HL7 FHIR",
+        "C-CDA",
+        "Graphviz"
+      ],
+      "highlights": "以模块化规则引擎驱动，可配置地模拟从出生到死亡的全生命周期患者数据，并输出符合医疗行业标准的多种格式，是医疗数据合成领域的成熟开源方案。",
+      "target_audience": "医疗信息化开发者、需要合成患者数据进行测试或研究的人员、FHIR/C-CDA 标准学习者，以及希望扩展疾病模块的 Java 开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 3342,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "llmquant/quant-mind": {
+    "analysis": {
+      "one_liner": "面向量化金融的开源智能体原生知识抽取与检索框架，将论文、新闻、财报提炼为可溯源的结构化金融知识。",
+      "core_features": [
+        "确定性预处理流程：fetch/parse/format/clean 无模型介入，保证来源可追溯与可重放",
+        "配置驱动的操作：PaperFlow、collect_news、batch_run 支持批量扇出，无需手写 asyncio 样板",
+        "类型化知识结构：Paper 结构树与 News/Earnings/Factor/Thesis 扁平卡片，自带 as_of 时间戳与来源引用",
+        "多层级检索：rag 分块与 BM25/相似度、library 本地持久化与语义搜索、mind 基于推理的智能体检索",
+        "智能体原生仓库工程：AGENTS.md/CLAUDE.md 契约、渐进披露 contexts、可移植 skills 与确定性 verify 脚本"
+      ],
+      "tech_stack": [
+        "Python 3.8+",
+        "uv 包管理",
+        "asyncio 异步流程",
+        "BM25 与向量相似度检索",
+        "Claude 与 Codex 智能体钩子"
+      ],
+      "highlights": "提出 harness engineering 理念，认为弱模型配好工程脚手架胜过裸跑的强模型；仓库本身即产品界面，让编码智能体在仓库契约与确定性校验下产出量化金融级知识流水线，成果发表于 NeurIPS 2025 GenAI in Finance Workshop。",
+      "target_audience": "从事量化金融、金融 NLP 与 RAG/Agentic RAG 的开发者，以及希望用编码智能体构建知识抽取流水线的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 2974,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "everyinc/compound-engineering-plugin": {
+    "analysis": {
+      "one_liner": "为 AI 编程代理提供 35 个技能，围绕头脑风暴、计划、构建、审查、沉淀学习的闭环工作流。",
+      "core_features": [
+        "35 个 AI 技能覆盖 brainstorm、plan、work、simplify、review、compound 六步闭环",
+        "支持 Claude Code、Cursor、Codex 等 14 种代理宿主安装使用",
+        "ce-compound 将经验写入 docs/solutions 供后续计划复用",
+        "ce-code-review 提供多代理只读审查，ce-explain 与 ce-pov 辅助理解与决策",
+        "强调 80% 规划与审查、20% 执行的复合工程理念"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Claude Code",
+        "Cursor",
+        "Codex",
+        "GitHub Actions"
+      ],
+      "highlights": "以“每次工程工作让下一次更轻松”为核心理念，通过沉淀学习文档形成知识复利，并跨 14 种代理宿主复用同一套技能。",
+      "target_audience": "使用 Claude Code、Cursor、Codex 等 AI 编程代理，并希望以结构化规划与知识沉淀提升长期开发效率的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 25138,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "web-infra-dev/rspack": {
+    "analysis": {
+      "one_liner": "基于 Rust 的高性能 Web 打包器，兼容并现代化 webpack API，可无缝替换 webpack。",
+      "core_features": [
+        "基于 Rust 实现，启动与构建速度极快",
+        "内置增量编译机制，提供极速 HMR",
+        "兼容 webpack 生态的插件与 loader",
+        "一等支持 Module Federation",
+        "默认内置 tree shaking、压缩等生产优化"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Node.js",
+        "webpack API",
+        "npm",
+        "crates.io"
+      ],
+      "highlights": "在保持 webpack 插件与 loader 兼容的前提下，用 Rust 重写核心以获得极快构建速度，并作为 Rstack 工具链的打包器核心。",
+      "target_audience": "需要迁移或替换 webpack、追求构建性能的前端工程师，以及开发大型 Web 应用与构建工具的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 12916,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "dependencytrack/dependency-track": {
+    "analysis": {
+      "one_liner": "基于 SBOM 的智能组件分析平台，帮助组织识别并降低软件供应链风险。",
+      "core_features": [
+        "利用 SBOM 进行组件分析",
+        "识别软件供应链中的风险",
+        "支持 Docker Compose 快速本地部署",
+        "提供 API 服务端与前端分离架构",
+        "支持 Helm 部署与社区协作"
+      ],
+      "tech_stack": [
+        "Java",
+        "Docker",
+        "Helm",
+        "Docker Compose"
+      ],
+      "highlights": "以 SBOM 为核心切入软件供应链安全，是 OWASP 旗下的开源项目，拥有活跃社区、完善文档与多仓库协作生态。",
+      "target_audience": "关注软件供应链安全、需要基于 SBOM 做组件风险分析的安全工程师与 DevSecOps 团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4213,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "wilbowes/echomuse": {
+    "analysis": {
+      "one_liner": "将亚马逊 Echo Dot 二代改造成完全本地的开源语音助手与媒体播放器，接入 Home Assistant。",
+      "core_features": [
+        "本地唤醒词检测与 Assist 语音对话，支持自定义唤醒词训练",
+        "多房间唤醒仲裁，避免多个设备同时响应",
+        "作为 HA media_player 播放音乐，语音播报时自动压低音乐音量",
+        "蓝牙代理、环境光传感器与按键事件接入 Home Assistant",
+        "车队管理面板：配置下发、OTA 更新、日志与逐轮活动分析"
+      ],
+      "tech_stack": [
+        "Python",
+        "Go",
+        "ESPHome 原生 API",
+        "Docker",
+        "Home Assistant",
+        "openwakeword",
+        "speexdsp",
+        "WebSocket/TLS"
+      ],
+      "highlights": "用 Go 固件替换 Alexa 固件，把设备做成哑终端，唤醒评分、端点检测、降噪等易漂移逻辑全部放在可观测、可批量更新的控制器上，并以 ESPHome 语音卫星方式原生接入 HA，无需云端与自定义集成。",
+      "target_audience": "拥有 Echo Dot 二代并愿意解锁刷机的 Home Assistant 用户，以及对本地语音助手、嵌入式音频与固件改造感兴趣的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 782,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "jnmetacode/superpowers-zh": {
+    "analysis": {
+      "one_liner": "superpowers 中文增强版，为 26 款 AI 编程工具提供 20 个系统化工作方法论 skills",
+      "core_features": [
+        "14 个上游 skills 完整汉化 + 4 个中国原创 skills，共 20 个",
+        "一条 npx 命令自动识别项目中的 AI 编程工具并安装",
+        "覆盖 26 款 AI 编程工具，含 Claude Code、Cursor、Copilot CLI、Qoder、CodeBuddy 等",
+        "适配国内 Git 平台与 CI/CD，如 Gitee、Coding、极狐 GitLab、CNB",
+        "覆盖头脑风暴、计划执行、TDD、调试、代码审查等完整开发工作流"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "npm / npx",
+        "Claude Code",
+        "Cursor",
+        "GitHub Actions"
+      ],
+      "highlights": "在完整汉化热门 AI 编程 skills 框架的基础上，新增中国原创 skills，并把工具支持从 6 款扩展到 26 款，安装方式简化为一条命令，同时适配国内 Git 平台与 CI/CD 生态。",
+      "target_audience": "使用 Claude Code、Cursor、Copilot CLI 等 AI 编程工具的中文开发者，以及希望引入系统化 AI 编程工作方法论的国内研发团队。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 8139,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "freecodecamp/freecodecamp": {
+    "analysis": {
+      "one_liner": "免费开源的全栈编程学习平台与课程体系，帮助成人转行进入科技行业。",
+      "core_features": [
+        "提供响应式网页设计、JavaScript、Python、关系型数据库等免费认证课程",
+        "包含交互式编程挑战、工作坊、实验、测验与项目实战",
+        "提供英语、西班牙语、中文等语言认证课程",
+        "社区支持包括论坛、Discord、YouTube 频道和技术出版物",
+        "支持贡献者参与开源协作，对新手友好"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Node.js",
+        "React",
+        "MongoDB",
+        "Docker"
+      ],
+      "highlights": "全球最大的开源编程教育项目之一，拥有超过 45 万 Star，课程完全免费且自定进度，已帮助超过 10 万人获得第一份开发者工作。",
+      "target_audience": "希望免费学习编程并转行科技行业的成人学习者，以及想参与大型开源教育项目贡献的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 455667,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "larksuite/cli": {
+    "analysis": {
+      "one_liner": "飞书官方 CLI 工具，覆盖 18 个业务域、200+ 命令与 26 个 AI Agent Skills，面向人类与 AI Agent。",
+      "core_features": [
+        "覆盖 Messenger、Docs、Base、Sheets、Calendar、Mail、Tasks、Meetings 等 18 个业务域，提供 200+ 命令",
+        "内置 26 个 AI Agent Skills，兼容主流 AI 工具，Agent 零额外配置即可操作飞书",
+        "三层命令体系：Shortcuts、API Commands、Raw API，可按需选择粒度",
+        "安全可控：输入注入防护、终端输出净化、操作系统原生钥匙串存储凭证",
+        "支持个人开发者快速上手，也支持企业以 extension 包嵌入自有 Agent 平台"
+      ],
+      "tech_stack": [
+        "Go",
+        "Node.js / npm",
+        "Python 3",
+        "Make"
+      ],
+      "highlights": "Agent-Native 设计是最大亮点：命令经真实 Agent 测试，参数简洁、默认值智能、输出结构化，以提升 Agent 调用成功率；同时提供 MIT 许可、npm 一键安装与三分钟快速上手体验。",
+      "target_audience": "在终端使用飞书的个人开发者、构建 AI Agent 的开发者，以及需要集中凭证管理与审计日志的企业 IT / ISV。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 17264,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "eclipse-zenoh/zenoh": {
+    "analysis": {
+      "one_liner": "Eclipse Zenoh 是一个统一数据流动、存储与计算的零开销发布/订阅协议及 Rust 参考实现。",
+      "core_features": [
+        "零开销的发布/订阅通信",
+        "地理分布式存储与查询能力",
+        "支持计算与数据在途、在用、在存统一",
+        "提供 zenohd 路由器与插件扩展机制",
+        "多语言绑定（C、C++、Python、Java、Kotlin、Go、TypeScript 等）"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Cargo",
+        "EPL 2.0 / Apache 2.0 双许可",
+        "zenohd 路由器",
+        "插件系统"
+      ],
+      "highlights": "在保持极高时间与空间效率的同时，将传统 pub/sub 与地理分布式存储、查询和计算融合为统一抽象，并提供多语言绑定与纯 C 实现。",
+      "target_audience": "需要构建低延迟、分布式、跨语言数据通信与存储系统的 Rust 开发者及物联网、边缘计算领域工程师。",
+      "scores": {
+        "innovation": 5,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 3198,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "trailofbits/skills": {
+    "analysis": {
+      "one_liner": "Trail of Bits 推出的 Claude Code 插件市场，为 AI 辅助安全分析、漏洞检测与审计工作流提供技能集。",
+      "core_features": [
+        "以插件市场形式提供 Claude Code 技能，可通过命令添加与安装",
+        "覆盖智能合约安全、代码审计、恶意软件分析、验证、逆向工程、移动安全与开发等类别",
+        "包含 Semgrep 规则创建、静态分析（CodeQL/Semgrep/SARIF）、供应链风险审计等安全工具技能",
+        "支持 Codex 及 ChatGPT 工作区市场加载，并提供本地开发方式"
+      ],
+      "tech_stack": [
+        "Python",
+        "Claude Code 插件市场",
+        "Codex",
+        "Semgrep",
+        "CodeQL",
+        "SARIF",
+        "YARA",
+        "Lean 4"
+      ],
+      "highlights": "由知名安全公司 Trail of Bits 出品，将大量专业安全审计与漏洞检测工作流封装为 AI 可调用的技能，覆盖范围广且工程化程度高。",
+      "target_audience": "从事安全研究、漏洞检测、代码审计与智能合约安全的开发者，以及使用 Claude Code 或 Codex 进行安全相关开发的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 7127,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "vercel/next.js": {
+    "analysis": {
+      "one_liner": "基于 React 的全栈 Web 开发框架，提供路由、渲染与构建等一体化能力。",
+      "core_features": [
+        "基于 React 的页面与组件开发",
+        "内置路由与多种渲染模式",
+        "支持服务端渲染与静态生成",
+        "提供构建、打包与开发服务器",
+        "面向生产环境的一体化框架能力"
+      ],
+      "tech_stack": [
+        "React",
+        "JavaScript",
+        "Node.js"
+      ],
+      "highlights": "作为 React 生态中广泛使用的框架，拥有极高的社区关注度与庞大的 Fork 规模，是构建现代 Web 应用的主流选择。",
+      "target_audience": "使用 React 进行 Web 应用开发的前端与全栈开发者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 142351,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "vitest-dev/vitest": {
+    "analysis": {
+      "one_liner": "基于 Vite 的下一代测试框架，复用 Vite 配置与插件，兼容 Jest 风格 API。",
+      "core_features": [
+        "复用 Vite 的配置、转换器、解析器与插件",
+        "内置 Chai 断言并兼容 Jest expect API 与快照测试",
+        "智能即时 watch 模式，类似测试的 HMR",
+        "通过 v8 或 istanbul 提供原生代码覆盖率",
+        "支持浏览器模式与 Vue、React、Svelte 等组件测试"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Vite",
+        "Chai",
+        "Jest 兼容 API",
+        "JSDOM / happy-dom",
+        "Tinybench",
+        "v8 / istanbul"
+      ],
+      "highlights": "与 Vite 生态深度集成，开箱支持 TypeScript、JSX 与 ESM，同时提供 Jest 兼容的迁移路径和浏览器原生测试能力。",
+      "target_audience": "使用 Vite 构建前端或 Node 项目、希望从 Jest 迁移或需要组件与浏览器测试的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 17125,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "microsoft/typescript": {
+    "analysis": {
+      "one_liner": "为大规模 JavaScript 应用添加可选类型并编译输出标准 JavaScript 的语言与工具链。",
+      "core_features": [
+        "为 JavaScript 添加可选静态类型",
+        "编译输出可读、符合标准的 JavaScript",
+        "支持任意浏览器、宿主与操作系统",
+        "提供 playground 在线试用与官方文档手册",
+        "支持 npm 稳定版与 nightly 版本安装"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "JavaScript",
+        "Node.js",
+        "npm"
+      ],
+      "highlights": "由微软维护、拥有超十万 Star 的成熟语言项目，面向应用级 JavaScript 开发，兼顾类型安全与标准输出。",
+      "target_audience": "构建大型 JavaScript 应用、需要类型系统与工具支持的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 111107,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "cube-js/cube": {
+    "analysis": {
+      "one_liner": "开源语义层，统一定义指标与维度，通过 SQL、REST、GraphQL 对外提供数据服务。",
+      "core_features": [
+        "在代码中一次性定义指标、维度、关联与访问规则",
+        "通过 SQL、REST 和 GraphQL API 暴露给 BI 工具、应用与 AI 代理",
+        "无头设计，不附带 UI，可自建分析体验",
+        "支持各类 SQL 数据源，包括云数据仓库、查询引擎与应用数据库",
+        "内置关系型缓存引擎，提供亚秒级延迟与高并发"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Docker",
+        "SQL",
+        "REST",
+        "GraphQL",
+        "Node.js"
+      ],
+      "highlights": "将原本与单一 BI 平台绑定的语义层独立开源，指标定义一次即可在内部 BI、嵌入式分析和 AI 代理中复用，并配有内置缓存引擎。",
+      "target_audience": "需要自建分析体验、嵌入式分析或为 AI 代理提供受治理语义基础的开发者与数据团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 20864,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "tracer-cloud/opensre": {
+    "analysis": {
+      "one_liner": "面向 AI SRE 的开源框架，用于构建、训练和评估生产事故响应智能体。",
+      "core_features": [
+        "构建可部署、可定制的 AI SRE 智能体，用于生产运维与事故响应",
+        "连接 60+ 现有工具并自定义工作流，在自有基础设施上回答生产问题",
+        "提供交互式 REPL 与无头 CLI（ask 命令）两种使用方式",
+        "提供 Python API，可在自有代码中进程内驱动智能体",
+        "包含面向真实云场景的端到端测试与语义化测试目录"
+      ],
+      "tech_stack": [
+        "Python",
+        "CLI（交互式 REPL 与无头命令）",
+        "Python API（AgentSession）",
+        "强化学习环境与端到端测试框架"
+      ],
+      "highlights": "类比 SWE-bench 为编码智能体提供训练数据，OpenSRE 试图补上生产事故响应缺失的强化学习环境与评估基准，并强调在用户自有基础设施上运行。",
+      "target_audience": "构建 AI SRE 与生产事故响应智能体的开发者，以及关注 AI 运维、智能体训练与评估的研究人员。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 11097,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "stirling-tools/stirling-pdf": {
+    "analysis": {
+      "one_liner": "开源 PDF 编辑平台，支持桌面、浏览器与自托管部署，本地处理文档不上传外部服务。",
+      "core_features": [
+        "50+ PDF 工具，涵盖编辑、合并、拆分、签名、涂黑、转换、OCR、压缩等",
+        "无代码自动化工作流，并提供 REST API 批量处理 PDF",
+        "支持桌面客户端、浏览器界面与自托管服务器私有 API 三种形态",
+        "企业级能力：SSO、审计日志与灵活的本地化部署",
+        "界面支持 40+ 种语言"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Docker",
+        "REST API",
+        "Task 命令运行器"
+      ],
+      "highlights": "GitHub 上排名第一的 PDF 应用，近 9.2 万 Star；以本地/自托管方式处理文档，避免将文件发送给第三方服务，同时提供 API 与自动化工作流，兼顾个人使用与企业集成。",
+      "target_audience": "需要私有化处理 PDF 的个人用户、注重数据合规的企业团队，以及希望通过 API 集成 PDF 能力的开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 92427,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "getarcaneapp/arcane": {
+    "analysis": {
+      "one_liner": "一款面向所有人的现代化 Docker 容器管理工具",
+      "core_features": [
+        "现代化的 Docker 容器管理界面",
+        "提供官方文档站点的安装与配置指南",
+        "公开软件物料清单（SBOM）以保障安全透明",
+        "通过 Crowdin 支持多语言社区翻译",
+        "使用 Discussions 收集功能需求并支持投票"
+      ],
+      "tech_stack": [
+        "Go",
+        "Docker"
+      ],
+      "highlights": "以 Go 编写、强调安全透明（提供 SBOM）与社区协作（Crowdin 翻译、Discussions 需求投票），并拥有较高的社区关注度",
+      "target_audience": "需要图形化管理 Docker 的开发者与运维人员，以及关注容器管理工具安全透明性的团队",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 7438,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "gcwing/openbitfun": {
+    "analysis": {
+      "one_liner": "基于 Rust 高性能 Agent 运行时的开源桌面 Agent 工作台，支持多模式与跨设备协作。",
+      "core_features": [
+        "四种 Agent Harness 模式：Minimal、Standard、Ultimate、Creative",
+        "跨设备远程控制，支持桌面、手机、浏览器及可穿戴设备",
+        "Mini Apps 可将日常需求构建为可复用的小应用",
+        "通过 MCP、Skills、Hooks、皮肤和源码修改进行深度定制",
+        "Rust Agent Runtime 提供持久会话、中断恢复、长期记忆与上下文压缩"
+      ],
+      "tech_stack": [
+        "Rust",
+        "MCP",
+        "SSH",
+        "Relay server",
+        "桌面应用（Windows/macOS/Linux）"
+      ],
+      "highlights": "用 Rust 编写的高性能 Agent 运行时与精致桌面应用结合，既具备 Code Agent 的深度，又面向软件开发之外的通用任务，并支持跨设备远程协作与自我扩展。",
+      "target_audience": "希望获得可定制、跨设备、长时运行 Agent 工作台的开发者，以及需要将日常需求转化为小应用或扩展 Agent 能力的用户。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 2276,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "langchain4j/langchain4j": {
+    "analysis": {
+      "one_liner": "面向 JVM 的 Java 库，用统一 API 简化 LLM 应用开发，支持工具调用、Agent 与 RAG。",
+      "core_features": [
+        "统一 API 抽象 20+ LLM 提供商与 30+ 向量存储，切换无需重写代码",
+        "覆盖提示模板、对话记忆、函数调用等低层工具与 Agent、RAG 高层模式",
+        "支持工具调用并包含 MCP 支持",
+        "与 Quarkus、Spring Boot、Helidon、Micronaut 等企业框架无缝集成",
+        "提供大量示例项目，涵盖纯 Java 及各框架用法"
+      ],
+      "tech_stack": [
+        "Java",
+        "Maven",
+        "Quarkus",
+        "Spring Boot",
+        "Helidon",
+        "Micronaut"
+      ],
+      "highlights": "并非 Python LangChain 的移植，而是按 Java 习惯（类型安全、POJO、注解、接口、依赖注入、流式 API）从零设计，填补 JVM 生态 LLM 库的空白。",
+      "target_audience": "需要在 JVM 上构建 LLM 应用的 Java 开发者，尤其是使用 Spring Boot、Quarkus 等企业框架的团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 13116,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "hao-ai-lab/fastvideo": {
+    "analysis": {
+      "one_liner": "统一的视频生成后训练与实时推理加速框架，支持蒸馏、稀疏注意力与多硬件部署。",
+      "core_features": [
+        "端到端后训练：全量微调、LoRA、DMD2 步进蒸馏与稀疏蒸馏",
+        "视频稀疏注意力与自强制因果蒸馏，实现超过 50 倍去噪加速",
+        "推理优化：序列并行、多种注意力后端、CLI 与 Python API",
+        "多硬件多系统支持：H100/A100/4090、Linux/Windows/macOS 及 Apple Silicon MLX",
+        "实时视频生成与编辑应用 Dreamverse，可本地或云端部署"
+      ],
+      "tech_stack": [
+        "Python",
+        "PyTorch",
+        "FSDP2",
+        "序列并行",
+        "DMD2 蒸馏",
+        "Video Sparse Attention",
+        "MLX",
+        "CUDA",
+        "uv"
+      ],
+      "highlights": "同时覆盖后训练与实时推理，通过稀疏注意力与稀疏蒸馏实现数十倍加速，并支持从 NVIDIA 到 Apple Silicon 的多平台部署。",
+      "target_audience": "从事视频生成模型训练与推理优化的研究者、需要加速视频扩散模型的工程开发者，以及关注多硬件部署的实践者。",
+      "scores": {
+        "innovation": 5,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 4452,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "swagger-api/swagger-ui": {
+    "analysis": {
+      "one_liner": "根据 OpenAPI 规范自动生成可视化 API 文档并支持在线交互调试的前端工具。",
+      "core_features": [
+        "从 OpenAPI/Swagger 规范动态生成可视化 API 文档",
+        "支持在页面上直接与 API 资源交互调用",
+        "提供 swagger-ui、swagger-ui-dist、swagger-ui-react 三种 NPM 模块形态",
+        "支持插件 API 与自定义布局进行扩展定制",
+        "兼容 OpenAPI 2.0 至 3.2.0 多个规范版本"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "React",
+        "Webpack",
+        "Cypress"
+      ],
+      "highlights": "OpenAPI 生态中最主流的文档渲染工具，兼容多个规范版本，提供插件机制与多种分发形态，社区贡献者与使用量庞大。",
+      "target_audience": "需要为后端 API 生成交互式文档的后端开发者，以及构建 API 文档平台或集成文档组件的前端开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 29032,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "gastownhall/beads": {
+    "analysis": {
+      "one_liner": "为 AI 编码代理提供基于 Dolt 的分布式图状问题追踪与持久记忆工具",
+      "core_features": [
+        "基于 Dolt 的版本控制 SQL 数据库，支持单元格级合并与原生分支",
+        "依赖图追踪与自动就绪任务检测，支持阻塞关系与层级 ID",
+        "哈希 ID 与多代理/多分支零冲突工作流",
+        "语义压缩（记忆衰减）总结旧任务以节省上下文窗口",
+        "消息类型支持线程化、临时生命周期与邮件委派"
+      ],
+      "tech_stack": [
+        "Go",
+        "Dolt",
+        "SQL",
+        "npm",
+        "PyPI",
+        "MCP"
+      ],
+      "highlights": "用依赖感知的图结构替代混乱的 markdown 计划，为编码代理提供跨机器同步的持久结构化记忆，并针对多代理协作做了零冲突设计",
+      "target_audience": "使用 AI 编码代理进行长周期任务开发、需要多代理或多分支协作的开发者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 27255,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "bevyengine/bevy": {
+    "analysis": {
+      "one_liner": "用 Rust 构建的数据驱动游戏引擎，基于 ECS 架构，简洁且模块化。",
+      "core_features": [
+        "基于实体组件系统（ECS）的数据导向架构",
+        "完整的 2D 与 3D 功能集",
+        "高度模块化，可按需选用或替换组件",
+        "应用逻辑尽可能并行执行以提升性能",
+        "注重快速编译与开发效率"
+      ],
+      "tech_stack": [
+        "Rust",
+        "ECS（实体组件系统）",
+        "Cargo"
+      ],
+      "highlights": "以数据驱动和 ECS 为核心设计，兼顾新手易用与高级用户的灵活性，模块化程度高，且完全免费开源。",
+      "target_audience": "对 Rust 游戏开发感兴趣的开发者，以及希望使用数据驱动 ECS 架构构建 2D/3D 游戏的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 48240,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "pytorch/pytorch": {
+    "analysis": {
+      "one_liner": "基于 Python 的张量计算与动态神经网络框架，提供强大的 GPU 加速能力。",
+      "core_features": [
+        "支持 CPU/GPU 的张量计算，类似 NumPy 并具备 GPU 加速",
+        "基于磁带式自动求导的动态神经网络构建",
+        "Python 优先，可与 NumPy、SciPy、Cython 等生态无缝集成",
+        "提供 TorchScript 编译栈，生成可序列化与可优化的模型",
+        "支持多进程内存共享与高效 GPU 内存分配器"
+      ],
+      "tech_stack": [
+        "Python",
+        "C++",
+        "CUDA",
+        "ROCm",
+        "Intel MKL",
+        "cuDNN",
+        "NCCL",
+        "TorchScript"
+      ],
+      "highlights": "动态计算图与磁带式自动求导带来极高的灵活性，命令式执行便于调试，同时保持高性能与高效内存管理，是深度学习研究与生产的主流框架。",
+      "target_audience": "深度学习研究者、机器学习工程师、需要 GPU 加速科学计算的 Python 开发者。",
+      "scores": {
+        "innovation": 5,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 103066,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "denoland/celld": {
+    "analysis": {
+      "one_liner": "在自有机器上自托管运行 Cloudflare Workers 应用与分布式 Durable Objects 的开源守护进程",
+      "core_features": [
+        "在自有机器上运行 Workers、Durable Objects、KV、Queues、D1、R2、Workflows、Cron Triggers 与静态资源",
+        "每个对象是一个 cell，即带独立 SQLite 数据库的命名服务器",
+        "长期状态存储在用户自有的 S3 兼容、GCS 或 Azure Blob 存储桶中，无需控制平面与共识服务",
+        "通过条件写桶获得 cell 所有权，保证同一时刻只有一个节点拥有该 cell",
+        "将已提交的 SQLite 写入捕获为 LTX 数据，单节点经桶确认持久，多节点经对等复制更快持久"
+      ],
+      "tech_stack": [
+        "Rust",
+        "V8",
+        "SQLite",
+        "Cloudflare Workers 运行时",
+        "Wrangler",
+        "esbuild",
+        "S3 兼容对象存储 / Google Cloud Storage / Azure Blob Storage",
+        "Docker"
+      ],
+      "highlights": "用对象存储的条件写替代共识服务来实现 Durable Objects 的分布式所有权与故障转移，无需服务控制平面，空闲 cell 几乎零成本，且节点可替换",
+      "target_audience": "希望自托管 Cloudflare Workers 与 Durable Objects 应用、关注边缘计算运行时与分布式状态复制的开发者",
+      "scores": {
+        "innovation": 5,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 4729,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "openapitools/openapi-generator": {
+    "analysis": {
+      "one_liner": "根据 OpenAPI 规范自动生成 API 客户端 SDK、服务端桩代码、文档和配置的工具。",
+      "core_features": [
+        "根据 OpenAPI v2/v3 规范生成多语言 API 客户端库（SDK）",
+        "生成服务端桩代码（server stubs）",
+        "自动生成 API 文档与配置",
+        "支持从 Swagger Codegen 迁移",
+        "提供模板与选项自定义生成结果"
+      ],
+      "tech_stack": [
+        "Java",
+        "OpenAPI Specification v2/v3",
+        "Maven Central",
+        "Gradle",
+        "CircleCI",
+        "Bitrise"
+      ],
+      "highlights": "支持多种语言和框架的代码生成，社区活跃、Star 数高，是从 Swagger Codegen 迁移的主流替代方案。",
+      "target_audience": "需要基于 OpenAPI 规范自动生成客户端 SDK、服务端桩代码或文档的后端与全栈开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 26745,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "bmad-code-org/bmad-method": {
+    "analysis": {
+      "one_liner": "一套面向 AI 驱动开发的敏捷方法论，把想法或变更请求转化为可运行软件并保留决策上下文。",
+      "core_features": [
+        "按工作量大小自适应流程，小改动直接实现，复杂项目补充规划",
+        "支持从零开始或接入已有代码库并建立可验证的上下文",
+        "通过技能与工作流让产品、架构、UX、开发、测试等角色参与协作",
+        "决策与上下文持久保留，无需在每次对话中重复说明",
+        "提供从早期思考到实现、评审、修正与学习的完整交付路径"
+      ],
+      "tech_stack": [
+        "Python",
+        "uv",
+        "Node.js/npm",
+        "Skills CLI",
+        "Claude Code 插件",
+        "Codex 插件"
+      ],
+      "highlights": "把 AI 编码助手从单纯写代码扩展为覆盖规划、架构、实现与学习的完整敏捷交付方法，强调决策显式化与上下文延续，并提供模块化生态与多工具集成。",
+      "target_audience": "使用 AI 编码助手进行软件开发、希望保留工程判断与上下文管理的开发者与团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 53127,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "xinnan-tech/xiaozhi-esp32-server": {
+    "analysis": {
+      "one_liner": "为开源智能硬件项目xiaozhi-esp32提供后端服务，帮助快速搭建ESP32设备控制服务器。",
+      "core_features": [
+        "支持MQTT+UDP协议与Websocket协议通信",
+        "支持MCP接入点、声纹识别、知识库",
+        "提供智能对话、多用户与多智能体管理",
+        "提供智控台界面操作与OTA接口",
+        "支持流式配置，响应速度提升约2.5秒"
+      ],
+      "tech_stack": [
+        "Python",
+        "Java",
+        "Vue",
+        "JavaScript",
+        "MQTT",
+        "UDP",
+        "Websocket",
+        "Docker"
+      ],
+      "highlights": "由华南理工大学刘思源教授团队主导研发，基于人机共生智能理论，为xiaozhi-esp32开源硬件项目提供完整后端方案，支持多种协议与流式配置，Star数超一万。",
+      "target_audience": "已购买ESP32硬件、成功对接过虾哥部署的后端服务，并希望独立搭建自己xiaozhi-esp32后端服务的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 10612,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "actualbudget/actual": {
+    "analysis": {
+      "one_liner": "一款本地优先、完全免费开源的个人财务与预算管理应用，支持多设备同步。",
+      "core_features": [
+        "本地优先的数据存储，隐私可控",
+        "多设备之间的变更同步",
+        "信封预算（Envelope Budgeting）记账方式",
+        "提供 Windows、Mac、Linux 桌面应用",
+        "支持 Docker 自托管及托管部署方案"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "NodeJS",
+        "Electron",
+        "Docker"
+      ],
+      "highlights": "本地优先架构兼顾数据隐私与多设备同步，完全免费开源，提供桌面应用、自托管和托管多种部署方式，社区活跃且支持国际化翻译。",
+      "target_audience": "注重数据隐私、希望自托管个人财务工具的用户，以及想学习本地优先架构与 Electron 桌面应用开发的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 28982,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "zaproxy/zaproxy": {
+    "analysis": {
+      "one_liner": "全球最广泛使用的开源Web应用安全扫描器，可自动发现Web应用漏洞。",
+      "core_features": [
+        "自动扫描Web应用中的安全漏洞",
+        "支持手动渗透测试",
+        "提供桌面图形界面与下载安装包",
+        "支持Docker镜像部署",
+        "社区驱动、可自由贡献代码"
+      ],
+      "tech_stack": [
+        "Java",
+        "GitHub Actions",
+        "Docker",
+        "CodeQL",
+        "SonarCloud"
+      ],
+      "highlights": "GitHub Top 1000 社区项目，由 Checkmarx 维护，是业界最流行的开源 Web 安全扫描工具，兼具自动化扫描与手动渗透测试能力。",
+      "target_audience": "安全测试人员、渗透测试工程师、Web 开发者以及关注应用安全的团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 15781,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "fosrl/pangolin": {
+    "analysis": {
+      "one_liner": "基于 WireGuard 的开源 SASE 平台，统一提供零信任 VPN、反向代理、特权访问管理与 AI 网关。",
+      "core_features": [
+        "站点连接器与智能 NAT 穿透，无需公网 IP 或开放端口即可接入内网资源",
+        "浏览器端反向代理访问，支持 VNC、RDP、SSH 及单点登录",
+        "客户端私有资源访问，支持 CIDR、端口范围与友好 DNS 别名",
+        "身份感知 AI 网关，统一接入云端与自托管模型并控制预算与审计",
+        "基于身份提供商与 RBAC 的零信任按资源授权及审计日志"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "WireGuard",
+        "Docker",
+        "AGPL-3.0"
+      ],
+      "highlights": "将网络连接与安全能力统一到同一身份与策略模型下，开源可自托管，且提供轻量用户态连接器，可替代 Cloudflare One、Zscaler 等闭源 SASE 方案。",
+      "target_audience": "需要自托管零信任访问方案的企业运维与安全工程师，以及希望统一管理内网资源与 AI 模型访问的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 22811,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "cjpais/handy": {
+    "analysis": {
+      "one_liner": "一款免费开源、完全离线运行的跨平台语音转文字桌面应用，按下快捷键说话即可将文字输入任意输入框。",
+      "core_features": [
+        "全局快捷键录音，支持按住说话与点击切换两种模式",
+        "完全本地推理，音频不上传云端，隐私安全",
+        "支持 Whisper（Small/Medium/Turbo/Large）与 Parakeet V3 多种模型，可选 GPU 加速",
+        "使用 Silero VAD 过滤静音，转写结果自动粘贴到当前应用",
+        "支持 Windows、macOS、Linux，提供 CLI 参数与 Raycast 集成"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Tauri",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "transcribe-cpp",
+        "transcribe-rs",
+        "cpal",
+        "vad-rs",
+        "rdev",
+        "rubato"
+      ],
+      "highlights": "以“最易被 fork 和扩展”为设计目标，将 Whisper 与 Parakeet 本地推理、VAD、跨平台音频与全局快捷键整合进 Tauri 桌面应用，兼顾隐私与可扩展性。",
+      "target_audience": "希望构建隐私优先本地语音输入工具的开发者，以及对 Rust、Tauri 桌面应用和本地语音识别集成感兴趣的工程师。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 31831,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "mcrcortex/voxy": {
+    "analysis": {
+      "one_liner": "一个为 Minecraft 提供 LoD 渲染的模组，用于优化远距离地形显示。",
+      "core_features": [
+        "LoD 渲染",
+        "Minecraft 模组",
+        "远距离地形优化"
+      ],
+      "tech_stack": [
+        "Java"
+      ],
+      "highlights": "为 Minecraft 实现 LoD 渲染，提升远距离地形渲染性能。",
+      "target_audience": "Minecraft 模组开发者、图形渲染爱好者",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 1222,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "webkit/webkit": {
+    "analysis": {
+      "one_liner": "WebKit 是 Safari、Mail、App Store 等应用使用的浏览器引擎开源项目。",
+      "core_features": [
+        "提供网页渲染与 JavaScript 执行能力",
+        "支持 macOS、iOS 和 Linux 平台",
+        "作为 Safari 等系统应用的底层引擎",
+        "包含 Web 标准实现与持续演进"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Web 标准技术栈",
+        "C++（WebKit 引擎核心）"
+      ],
+      "highlights": "是苹果生态中 Safari 等关键应用的底层浏览器引擎，影响范围广、工程规模大。",
+      "target_audience": "浏览器引擎开发者、Web 标准实现者、系统级前端与嵌入式浏览器开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 10174,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": false
+  },
+  "rowboatlabs/rowboat": {
+    "analysis": {
+      "one_liner": "开源的多人在线 AI 工作助手，每位成员拥有本地记忆的智能体，共享一个协作空间。",
+      "core_features": [
+        "每位成员在本地运行自己的 Rowboat，拥有独立记忆与模型密钥",
+        "Space 提供频道、共享文件、白板与 @rowboat 提及协作",
+        "通过 MCP 服务器让任意智能体接入 Space，无特权通道",
+        "智能体编辑与并发修改按行合并，保留历史、差异与恢复",
+        "隐私规则限制智能体只读取任务所需内容并仅以摘要形式共享"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "HTTP",
+        "WebSocket",
+        "MCP",
+        "Harbor 服务端"
+      ],
+      "highlights": "将单机 AI 助手扩展为多人协作模式，每人保留本地私有上下文，仅通过共享 Space 交换必要信息，并以 MCP 开放接口实现智能体互通。",
+      "target_audience": "希望为团队引入 AI 协作、注重数据隐私并愿意自行部署或使用本地智能体的开发者与团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 17863,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "burntsushi/ripgrep": {
+    "analysis": {
+      "one_liner": "用 Rust 编写的递归正则搜索工具，默认遵循 gitignore 规则并自动跳过隐藏与二进制文件。",
+      "core_features": [
+        "递归搜索目录中的正则表达式模式",
+        "默认遵循 .gitignore/.ignore/.rgignore 并跳过隐藏文件和二进制文件",
+        "支持按文件类型搜索（如 -tpy 只搜 Python，-Tjs 排除 JavaScript）",
+        "支持上下文显示、多模式搜索、彩色高亮与完整 Unicode",
+        "可选启用 PCRE2 引擎以支持环视和反向引用"
+      ],
+      "tech_stack": [
+        "Rust",
+        "regex 库",
+        "PCRE2（可选）",
+        "Cargo/Crates.io",
+        "GitHub Actions CI"
+      ],
+      "highlights": "在多项基准测试中速度显著领先 GNU grep、ack、The Silver Searcher 等同类工具，同时保持 Unicode 支持与自动过滤的易用性。",
+      "target_audience": "需要在代码库中快速搜索文本的开发者，尤其是使用命令行、关注搜索性能与 gitignore 集成体验的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 68366,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "joeanamier/tiktokdownloader": {
+    "analysis": {
+      "one_liner": "抖音与 TikTok 平台的视频、图集下载及数据采集工具，支持多账号批量处理。",
+      "core_features": [
+        "下载抖音/TikTok 视频、图集、实况与最高画质文件",
+        "采集账号作品、评论、搜索、热榜等详细数据并持久化保存",
+        "支持多账号批量下载、增量下载与断点续传",
+        "提供终端交互、Web API 接口及 Web UI 交互模式",
+        "支持 CSV/XLSX/SQLite 数据保存与直播拉流地址获取"
+      ],
+      "tech_stack": [
+        "Python",
+        "JavaScript",
+        "Node.js",
+        "Docker",
+        "ffmpeg",
+        "SQLite",
+        "curl_cffi"
+      ],
+      "highlights": "功能覆盖下载与数据采集全流程，支持多账号、多格式存储、Web API 调用与 Docker 部署，并提供开箱即用的可执行文件。",
+      "target_audience": "需要批量下载抖音/TikTok 作品或采集平台数据的开发者与数据分析人员。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 16140,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "wonderwhy-er/desktopcommandermcp": {
+    "analysis": {
+      "one_liner": "为 Claude 等 AI 客户端提供终端控制、文件搜索与差异编辑能力的 MCP 服务器。",
+      "core_features": [
+        "执行终端命令并支持输出流式传输、超时与后台运行",
+        "文件系统读写、目录管理与基于 ripgrep 的递归搜索",
+        "外科手术式文本替换与整文件重写的差异编辑",
+        "在内存中直接运行 Python、Node.js、R 代码并分析 CSV/JSON/Excel",
+        "原生支持 Excel、PDF、DOCX 的读取与编辑"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Node.js",
+        "Model Context Protocol",
+        "vscode-ripgrep",
+        "Docker"
+      ],
+      "highlights": "把终端、文件系统与代码编辑能力统一接入 AI 聊天，复用宿主客户端订阅而非额外 API 费用，并提供文件预览 UI 与安全护栏。",
+      "target_audience": "希望让 AI 直接操作本地终端与文件、进行自动化开发任务的开发者与 Claude Desktop 用户。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 9632,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "microsoft/typespec": {
+    "analysis": {
+      "one_liner": "微软推出的用于定义云服务 API 与数据形状的可扩展语言，可生成多种 API 描述格式与代码。",
+      "core_features": [
+        "用单一 TypeSpec 定义作为唯一事实来源，生成 OpenAPI、gRPC 等多种 API 描述格式",
+        "支持将可复用模式打包为库，为 API 设计提供约束与最佳实践护栏",
+        "内置丰富的 linter 框架，可标记反模式",
+        "提供 emitter 框架，可自定义输出格式",
+        "支持生成客户端与服务端代码、文档等资产"
+      ],
+      "tech_stack": [
+        "TypeSpec 语言",
+        "Node.js",
+        "npm",
+        "VS Code 扩展",
+        "Visual Studio 扩展",
+        "Prettier 插件"
+      ],
+      "highlights": "以单一 API 定义为事实来源，通过可扩展语言、linter 与 emitter 框架统一生成多种协议描述与代码，减少重复与不一致。",
+      "target_audience": "设计云服务 API 的后端开发者、API 架构师，以及需要从统一定义生成多格式 API 描述与代码的团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 5861,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "immich-app/immich": {
+    "analysis": {
+      "one_liner": "高性能自托管照片与视频管理方案，可替代云端相册服务。",
+      "core_features": [
+        "照片与视频上传、浏览及自动备份，支持去重",
+        "基于元数据、物体、人脸与 CLIP 的智能搜索",
+        "相册、共享相册、归档、收藏与公共分享",
+        "人脸识别与聚类、回忆（往年今日）功能",
+        "多用户支持、OAuth 登录与 API 密钥管理"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "移动端应用",
+        "Web 前端",
+        "自托管服务端",
+        "OAuth",
+        "CLIP"
+      ],
+      "highlights": "功能覆盖接近商业云相册，支持自托管、多用户、AI 搜索与人脸识别，并提供移动端与 Web 双端体验。",
+      "target_audience": "希望自建私有相册服务、重视数据隐私与备份的开发者及技术爱好者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 114513,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "open-telemetry/opentelemetry-collector-contrib": {
+    "analysis": {
+      "one_liner": "OpenTelemetry Collector 的贡献仓库，托管不适合放入核心仓库的各类采集器组件。",
+      "core_features": [
+        "提供核心仓库之外的 Collector 组件（receiver、processor、exporter、extension 等）",
+        "组件按信号类型（traces、metrics、logs）分别标注稳定性等级",
+        "支持通过特性门控（feature gates）隐藏尚未进入主路径的功能",
+        "组件由社区维护者或特定厂商分别提供支持",
+        "配合 OpenTelemetry Collector Builder 构建自定义发行版"
+      ],
+      "tech_stack": [
+        "Go",
+        "OpenTelemetry Collector",
+        "GitHub Actions",
+        "Codecov"
+      ],
+      "highlights": "作为 OpenTelemetry Collector 生态的组件扩展仓库，汇聚了大量社区与厂商贡献的采集组件，是构建自定义 Collector 发行版的重要来源。",
+      "target_audience": "需要扩展或定制 OpenTelemetry Collector 采集能力的可观测性工程师、组件贡献者及厂商开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4951,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "tikv/tikv": {
+    "analysis": {
+      "one_liner": "基于 Rust 与 Raft 的分布式事务型键值数据库，为 TiDB 提供底层存储支持。",
+      "core_features": [
+        "提供兼容 ACID 的分布式事务 API 与经典键值 API",
+        "基于 Raft 共识算法与 RocksDB 保证数据一致性",
+        "通过 Placement Driver 实现自动分片与数据迁移",
+        "支持地理复制与水平扩展，可扩展至 100+ TB 数据",
+        "提供 Coprocessor 框架支持分布式计算"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Raft",
+        "RocksDB",
+        "Placement Driver (PD)",
+        "TiDB",
+        "Docker Compose",
+        "TiUP"
+      ],
+      "highlights": "CNCF 毕业项目，设计受 BigTable、Spanner、Percolator 启发，事务模型在 Percolator 基础上做了性能优化，支持快照隔离与外部一致性读写。",
+      "target_audience": "分布式系统与数据库内核开发者，以及需要高扩展、强一致事务存储的工程团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 16862,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "adityatandon15/low-level-design-course": {
+    "analysis": {
+      "one_liner": "Coder Army 低层设计（LLD）视频课程的配套 Java 代码与笔记合集。",
+      "core_features": [
+        "提供 LLD 播放列表的全部代码",
+        "包含配套学习笔记",
+        "以 Java 语言实现设计案例",
+        "内容与 YouTube 免费课程同步",
+        "面向系统设计中的低层设计主题"
+      ],
+      "tech_stack": [
+        "Java"
+      ],
+      "highlights": "与免费视频课程配套，代码与笔记同步开源，便于边看边练。",
+      "target_audience": "学习低层设计（LLD）与系统设计的 Java 开发者及面试准备者。",
+      "scores": {
+        "innovation": 2,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 1278,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "vercel-labs/agent-browser": {
+    "analysis": {
+      "one_liner": "面向 AI 智能体的浏览器自动化命令行工具，基于 Rust 原生实现",
+      "core_features": [
+        "通过无障碍树快照与元素引用（ref）驱动点击、填写、读取等操作",
+        "提供 open、click、fill、screenshot、snapshot、eval 等完整浏览器控制命令",
+        "支持传统 CSS 选择器与 find role 等语义化定位方式",
+        "内置截图去重与阈值比较，减少 token 消耗",
+        "提供 chat 自然语言控制与实验性 WebMCP 页面工具调用"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Node.js",
+        "pnpm",
+        "Chrome for Testing",
+        "CDP",
+        "npm",
+        "Homebrew",
+        "Cargo"
+      ],
+      "highlights": "以原生 Rust 实现高性能 CLI，用无障碍树快照加元素引用替代传统选择器，专为 AI 智能体设计，并支持截图去重以节省 token",
+      "target_audience": "构建 AI 智能体或自动化流程的开发者，以及需要脚本化浏览器操作的工程师",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 42778,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "hibernate/hibernate-orm": {
+    "analysis": {
+      "one_liner": "面向 Java 的成熟 ORM 框架，为关系型数据库提供符合 Java 习惯的持久化方案。",
+      "core_features": [
+        "对象关系映射（ORM），将 Java 对象与关系型数据库表进行映射",
+        "提供 HQL/JPQL 查询语言支持",
+        "事务与持久化上下文管理",
+        "支持多种关系型数据库方言",
+        "作为 JPA 规范的实现之一"
+      ],
+      "tech_stack": [
+        "Java",
+        "JPA",
+        "JDBC",
+        "关系型数据库"
+      ],
+      "highlights": "由 Red Hat 维护、历史悠久且被广泛采用的 Java 持久化框架，是 JPA 规范的重要实现，生态成熟、社区规模大。",
+      "target_audience": "需要在 Java 应用中访问关系型数据库、希望使用 ORM 或 JPA 规范的后端开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 6469,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": false
+  },
+  "hashicorp/terraform": {
+    "analysis": {
+      "one_liner": "Terraform 是用声明式配置安全可预测地创建、变更和版本化基础设施的 IaC 工具",
+      "core_features": [
+        "基础设施即代码：用高层配置语法描述基础设施并可版本化、共享复用",
+        "执行计划：apply 前生成计划，明确将做哪些变更，避免意外操作",
+        "资源图：构建资源依赖图并并行创建修改无依赖资源，提升效率",
+        "变更自动化：以最少人工交互应用复杂变更集，减少人为错误",
+        "插件化 Provider 机制：核心仅含 CLI 与图引擎，Provider 以插件形式实现并可自动下载"
+      ],
+      "tech_stack": [
+        "Go",
+        "声明式配置语言（HCL）",
+        "插件化 Provider 架构",
+        "Terraform Registry"
+      ],
+      "highlights": "将基础设施抽象为可版本化、可评审、可复用的代码，并通过执行计划与资源依赖图实现安全、可预测、并行的变更自动化，是基础设施即代码领域的标杆工具",
+      "target_audience": "需要以代码方式管理和自动化云及本地基础设施的运维、DevOps 与平台工程师，以及希望学习 IaC 与声明式配置实践的开发者",
+      "scores": {
+        "innovation": 5,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 49682,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "slint-ui/slint": {
+    "analysis": {
+      "one_liner": "Slint 是一个开源声明式 GUI 工具包，用 .slint 标记语言为 Rust、C++、JavaScript 或 Python 应用构建原生界面。",
+      "core_features": [
+        "使用 .slint 声明式标记语言编写 UI，与业务逻辑分离",
+        "支持 Rust、C++、JavaScript、Python 多语言绑定",
+        "面向嵌入式、桌面、移动及 WebAssembly 多平台",
+        "提供 LSP 服务器、VS Code 扩展、slint-viewer、SlintPad 等工具链",
+        "支持 femtovg、skia、software 等多种渲染后端与原生样式"
+      ],
+      "tech_stack": [
+        "Rust",
+        "C++",
+        "JavaScript/NodeJS",
+        "Python",
+        "OpenGL ES 2.0",
+        "Skia",
+        "WebAssembly",
+        "Qt QStyle"
+      ],
+      "highlights": "将 .slint 界面在编译期编译为原生机器码，运行时内存占用低，适合资源受限的嵌入式设备，同时保持跨平台与多语言一致的开发体验。",
+      "target_audience": "需要为嵌入式、桌面或移动平台构建轻量原生界面的 Rust、C++、JavaScript 或 Python 开发者，以及希望 UI 设计与业务逻辑并行协作的团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 23852,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "geysermc/geyser": {
+    "analysis": {
+      "one_liner": "一个代理桥接工具，让基岩版玩家能连接并游玩 Java 版 Minecraft 服务器。",
+      "core_features": [
+        "在基岩版与 Java 版之间进行网络数据包协议翻译",
+        "作为代理运行，使基岩版客户端无缝加入 Java 版服务器",
+        "支持多个基岩版与 Java 版版本",
+        "提供编译构建流程与多语言翻译支持",
+        "开源协作项目，附带测试服务器供验证"
+      ],
+      "tech_stack": [
+        "Java",
+        "Gradle",
+        "Adventure Text Library",
+        "CloudburstMC Bedrock Protocol Library",
+        "MCProtocolLib",
+        "slf4j"
+      ],
+      "highlights": "通过协议翻译打通两个不同版本的 Minecraft，实现真正的跨平台联机，且为开放协作项目，社区活跃。",
+      "target_audience": "对 Minecraft 跨平台联机、网络协议翻译及 Java 网络编程感兴趣的开发者。",
+      "scores": {
+        "innovation": 5,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 5790,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "apache/cassandra": {
+    "analysis": {
+      "one_liner": "Apache Cassandra 是一个开源分布式事务数据库，支持线性扩展与容错。",
+      "core_features": [
+        "分布式架构支持线性扩展",
+        "在通用硬件或云基础设施上提供容错能力",
+        "事务型数据库能力",
+        "不牺牲性能的前提下实现扩展与容错"
+      ],
+      "tech_stack": [
+        "Java"
+      ],
+      "highlights": "作为 Apache 顶级项目，拥有极高的社区认可度（超万 Star、四千余 Fork），在分布式数据库领域具有长期影响力。",
+      "target_audience": "需要构建高可用、可水平扩展数据存储系统的后端与分布式系统开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 10096,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": false
+  },
+  "p1neapplexpress/openflux": {
+    "analysis": {
+      "one_liner": "基于可插拔传输的 TCP 隧道网络栈研究工具，支持 L3/L4 两种出口后端。",
+      "core_features": [
+        "可插拔传输层，支持 Yandex.Docs、Volga、MAX、Cups.online、Mail.ru Docs 等多种通道",
+        "批量合并加 zstd 压缩编解码，减少通道消息数并提升吞吐",
+        "两种出口后端：l3 原始 SNAT/DNAT 转发与 l4 gVisor 用户态代理",
+        "macOS utun 客户端与 iOS NEPacketTunnelProvider 纯 L3 转发",
+        "可选 AES-256-GCM 加密与基准测试模式"
+      ],
+      "tech_stack": [
+        "Go",
+        "gVisor",
+        "utun",
+        "NEPacketTunnelProvider",
+        "zstd",
+        "LZ4",
+        "AES-256-GCM",
+        "WebRTC DataChannel"
+      ],
+      "highlights": "将隧道流量伪装进多个常见 Web 服务通道，并用批量加 zstd 编解码提升吞吐；出口端提供 l3 与 l4 两种后端，兼顾性能与跨平台无 root 运行。",
+      "target_audience": "对网络栈、隧道传输与流量伪装感兴趣的网络研究与 Go 开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 3,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 1672,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "vastsa/pi-desktop": {
+    "analysis": {
+      "one_liner": "本地优先的 AI 编程智能体桌面工作台，支持自带模型、打开本地项目并安装插件扩展。",
+      "core_features": [
+        "多模型接入：支持 OpenAI、Anthropic、本地模型及任意 OpenAI 兼容 API，可按会话切换提供商与推理等级",
+        "三种工作模式：Agent 直接执行、Plan 先出计划待批准、Goal 锁定目标与验收标准",
+        "持久化项目与会话管理：支持置顶、归档、分支、搜索、排队提示、@ 引用文件与斜杠命令",
+        "权限层与审查：智能体读写文件、执行命令需经权限层，可查看 diff 与命令输出",
+        "多层扩展体系：Skills、MCP 服务器、Subagents、pi 扩展与可安装插件（.piplug）"
+      ],
+      "tech_stack": [
+        "Electron",
+        "Rust",
+        "TypeScript",
+        "pi Agent Harness"
+      ],
+      "highlights": "以本地优先、模型无关为设计核心，把智能体工作流从终端或编辑器插件中独立出来，形成包含项目、会话、审查、预览与插件市场的独立桌面工作台，并提供权限层与子智能体编排能力。",
+      "target_audience": "希望使用自有模型、注重数据本地化与工作流可控性的 AI 编程开发者，以及需要为智能体扩展自定义插件与工具的高级用户。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4124,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "python/cpython": {
+    "analysis": {
+      "one_liner": "Python 编程语言的官方参考实现，包含解释器、标准库与构建测试工具链。",
+      "core_features": [
+        "CPython 解释器与标准库的完整源码实现",
+        "支持 Unix/Linux/macOS/Windows 等多平台构建与安装",
+        "提供 PGO 与 LTO 等编译优化选项",
+        "内置完整测试套件与多版本并行安装支持",
+        "持续更新的官方文档与变更日志"
+      ],
+      "tech_stack": [
+        "Python",
+        "C",
+        "Autoconf/configure",
+        "Make",
+        "GitHub Actions",
+        "Azure Pipelines"
+      ],
+      "highlights": "作为 Python 语言的官方实现，是理解解释器内部机制、语言演进与大型开源协作流程的权威代码库。",
+      "target_audience": "Python 核心开发者、CPython 贡献者、编译器与解释器研究者，以及希望深入理解 Python 底层实现的高级开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 77201,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "bojieli/ai-agent-book": {
+    "analysis": {
+      "one_liner": "《深入理解 AI Agent》开源书籍主仓库，含全书正文、编译版 PDF 与 109 个按章配套实验代码。",
+      "core_features": [
+        "10 章正文围绕 Agent = LLM + 上下文 + 工具 展开，从原理讲到工程实战",
+        "109 个按章配套实验，含本地项目与外部复现轨道",
+        "提供 PDF / EPUB 离线下载与在线阅读，支持多语言切换、高亮与笔记",
+        "社区贡献 15 种语言翻译版本，正文源码与配图全部开源",
+        "附带 PDF / EPUB 自行编译脚本与构建说明"
+      ],
+      "tech_stack": [
+        "Python",
+        "Markdown",
+        "pandoc",
+        "xelatex",
+        "ElegantBook",
+        "SVG"
+      ],
+      "highlights": "以 Agent = LLM + 上下文 + 工具 为核心公式系统讲解 AI Agent，正文、配图与 109 个实验全部开源，并已扩展至 15 种语言，配套离线 PDF/EPUB 与在线阅读站点。",
+      "target_audience": "希望系统学习 AI Agent 设计原理与工程实践、并想通过动手实验加深理解的开发者与学习者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 48251,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "mekos2772/ios-location-spoofer": {
+    "analysis": {
+      "one_liner": "通过代理软件 MITM 改写 Apple 定位服务响应，实现免越狱的 iOS 虚拟定位。",
+      "core_features": [
+        "适配 Shadowrocket、Surge、Loon、Quantumult X、Stash 五大代理平台，免编译即导即用",
+        "同时改写 Wi-Fi 热点与蜂窝基站坐标，并兼容多种响应封装格式",
+        "最小改写策略，仅替换经纬度与精度，其余字段透传以避免 iOS 校验失败",
+        "提供 iOS 12 兼容构建，适配不支持 BigInt 的旧设备",
+        "附带网页地图选点工具，支持 Cloudflare Worker、Railway、Node、Docker 多种部署"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Shadowrocket",
+        "Surge",
+        "Loon",
+        "Quantumult X",
+        "Stash",
+        "Node.js",
+        "SQLite",
+        "Cloudflare Worker",
+        "Docker"
+      ],
+      "highlights": "无需越狱、电脑或开发者账号，仅靠代理软件的 HTTPS 解密即可在系统层面伪装真实定位，隐蔽性高，并针对 iOS 26+ 的定位缓存问题给出了重启生效方案。",
+      "target_audience": "需要在 iOS 上修改定位的普通用户，以及熟悉 Shadowrocket、Surge、Loon 等代理工具配置的进阶玩家。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4136,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "ahujasid/mcp-for-blender": {
+    "analysis": {
+      "one_liner": "通过 MCP 协议把 Blender 3D 软件连接到任意 LLM，实现提示词驱动的建模与场景操作。",
+      "core_features": [
+        "基于 socket 的 MCP 服务器实现 LLM 与 Blender 双向通信",
+        "创建、修改、删除 3D 对象并控制材质与颜色",
+        "获取当前 Blender 场景的详细信息",
+        "在 Blender 中执行 LLM 生成的任意 Python 代码",
+        "集成 Poly Haven、Sketchfab、Poly Pizza 及 AI 生成模型等资产"
+      ],
+      "tech_stack": [
+        "Python",
+        "Model Context Protocol (MCP)",
+        "Blender Addon",
+        "uv / uvx",
+        "Docker"
+      ],
+      "highlights": "把 MCP 协议引入 3D 建模工作流，让 Claude、Cursor、Codex 等任意 MCP 客户端直接操控 Blender，并支持代码执行与外部资产库、AI 生成模型接入。",
+      "target_audience": "希望用 LLM 辅助 3D 建模的 Blender 用户，以及开发 MCP 集成与 AI 工具链的 Python 开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 28854,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "jihe520/mathmodelagent": {
+    "analysis": {
+      "one_liner": "专为数学建模设计的 Agent 与 SKILLS，自动完成建模、编码、绘图并生成可直接提交的论文。",
+      "core_features": [
+        "多智能体协作：建模手、代码手、论文手分工完成全流程",
+        "代码解释器：支持本地 Jupyter 与 E2B、Daytona 云端执行",
+        "内置 17 套 Typst 论文模板，自动匹配赛事并生成可提交 PDF",
+        "9 步自动验收：文本泄漏检测、数值一致性校验、Typst 编译与 PDF 检查",
+        "支持多模型接入（litellm）与自定义 prompt 模板注入"
+      ],
+      "tech_stack": [
+        "Python",
+        "FastAPI",
+        "Redis",
+        "Jupyter",
+        "Typst",
+        "litellm",
+        "ChromaDB",
+        "Docker",
+        "Node.js/pnpm"
+      ],
+      "highlights": "以 SKILLS 驱动替代自建 Agent 框架，直接运行在 Claude Code、Codex 等 Harness 上，并提供开箱即用的桌面版，降低使用门槛。",
+      "target_audience": "参加数学建模竞赛的学生、需要自动化建模与论文生成的科研人员，以及研究 Agent 与 SKILLS 设计的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 5650,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "microsoft/ai-engineering-coach": {
+    "analysis": {
+      "one_liner": "读取本地 AI 编码会话日志，生成仪表盘与改进建议的 VS Code 扩展。",
+      "core_features": [
+        "追踪练习分数、周趋势与每日活动图表",
+        "45 条规则检测提示词质量、会话卫生、代码审查等反模式",
+        "按语言、工作区、模型与工具统计 AI 生成代码量",
+        "发现重复提示词并转化为可复用技能",
+        "评估上下文健康度与工作区上下文地图"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "VS Code 扩展",
+        "GitHub Copilot 应用 Canvas",
+        "Node.js/npm",
+        "Dev Containers"
+      ],
+      "highlights": "所有分析在本地完成，数据不出机器；同一套仪表盘既可作为 VS Code 扩展运行，也可作为 GitHub Copilot 应用中的 Canvas 使用，并支持多工具会话日志统一分析。",
+      "target_audience": "使用 AI 编码助手并希望量化、改进自身 agentic 工程实践的开发者与团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4319,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "moghtech/komodo": {
+    "analysis": {
+      "one_liner": "一个用于在多台服务器上构建和部署软件的开源工具",
+      "core_features": [
+        "跨多台服务器构建与部署软件",
+        "支持连接无限数量的服务器",
+        "提供仪表盘、Stack、Compose、环境变量、同步、更新、统计与导出等管理界面",
+        "支持通过 API 进行自动化操作",
+        "提供浅色与深色主题界面"
+      ],
+      "tech_stack": [
+        "Rust"
+      ],
+      "highlights": "不限制可连接的服务器数量，也不限制可用于自动化的 API，采用 GPL-V3 开源许可",
+      "target_audience": "需要在多台服务器上进行软件构建与部署的运维和开发人员",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 12317,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "arcboxlabs/arcbox": {
+    "analysis": {
+      "one_liner": "用纯 Rust 从零打造的 macOS 容器与虚拟机运行时，可跑 Docker、AI 智能体沙箱、Kubernetes 与完整 Linux/macOS 虚拟机。",
+      "core_features": [
+        "兼容 Docker 的容器引擎，支持 Compose、BuildKit、端口转发与卷挂载",
+        "基于 Firecracker 的一次性 microVM 沙箱，用于 AI 编码智能体与不可信代码",
+        "原生 k3s 本地 Kubernetes 集群，自动集成 kubectl",
+        "完整 Linux 虚拟机，自带内核、持久磁盘与发行版选择",
+        "从 Docker Desktop 或 OrbStack 一键迁移镜像、卷与容器"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Docker",
+        "Kubernetes(k3s)",
+        "Firecracker",
+        "FEX",
+        "gRPC",
+        "VirtIO",
+        "NFSv4/vsock"
+      ],
+      "highlights": "自研 VMM、VirtIO 设备、文件共享与网络数据通路，全部从零用 Rust 实现；本地沙箱与云端平台共用同一原语，可无缝扩展；开源 MIT/Apache-2.0，对标闭源的 OrbStack。",
+      "target_audience": "macOS 上需要轻量容器与虚拟机环境的开发者、运行 AI 编码智能体的团队，以及关注 Rust 系统编程与虚拟化实现的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 5049,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "cluvexstudio/aether": {
+    "analysis": {
+      "one_liner": "基于 MASQUE over HTTP/3 与 HTTP/2 的 Rust 抗审查代理客户端，自动发现可用出口并提供本地 SOCKS5 代理。",
+      "core_features": [
+        "自动端点发现，并通过端到端数据面验证网关是否真正可转发流量",
+        "支持 MASQUE（HTTP/3 与 HTTP/2，可选 TLS ClientHello 分片）与 WireGuard 协议",
+        "嵌套隧道模式：嵌套 WireGuard（gool）与嵌套 MASQUE（--mim）",
+        "按域名、地址或端口的路由规则，支持上游代理与可选 Tor 出口",
+        "本地 SOCKS5 代理，支持自动重连与快速重连上次可用网关"
+      ],
+      "tech_stack": [
+        "Rust",
+        "MASQUE",
+        "HTTP/3 (QUIC)",
+        "HTTP/2",
+        "WireGuard",
+        "quiche",
+        "SOCKS5",
+        "Docker"
+      ],
+      "highlights": "面向 DPI、协议指纹识别、UDP 限速与端点封锁等强审查环境设计，强调网关需通过实际数据面验证才被信任，并支持嵌套隧道与 Tor 出口等多样化出口策略。",
+      "target_audience": "需要在严格网络审查环境下突破封锁的开发者与高级用户，以及关注 Rust 网络编程、MASQUE/QUIC 与抗审查隧道实现的技术人员。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 1931,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "glanceapp/glance": {
+    "analysis": {
+      "one_liner": "一个自托管的轻量级仪表盘，将各类信息源聚合到统一界面中展示。",
+      "core_features": [
+        "内置 RSS、Reddit、Hacker News、YouTube、Twitch、天气、行情、Docker 状态、服务器状态等多种小组件",
+        "通过 YAML 文件配置布局、页面、标签页与每个小组件的选项",
+        "支持自定义 CSS 与主题，可自行创建主题",
+        "针对移动设备优化，页面加载通常在约 1 秒内",
+        "提供单文件二进制（小于 20MB）与轻量 Docker 镜像，依赖少"
+      ],
+      "tech_stack": [
+        "Go",
+        "YAML 配置",
+        "原生 JavaScript",
+        "Docker"
+      ],
+      "highlights": "轻量高效，内存占用低、依赖少，单二进制即可部署，同时具备高度可定制的小组件与主题体系。",
+      "target_audience": "喜欢自托管、希望把多种信息源集中到一个仪表盘的开发者与自托管爱好者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 37080,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "securo-finance/securo": {
+    "analysis": {
+      "one_liner": "开源的自托管个人财务管理工具，隐私优先，数据完全由用户自己掌控。",
+      "core_features": [
+        "多账户管理与余额追踪，支持交易搜索、筛选与 CSV 导出",
+        "支持 OFX、QIF、CAMT、CSV 文件导入及自动分类规则引擎",
+        "预算、定期交易、储蓄目标与资产估值增长追踪",
+        "通过 Pluggy、Enable Banking、SimpleFIN 等提供商实现银行同步",
+        "多币种自动汇率换算、多用户与管理员面板、双因素认证及 OIDC 登录"
+      ],
+      "tech_stack": [
+        "Python",
+        "Docker",
+        "Podman",
+        "Docker Compose",
+        "OIDC",
+        "TOTP"
+      ],
+      "highlights": "完全自托管、隐私优先，不向第三方交出任何数据；同时提供多国银行同步、多币种、多用户与可选的自托管 LLM 智能代理。",
+      "target_audience": "注重数据隐私、愿意自行部署服务的开发者与个人用户，尤其是需要多币种、多银行同步及自托管 AI 能力的用户。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 3485,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "theagentrouter/agent-router": {
+    "analysis": {
+      "one_liner": "基于 Envoy Gateway 构建的 AI 与智能体流量开源控制平面，提供统一的 OpenAI 兼容 API 接入各类生成式 AI 服务。",
+      "core_features": [
+        "为所有模型与工具提供统一、OpenAI 兼容的 API 接入",
+        "集中管理凭证、路由、配额、故障转移与用量归因",
+        "支持托管服务商、自托管推理与 MCP 服务器等多种后端",
+        "采用两层网关模式：一层负责认证、顶层路由与全局限流，二层负责自托管模型集群的细粒度控制与端点选择",
+        "支持通过 aigw run 命令在本地以独立模式运行"
+      ],
+      "tech_stack": [
+        "Go",
+        "Envoy",
+        "Envoy Gateway",
+        "Kubernetes CRD",
+        "Helm"
+      ],
+      "highlights": "由 Envoy AI Gateway 更名而来，是 Agentic AI Foundation 项目，CRD、API 组、CLI、镜像与模块路径均保持不变，迁移无破坏性；以 Envoy 作为数据面承载流量，控制面负责策略。",
+      "target_audience": "需要在 Kubernetes 或网关层统一管理多模型接入、凭证、限流与故障转移的平台工程团队和应用开发团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 2110,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "jeecgboot/jimureport": {
+    "analysis": {
+      "one_liner": "一款免费开源的AI报表工具，支持一句话生成报表、数据大屏与对话式智能数据分析。",
+      "core_features": [
+        "JimuChatBI对话式智能数据分析，自然语言生成表格、图表与分组汇总",
+        "类Excel在线拖拽设计器，支持多Sheet、复杂报表与精准打印",
+        "JimuBI数据大屏与仪表盘，ECharts图表与类Word风格拖拽布局",
+        "兼容30+数据源及国产信创数据库，支持多端适配与数据填报"
+      ],
+      "tech_stack": [
+        "Java",
+        "SpringBoot",
+        "ECharts",
+        "MySQL",
+        "OpenAI兼容API"
+      ],
+      "highlights": "首款免费开源对话式智能数据分析产品（Chat2BI），内置Claude Code技能，一句话即可生成报表、大屏与仪表盘，并支持对话式AI修改优化。",
+      "target_audience": "需要快速搭建企业级报表、数据大屏与BI分析能力的Java后端及低代码开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 8443,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "spicetify/cli": {
+    "analysis": {
+      "one_liner": "一款跨平台命令行工具，用于深度定制官方 Spotify 客户端界面与功能。",
+      "core_features": [
+        "修改界面配色主题",
+        "注入自定义 CSS 实现高级定制",
+        "注入扩展以扩展功能、操控界面与播放器",
+        "注入自定义应用",
+        "支持 Windows、macOS 和 Linux"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Go",
+        "命令行工具"
+      ],
+      "highlights": "无需修改 Spotify 源码即可通过注入 CSS、扩展和应用全面定制官方客户端，跨三大桌面平台，社区活跃且下载量可观。",
+      "target_audience": "希望个性化 Spotify 客户端外观与功能的开发者及进阶用户。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 24532,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "bjarneo/cliamp": {
+    "analysis": {
+      "one_liner": "一款受 Winamp 启发的终端音乐播放器，支持本地文件、流媒体与多种在线音乐服务。",
+      "core_features": [
+        "播放本地文件、URL 流媒体、播客与在线电台",
+        "集成 YouTube、SoundCloud、Spotify、网易云音乐等众多平台",
+        "提供频谱可视化、参数均衡器与播放列表管理",
+        "内置约 58000 个在线电台目录，可按国家与流派浏览",
+        "交互式配置向导管理远程服务器与音乐服务"
+      ],
+      "tech_stack": [
+        "Go",
+        "Bubbletea",
+        "Lip Gloss",
+        "Beep",
+        "go-librespot",
+        "ffmpeg",
+        "yt-dlp"
+      ],
+      "highlights": "在终端中复刻 Winamp 的复古体验，同时聚合了极其广泛的音乐来源与自建媒体服务器，功能覆盖远超普通命令行播放器。",
+      "target_audience": "喜欢终端工具、追求复古音乐播放体验，且需要统一管理本地与在线音乐来源的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 4213,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "osmandapp/osmand": {
+    "analysis": {
+      "one_liner": "基于OpenStreetMap的离线地图与导航应用，支持多平台，提供驾车、骑行和步行路线规划。",
+      "core_features": [
+        "离线地图浏览与导航，无需网络连接",
+        "支持驾车、骑行、步行等多种出行方式的路线规划与语音导航",
+        "基于OpenStreetMap和Wikipedia的兴趣点与地图数据",
+        "支持GPX轨迹记录、上传及地图数据贡献",
+        "提供日间/夜间模式、限速提醒等安全功能"
+      ],
+      "tech_stack": [
+        "Java",
+        "Android",
+        "OpenStreetMap",
+        "GPX"
+      ],
+      "highlights": "完全离线可用，全球覆盖，数据来自OpenStreetMap，支持多平台，开源且社区活跃。",
+      "target_audience": "需要离线导航的移动用户、户外活动爱好者、OpenStreetMap贡献者及地图应用开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 6017,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "linshenkx/prompt-optimizer": {
+    "analysis": {
+      "one_liner": "一款帮助用户优化 AI 提示词、提升模型输出质量的工具，支持网页、桌面、浏览器插件与 Docker 多种形态。",
+      "core_features": [
+        "一键智能优化提示词，支持多轮迭代改进",
+        "系统提示词与用户提示词双模式优化",
+        "分析、单结果评估与多结果对比评估",
+        "多模型集成，支持 OpenAI、Gemini、DeepSeek 等主流模型",
+        "支持文生图、图生图与多图生成，以及 MCP 协议集成"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Web 应用",
+        "桌面应用",
+        "Chrome 扩展",
+        "Docker",
+        "Vercel",
+        "Cloudflare Pages",
+        "MCP 协议"
+      ],
+      "highlights": "纯客户端处理，数据直接与 AI 服务商交互、不经中间服务器；同时提供提示词收藏、版本历史与可复现示例等资产管理能力，并覆盖网页、桌面、插件、Docker 多端形态。",
+      "target_audience": "需要编写和调优 AI 提示词的开发者、AI 应用构建者，以及希望提升模型输出质量的普通用户。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 34899,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "sagernet/sing-box": {
+    "analysis": {
+      "one_liner": "一个用 Go 编写的通用代理平台，支持多种代理协议与跨平台部署。",
+      "core_features": [
+        "通用代理平台，统一支持多种代理协议",
+        "提供官方文档站点说明配置与使用",
+        "通过多平台软件包分发，覆盖主流操作系统",
+        "基于 Go 语言实现，便于跨平台编译与部署"
+      ],
+      "tech_stack": [
+        "Go",
+        "GPL-3.0 开源许可",
+        "Repology 打包分发"
+      ],
+      "highlights": "以“通用代理平台”为定位，用单一 Go 项目统一承载多种代理能力，并拥有近 4 万 Star 的高活跃社区与多平台打包支持。",
+      "target_audience": "需要自建或配置代理服务的开发者，以及关注 Go 网络编程与跨平台工具实现的技术人员。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 38077,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "d4vinci/scrapling": {
+    "analysis": {
+      "one_liner": "自适应网页抓取框架，覆盖单次请求到大规模爬取，能自动应对网站结构变化与反爬系统。",
+      "core_features": [
+        "自适应解析器，网站改版后自动重新定位元素",
+        "内置多种 Fetcher，可绕过 Cloudflare Turnstile 等反爬系统",
+        "Spider 框架支持并发多会话爬取、暂停恢复与自动代理轮换",
+        "爬取速度自适应目标站点响应并自动退避",
+        "提供 CLI 与 MCP 集成，支持 AI Agent 调用"
+      ],
+      "tech_stack": [
+        "Python",
+        "异步并发",
+        "CSS/XPath 选择器",
+        "Docker",
+        "MCP"
+      ],
+      "highlights": "解析器能学习网站变化并自动重定位元素，配合开箱即用的反爬绕过与自适应爬取速度，兼顾单请求与大规模爬虫场景。",
+      "target_audience": "需要采集网页数据的 Python 开发者、爬虫工程师，以及希望借助 AI Agent 完成抓取任务的用户。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 81710,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "youssofal/mtplx": {
+    "analysis": {
+      "one_liner": "在 Apple Silicon Mac 上以原生 MTP 推测解码加速运行 Qwen 系列本地大模型，",
+      "core_features": [
+        "利用模型自带的多 token 预测（MTP）头做推测解码，一次批量前向验证草稿，解码速度约为普通解码的 2 倍",
+        "采用精确拒绝采样与残差校正，任意温度下输出分布与模型自身一致，不改变生成结果",
+        "提供 OpenAI 与 Anthropic 兼容的本地服务器，可对接 OpenCode、Claude Code、Cline、Cursor 等工具",
+        "附带 Mac 原生应用，自动检测硬件、推荐并下载适配内存的模型、配置 Python 引擎与风扇控制",
+        "支持 Qwen 3.8 Flash Next（125B MoE）、Qwen 3.8 27B 以及 Qwen 3.6、3.5、Gemma 4 等多档量化包"
+      ],
+      "tech_stack": [
+        "Python",
+        "Apple Silicon / Metal",
+        "MLX",
+        "Hugging Face 模型权重",
+        "OpenAI 与 Anthropic 兼容 API 服务"
+      ],
+      "highlights": "用模型自身的 MTP 头做精确推测解码，在保持输出分布不变的前提下把解码速度提升约 2 倍，并给出可复现的实测数据与分布一致性验证。",
+      "target_audience": "在 Apple Silicon Mac 上本地部署大模型、追求推理速度且不希望牺牲输出质量的开发者，尤其是使用编码助手类工具的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 2344,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "cloudflare/cloudflared": {
+    "analysis": {
+      "one_liner": "Cloudflare Tunnel 的命令行客户端，将 Cloudflare 网络流量安全代理到本地源站，无需开放防火墙端口。",
+      "core_features": [
+        "通过隧道守护进程把 Cloudflare 网络流量代理到源站，无需在防火墙上开洞",
+        "支持通过 DNS 记录、负载均衡器或 WARP 私有流量将流量路由到隧道",
+        "提供 cloudflared access 支持 SSH、RDP 等第 4 层 TCP 流量的访问",
+        "支持 TryCloudflare 快速测试，无需先添加网站到 Cloudflare",
+        "提供独立二进制、Docker 镜像及 Debian、RPM、Homebrew 等安装方式"
+      ],
+      "tech_stack": [
+        "Go",
+        "GNU Make",
+        "capnp",
+        "Docker",
+        "golangci-lint"
+      ],
+      "highlights": "由 Cloudflare 官方维护，采用隧道反向连接模式让源站保持关闭状态，同时覆盖 HTTP 与 SSH、RDP 等第 4 层 TCP 场景，并提供 TryCloudflare 零配置试用。",
+      "target_audience": "需要将本地或私有网络服务安全暴露到公网的后端与运维开发者，以及使用 Cloudflare 生态、关注零信任网络接入的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 15676,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
+  },
+  "emilk/egui": {
+    "analysis": {
+      "one_liner": "egui 是一个纯 Rust 编写的即时模式 GUI 库，可同时运行在 Web 和原生平台。",
+      "core_features": [
+        "纯即时模式 GUI，无回调，代码直观易用",
+        "同一套代码可运行于 Web、桌面和游戏引擎",
+        "内置丰富控件：标签、按钮、滑块、文本编辑、颜色选择器等",
+        "支持抗锯齿渲染、布局、窗口、面板与滚动区域",
+        "无 unsafe 代码，依赖精简，支持 AccessKit 无障碍"
+      ],
+      "tech_stack": [
+        "Rust",
+        "wgpu",
+        "winit",
+        "WebAssembly",
+        "WebGL",
+        "eframe",
+        "epaint"
+      ],
+      "highlights": "纯 Rust 实现、无 unsafe、跨 Web 与原生平台，且易于集成进任意游戏引擎，是 Rust 生态中最易上手的 GUI 方案之一。",
+      "target_audience": "使用 Rust 开发交互式应用、工具或游戏内 GUI 的开发者，尤其是需要跨平台与 Web 支持的场景。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 30595,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "readme_available": true
   }
 }
