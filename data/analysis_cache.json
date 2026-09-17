@@ -12020,5 +12020,37 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-09-17T13:35:25+00:00",
     "readme_available": true
+  },
+  "carterperez-dev/cybersecurity-projects": {
+    "analysis": {
+      "one_liner": "一个包含70个从入门到高级的网络安全实战项目合集，配有认证路线图与学习资源。",
+      "core_features": [
+        "70个网络安全项目，按Foundations、Beginner、Intermediate、Advanced四个难度层级组织",
+        "每个项目提供完整源码与learn文档，Foundations层级带逐行教学注释",
+        "10条认证路线图，覆盖SOC分析师、渗透测试、安全工程师等职业路径",
+        "学习资源汇总：工具、课程、认证、社区与框架",
+        "部分项目支持直接复制使用或作为参考进行二次开发"
+      ],
+      "tech_stack": [
+        "Go",
+        "Python",
+        "C++",
+        "httpx",
+        "Argon2id",
+        "AES-GCM"
+      ],
+      "highlights": "以游戏化方式组织网络安全学习，项目按难度分层且配套教学文档，兼顾零基础新手与进阶开发者，同时提供职业认证路线图。",
+      "target_audience": "从零基础编程新手到进阶安全从业者，以及准备网络安全认证、需要实战项目参考的开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 7059,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T22:53:54+00:00",
+    "readme_available": true
   }
 }
