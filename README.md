@@ -110,7 +110,7 @@ INPUT_SOURCE=fixture python scripts/main.py
 python -m unittest discover -s tests
 ```
 
-227 项离线测试，数十秒（实测 27–47 秒，随机器负载波动）。另有 9 项浏览器验收（E2/E3/E4），需要 Chromium 系浏览器，找不到会自动跳过并说明原因而非伪装通过：
+229 项离线测试，数十秒（实测 27–47 秒，随机器负载波动）。另有 9 项浏览器验收（E2/E3/E4），需要 Chromium 系浏览器，找不到会自动跳过并说明原因而非伪装通过：
 
 ```bash
 SKIP_BROWSER_TESTS=1 python -m unittest discover -s tests   # 跳过浏览器验收
