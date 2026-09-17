@@ -11,6 +11,7 @@ import re
 import sys
 import unittest
 from datetime import datetime, timezone
+from functools import lru_cache
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest import mock
@@ -20,10 +21,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import analyze  # noqa: E402
 import cache  # noqa: E402
 import config  # noqa: E402
+import fetch  # noqa: E402
 import main  # noqa: E402
 import net  # noqa: E402
 
 NOW = datetime(2026, 9, 17, 12, 0, 0, tzinfo=timezone.utc)
+
+# fixture 是冻结的，但每个用例都会重新读盘并按 21 份共 14MB 的 HTML 重新解析。
+# cProfile 实测：不做缓存时 parse_trending_html 被真实调用 399 次、占套件 97% 的时间。
+# 因此缓存必须跨用例共享（模块级），只在单个用例内缓存只能省掉一小部分。
+# 解析器自身的覆盖不受影响——test_fetch.py 用内联合成 HTML 测它，test_fixtures.py
+# 另有自己的缓存；此处缓存的只是「同一份冻结字节」的重复解析。
+_SHARED_READ = lru_cache(maxsize=None)(cache.read_fixture)
+_SHARED_PARSE = lru_cache(maxsize=None)(fetch.parse_trending_html)
+
 TRANSPORT_HOSTS = {
     "trending": "github.com/trending",
     "readme": "raw.githubusercontent.com",
@@ -97,9 +108,12 @@ class MainHarness(unittest.TestCase):
         self.data_dir = self.root / "data"
         self.dist_dir = self.root / "dist"
 
+        # 用模块级缓存对象（而非每次新建），这样 21 份 fixture 在整个套件里只解析一次
         self._patches = [
             mock.patch.object(config, "DATA_DIR", self.data_dir),
             mock.patch.object(config, "DIST_DIR", self.dist_dir),
+            mock.patch.object(cache, "read_fixture", _SHARED_READ),
+            mock.patch.object(fetch, "parse_trending_html", _SHARED_PARSE),
             # network 模式下没有 Key 会让每次调用都直接失败；这里给一个占位值，
             # 因为传输层是假的，Key 不会被真正校验。
             mock.patch.dict(

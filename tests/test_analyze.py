@@ -177,13 +177,41 @@ class FieldValidationTest(unittest.TestCase):
         with self.assertRaises(analyze.AnalysisError):
             self.validate(payload(core_features=too_many))
 
-    def test_one_liner_length_boundary(self):
-        """写作要求 60 字，校验容忍到 80 字——64 字这种实测常见擦边必须接受。"""
-        for length in (60, 64, analyze.ONE_LINER_SANITY_MAX):
-            self.validate(payload(one_liner="字" * length))
+    def test_one_liner_within_target_is_untouched(self):
+        for length in (10, analyze.ONE_LINER_TARGET_CHARS):
+            text = "字" * length
+            with self.subTest(length=length):
+                self.assertEqual(self.validate(payload(one_liner=text))["one_liner"], text)
+
+    def test_one_liner_over_target_is_trimmed_not_rejected(self):
+        """84 字是实测真实出现过的值（googleworkspace/cli）。
+
+        截断而非拒绝：若拒绝，该仓库会永远进不了缓存，在站点上永久缺卡。
+        +1 是硬截断时补的省略号。
+        """
+        result = self.validate(payload(one_liner="字" * 84))
+        self.assertLessEqual(len(result["one_liner"]), analyze.ONE_LINER_SANITY_MAX + 1)
+
+    def test_trim_prefers_clause_boundary(self):
+        text = "字" * 50 + "。" + "字" * 80
+        trimmed = self.validate(payload(one_liner=text))["one_liner"]
+        self.assertTrue(trimmed.endswith("。"), f"应在标点处断开：{trimmed!r}")
+        self.assertLessEqual(len(trimmed), analyze.ONE_LINER_SANITY_MAX)
+
+    def test_trim_hard_cuts_with_ellipsis_when_no_boundary(self):
+        trimmed = self.validate(payload(one_liner="字" * 120))["one_liner"]
+        self.assertEqual(len(trimmed), analyze.ONE_LINER_SANITY_MAX + 1)
+        self.assertTrue(trimmed.endswith("…"))
+
+    def test_trim_is_idempotent(self):
+        once = analyze.trim_one_liner("字" * 200)
+        self.assertEqual(analyze.trim_one_liner(once), once)
+
+    def test_pathological_one_liner_is_rejected(self):
+        """只有模型把整段分析塞进一句话时才拒绝。"""
         with self.assertRaises(analyze.AnalysisError) as caught:
-            self.validate(payload(one_liner="字" * (analyze.ONE_LINER_SANITY_MAX + 1)))
-        self.assertIn("one_liner 超长", str(caught.exception))
+            self.validate(payload(one_liner="字" * (analyze.ONE_LINER_HARD_MAX + 1)))
+        self.assertIn("未按结构作答", str(caught.exception))
 
     def test_score_range_boundaries(self):
         for value in (1, 5):
@@ -353,6 +381,16 @@ class RealDatasetQualityTest(unittest.TestCase):
                 for score in analysis["scores"].values():
                     self.assertIsInstance(score, int)
                     self.assertTrue(1 <= score <= 5)
+
+    def test_b2_one_liner_lengths_within_bound(self):
+        """+1 是留给硬截断时补的省略号。"""
+        limit = analyze.ONE_LINER_SANITY_MAX + 1
+        offenders = {
+            key: len(analysis["one_liner"])
+            for key, analysis in self.analyses().items()
+            if len(analysis["one_liner"]) > limit
+        }
+        self.assertEqual(offenders, {}, f"以下条目总结超长：{offenders}")
 
     def test_cache_entries_record_provenance(self):
         """缓存条目必须记下版本与模型，否则切换模型时无法定向失效。"""

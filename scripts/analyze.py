@@ -21,9 +21,15 @@ FEATURE_TARGET_MAX = 5
 # 校验用的容忍上界，刻意比写作要求宽松。实测首轮 200 次调用里有 16 次被严格校验
 # 丢弃，原因清一色是「6 条功能」「总结 64 字」——内容完全可用。为这种擦边丢掉一次
 # 已付费的调用不划算，因此校验只拦真正跑偏的输出，擦边部分归一化处理。
+#
+# 长度类偏差一律「截断」而非「拒绝」：一个字符串字段太长是偏好问题，不是结构违规。
+# 若改成拒绝，某个稳定产出 84 字总结的仓库会**永远进不了缓存**，在站点上永久缺卡——
+# 实测 297 个候选里就有 1 个是这样被卡住的。
 ONE_LINER_SANITY_MAX = 80
+# 超过此值说明模型根本没按结构作答（把整段分析塞进了一句话），才值得整条拒绝
+ONE_LINER_HARD_MAX = 240
 FEATURE_SANITY_MAX = 8
-# 归一化：超出写作要求的功能条数截断，而不是整条丢弃
+# 归一化：超出写作要求的部分截断，而不是整条丢弃
 FEATURE_KEEP = FEATURE_TARGET_MAX
 
 # 中文检查用**绝对字符数**而非占比。分析结果天然嵌满专有名词（Tauri、Kubernetes、
@@ -178,8 +184,13 @@ def validate_analysis(payload) -> dict:
     one_liner = _clean_text(payload.get("one_liner"))
     if not one_liner:
         problems.append("one_liner 缺失或为空")
-    elif len(one_liner) > ONE_LINER_SANITY_MAX:
-        problems.append(f"one_liner 超长（{len(one_liner)} > {ONE_LINER_SANITY_MAX} 字）")
+    elif len(one_liner) > ONE_LINER_HARD_MAX:
+        problems.append(
+            f"one_liner 过长（{len(one_liner)} > {ONE_LINER_HARD_MAX} 字），"
+            "疑为未按结构作答"
+        )
+    else:
+        one_liner = trim_one_liner(one_liner)
 
     features = _clean_list(payload.get("core_features"))
     if not FEATURE_TARGET_MIN <= len(features) <= FEATURE_SANITY_MAX:
@@ -258,6 +269,25 @@ def iter_texts(analysis: dict):
         yield item
     for item in analysis.get("tech_stack", []):
         yield item
+
+
+_CLAUSE_ENDINGS = "，。；！？、）】》"
+
+
+def trim_one_liner(text: str, limit: int | None = None) -> str:
+    """把过长的总结截到 limit 以内，优先在标点处断开。
+
+    截断而非拒绝：见 ONE_LINER_SANITY_MAX 处的说明。无标点可断时才硬截，并补省略号
+    以表明文字不完整。
+    """
+    limit = ONE_LINER_SANITY_MAX if limit is None else limit
+    if len(text) <= limit:
+        return text
+    window = text[:limit]
+    cut = max((window.rfind(char) for char in _CLAUSE_ENDINGS), default=-1)
+    if cut >= limit // 2:
+        return window[: cut + 1]
+    return window + "…"
 
 
 def chinese_char_count(text: str | None) -> int:
