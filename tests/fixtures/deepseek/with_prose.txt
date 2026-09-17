@@ -1,0 +1,21 @@
+好的，以下是这个项目的分析结果：
+
+{
+  "one_liner": "用声明式配置把数据管道编排成可版本控制的代码",
+  "core_features": [
+    "声明式管道定义，支持 YAML 与 Python 两种写法",
+    "内置增量同步与断点续跑，失败任务可精确重放",
+    "对接 PostgreSQL、BigQuery 等十余种数据源",
+    "本地一键起全栈，无需依赖云端调度服务"
+  ],
+  "tech_stack": ["Python", "SQLAlchemy", "Pydantic", "DuckDB"],
+  "highlights": "把调度状态与管道定义分离，使管道定义可以作为纯函数被单元测试，这在数据工程工具里并不常见",
+  "target_audience": "需要维护多条 ETL 链路的数据工程师，以及希望把数据管道纳入 CI 的后端开发者",
+  "scores": {
+    "innovation": 4,
+    "practicality": 5,
+    "learning_value": 3
+  }
+}
+
+希望对你有帮助。如需更深入地对比同类工具，可以再告诉我。
