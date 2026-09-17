@@ -1,0 +1,57 @@
+name: Online Smoke
+
+# 与 build 并行、独立成败，不阻塞部署。
+# 首次运行时 tests/fixtures/ 为空，本 job 会引导写入真实 HTML 快照并提交入库；
+# 此后每轮只做结构不变量校验，绝不覆盖已有 fixture（§4.8.1）。
+
+on:
+  schedule:
+    # 每 6 小时一次，避开整点以减少 GitHub 调度器排队
+    - cron: '17 3,9,15,21 * * *'
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      refresh_fixtures:
+        description: '覆盖已有 fixture（仅在修复上游改版后使用）'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: online-smoke
+  cancel-in-progress: false
+
+jobs:
+  online-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch boards (bootstrap or verify)
+        env:
+          REFRESH_FIXTURES: ${{ inputs.refresh_fixtures }}
+        run: python scripts/smoke.py
+
+      - name: Commit bootstrapped fixtures
+        run: |
+          if [ -n "$(git status --porcelain tests/fixtures)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add tests/fixtures
+            git commit -m "chore: 引导写入 GitHub Trending HTML 快照"
+            git push
+          else
+            echo "fixtures 未变更（符合预期：已冻结，只校验不覆盖）"
+          fi
