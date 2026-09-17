@@ -23,6 +23,9 @@ LANGUAGE_SELECTORS = (
 
 _STARS_SUFFIX = "/stargazers"
 _FORKS_SUFFIX = "/forks"
+# 语言色点自带的背景色。只接受十六进制字面量——该值最终会进入前端的 style，
+# 宽松匹配等于给 CSS 注入开口子。
+_HEX_COLOR_RE = re.compile(r"#[0-9a-fA-F]{3,8}\b")
 _HREF_RE = re.compile(r"^/([^/]+)/([^/]+?)/?$")
 _ABBREVIATED_RE = re.compile(r"^([\d.,]+)\s*([kKmM])$")
 # GitHub 用逗号或各类 Unicode 空白作千位分隔符。只删夹在数字之间的空白，
@@ -91,6 +94,15 @@ def _period_added_stars(article) -> int | None:
     return to_int(match.group(1)) if match else None
 
 
+def _language_color(article) -> str:
+    """取语言色点的真实色值。GitHub 在 style 里给出，比硬编码语言色表更准。"""
+    dot = article.select_one("span.repo-language-color")
+    if dot is None:
+        return ""
+    match = _HEX_COLOR_RE.search(dot.get("style") or "")
+    return match.group(0).lower() if match else ""
+
+
 def parse_article(article) -> dict | None:
     """解析单个 <article>。取不到 owner/repo 的条目直接丢弃——那多半不是仓库行，
     丢弃数量会在 diagnose_html 的 articles_found 与 parsed 之差中体现。"""
@@ -107,6 +119,7 @@ def parse_article(article) -> dict | None:
         "url": f"https://github.com/{owner}/{name}",
         "description": _first_text(article, DESCRIPTION_SELECTORS),
         "language": _first_text(article, LANGUAGE_SELECTORS),
+        "language_color": _language_color(article),
         "stars": _link_count(article, _STARS_SUFFIX),
         "forks": _link_count(article, _FORKS_SUFFIX),
         "add_stars": _period_added_stars(article),
@@ -122,6 +135,18 @@ def parse_trending_html(html: str) -> list[dict]:
         if parsed is not None:
             repos.append(parsed)
     return repos
+
+
+def build_boards(parsed_by_board: dict, fetched_at: str) -> dict:
+    """把各榜单的解析结果汇成 boards.json 的结构（纯函数）。
+
+    parsed_by_board 的键为榜单键（见 config.board_key），值为 parse_trending_html()
+    的输出。rank 按页面顺序从 1 编号——GitHub 的排名就是页面顺序，不另做排序。
+    """
+    boards = {}
+    for key, repos in parsed_by_board.items():
+        boards[key] = [{**repo, "rank": index} for index, repo in enumerate(repos, 1)]
+    return {"fetched_at": fetched_at, "boards": boards}
 
 
 # description 与 language 都可能合法为空（仓库可以没有简介，也可以没有可识别的主

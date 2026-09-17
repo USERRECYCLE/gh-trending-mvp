@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub 热榜 · AI 解读</title>
+<meta name="description" content="自动采集 GitHub Trending，并用 AI 为每个项目生成中文解读。日榜、周榜、月榜，支持按语言筛选。">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="error-banner" class="banner" role="alert" hidden></div>
+
+<div class="wrap">
+  <header class="head">
+    <h1 class="head__title">GitHub 热榜 <span>AI 解读</span></h1>
+    <p class="head__sub">自动采集 · 中文解读 · 无需逐个读英文 README</p>
+    <p class="head__stamp" id="generated-at"></p>
+  </header>
+
+  <nav class="tabs" id="window-tabs" aria-label="时间范围"></nav>
+
+  <section class="filters" aria-label="语言筛选">
+    <span class="filters__label">语言</span>
+    <div class="filters__items" id="language-filters"></div>
+  </section>
+
+  <p class="stats" id="stats"></p>
+
+  <main id="cards" class="cards" aria-live="polite">
+    <p class="loading" id="loading">正在加载榜单数据…</p>
+  </main>
+
+  <footer class="foot">
+    <p>数据来源 <a href="https://github.com/trending" rel="noopener">GitHub Trending</a>，AI 解读由 DeepSeek 生成</p>
+    <p class="foot__note">全部内容在构建期预生成，页面加载不调用任何第三方接口</p>
+  </footer>
+</div>
+
+<script src="js/adapter.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -18,12 +18,28 @@ QUOTA_FILE = "quota.json"
 
 TIME_WINDOWS = ("daily", "weekly", "monthly")
 
+WINDOW_LABELS = {"daily": "日榜", "weekly": "周榜", "monthly": "月榜"}
+
+# 榜单在前端数据与 boards.json 中的键分隔符
+BOARD_KEY_SEPARATOR = "|"
+
+
+def board_key(window: str, language: str) -> str:
+    """榜单键。放在 config 里是因为采集侧与渲染侧都要用它，而两侧不应互相 import。"""
+    return f"{window}{BOARD_KEY_SEPARATOR}{language}"
+
+
+def parse_board_key(key: str) -> tuple[str, str]:
+    window, _, language = key.partition(BOARD_KEY_SEPARATOR)
+    return window, language
+
 # 配额不足时按此优先级选取候选，小者优先（§2.4）
 WINDOW_PRIORITY = {"daily": 0, "weekly": 1, "monthly": 2}
 
-# 空字符串代表 All Languages 维度，与 GitHub 的 URL 形态一致
+# 空字符串代表 All Languages 维度，与 GitHub 的 URL 形态一致。
+# 界面为中文，故该维度的标签取中文；语言名本身是专有名词，保持原样。
 LANGUAGES = {
-    "": "All Languages",
+    "": "全部",
     "python": "Python",
     "javascript": "JavaScript",
     "typescript": "TypeScript",
