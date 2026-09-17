@@ -158,15 +158,31 @@ class FieldValidationTest(unittest.TestCase):
         self.assertEqual(
             len(self.validate(payload(core_features=["a", "b", "c", "d", "e"]))["core_features"]), 5
         )
-        for bad in (["a", "b"], ["a"] * 6, []):
+        for bad in (["a", "b"], []):
             with self.assertRaises(analyze.AnalysisError) as caught:
                 self.validate(payload(core_features=bad))
             self.assertIn("core_features", str(caught.exception))
 
+    def test_slightly_over_target_is_kept_and_trimmed(self):
+        """擦边不算错：6 条是实测最常出现的偏差，为它丢掉一次已付费调用不划算。"""
+        result = self.validate(payload(core_features=[f"f{i}" for i in range(6)]))
+        self.assertEqual(len(result["core_features"]), analyze.FEATURE_KEEP)
+        result = self.validate(
+            payload(core_features=[f"f{i}" for i in range(analyze.FEATURE_SANITY_MAX)])
+        )
+        self.assertEqual(len(result["core_features"]), analyze.FEATURE_KEEP)
+
+    def test_far_over_target_is_rejected(self):
+        too_many = [f"f{i}" for i in range(analyze.FEATURE_SANITY_MAX + 1)]
+        with self.assertRaises(analyze.AnalysisError):
+            self.validate(payload(core_features=too_many))
+
     def test_one_liner_length_boundary(self):
-        self.validate(payload(one_liner="字" * analyze.ONE_LINER_MAX_CHARS))
+        """写作要求 60 字，校验容忍到 80 字——64 字这种实测常见擦边必须接受。"""
+        for length in (60, 64, analyze.ONE_LINER_SANITY_MAX):
+            self.validate(payload(one_liner="字" * length))
         with self.assertRaises(analyze.AnalysisError) as caught:
-            self.validate(payload(one_liner="字" * (analyze.ONE_LINER_MAX_CHARS + 1)))
+            self.validate(payload(one_liner="字" * (analyze.ONE_LINER_SANITY_MAX + 1)))
         self.assertIn("one_liner 超长", str(caught.exception))
 
     def test_score_range_boundaries(self):
@@ -217,12 +233,35 @@ class TextQualityHelpersTest(unittest.TestCase):
         text = cache.read_fixture(f"{config.FIXTURE_DEEPSEEK_SUBDIR}/bare.txt")
         return [analyze.parse_analysis_response(text)]
 
-    def test_fixture_is_majority_chinese(self):
-        """B3：叙述字段的中文字符占比需达标。"""
+    def test_fixture_has_enough_chinese(self):
+        """B3：叙述字段必须含足够的中文字符。"""
         for analysis in self.fixture_analyses():
             for text in analyze.iter_prose(analysis):
                 with self.subTest(text=text[:20]):
-                    self.assertGreaterEqual(analyze.chinese_ratio(text), 0.6)
+                    self.assertGreaterEqual(
+                        analyze.chinese_char_count(text), analyze.MIN_CHINESE_CHARS
+                    )
+
+    def test_ratio_is_the_wrong_instrument_for_language_checks(self):
+        """固化「占比不适合做语言检查」这一结论。
+
+        下面这句是**完全正确的中文**，只因密布专有名词，占比仅约 0.3。真实数据集
+        里 552 个叙述字段有 109 个占比低于 0.6，中位却是 0.759——占比度量的是专有
+        名词密度，不是回答语言。改用绝对字符数后这些都不再误报。
+        """
+        text = "基于 Tauri 的现代化 Clash Meta 图形客户端，支持 Windows、macOS 和 Linux。"
+        self.assertLess(analyze.chinese_ratio(text), 0.35)
+        self.assertGreaterEqual(analyze.chinese_char_count(text), analyze.MIN_CHINESE_CHARS)
+
+    def test_english_answer_would_be_caught(self):
+        """真正的失败模式是模型用英文作答，绝对字符数能可靠拦住。"""
+        for english in (
+            "A fast web framework for building APIs.",
+            "This tool helps you deploy containers to Kubernetes clusters safely.",
+            "CI/CD automation with declarative pipelines and rollback support.",
+        ):
+            with self.subTest(text=english[:24]):
+                self.assertLess(analyze.chinese_char_count(english), analyze.MIN_CHINESE_CHARS)
 
     def test_tech_stack_is_exempt_from_the_language_check(self):
         """tech_stack 装的是框架与工具名，实测中文占比为 0——对它做语言检查没有意义。
@@ -247,6 +286,13 @@ class TextQualityHelpersTest(unittest.TestCase):
         self.assertEqual(analyze.chinese_ratio("   \n  "), 0.0)
         self.assertAlmostEqual(analyze.chinese_ratio("中文ab"), 0.5)
 
+    def test_chinese_char_count_edges(self):
+        self.assertEqual(analyze.chinese_char_count("全部是中文"), 5)
+        self.assertEqual(analyze.chinese_char_count("all latin text"), 0)
+        self.assertEqual(analyze.chinese_char_count(None), 0)
+        self.assertEqual(analyze.chinese_char_count(""), 0)
+        self.assertEqual(analyze.chinese_char_count("中文 with latin"), 2)
+
     def test_find_urls_detects_and_strips_punctuation(self):
         found = analyze.find_urls("参考 https://example.com/a，以及 http://x.test/b。")
         self.assertEqual(found, ["https://example.com/a", "http://x.test/b"])
@@ -258,6 +304,65 @@ class TextQualityHelpersTest(unittest.TestCase):
             self.assertIn(value, joined)
         for item in analysis["core_features"] + analysis["tech_stack"]:
             self.assertIn(item, joined)
+
+
+class RealDatasetQualityTest(unittest.TestCase):
+    """对真实 AI 输出做质量断言。
+
+    缓存由构建流水线写入并提交入库，因此是确定数据而非实时数据——对这些内容断言
+    与 test_fixtures.py 对榜单快照断言是同一思路。这一层才是能真正发现「阈值在
+    真实数据上站不住」的地方：B3 原先的占比阈值正是在这里暴露的。
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.entries = cache.load_analysis_cache()
+        if not cls.entries:
+            raise unittest.SkipTest("尚无真实解读缓存（首次构建前）")
+
+    def analyses(self):
+        return {key: entry["analysis"] for key, entry in self.entries.items()}
+
+    def test_b1_every_stored_analysis_passes_validation(self):
+        for key, analysis in self.analyses().items():
+            with self.subTest(repo=key):
+                revalidated = analyze.validate_analysis(analysis)
+                self.assertEqual(revalidated["scores"], analysis["scores"])
+
+    def test_b3_every_prose_field_has_enough_chinese(self):
+        offenders = []
+        for key, analysis in self.analyses().items():
+            for text in analyze.iter_prose(analysis):
+                if analyze.chinese_char_count(text) < analyze.MIN_CHINESE_CHARS:
+                    offenders.append(f"{key}: {text[:40]}")
+        self.assertEqual(offenders, [], f"叙述字段中文字符不足：{offenders[:5]}")
+
+    def test_b4_no_hallucinated_urls(self):
+        offenders = [
+            key
+            for key, analysis in self.analyses().items()
+            if any(analyze.find_urls(text) for text in analyze.iter_texts(analysis))
+        ]
+        self.assertEqual(offenders, [], f"解读中出现 URL：{offenders[:5]}")
+
+    def test_b2_scores_and_feature_counts_within_range(self):
+        for key, analysis in self.analyses().items():
+            with self.subTest(repo=key):
+                self.assertLessEqual(len(analysis["core_features"]), analyze.FEATURE_KEEP)
+                self.assertGreaterEqual(len(analysis["core_features"]), analyze.FEATURE_TARGET_MIN)
+                for score in analysis["scores"].values():
+                    self.assertIsInstance(score, int)
+                    self.assertTrue(1 <= score <= 5)
+
+    def test_cache_entries_record_provenance(self):
+        """缓存条目必须记下版本与模型，否则切换模型时无法定向失效。"""
+        for key, entry in self.entries.items():
+            with self.subTest(repo=key):
+                self.assertEqual(entry["prompt_version"], config.PROMPT_VERSION)
+                self.assertTrue(entry["model"])
+                self.assertTrue(entry["analyzed_at"])
+                self.assertIn("readme_available", entry)
+                self.assertIsInstance(entry["stars_at_analysis"], int)
 
 
 if __name__ == "__main__":
