@@ -28,6 +28,10 @@ jobs:
   test:
     name: Offline test suite
     runs-on: ubuntu-latest
+    # 显式声明只读，而不是依赖仓库的默认权限设置——否则默认一旦被改成可写，
+    # 这个只需要读代码的 job 就会白白拿到写权限（D4：最小授权）
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
