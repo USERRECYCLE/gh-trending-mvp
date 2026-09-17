@@ -74,10 +74,11 @@ jobs:
   build:
     name: Build site
     runs-on: ubuntu-latest
+    # 只依赖 contents：取数、分析、提交 data/ 与发布产物无关。发布所需的
+    # pages／id-token 权限全部留在 deploy job，这样 Pages 未就绪时也不会连坐
+    # 最贵的取数与 AI 分析环节（首轮冷启动要跑 200 次模型调用）。
     permissions:
       contents: write
-      pages: write
-      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -85,13 +86,6 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install -r requirements.txt
-
-      # 若 Pages 尚未启用则在此开启。本仓库的 API token 缺 Pages 写权限，网页端在
-      # 开发者所在网络又不可达，因此用工作流自身的 GITHUB_TOKEN 完成（需 pages: write）。
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Run pipeline (fetch → analyze → render)
         env:
@@ -147,6 +141,14 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # 若 Pages 尚未启用则在此开启。本仓库的 API token 缺 Pages 写权限、网页端在
+      # 开发者所在网络又不可达，因此改由工作流自身的 GITHUB_TOKEN 尝试；若仓库的
+      # Actions 默认权限为只读，此步仍会被拒——届时需在仓库设置里放开。
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
