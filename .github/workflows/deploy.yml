@@ -1,0 +1,152 @@
+name: Build and Deploy
+
+# 四个 job 的关系：
+#   test / online-smoke / build 三者并行且互不阻塞
+#   deploy 只依赖 build（online-smoke 的成败不影响发布，见 §4.8）
+#
+# 两个 job 都会向 main 提交（fixtures 与 data/），因此提交前必须 rebase 并重试，
+# 否则并发推送会因 non-fast-forward 互相拒绝。
+
+on:
+  schedule:
+    # 每 6 小时一次，避开整点以减少调度器排队
+    - cron: '23 2,8,14,20 * * *'
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      refresh_fixtures:
+        description: '覆盖已有 fixture（仅在修复上游改版后使用）'
+        type: boolean
+        default: false
+
+concurrency:
+  group: trending-pipeline
+  cancel-in-progress: false
+
+jobs:
+  test:
+    name: Offline test suite
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+
+  online-smoke:
+    name: Online Smoke
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Verify against upstream (write fixtures only when missing)
+        env:
+          REFRESH_FIXTURES: ${{ inputs.refresh_fixtures }}
+        run: python scripts/smoke.py
+      - name: Commit bootstrapped fixtures
+        run: |
+          if [ -z "$(git status --porcelain tests/fixtures)" ]; then
+            echo "fixtures 未变更（符合预期：已冻结，只校验不覆盖）"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tests/fixtures
+          git commit -m "chore: 引导写入 GitHub Trending HTML 快照"
+          for attempt in 1 2 3; do
+            git pull --rebase --autostash && git push && exit 0
+            sleep $((attempt * 5))
+          done
+          echo "::error::fixtures 提交推送失败"
+          exit 1
+
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 若 Pages 尚未启用则在此开启。本仓库的 API token 缺 Pages 写权限，网页端在
+      # 开发者所在网络又不可达，因此用工作流自身的 GITHUB_TOKEN 完成（需 pages: write）。
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Run pipeline (fetch → analyze → render)
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+          INPUT_SOURCE: network
+        run: python scripts/main.py
+
+      # D1／D2：产物中绝不能出现密钥。assert 而非事后 grep 日志。
+      - name: Guard against leaked secrets in the artifact
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          if [ -z "${DEEPSEEK_API_KEY}" ]; then
+            echo "::error::未配置 DEEPSEEK_API_KEY，构建无从进行"
+            exit 1
+          fi
+          if grep -rqF "${DEEPSEEK_API_KEY}" dist/; then
+            echo "::error::构建产物中出现了 API Key"
+            exit 1
+          fi
+          echo "产物未包含密钥"
+
+      - name: Commit dataset
+        run: |
+          if [ -z "$(git status --porcelain data)" ]; then
+            echo "data/ 未变更"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "chore: 更新榜单数据与 AI 解读缓存"
+          for attempt in 1 2 3; do
+            git pull --rebase --autostash && git push && exit 0
+            sleep $((attempt * 5))
+          done
+          echo "::error::data/ 提交推送失败"
+          exit 1
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+  deploy:
+    name: Deploy to Pages
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
