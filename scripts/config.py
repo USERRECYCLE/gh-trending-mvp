@@ -29,6 +29,15 @@ def board_key(window: str, language: str) -> str:
     return f"{window}{BOARD_KEY_SEPARATOR}{language}"
 
 
+def repo_key(full_name: str) -> str:
+    """去重键。GitHub 的 owner/repo 大小写不敏感，统一小写以避免重复分析。
+
+    与 board_key 一样放在 config：采集侧、渲染侧与配额侧都要用它，而这些模块之间
+    不应互相 import。
+    """
+    return (full_name or "").strip().lower()
+
+
 def parse_board_key(key: str) -> tuple[str, str]:
     window, _, language = key.partition(BOARD_KEY_SEPARATOR)
     return window, language
@@ -94,6 +103,11 @@ BOOTSTRAP_FUSE_DAYS = 3
 FIXTURE_TENDING_SUBDIR = "trending"
 FIXTURE_README_SUBDIR = "readme"
 FIXTURE_DEEPSEEK_SUBDIR = "deepseek"
+
+# fixture 模式下使用的样本输入。DeepSeek 响应属「手工构造、不参与漂移检测」一类
+# （§4.8.3），因此可以固定用同一份来驱动离线跑通全链路。
+FIXTURE_README_SAMPLE = "readme/sample.md"
+FIXTURE_DEEPSEEK_RESPONSE = "deepseek/bare.txt"
 
 ENV_DEEPSEEK_API_KEY = "DEEPSEEK_API_KEY"
 ENV_INPUT_SOURCE = "INPUT_SOURCE"

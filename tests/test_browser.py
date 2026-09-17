@@ -87,7 +87,7 @@ def build_site(with_analysis: bool):
     analyses = {}
     if with_analysis:
         for repo in boards["boards"][config.board_key("daily", "")][:5]:
-            analyses[cache.repo_key(repo["name"])] = {
+            analyses[config.repo_key(repo["name"])] = {
                 "analysis": sample_analysis(),
                 "stars_at_analysis": repo["stars"],
                 "prompt_version": config.PROMPT_VERSION,

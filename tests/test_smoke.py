@@ -40,7 +40,9 @@ def board_html(count=3, tag="a"):
 
 
 def transport_returning(html):
-    def transport(url, headers, timeout):
+    """假传输层：接收 net.Request，返回固定 HTML。"""
+
+    def transport(request):
         return html
 
     return transport
@@ -167,7 +169,7 @@ class FetchFailureTest(unittest.TestCase):
         self._tmp.cleanup()
 
     def test_network_failure_fails_run_without_writing(self):
-        def transport(url, headers, timeout):
+        def transport(request):
             raise net.RetryableError("HTTP 503")
 
         exit_code, results = silent_run(self.fixture_dir, transport)

@@ -149,6 +149,40 @@ def build_boards(parsed_by_board: dict, fetched_at: str) -> dict:
     return {"fetched_at": fetched_at, "boards": boards}
 
 
+def collect_candidates(boards_doc: dict) -> list[dict]:
+    """把 21 个榜单摊平成候选列表，同一仓库只保留优先级最高的一次出现（纯函数）。
+
+    这里是跨榜去重的第一道口：同一仓库出现在日榜与语言榜时只会产生一个候选，
+    后续配额与分析都按候选计数，因此不会为同一个仓库重复消耗额度。
+    """
+    best: dict[str, dict] = {}
+    for key, rows in (boards_doc or {}).get("boards", {}).items():
+        window, _language = config.parse_board_key(key)
+        for row in rows:
+            key_name = config.repo_key(row.get("name", ""))
+            if not key_name:
+                continue
+            order = (config.WINDOW_PRIORITY.get(window, 99), row.get("rank", 99))
+            if key_name in best and order >= best[key_name]["_order"]:
+                continue
+            best[key_name] = {
+                "_order": order,
+                "repo_key": key_name,
+                "name": row.get("name", ""),
+                "window": window,
+                "rank": row.get("rank", 99),
+                "description": row.get("description", ""),
+                "language": row.get("language", ""),
+                "stars": row.get("stars") or 0,
+                "forks": row.get("forks"),
+                "add_stars": row.get("add_stars"),
+            }
+    return [
+        {field: value for field, value in item.items() if field != "_order"}
+        for item in best.values()
+    ]
+
+
 # description 与 language 都可能合法为空（仓库可以没有简介，也可以没有可识别的主
 # 语言），因此「报告」的字段比「断言」的字段多：全部字段都算缺失率供人查看，但只有
 # config.FIELD_MISS_TOLERANCE 中列出的字段参与失败判定。

@@ -97,14 +97,24 @@ def write_fixture(relative: str, text: str, fixture_dir=None) -> Path:
     return path
 
 
+def append_step_summary(text: str) -> bool:
+    """把一段 Markdown 追加到 GitHub Actions 的 Step Summary。
+
+    这是平台提供的产物文件，不是数据存储，因此不受 §2.9 第 2 条的范围限制——放在本
+    模块只是因为这里集中负责文件 I/O，避免每个入口各写一遍 open()。未设置该环境
+    变量时（本地运行）静默跳过。
+    """
+    path = os.environ.get(config.ENV_STEP_SUMMARY)
+    if not path:
+        return False
+    with open(path, "a", encoding="utf-8") as handle:
+        handle.write(text + "\n")
+    return True
+
+
 # --------------------------------------------------------------------------
 # 缓存有效性判定（纯函数）
 # --------------------------------------------------------------------------
-
-def repo_key(full_name: str) -> str:
-    """去重键。GitHub 的 owner/repo 大小写不敏感，统一小写以避免重复分析。"""
-    return (full_name or "").strip().lower()
-
 
 def _parse_timestamp(value: str):
     if not value:

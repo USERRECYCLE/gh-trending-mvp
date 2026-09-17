@@ -29,10 +29,10 @@ class RepoKeyTest(unittest.TestCase):
     """C1：跨榜去重键。"""
 
     def test_key_is_case_insensitive(self):
-        self.assertEqual(cache.repo_key("Torvalds/Linux"), cache.repo_key("torvalds/linux"))
+        self.assertEqual(config.repo_key("Torvalds/Linux"), config.repo_key("torvalds/linux"))
 
     def test_key_trims_whitespace(self):
-        self.assertEqual(cache.repo_key("  a/b  "), "a/b")
+        self.assertEqual(config.repo_key("  a/b  "), "a/b")
 
 
 class CacheValidityTest(unittest.TestCase):

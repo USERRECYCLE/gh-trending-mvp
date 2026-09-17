@@ -60,7 +60,7 @@ def build_site_data(boards_doc, analysis_cache, generated_at: str) -> dict:
             key = config.board_key(window, language)
             rows = []
             for repo in boards.get(key) or []:
-                entry = _site_entry(repo, analyses.get(cache.repo_key(repo.get("name", ""))))
+                entry = _site_entry(repo, analyses.get(config.repo_key(repo.get("name", ""))))
                 entries += 1
                 if entry["analysis"] is not None:
                     analyzed += 1

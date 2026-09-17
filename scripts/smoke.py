@@ -112,11 +112,7 @@ def _publish(results, failures, refresh, log) -> None:
 
     text = "\n".join(lines)
     log(text)
-
-    summary_path = os.environ.get(config.ENV_STEP_SUMMARY)
-    if summary_path:
-        with open(summary_path, "a", encoding="utf-8") as handle:
-            handle.write(text + "\n")
+    cache.append_step_summary(text)
 
 
 def main() -> int:
