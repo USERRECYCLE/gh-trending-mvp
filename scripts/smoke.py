@@ -17,6 +17,14 @@ import net
 
 SUMMARY_FIELDS = ("name", "url", "stars", "language")
 
+# 失败时用来定位「上游改了哪一处」的选择器探针
+SELECTOR_PROBES = (
+    ("star 链接", "has_stargazers_link"),
+    ("fork 链接", "has_forks_link"),
+    ("语言 itemprop", "has_language_itemprop"),
+    ("周期徽章", "has_period_badge"),
+)
+
 
 def _env_flag(name: str) -> bool:
     return (os.environ.get(name) or "").strip().lower() in {"1", "true", "yes", "on"}
@@ -72,6 +80,8 @@ def run(transport=None, sleep=None, refresh=None, fixture_dir=None, log=print):
 
             if problems:
                 entry["problems"] = problems
+                # 只在失败时才算选择器诊断：正常情况下零开销，出问题时才需要它定位
+                entry["diagnostics"] = fetch.diagnose_html(html, repos)
                 failures.append((board, problems))
             results.append(entry)
 
@@ -105,10 +115,20 @@ def _publish(results, failures, refresh, log) -> None:
         lines.append(f"| {entry['board']} | {entry['action']} | {entry['count']} | {cells} | {problem} |")
 
     if failures:
+        by_board = {entry["board"]: entry for entry in results}
         lines += ["", "### 失败明细", ""]
         for board, problems in failures:
             for problem in problems:
                 lines.append(f"- **{board}**：{problem}")
+            diag = by_board.get(board, {}).get("diagnostics") or {}
+            if diag:
+                hit = [label for label, key in SELECTOR_PROBES if diag.get(key)]
+                miss = [label for label, key in SELECTOR_PROBES if not diag.get(key)]
+                lines.append(f"  - 选择器命中：{'、'.join(hit) or '（无）'}")
+                lines.append(f"  - 选择器未命中：{'、'.join(miss) or '（无）'}")
+                lines.append(
+                    f"  - HTML 中 article 标签 {diag.get('articles_found')} 个，解析出 {diag.get('parsed')} 条"
+                )
 
     text = "\n".join(lines)
     log(text)

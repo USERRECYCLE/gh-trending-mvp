@@ -208,6 +208,26 @@ class SummaryTest(unittest.TestCase):
         self.assertIn("失败明细", text)
         self.assertIn("解析结果为 0 条", text)
 
+    def test_failure_detail_names_the_selectors_that_still_match(self):
+        """失败诊断必须指出命中的选择器，否则无法判断上游改的是哪一处。
+
+        这条断言存在的原因：diagnose_html 曾被写出来但从未接进 smoke，导致
+        「诊断含命中的选择器」在文档里成立、在实际运行中不成立。
+        """
+        html = '<html><body><div class="ProjectCard">改版了，没有 article</div></body></html>'
+        with mock.patch.dict(os.environ, {config.ENV_STEP_SUMMARY: str(self.summary_path)}):
+            silent_run(self.fixture_dir, transport_returning(html))
+        text = self.summary_path.read_text(encoding="utf-8")
+        self.assertIn("选择器命中", text)
+        self.assertIn("选择器未命中", text)
+        self.assertIn("article 标签", text)
+
+    def test_healthy_run_carries_no_diagnostics(self):
+        """正常时不算诊断——这是「只在失败时才算」的代价控制，也是它的行为断言。"""
+        _, results = silent_run(self.fixture_dir, transport_returning(board_html()))
+        for entry in results:
+            self.assertNotIn("diagnostics", entry)
+
 
 class BoardLabelTest(unittest.TestCase):
     def test_all_languages_label(self):
