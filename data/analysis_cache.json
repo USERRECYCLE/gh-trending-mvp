@@ -9351,5 +9351,37 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-09-17T08:07:33+00:00",
     "readme_available": true
+  },
+  "googleworkspace/cli": {
+    "analysis": {
+      "one_liner": "统一管理 Google Workspace 各服务的命令行工具，基于 Discovery Service 动态生成命令，并内置 AI 智能体技能。",
+      "core_features": [
+        "运行时读取 Google Discovery Service 动态构建命令，自动跟进新 API",
+        "覆盖 Drive、Gmail、Calendar、Sheets、Docs、Chat、Admin 等 Workspace 服务",
+        "所有响应输出结构化 JSON，并支持 NDJSON 流式分页",
+        "内置 40+ AI 智能体技能，便于 LLM 直接调用",
+        "支持 --help、--dry-run 预览与自动分页等命令行体验"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Node.js 18+（npm 安装）",
+        "Google Discovery Service",
+        "OAuth 2.0",
+        "Nix",
+        "Homebrew"
+      ],
+      "highlights": "命令面不写死，而是运行时从 Google Discovery Service 动态生成，Google 新增接口即可自动获得；同时面向人类与 AI 智能体设计，提供结构化 JSON 输出和 40+ 智能体技能。",
+      "target_audience": "需要脚本化操作 Google Workspace 的开发者、运维与 CI 场景用户，以及希望让 LLM 智能体直接管理 Workspace 的 AI 应用开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 31029,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-17T08:37:14+00:00",
+    "readme_available": true
   }
 }
