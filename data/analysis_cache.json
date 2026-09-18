@@ -32,33 +32,33 @@
   },
   "cloudflare/security-audit-skill": {
     "analysis": {
-      "one_liner": "一个让编码智能体化身安全审计员的技能，通过六阶段流程产出可机器读取且经独立验证的漏洞发现。",
+      "one_liner": "把编码智能体变成安全审计员，通过六阶段多智能体流程产出可独立验证的机器可读漏洞发现。",
       "core_features": [
         "六阶段审计流程：侦察、覆盖驱动狩猎、候选验证、结构化输出、独立记录验证、目标中立报告",
-        "对抗式验证机制，验证者与发现者分离，避免自证",
-        "输出 findings.json 与 coverage-ledger.json，并提供零依赖校验脚本",
-        "多轮运行结果可叠加，利用历史账本定位覆盖缺口",
-        "内置多类攻击面狩猎提示，涵盖内存安全、LLM、Web 协议、供应链、云部署等"
+        "多智能体隔离与对抗式验证，检查者与发现者分离",
+        "coverage-ledger.json 与 findings.json 双产物，配套零依赖校验脚本",
+        "confirmed/needs_validation/rejected 三类判定，严重性需有实际影响支撑",
+        "多次运行结果可叠加，利用历史账本定位覆盖缺口"
       ],
       "tech_stack": [
         "JavaScript",
         "Node.js",
-        "JSON Schema",
         "Skills CLI",
-        "编码智能体（支持工具调用与并行子智能体）"
+        "JSON Schema",
+        "Markdown 提示词文件"
       ],
-      "highlights": "源自 Cloudflare 漏洞发现框架的起点版本，强调对抗式独立验证与覆盖账本驱动的可复现审计，且明确区分 confirmed、needs_validation、rejected 三种结论。",
-      "target_audience": "使用编码智能体进行代码安全审计、渗透测试或漏洞挖掘的安全工程师与研究者",
+      "highlights": "源自 Cloudflare 漏洞发现框架的起点版本，强调对抗式独立验证与覆盖账本驱动的可复现审计，而非一次性扫描。",
+      "target_audience": "使用支持工具调用与并行子智能体的编码智能体、需要自动化安全审计与漏洞挖掘的开发者及安全研究人员。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 8208,
+    "stars_at_analysis": 12887,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-17T07:50:54+00:00",
+    "analyzed_at": "2026-09-18T17:44:04+00:00",
     "readme_available": true
   },
   "jamiepine/voicebox": {
