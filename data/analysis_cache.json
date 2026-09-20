@@ -16215,5 +16215,536 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-09-20T07:48:08+00:00",
     "readme_available": true
+  },
+  "builderio/agent-native": {
+    "analysis": {
+      "one_liner": "一个用 TypeScript 构建智能体应用的框架，让智能体与 UI 共享同一套动作、数据和状态。",
+      "core_features": [
+        "共享动作：同一能力既作为智能体工具，也供 UI 代码调用，共用校验、权限与实现",
+        "共享数据：智能体与 UI 的操作互相可见，基于 PostgreSQL/PGlite 后端",
+        "共享应用状态：智能体可感知当前页面、选中记录等 UI 上下文",
+        "内置智能体聊天、认证权限、技能与记忆、自动化、智能体团队等能力",
+        "动作可同时通过 HTTP、MCP、A2A 和 CLI 暴露"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "React",
+        "Zod",
+        "PostgreSQL",
+        "PGlite",
+        "Nitro",
+        "MCP",
+        "A2A"
+      ],
+      "highlights": "以“动作”为单一抽象，让智能体与 UI 走同一层能力，而非让智能体模拟点击界面，实现人机协作与结果可审查。",
+      "target_audience": "希望构建带界面的智能体应用、需要人机协作与权限控制的 TypeScript 全栈开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4997,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "anthropics/financial-services": {
+    "analysis": {
+      "one_liner": "面向投行、股票研究、私募与财富管理场景的 Claude 智能体、技能与数据连接器参考实现。",
+      "core_features": [
+        "提供 Pitch Agent、Market Researcher、GL Reconciler 等端到端命名智能体",
+        "按金融垂直领域打包技能、斜杠命令与 MCP 数据连接器",
+        "同一套系统提示与技能可同时以 Cowork 插件或 Managed Agents API 部署",
+        "内置 Excel 建模、估值复核、月末结账、KYC 筛查等金融工作流",
+        "所有输出均需人工复核签署，不构成投资建议"
+      ],
+      "tech_stack": [
+        "Python",
+        "Claude Cowork 插件",
+        "Claude Managed Agents API",
+        "Model Context Protocol (MCP)",
+        "Markdown/JSON 文件式配置"
+      ],
+      "highlights": "同一份源文件既可作为 Cowork 插件安装，也可通过 Managed Agents API 无头部署，并配有子智能体编排与部署脚本。",
+      "target_audience": "从事投资银行、股票研究、私募股权、基金管理与财富管理，并希望用 Claude 构建自动化工作流的开发者与金融从业者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 35214,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "creators-of-create/create": {
+    "analysis": {
+      "one_liner": "一款为 Minecraft 提供建造、装饰与美学自动化工具和方块的大型模组。",
+      "core_features": [
+        "提供建造、装饰与美学自动化相关的工具和方块",
+        "强调玩家自由设计，通过动画化机械组件组合搭建装置",
+        "内置名为 Ponder 的可视化游戏内文档，讲解机制与装置",
+        "技术元素设计尽量减少 UI 依赖，鼓励动手搭建",
+        "支持 NeoForge 平台，另有 Fabric 移植版本"
+      ],
+      "tech_stack": [
+        "Java",
+        "NeoForge",
+        "Minecraft Mod"
+      ],
+      "highlights": "以动画化机械组件和可视化教程 Ponder 为核心，把技术自动化与美学建造结合，鼓励玩家自由组合装置而非依赖界面操作。",
+      "target_audience": "Minecraft 模组开发者、NeoForge 平台开发者以及对机械自动化与建造类模组感兴趣的玩家。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4520,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "paperless-ngx/paperless-ngx": {
+    "analysis": {
+      "one_liner": "将纸质文档扫描、索引并归档为可搜索在线档案的开源文档管理系统",
+      "core_features": [
+        "扫描并归档纸质文档为可搜索的在线档案",
+        "文档索引与全文搜索",
+        "支持多语言的社区翻译",
+        "通过 Docker Compose 快速部署",
+        "从 Paperless-ng 平滑迁移"
+      ],
+      "tech_stack": [
+        "Python",
+        "Docker Compose",
+        "GitHub Container Registry",
+        "Crowdin"
+      ],
+      "highlights": "原 Paperless 与 Paperless-ng 的官方继任项目，由社区团队共同维护，拥有超过 4.5 万 Star，并提供在线演示环境",
+      "target_audience": "希望自建私有文档归档系统的个人用户与家庭服务器爱好者，以及愿意参与开源贡献的开发者",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 45373,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "xai-org/x-algorithm": {
+    "analysis": {
+      "one_liner": "X 平台 For You 信息流推荐算法核心代码，含召回、过滤与 Transformer 排序。",
+      "core_features": [
+        "站内 Thunder 与站外 Phoenix、SimClusters 多路候选召回",
+        "基于 Transformer 模型预测用户行为概率并加权打分排序",
+        "visibility-filtering 结合标签与用户行为决定帖子可见性",
+        "包含 Phoenix 模型训练代码与合成数据生成",
+        "Under the Hood 标签透明度工具展示账号与帖子限流信息"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Transformer 模型",
+        "Phoenix 检索模型",
+        "SimClusters",
+        "Thunder"
+      ],
+      "highlights": "公开了工业级社交推荐系统的完整链路，包括排序权重、过滤规则与合规性过滤（如巴西选举过滤）的具体实现，透明度极高。",
+      "target_audience": "推荐系统工程师、大规模分布式后端开发者、对社交平台算法机制感兴趣的研究者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 33288,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "niedev/rtranslator": {
+    "analysis": {
+      "one_liner": "一款完全离线运行在安卓手机上的开源实时翻译应用，支持双向对话翻译。",
+      "core_features": [
+        "Conversation模式：两台手机连接后通过蓝牙耳机实现双向实时语音翻译",
+        "WalkieTalkie模式：单台手机轮流说话，自动识别语言并翻译",
+        "文本翻译模式：经典文本翻译功能",
+        "后台运行：支持手机待机或使用其他应用时继续翻译",
+        "支持约30种语言，模型首次启动自动下载"
+      ],
+      "tech_stack": [
+        "Java",
+        "Android",
+        "Meta NLLB翻译模型",
+        "OpenAI Whisper语音识别",
+        "Mozilla Bergamot",
+        "Madlad 400 3B",
+        "HY-MT 1.5 1.8B",
+        "FastText",
+        "Lingua"
+      ],
+      "highlights": "完全离线运行，无需联网，保护隐私；使用最先进的AI模型在手机上本地推理；3.0版本已实现100%开源并替换闭源组件。",
+      "target_audience": "需要在无网络环境下进行跨语言交流的用户，以及对离线AI翻译和Android端模型部署感兴趣的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 10433,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "mihail911/modern-software-dev-assignments": {
+    "analysis": {
+      "one_liner": "斯坦福 CS146S 现代软件开发课程的配套作业仓库，基于 Python 3.12。",
+      "core_features": [
+        "提供 CS146S 课程的全部作业代码",
+        "使用 Conda 创建 Python 3.12 环境",
+        "使用 Poetry 管理项目依赖",
+        "包含完整的仓库初始化与安装步骤说明"
+      ],
+      "tech_stack": [
+        "Python 3.12",
+        "Anaconda",
+        "Poetry"
+      ],
+      "highlights": "由斯坦福大学课程官方维护，配套现代软件开发教学，适合系统化学习工程实践。",
+      "target_audience": "学习现代软件开发的学生、自学者以及希望参考课程作业设计的开发者",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 4431,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "apache/datafusion": {
+    "analysis": {
+      "one_liner": "基于 Rust 和 Apache Arrow 的可扩展 SQL 查询引擎，用于构建数据库与数据分析系统。",
+      "core_features": [
+        "提供 SQL 与 DataFrame 两套查询 API",
+        "内置完整查询规划器与列式、流式、多线程向量化执行引擎",
+        "开箱支持 CSV、Parquet、JSON、Avro 等数据格式",
+        "支持分区数据源与几乎全链路的自定义扩展",
+        "提供 Python、Java、Comet、Ballista 等子项目"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Apache Arrow",
+        "Apache Parquet",
+        "Apache Avro",
+        "SQL"
+      ],
+      "highlights": "以 Apache Arrow 为内存格式，从可用引擎出发按需定制数据源、查询语言、函数与算子，是构建专用查询引擎和数据库平台的成熟基础。",
+      "target_audience": "构建数据库、分析系统与数据管道的 Rust 开发者，以及需要定制查询引擎的团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 9333,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "browser-use/browser-harness": {
+    "analysis": {
+      "one_liner": "通过可编辑的 CDP websocket 将 LLM 直连真实浏览器，并让智能体在任务中自写缺失辅助函数。",
+      "core_features": [
+        "通过单个可编辑的 CDP websocket 将 LLM 连接到真实浏览器",
+        "智能体在遇到缺失 helper 时自行编写并保存到本地工作区",
+        "提供 SKILL.md 教授浏览器工作流，核心源码受保护",
+        "提供 MCP server，将浏览器控制辅助函数暴露为 MCP 工具",
+        "支持本地浏览器录制，并可接入 Browser Use Cloud 实现多浏览器并行"
+      ],
+      "tech_stack": [
+        "Python",
+        "CDP (Chrome DevTools Protocol)",
+        "MCP",
+        "uv",
+        "Claude Code / Codex"
+      ],
+      "highlights": "自愈式 harness 设计：智能体在任务过程中动态编写缺失的辅助函数，使工具集随使用不断进化，而非依赖固定 API。",
+      "target_audience": "希望让 LLM 智能体直接操控真实浏览器完成复杂任务的开发者，以及使用 Claude Code、Codex、Cursor 等 MCP 客户端的用户。",
+      "scores": {
+        "innovation": 5,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 17828,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "mnfst/awesome-free-llm-apis": {
+    "analysis": {
+      "one_liner": "汇总提供永久免费额度的 LLM API 清单，含模型、上下文与限流信息。",
+      "core_features": [
+        "按厂商 API 与第三方推理平台分类整理免费 LLM 接口",
+        "列出每个模型的上下文长度、最大输出、模态与速率限制",
+        "标注是否需信用卡、是否永久免费及数据使用说明",
+        "多数端点兼容 OpenAI SDK，附 API Key 申请入口",
+        "包含术语表帮助理解限流与模型概念"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Markdown",
+        "OpenAI SDK 兼容接口"
+      ],
+      "highlights": "把分散在各厂商的永久免费 LLM 额度集中成一份可对比表格，直接给出模型能力与限流细节，省去逐个平台调研的成本。",
+      "target_audience": "需要低成本调用大模型 API 的个人开发者、做原型验证与副业项目的独立开发者，以及选型阶段的技术决策者。",
+      "scores": {
+        "innovation": 2,
+        "practicality": 5,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 7901,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "termux/termux-api": {
+    "analysis": {
+      "one_liner": "将 Android 设备功能以 API 形式暴露给 Termux 命令行程序与脚本使用。",
+      "core_features": [
+        "通过广播接收器与匿名命名空间套接字在命令行与 Android API 之间转发输入输出",
+        "提供 termux-api 客户端二进制与配套客户端脚本处理命令行参数",
+        "作为 Termux 插件应用，需与主应用使用相同签名才能调用 API",
+        "支持通过 F-Droid 或 GitHub Actions 的每次提交调试构建安装"
+      ],
+      "tech_stack": [
+        "Java",
+        "Android SDK",
+        "Gradle",
+        "GitHub Actions",
+        "GPLv3"
+      ],
+      "highlights": "用套接字加广播的巧妙机制把 Android 系统能力桥接到终端命令行，是 Termux 生态中连接脚本与设备功能的关键插件。",
+      "target_audience": "希望在 Android 终端中用脚本调用设备功能的开发者，以及 Termux 插件与生态贡献者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4341,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "fareedkhan-dev/train-llm-from-scratch": {
+    "analysis": {
+      "one_liner": "用纯 PyTorch 从零实现 Transformer，覆盖从数据下载、预训练到 SFT、RLHF 对齐的完整 LLM 训练流程。",
+      "core_features": [
+        "从零手写 Transformer 各组件（MLP、单头/多头注意力、Transformer Block）",
+        "完整预训练流程：数据准备、分词、训练、文本生成",
+        "后训练全链路：SFT、奖励模型、DPO/ORPO/KTO、PPO、GRPO",
+        "支持单 GPU 训练百万到十亿参数级模型，含 AMP、梯度检查点、梯度累积",
+        "提供 Streamlit 控制面板与 MkDocs 文档站点"
+      ],
+      "tech_stack": [
+        "Python",
+        "PyTorch",
+        "Streamlit",
+        "Pandas",
+        "Altair",
+        "MkDocs",
+        "datasets",
+        "wandb"
+      ],
+      "highlights": "不依赖 transformers、trl、peft 等高层库，所有算法手写实现，把从原始文本到对齐推理模型的每一步都拆解清楚，并配有统一配色图示和分阶段配置。",
+      "target_audience": "想深入理解 LLM 训练原理的学生、需要动手复现全流程的开发者，以及关注 RLHF/GRPO 等后训练算法的研究者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 10033,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "builderio/skills": {
+    "analysis": {
+      "one_liner": "为 AI 智能体提供一组小型可组合技能，覆盖可视化规划、代码审查与多智能体协作。",
+      "core_features": [
+        "提供 /visual-plan、/visual-recap 等技能，将文本计划与代码 diff 转为交互式可视化 MDX 页面",
+        "支持 /an、/webmcp 在宿主内置浏览器中操作 Agent-Native 应用与网页 MCP 工具",
+        "提供 /agent-watchdog、/plan-arbiter 等技能用于审计其他智能体工作与仲裁多方案",
+        "通过 /efficient-fable、/efficient-frontier 让高成本模型专注判断、廉价智能体承担繁重任务",
+        "提供 npx CLI 一键安装推荐技能，并支持 GitHub Action 自动为 PR 生成可视化回顾"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Node.js CLI",
+        "MDX",
+        "MCP",
+        "GitHub Actions"
+      ],
+      "highlights": "以「技能」为粒度封装智能体工作流，把规划、审查、协作等环节可视化并模块化，且支持跨 Claude、Codex、ChatGPT 等宿主复用。",
+      "target_audience": "使用 Claude Code、Codex 等编码智能体并希望提升多智能体协作与代码审查效率的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4331,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "cloudflare/mcp-server-cloudflare": {
+    "analysis": {
+      "one_liner": "Cloudflare 官方推出的 MCP 服务器集合，让 LLM 客户端用自然语言操作 Cloudflare 各项服务。",
+      "core_features": [
+        "提供多个领域专属 MCP 服务器，覆盖文档、Workers、可观测性、DNS、Radar 等",
+        "通过统一的 /mcp 与 /sse 无状态 Streamable HTTP 端点暴露服务",
+        "支持 MCP 客户端（如 Cursor、Claude）及 OpenAI Responses API 接入",
+        "可读取账户配置、分析数据、给出建议并执行变更",
+        "区分 Code Mode 通用服务器与领域专属服务器两种使用模式"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Model Context Protocol (MCP) SDK v2",
+        "Streamable HTTP 传输",
+        "Cloudflare Workers",
+        "Durable Objects",
+        "OAuth"
+      ],
+      "highlights": "由 Cloudflare 官方维护，将旗下众多产品能力标准化封装为 MCP 工具，并采用无状态 Streamable HTTP 与请求级实现，便于 LLM 客户端直接以自然语言管理和调试云资源。",
+      "target_audience": "希望用 LLM 客户端以自然语言管理 Cloudflare 服务的开发者，以及构建 MCP 集成与 AI Agent 工具的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4253,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "cloudreve/cloudreve": {
+    "analysis": {
+      "one_liner": "自托管的文件管理与分享系统，支持多种云存储后端",
+      "core_features": [
+        "支持本地、OneDrive、S3、七牛、阿里云OSS等多种存储后端",
+        "客户端直传存储，支持WebDAV与断点续传",
+        "集成Aria2/qBittorrent后台下载与多节点负载",
+        "在线预览与编辑视频、图片、Office、Markdown等文件",
+        "多用户多组管理与带过期时间的分享链接"
+      ],
+      "tech_stack": [
+        "Go",
+        "Gin",
+        "ent",
+        "React",
+        "Redux",
+        "Material-UI"
+      ],
+      "highlights": "一体化打包开箱即用，存储后端兼容性广，前后端分离架构清晰，社区活跃度高",
+      "target_audience": "需要自建网盘或私有文件管理系统的开发者与运维人员，以及学习Go全栈开发的工程师",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 28735,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "cabaletta/baritone": {
+    "analysis": {
+      "one_liner": "为 Minecraft 提供自动寻路与路径规划能力的机器人系统。",
+      "core_features": [
+        "Minecraft 自动寻路与路径规划",
+        "作为 Impact 等客户端自 4.4 版本起的寻路系统",
+        "支持 Forge、Fabric、NeoForge 多加载器",
+        "覆盖 1.12.2 至 1.21.3 多个游戏版本",
+        "提供 API 供其他客户端集成"
+      ],
+      "tech_stack": [
+        "Java",
+        "Gradle",
+        "Forge",
+        "Fabric",
+        "NeoForge",
+        "Travis CI"
+      ],
+      "highlights": "被多个 Minecraft 客户端长期集成使用，跨版本与跨加载器支持广泛，社区活跃度高。",
+      "target_audience": "Minecraft 模组开发者、客户端开发者以及对游戏 AI 寻路感兴趣的 Java 开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 9230,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
+  },
+  "harvard-edge/cs249r_book": {
+    "analysis": {
+      "one_liner": "哈佛 CS249r 机器学习系统课程开源教材，涵盖基础、扩展、智能体与物理 AI 四卷及配套实践工具。",
+      "core_features": [
+        "四卷本教材：基础、扩展、智能体 AI、物理 AI",
+        "TinyTorch：从零构建 ML 框架内部机制",
+        "MLSys·im 模拟器：对无法实际租用的基础设施进行建模推理",
+        "硬件套件与实验：面对真实部署约束",
+        "StaffML 测评与讲师资源、幻灯片、AI 引导阅读"
+      ],
+      "tech_stack": [
+        "Python",
+        "Jupyter",
+        "GitHub Actions",
+        "Arduino",
+        "Googleslides"
+      ],
+      "highlights": "将教材、动手构建、硬件约束与基础设施模拟整合为单一课程体系，强调端到端 AI 系统工程而非孤立模型。",
+      "target_audience": "学习机器学习系统与 AI 工程的学生、讲师，以及希望理解端到端智能系统设计与部署的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 28370,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-20T13:05:52+00:00",
+    "readme_available": true
   }
 }
