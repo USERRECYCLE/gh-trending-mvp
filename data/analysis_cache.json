@@ -17973,5 +17973,252 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-09-21T08:02:05+00:00",
     "readme_available": true
+  },
+  "mvt-project/mvt": {
+    "analysis": {
+      "one_liner": "移动设备取证工具，用于检测 Android 和 iOS 设备是否被间谍软件入侵。",
+      "core_features": [
+        "支持 iOS 与 Android 设备的取证数据采集与分析",
+        "使用公开的入侵指标（IOC）扫描设备痕迹",
+        "提供 mvt-ios、mvt-android 等命令行工具",
+        "支持插件扩展自定义取证模块",
+        "生成取证报告以识别潜在入侵迹象"
+      ],
+      "tech_stack": [
+        "Python",
+        "PyPI",
+        "uv",
+        "命令行工具"
+      ],
+      "highlights": "由 Amnesty International 安全实验室在 Pegasus 项目背景下开发，专注于公民社会与高风险人群的移动设备取证，并提供配套的取证方法论。",
+      "target_audience": "具备数字取证知识的安全研究人员、调查人员与技术专家",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 13424,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-21T15:09:57+00:00",
+    "readme_available": true
+  },
+  "ashishps1/awesome-system-design-resources": {
+    "analysis": {
+      "one_liner": "汇集免费系统设计学习资料与面试题，帮助开发者掌握系统设计概念并备战面试。",
+      "core_features": [
+        "覆盖核心概念、网络、API、数据库、缓存等系统设计基础知识",
+        "提供异步通信、分布式系统与微服务、架构模式等进阶主题",
+        "整理系统设计权衡对比（如一致性、缓存策略、通信方式）",
+        "按难度分级提供系统设计面试题（如设计短链、WhatsApp、Instagram）",
+        "提供系统设计面试答题框架指导"
+      ],
+      "tech_stack": [
+        "Java",
+        "Markdown"
+      ],
+      "highlights": "以免费资源形式系统化整理系统设计知识体系，并配套面试题与答题框架，Star 数超 4 万，社区认可度高。",
+      "target_audience": "准备系统设计面试的开发者、希望系统学习分布式与架构设计的中高级工程师。",
+      "scores": {
+        "innovation": 2,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 41599,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-21T15:09:57+00:00",
+    "readme_available": true
+  },
+  "esengine/deepseek-reasonix": {
+    "analysis": {
+      "one_liner": "基于 DeepSeek 的终端 AI 编程代理，围绕前缀缓存稳定性设计，可长时间常驻运行。",
+      "core_features": [
+        "配置驱动，Provider、代理、工具与插件均在 reasonix.toml 中声明，无硬编码模型",
+        "多模型可组合，DeepSeek 为预设，任意 OpenAI 兼容端点可作为配置项接入，支持执行器与规划器双模型协作",
+        "插件驱动，MCP 服务器提供工具、提示与资源，扩展协议 v1 侧车可拦截运行时事件并贡献 Provider 与 UI",
+        "缓存感知的上下文维护，启动注入稳定环境摘要，陈旧工具输出在摘要压缩前被裁剪",
+        "零依赖分发，CGO_ENABLED=0 单一静态二进制，一条命令交叉编译六个目标平台"
+      ],
+      "tech_stack": [
+        "Go",
+        "Electron",
+        "Node.js",
+        "pnpm",
+        "MCP",
+        "ACP",
+        "TOML"
+      ],
+      "highlights": "以 prefix-cache 稳定性为核心工程目标，让代理可长时间常驻；单一本地引擎支持终端、桌面、浏览器与编辑器四种入口，配合计划模式、权限控制、工作区沙箱与逐轮检查点，使长时自主运行仍可读可撤销。",
+      "target_audience": "需要在终端或编辑器中长时间运行自主编码代理的开发者，以及希望以配置和插件方式定制模型、工具链的工程团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 35658,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-21T15:09:57+00:00",
+    "readme_available": true
+  },
+  "emanuele-f/pcapdroid": {
+    "analysis": {
+      "one_liner": "无需 root 的 Android 网络监控、防火墙与 PCAP 抓包工具",
+      "core_features": [
+        "通过模拟 VPN 在本地捕获并分析应用连接，无需 root",
+        "记录流量为 PCAP 文件并支持 PCAP-over-IP 实时分析",
+        "解密 HTTPS/TLS 流量，提取 URL 并保存 SSLKEYLOGFILE",
+        "检查 HTTP 请求/响应并导出为 HAR",
+        "识别远程服务器国家与 ASN，支持离线数据库查询"
+      ],
+      "tech_stack": [
+        "Java",
+        "Android",
+        "nDPI",
+        "mitmproxy",
+        "zdtun"
+      ],
+      "highlights": "无需 root 即可在设备本地完成抓包与 TLS 解密，并可通过 API 集成到第三方应用",
+      "target_audience": "Android 开发者、网络安全研究人员及需要进行流量分析的开发者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4786,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-21T15:09:57+00:00",
+    "readme_available": true
+  },
+  "cv-cat/douyin_spider": {
+    "analysis": {
+      "one_liner": "抖音逆向爬虫项目，支持数据采集、直播间监听与私信收发",
+      "core_features": [
+        "用户主页、作品、评论、搜索、关注粉丝等多维度数据采集",
+        "直播间 WebSocket 实时监听弹幕、礼物、进场、点赞与热度",
+        "抖音私信 WebSocket 实时接收与主动发送",
+        "点赞视频、发布评论、收藏作品等互动操作",
+        "自动重试、断线重连、代理与结构化存储输出"
+      ],
+      "tech_stack": [
+        "Python",
+        "Node.js",
+        "WebSocket",
+        "requests"
+      ],
+      "highlights": "将抖音平台通信能力封装为完整 API，覆盖爬取、直播监听与私信收发，可支撑 AI Agent 落地抖音场景",
+      "target_audience": "对爬虫逆向、抖音数据采集及 AI Agent 平台接入感兴趣的开发者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 3108,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-21T15:09:57+00:00",
+    "readme_available": true
+  },
+  "leonxlnx/taste-skill": {
+    "analysis": {
+      "one_liner": "为 AI 编程代理提供可移植的 Agent Skills，让 AI 生成的界面更有设计品味，摆脱千篇一律的模板感。",
+      "core_features": [
+        "提供可移植的 Agent Skills，用于升级 AI 生成的界面布局、排版、动效与间距",
+        "包含图像生成技能，可产出网页、移动端、品牌套件的参考图板",
+        "通过 VARIANCE / MOTION / DENSITY 三个旋钮调节设计风格",
+        "内置设计系统映射、重设计审计流程与严格的预检清单",
+        "支持按单个技能名安装，也可直接复制 SKILL.md 使用"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "npx skills CLI",
+        "Agent Skills 规范",
+        "GSAP",
+        "Codex / Cursor / Claude Code"
+      ],
+      "highlights": "用技能文件的形式把设计品味注入 AI 代理，配合图像生成参考板再交给编码代理实现，形成从参考到落地的完整流程。",
+      "target_audience": "使用 Codex、Cursor、Claude Code 等 AI 编程代理做前端开发，希望提升界面设计质量的开发者与设计师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 88974,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-21T15:09:57+00:00",
+    "readme_available": true
+  },
+  "aipoch/open-science": {
+    "analysis": {
+      "one_liner": "面向科研的开源AI研究工作台，本地优先、模型无关，支持可复现研究。",
+      "core_features": [
+        "科学AI智能体自动读写文件、联网检索、执行代码并生成可追溯报告与图表",
+        "内置Python/R执行环境与科学数据连接器，支持多学科计算与数据分析",
+        "可扩展技能、MCP工具与连接器，支持自定义能力接入",
+        "本地优先、模型无关，可配置多种模型提供商与自托管服务",
+        "跨平台桌面应用，支持macOS、Windows、Linux，含CLI无人值守运行"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Python",
+        "R",
+        "MCP",
+        "Electron类桌面应用",
+        "RO-Crate"
+      ],
+      "highlights": "本地优先与模型无关的科研智能体工作台，强调可追溯产物与可复现研究，并集成科学数据源与Python/R执行。",
+      "target_audience": "从事计算与数据密集型研究的科研人员、数据科学家，以及需要可复现AI科研工作流的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4877,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-21T15:09:57+00:00",
+    "readme_available": true
+  },
+  "katana-official/spatch-update": {
+    "analysis": {
+      "one_liner": "基于 Mundo 项目的 Metaverse Engine 启动器 UI，为 SPatch 等 Android 应用修改工具提供界面示例。",
+      "core_features": [
+        "提供 Metaverse Engine Launcher 的界面实现",
+        "通过 MetaActivityManager 启动应用或指定用户分区的应用",
+        "作为 SPatch 等商业 SDK 的 UI 示例与集成入口",
+        "支持开发者自定义 UI 并集成自有 SDK 文件"
+      ],
+      "tech_stack": [
+        "Java",
+        "Android",
+        "Xposed",
+        "LSPlant",
+        "ShadowHook",
+        "ByteHook",
+        "dexmaker"
+      ],
+      "highlights": "项目本身是闭源商业 SDK 的配套 UI 示例，背后关联 SlimVXposed、SPatch 等应用克隆与修改工具，并整合了多个主流 Hook 与逆向相关开源库。",
+      "target_audience": "对 Android 应用克隆、Xposed 框架、应用修改与容器技术感兴趣的 Android 开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 3,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 2297,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-21T15:09:57+00:00",
+    "readme_available": true
   }
 }
