@@ -19359,5 +19359,455 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-09-22T07:47:07+00:00",
     "readme_available": true
+  },
+  "dream-num/univer": {
+    "analysis": {
+      "one_liner": "面向 AI 智能体的开源 Office SDK，可在浏览器与 Node.js 中嵌入表格、文档、演示等办公能力。",
+      "core_features": [
+        "基于 Canvas 的渲染引擎与独立公式引擎，支撑大规模可编辑文档界面",
+        "插件化架构，能力可按需组合、替换、懒加载或扩展",
+        "同构设计，同一套架构同时运行于浏览器与 Node.js 无头环境",
+        "统一 Facade API，覆盖工作簿、区域、公式、命令与事件",
+        "面向 AI 智能体的程序化编辑、结果校验与隔离草稿协作流程"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Canvas 渲染",
+        "Node.js",
+        "React",
+        "Vue",
+        "Web Components"
+      ],
+      "highlights": "以插件化与同构架构为核心，把表格、文档、演示等办公能力做成可嵌入的 SDK，并专门为 AI 智能体的编辑、校验与人工审阅工作流提供支持。",
+      "target_audience": "需要在 SaaS、内部工具、BI 或 AI 应用中嵌入办公编辑能力的开发者，以及构建服务端文档处理与智能体办公工作流的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 14994,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "drawdb-io/drawdb": {
+    "analysis": {
+      "one_liner": "免费、简单、直观的在线数据库关系图编辑器与 SQL 生成器。",
+      "core_features": [
+        "在浏览器中通过点击快速绘制数据库 ERD 图",
+        "导入和导出 SQL 脚本",
+        "生成数据库迁移脚本",
+        "自定义编辑器外观与配置",
+        "无需注册账号即可使用"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Node.js",
+        "npm",
+        "Docker"
+      ],
+      "highlights": "无需注册即可在浏览器中完成数据库建模、SQL 导入导出与迁移生成，并提供可选的分享服务。",
+      "target_audience": "需要设计数据库结构、编写 SQL 或生成迁移脚本的后端与全栈开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 39669,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "dataease/dataease": {
+    "analysis": {
+      "one_liner": "人人可用的开源 BI 工具，支持拖拽式数据可视化分析与分享，可替代 Tableau。",
+      "core_features": [
+        "支持 MySQL、Oracle、ClickHouse、Excel、API 等多种数据源连接",
+        "通过鼠标拖拽快速制作图表与仪表板",
+        "支持多平台安装与多样化嵌入，方便分享数据",
+        "无缝集成 SQLBot 实现智能问数",
+        "提供模板中心与工作台，按月迭代更新"
+      ],
+      "tech_stack": [
+        "Vue.js",
+        "Element",
+        "AntV",
+        "Spring Boot",
+        "MySQL",
+        "Apache Calcite",
+        "Apache SeaTunnel",
+        "Docker"
+      ],
+      "highlights": "开源开放、简单易用，全场景支持多平台安装与嵌入，并集成 SQLBot 实现 AI 智能问数，是 Tableau 的开源替代方案。",
+      "target_audience": "需要快速搭建数据可视化与 BI 分析平台的数据分析师、业务人员及企业开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 24523,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "google/ax": {
+    "analysis": {
+      "one_liner": "谷歌开源的声明式智能体编排运行时，在集群中大规模沙箱化运行自主智能体任务",
+      "core_features": [
+        "以 Task、Workspace、Gateway、Model 四类声明式清单定义智能体工作负载",
+        "基于 Agent Substrate 提供沙箱隔离执行，支持 CPU/内存限制与网络出口白名单",
+        "提供 kubectl 风格的 CLI（apply/get/watch/ssh/suspend/resume）管理任务生命周期",
+        "支持 Git 仓库、MCP 服务器与技能包预配置，让智能体启动即就绪",
+        "支持任务挂起与恢复，可检查点保存并从中断处继续"
+      ],
+      "tech_stack": [
+        "Go",
+        "Kubernetes",
+        "Agent Substrate",
+        "Redis",
+        "gRPC",
+        "ko"
+      ],
+      "highlights": "将智能体视为一种全新工作负载类型，用类似 Kubernetes 的声明式原语统一解决沙箱隔离、工作区预置、网络围栏与规模化调度问题",
+      "target_audience": "需要在集群中大规模运行自主智能体、熟悉 Kubernetes 与声明式配置的平台工程师和基础设施开发者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 6918,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "upscayl/upscayl": {
+    "analysis": {
+      "one_liner": "免费开源的 AI 图像放大工具，支持 Linux、macOS 和 Windows，可无损放大低分辨率图片。",
+      "core_features": [
+        "使用 AI 算法放大并增强低分辨率图像",
+        "跨平台支持 Linux、macOS 和 Windows",
+        "提供多种安装方式（AppImage、Flatpak、Snap、Homebrew、DMG 等）",
+        "需要 Vulkan 兼容的 GPU 进行图像放大",
+        "提供前后对比的演示效果"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Vulkan",
+        "Electron（基于桌面应用形态推断）"
+      ],
+      "highlights": "完全免费开源，跨三大桌面平台，拥有近 5 万 Star，社区活跃且安装方式丰富。",
+      "target_audience": "需要无损放大图片的普通用户、设计师、摄影师，以及关注 AI 图像处理与跨平台桌面应用开发的开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 49743,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "kestra-io/kestra": {
+    "analysis": {
+      "one_liner": "开源事件驱动编排与调度平台，用声明式 YAML 统一数据、AI 与基础设施工作流。",
+      "core_features": [
+        "声明式 YAML 定义工作流，支持定时与事件驱动触发",
+        "内置代码编辑器、无代码编辑器与 AI Copilot 三种方式编辑同一流程",
+        "丰富的插件生态，可连接数据库、云存储、API 并运行任意语言脚本",
+        "支持命名空间、子流程、重试、超时、错误处理、输入输出等结构化与容错能力",
+        "AI 原生编排：AI Agent、RAG 工作流与 MCP 服务器将流程暴露给 AI 代理"
+      ],
+      "tech_stack": [
+        "Java",
+        "YAML",
+        "gRPC",
+        "Git 版本控制",
+        "MCP",
+        "Terraform"
+      ],
+      "highlights": "将基础设施即代码理念引入数据与 AI 工作流，UI、API、CI/CD 与 AI 代理对同一份 YAML 保持同步，兼具事件驱动与定时调度，并原生集成 AI 能力。",
+      "target_audience": "数据工程师、平台与基础设施工程师，以及需要编排数据、AI 与微服务管道的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 28233,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "superdesigndev/treg": {
+    "analysis": {
+      "one_liner": "面向 AI Agent 的工具聚合网关，用一个令牌调用 3000+ 第三方工具端点，按次计费。",
+      "core_features": [
+        "统一入口聚合 60+ 供应商、3000+ 工具端点，按调用次数计费",
+        "支持注册团队自有 API 密钥、OAuth 连接、CLI 与 SKILL.md 技能",
+        "服务端注入凭证，调用方无需持有密钥，代理只转发不建模上游",
+        "提供 CLI、Claude Code 插件与 MCP 连接器接入方式",
+        "余额不足返回 402 并附带余额与预估费用信息"
+      ],
+      "tech_stack": [
+        "Python",
+        "CLI",
+        "MCP",
+        "OAuth",
+        "Claude Code 插件"
+      ],
+      "highlights": "把分散在订阅墙和邀请制 API 背后的工具统一成一次调用，按分计费，并让团队密钥在服务端注入而不外泄。",
+      "target_audience": "需要为 AI Agent 接入大量外部工具、又不想逐个注册供应商账号的开发者与团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 2009,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "flipped-aurora/gin-vue-admin": {
+    "analysis": {
+      "one_liner": "基于 Gin 与 Vue3 的全栈开发基础平台，内置 AI 辅助、代码生成与权限管理，快速搭建企业级中后台项目。",
+      "core_features": [
+        "JWT 鉴权与 Casbin 权限管理，支持动态路由与动态菜单",
+        "代码生成器与表单生成器，一分钟生成前后端基础 CRUD 代码",
+        "内置 MCP 辅助服务与 Skills 管理，支持 AI 辅助开发",
+        "多点登录拦截、资源权限、分页封装与可配置导入导出",
+        "支持七牛云、阿里云、腾讯云的文件上传下载与分片上传"
+      ],
+      "tech_stack": [
+        "Go",
+        "Gin",
+        "GORM",
+        "Vue3",
+        "Vite",
+        "Element Plus",
+        "MySQL/MariaDB",
+        "Redis",
+        "Swagger",
+        "Casbin",
+        "JWT",
+        "Viper",
+        "Zap"
+      ],
+      "highlights": "将 AI 辅助开发（MCP、Skills 管理）与传统代码生成器结合，配合完善的中文文档、视频教程和插件市场，形成完整的企业级开发解决方案。",
+      "target_audience": "具备一定 Go 和 Vue 基础，需要快速搭建中小型企业级中后台系统的全栈开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 25041,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "thingsboard/thingsboard": {
+    "analysis": {
+      "one_liner": "开源物联网平台，提供设备管理、数据采集、处理与可视化能力。",
+      "core_features": [
+        "设备与资产的配置、监控和安全管控，支持实体间关系定义",
+        "可扩展、容错的遥测数据采集与存储，内置及自定义组件仪表盘可视化",
+        "SCADA 仪表盘，实时监控和控制工业流程",
+        "规则链引擎，对设备数据进行转换、归一化并触发告警",
+        "通过邮件、短信、移动应用或第三方服务发送通知"
+      ],
+      "tech_stack": [
+        "Java",
+        "Apache 2.0 License"
+      ],
+      "highlights": "设备无关的可扩展物联网平台，内置强大的规则引擎与实时仪表盘，并提供多种行业解决方案模板以加速产品上市。",
+      "target_audience": "从事物联网平台开发、设备接入、数据可视化与工业 SCADA 场景的后端及全栈开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 22464,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "browser-use/video-use": {
+    "analysis": {
+      "one_liner": "用 Claude Code 等编码智能体通过对话完成视频剪辑，自动去口癖、调色、加字幕并输出成片。",
+      "core_features": [
+        "自动剪掉口癖词、口误和镜头间空白",
+        "对每段素材自动调色，并在每个剪切点加 30ms 音频淡入淡出",
+        "按自定义风格烧录字幕，默认两词大写分块",
+        "通过 HyperFrames、Remotion、Manim 或 PIL 并行生成动画叠加层",
+        "渲染后在每个剪切边界自评估，通过后才展示预览，并用 project.md 持久化会话记忆"
+      ],
+      "tech_stack": [
+        "Python",
+        "ffmpeg",
+        "ElevenLabs Scribe",
+        "uv",
+        "yt-dlp",
+        "Claude Code / Codex 等编码智能体"
+      ],
+      "highlights": "不让 LLM 逐帧看视频，而是把音频转写打包成约 12KB 文本作为主要阅读视图，仅在决策点按需生成时间线合成图，把 4500 万 token 的噪声压缩成文本加少量图片。",
+      "target_audience": "希望用编码智能体自动化剪辑口播、教程、访谈、旅行等视频的开发者与内容创作者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 25556,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "openclaw/crabbox": {
+    "analysis": {
+      "one_liner": "在远程机器、SSH 主机或本地容器上同步代码并运行仓库命令的 Go 命令行工具。",
+      "core_features": [
+        "一次性运行：创建盒子、同步工作区、执行命令、流式输出并返回退出码后清理",
+        "预热并复用盒子，支持编辑—运行循环，仅同步变更内容",
+        "支持本地容器、自有 SSH 主机、云虚拟机及委派执行等多种提供方",
+        "可收集测试报告与产物，通过协调器查看历史、日志与事件",
+        "团队协调器统一管理云凭证、用量、花费上限与过期租约"
+      ],
+      "tech_stack": [
+        "Go",
+        "Docker",
+        "Podman",
+        "SSH",
+        "rsync",
+        "Git",
+        "Homebrew"
+      ],
+      "highlights": "无需推送提交即可把未提交改动同步到远端执行，并可在本地容器、SSH 主机与云之间自由选择执行环境，兼顾一次性运行与热盒复用。",
+      "target_audience": "需要在远端或容器中运行测试与命令、希望复用环境并统一管理团队算力的 Go 及多语言开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 1417,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "openbkn-ai/bkn-foundry": {
+    "analysis": {
+      "one_liner": "OpenBKN 的本体后端基础框架，将本体驱动的业务语义转化为数据、逻辑、动作、安全治理与可观测性的运行时服务。",
+      "core_features": [
+        "本体驱动的业务知识网络建模，把分散在文档、系统、流程、规则与专家经验中的数据和逻辑统一为可理解、可执行、可验证的知识网络",
+        "上下文工程能力：通过 Context Loader 的召回、粗排、精排流程抑制上下文爆炸，准确率达 93% 以上",
+        "以实时事实加证据引用替代长文本堆叠，缓解上下文衰减，准确率较基线提升 15% 以上",
+        "通过 BKN 网络构建企业数字孪生，隔离上下文污染与注入风险",
+        "提供统一数据访问、安全执行与治理能力，并支持 CLI、SDK 与 API 交互"
+      ],
+      "tech_stack": [
+        "Go",
+        "Kubernetes",
+        "Helm",
+        "kubectl",
+        "containerd",
+        "Node.js",
+        "TypeScript SDK",
+        "OpenAPI"
+      ],
+      "highlights": "面向智能体落地专有数据场景，用本体建模解决上下文爆炸、衰减与污染三大痛点，并给出 93%+ 准确率与 15%+ 提升的量化效果；项目为纯后端框架，不含 Web UI，配套 SDK、样例与一键 K8s 部署脚本。",
+      "target_audience": "需要为智能体接入企业专有数据、构建本体驱动业务知识网络的后端与平台开发者，以及关注上下文工程与语义治理的工程师。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 529,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "duartesantos8/opengym": {
+    "analysis": {
+      "one_liner": "自托管的健身与体重追踪应用，支持计划训练、记录组数、肌肉疲劳分析与数据导入。",
+      "core_features": [
+        "每周训练计划与1324个动作库，含动画演示和肌肉图浏览",
+        "引导式训练记录，支持超级组、热身组、计时动作与RIR/RPE强度标记",
+        "体重追踪图表与肌肉训练/疲劳/退化状态分析",
+        "从FitNotes、Strong、Hevy导入数据，支持Passkey登录",
+        "PWA可安装、离线支持、多设备同步，Docker Compose一键部署"
+      ],
+      "tech_stack": [
+        "React 19",
+        "JavaScript",
+        "Docker Compose",
+        "PWA"
+      ],
+      "highlights": "完全自托管，数据归用户所有，无订阅无广告无追踪；功能覆盖训练计划、记录、统计与数据迁移，且提供Passkey登录与离线支持。",
+      "target_audience": "注重数据隐私、希望自托管健身追踪工具的开发者与健身爱好者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 1179,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
+  },
+  "hydra-db/hydradb": {
+    "analysis": {
+      "one_liner": "基于对象存储的分布式图数据库，用 Rust 编写，支持 OpenCypher 查询与 Neo4j 兼容连接。",
+      "core_features": [
+        "图数据与索引持久化在 S3 兼容对象存储上，计算与存储完全分离",
+        "数据节点负责查询与写入，索引器后台构建不可变遍历索引，可独立扩缩容",
+        "基于 SlateDB 快照实现一致性读，结合 CSC 索引代与可见 WAL 覆盖层",
+        "支持 OpenCypher 查询、GraphBLAS 稀疏遍历与属性索引、反向邻接优化",
+        "提供 Neo4j Bolt 5.x 驱动兼容与 HTTPS JSON/NDJSON 查询 API"
+      ],
+      "tech_stack": [
+        "Rust",
+        "SlateDB",
+        "SuiteSparse GraphBLAS",
+        "OpenCypher",
+        "Neo4j Bolt",
+        "S3 兼容对象存储",
+        "Docker",
+        "Helm"
+      ],
+      "highlights": "存储计算彻底分离，对象存储作为唯一持久层，节点仅保留可丢弃的本地缓存，配合 CAS 租约与 SlateDB 写入纪元实现安全写入者切换，索引缺失或滞后时仍能保证读取正确。",
+      "target_audience": "需要云原生、可弹性伸缩图数据库的开发者，以及使用 Neo4j 驱动并希望迁移到对象存储架构的团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4076,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-22T13:28:34+00:00",
+    "readme_available": true
   }
 }
