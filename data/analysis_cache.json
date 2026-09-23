@@ -21212,5 +21212,36 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-09-23T13:42:49+00:00",
     "readme_available": true
+  },
+  "spotify/portal-ai-plugins": {
+    "analysis": {
+      "one_liner": "将 Spotify Portal 集成进 Claude Code、Codex 和 Cursor 的 AI 插件，提供软件目录搜索与服务运维工作流。",
+      "core_features": [
+        "为当前编码代理环境配置 Portal CLI 认证",
+        "运行只读诊断以验证插件、CLI、认证与动作就绪状态",
+        "用自然语言搜索软件目录与技术文档",
+        "生成包含归属、健康、事故与文档信息的服务简报",
+        "发现并安全调用 Portal 动作，内置帮助、试运行与确认保护"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Portal CLI",
+        "Claude Code",
+        "Codex",
+        "Cursor"
+      ],
+      "highlights": "通过插件市场把 Spotify 内部 Portal 能力接入主流编码代理，并提供 shunt 插件将高 I/O 的代理工作委派给更便宜的 AiKA 工作模型以节省 token。",
+      "target_audience": "使用 Claude Code、Codex 或 Cursor 并需要访问 Spotify Portal 软件目录与运维工作流的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 2216,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-23T22:59:40+00:00",
+    "readme_available": true
   }
 }
