@@ -24497,5 +24497,38 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-09-25T13:56:08+00:00",
     "readme_available": true
+  },
+  "v2raya/v2raya": {
+    "analysis": {
+      "one_liner": "基于自研 Xray 内核的 Web 客户端，支持多平台全局透明代理与节点订阅管理。",
+      "core_features": [
+        "导入 VMess、VLESS、Shadowsocks、Trojan、Hysteria2、TUIC、WireGuard 等订阅与分享链接",
+        "按最低延迟自动分组选点或手动固定节点",
+        "使用 RoutingA 规则进行流量分流",
+        "Linux、Windows、macOS 上的透明代理（redirect、tproxy、tun）",
+        "浏览器访问的 Web 管理界面，可作为服务运行于本机、路由器或 NAS"
+      ],
+      "tech_stack": [
+        "Go",
+        "Xray 内核（v2raya_core）",
+        "Web 前端（浏览器界面）",
+        "iptables/nftables",
+        "Docker",
+        "systemd/OpenRC",
+        "Homebrew/winget/scoop/AUR 等打包"
+      ],
+      "highlights": "自带同版本 Xray 内核，跨 Linux、Windows、macOS 提供全局透明代理，并通过 Web 界面统一管理订阅、节点分组与 RoutingA 分流规则。",
+      "target_audience": "需要在 Linux、Windows、macOS 或路由器/NAS 上部署代理并管理订阅与分流规则的开发者与进阶用户。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 15613,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-25T23:20:38+00:00",
+    "readme_available": true
   }
 }
