@@ -13648,30 +13648,31 @@
       "one_liner": "Trino 是一个面向大数据分析的快速分布式 SQL 查询引擎，前身为 PrestoSQL。",
       "core_features": [
         "分布式 SQL 查询引擎，支持大数据分析场景",
-        "提供丰富的连接器插件体系，可对接多种数据源",
-        "支持通过 CLI 执行 SQL 查询并查看集群节点信息",
+        "提供丰富的连接器（Connector）插件体系，可对接多种数据源",
+        "支持通过 CLI 连接集群并执行 SQL 查询",
         "支持可复现构建（自 449 版本起）",
-        "提供开发服务器与多种 QueryRunner 便于本地调试"
+        "提供开发服务器与 TPCH 连接器便于本地调试"
       ],
       "tech_stack": [
         "Java",
         "Maven",
         "Docker",
+        "IntelliJ IDEA",
         "JUnit",
-        "IntelliJ IDEA"
+        "Slack"
       ],
-      "highlights": "前身为 PrestoSQL，拥有成熟的分布式查询引擎架构与插件生态，社区活跃（Star 超 1.3 万、Fork 近 3800），并支持可复现构建。",
-      "target_audience": "从事大数据查询引擎、分布式系统或数据库内核开发，以及需要为 Trino 编写连接器插件的 Java 开发者。",
+      "highlights": "作为 PrestoSQL 的官方延续，Trino 是成熟且活跃的大数据查询引擎项目，拥有完善的插件生态、可复现构建支持以及详细的开发与部署文档。",
+      "target_audience": "从事大数据查询引擎、分布式系统或数据库内核开发，以及需要为 Trino 开发连接器插件的 Java 开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 13254,
+    "stars_at_analysis": 13281,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-19T07:24:29+00:00",
+    "analyzed_at": "2026-09-26T07:50:46+00:00",
     "readme_available": true
   },
   "hmjz100/linkswift": {
@@ -13833,17 +13834,17 @@
     "analysis": {
       "one_liner": "免费开源的分布式 RESTful 搜索引擎，基于 Java 构建。",
       "core_features": [
-        "分布式架构，支持水平扩展",
-        "RESTful 风格搜索接口",
-        "全文检索与数据分析能力",
-        "开源免费，社区活跃"
+        "分布式搜索与索引",
+        "RESTful API 接口",
+        "开源免费",
+        "基于 Java 实现",
+        "支持海量数据检索"
       ],
       "tech_stack": [
         "Java",
-        "RESTful API",
-        "分布式系统"
+        "RESTful API"
       ],
-      "highlights": "Star 数近 7.8 万、Fork 超 2.6 万，是搜索与日志分析领域事实上的基础设施级项目。",
+      "highlights": "Star 数接近 7.8 万、Fork 超 2.6 万，是搜索领域最主流、生态最成熟的开源项目之一。",
       "target_audience": "需要构建搜索、日志分析或数据检索能力的后端与大数据开发者。",
       "scores": {
         "innovation": 4,
@@ -13851,21 +13852,21 @@
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 77933,
+    "stars_at_analysis": 77993,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-19T07:24:29+00:00",
+    "analyzed_at": "2026-09-26T07:50:46+00:00",
     "readme_available": false
   },
   "guohuiyuan/go-music-dl": {
     "analysis": {
-      "one_liner": "基于 Go 的全网音乐搜索与下载工具，支持 Web、TUI 与桌面三种模式，聚合 10+ 主流音乐平台。",
+      "one_liner": "基于 Go 的全网音乐搜索与下载工具，支持 Web、TUI 与桌面三种模式，聚合 10+ 主流平台。",
       "core_features": [
-        "多平台聚合搜索，支持单曲、歌单、专辑，多源并发与无损音质解析",
-        "Web、TUI 终端、桌面应用三种使用模式，含 Android 与 iOS 移动端",
+        "多平台聚合搜索，支持单曲、歌单、专辑，内置网易云、QQ、酷狗、Bilibili、汽水音乐等 10+ 平台",
+        "Web、TUI 终端、桌面应用三种使用模式，另有 Android/iOS 移动端",
+        "支持网易云、QQ、Bilibili 的 FLAC 无损下载与加密音频解密",
         "歌单分类浏览、我的歌单、本地自制歌单与本地音乐管理",
-        "Cookie 扫码登录与加密音频解密，支持歌词逐字高亮与封面下载",
-        "WebDAV 同步、FFmpeg 元数据内嵌与文件名模板自定义"
+        "Cookie 扫码登录、歌词逐字 LRC 展示、WebDAV 同步与 FFmpeg 元数据内嵌"
       ],
       "tech_stack": [
         "Go",
@@ -13873,20 +13874,20 @@
         "SQLite",
         "FFmpeg/ffprobe",
         "Docker",
-        "Nginx"
+        "Web 前端模板"
       ],
-      "highlights": "覆盖 10+ 音乐平台并支持无损解析与加密音频解密，同时提供 Web、终端、桌面与移动端多种形态，功能完整度与工程实现细节较为突出。",
-      "target_audience": "需要批量下载与管理音乐的个人用户，以及想学习 Go 多平台聚合、Web 服务与桌面打包实践的开发者。",
+      "highlights": "多源并发搜索与无损解析，覆盖 Web/TUI/桌面/移动端四种形态，本地音乐索引与缓存优化完善，功能完整度高。",
+      "target_audience": "需要批量下载或管理音乐的个人用户，以及想学习 Go 多平台聚合、Web 服务与桌面/移动端打包的开发者。",
       "scores": {
         "innovation": 3,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 4385,
+    "stars_at_analysis": 4766,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-19T07:24:29+00:00",
+    "analyzed_at": "2026-09-26T07:50:46+00:00",
     "readme_available": true
   },
   "prometheus/alertmanager": {
@@ -14237,34 +14238,33 @@
   },
   "k2-fsa/omnivoice": {
     "analysis": {
-      "one_liner": "支持600多种语言的高质量零样本语音克隆TTS模型，基于扩散语言模型式架构。",
+      "one_liner": "支持600多种语言的高质量零样本语音克隆TTS模型",
       "core_features": [
-        "支持600多种语言的零样本语音合成",
-        "高质量语音克隆，可从短参考音频复刻音色",
-        "语音设计，可通过性别、年龄、音调、口音等属性控制声音",
-        "细粒度控制，支持非语言符号与拼音/音素发音纠正",
-        "推理速度快，RTF低至0.025，约为实时的40倍"
+        "支持600+语言的零样本语音合成",
+        "高质量语音克隆，可复用克隆提示",
+        "通过说话人属性进行语音设计",
+        "细粒度控制：非语言符号与拼音/音素纠音",
+        "推理速度快，RTF低至0.025"
       ],
       "tech_stack": [
         "Python",
         "PyTorch",
-        "Hugging Face",
+        "扩散语言模型式架构",
         "Whisper ASR",
-        "WeTextProcessing",
-        "uv"
+        "WeTextProcessing"
       ],
-      "highlights": "采用扩散语言模型式架构，在保证语音质量的同时实现极快推理速度，语言覆盖范围在零样本TTS模型中最为广泛，并提供语音克隆、语音设计与细粒度发音控制能力。",
-      "target_audience": "从事语音合成、语音克隆研究与应用的开发者，以及需要多语言TTS能力的AI应用开发者。",
+      "highlights": "覆盖600+语言的零样本TTS，采用扩散语言模型式架构，兼顾克隆质量与40倍实时推理速度",
+      "target_audience": "从事语音合成、多语言TTS、语音克隆研究与应用的开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 13565,
+    "stars_at_analysis": 13881,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-19T07:24:29+00:00",
+    "analyzed_at": "2026-09-26T07:50:46+00:00",
     "readme_available": true
   },
   "colinhacks/zod": {
@@ -14296,64 +14296,65 @@
   },
   "pdfmathtranslate/pdfmathtranslate": {
     "analysis": {
-      "one_liner": "基于 AI 的 PDF 科研论文全文翻译工具，完整保留公式、图表与排版，支持多种翻译服务。",
+      "one_liner": "基于 AI 的 PDF 科研论文全文翻译工具，完整保留公式、图表与排版，支持多种翻译服务与使用方式。",
       "core_features": [
-        "保留公式、图表、目录与注释等原始排版进行翻译",
+        "翻译时保留公式、图表、目录和批注等排版元素",
         "支持 Google、DeepL、Ollama、OpenAI 等多种翻译服务",
-        "提供命令行工具、交互式 GUI、Docker 及 Zotero 插件等多种使用方式",
-        "支持多语言翻译，并提供在线演示服务",
-        "实验性 OCR 支持与段落重组、自适应排版"
+        "提供命令行工具、交互式图形界面和 Docker 部署",
+        "支持多语言翻译，并可作为 Zotero 插件使用",
+        "实验性 OCR 支持，含段落重组与自适应排版"
       ],
       "tech_stack": [
         "Python",
-        "Gradio",
+        "CLI",
+        "Gradio GUI",
         "Docker",
-        "ONNX",
-        "PyPI"
+        "MCP",
+        "Zotero 插件",
+        "ONNX"
       ],
-      "highlights": "在翻译 PDF 科研论文时能完整保留公式、图表和排版，并集成多种主流翻译服务与多种使用形态，Star 数超过 3.7 万，被 EMNLP 2025 收录为 Demo。",
-      "target_audience": "需要阅读和翻译外文科研论文的研究人员、学生，以及需要 PDF 文档翻译能力的开发者。",
+      "highlights": "在翻译科研 PDF 时能完整保留公式、图表和排版，并提供 CLI、GUI、Docker、Zotero 插件等多种集成方式，已被 EMNLP 2025 接收为 Demo。",
+      "target_audience": "需要阅读外文科研论文的研究人员、学生，以及需要集成 PDF 翻译能力的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 37061,
+    "stars_at_analysis": 37197,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-19T07:24:29+00:00",
+    "analyzed_at": "2026-09-26T07:50:46+00:00",
     "readme_available": true
   },
   "dgtlmoon/changedetection.io": {
     "analysis": {
-      "one_liner": "自托管的网站变更检测与监控工具，可实时追踪网页内容变化并发送多渠道告警。",
+      "one_liner": "自托管的网页变更检测与监控工具，支持多种通知渠道和AI智能摘要。",
       "core_features": [
-        "网页内容变更检测，支持按词、行、字符级别查看差异",
-        "支持 Discord、邮件、Slack、Telegram、Webhook 等多种通知方式",
-        "AI 变更检测规则与自然语言变更摘要，可过滤无关噪音",
-        "可视化选择器与浏览器交互步骤，可监控登录后页面和特定元素",
-        "商品价格追踪与补货提醒，支持价格上下限和百分比阈值设置"
+        "监控网页内容变化并通过Discord、邮件、Slack、Telegram、Webhook等渠道发送通知",
+        "支持价格追踪与补货提醒，可设置价格上下限和变化百分比",
+        "集成LLM实现AI变更摘要和自然语言规则过滤，减少误报",
+        "提供可视化选择器与浏览器步骤，可监控登录后页面和特定元素",
+        "支持JSON API监控、PDF文件变更检测和RSS订阅生成"
       ],
       "tech_stack": [
         "Python",
         "Docker",
         "Playwright",
-        "LiteLLM",
-        "Chrome"
+        "LiteLLM"
       ],
-      "highlights": "将网页变更监控与 LLM 结合，用自然语言规则过滤误报并生成可读的变更摘要，同时支持本地模型和自托管部署。",
-      "target_audience": "需要监控网页内容变化、价格波动或补货信息的开发者，以及注重数据隐私、倾向自托管方案的技术用户。",
+      "highlights": "将网页变更检测与LLM结合，用自然语言规则过滤噪音并生成可读的变更摘要，同时支持本地模型和自托管部署。",
+      "target_audience": "需要监控网页变化、价格波动或补货信息的开发者、运维人员及注重数据隐私的自托管用户。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 34346,
+    "stars_at_analysis": 34559,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-19T07:24:29+00:00",
+    "analyzed_at": "2026-09-26T07:50:46+00:00",
     "readme_available": true
   },
   "caronc/apprise": {
@@ -22066,35 +22067,35 @@
   },
   "androoagi/starnet": {
     "analysis": {
-      "one_liner": "本地优先的桌面 AI 智能体工作站，用像素艺术空间站直观呈现真实运行的智能体团队。",
+      "one_liner": "本地优先的桌面 AI 智能体平台，用像素艺术空间站可视化并运行真实的多智能体协作任务。",
       "core_features": [
-        "创建具有不同职业、人设与装备的智能体，可并发运行且各自拥有独立工作区、记忆与受限权限",
-        "支持自带 OpenRouter 密钥或 Anthropic、OpenAI、Google 账号登录，密钥存于系统钥匙串",
-        "可将智能体接入 Telegram、Discord、Slack、Signal、Matrix 等渠道远程对话",
-        "夜班模式让智能体在明确可调的权限范围内持续工作，所有离场操作均有日志可查",
-        "支持配方、技能、定时任务、MCP 连接器、语音输入输出，以及 OUTBOX 交付物与真实花费账本"
+        "创建具有不同角色与权限的智能体，多个智能体可并发运行，各自拥有独立工作区、记忆与转录",
+        "支持自带密钥（OpenRouter、Anthropic、OpenAI、Google）或本地 Ollama 模型，密钥存于系统钥匙串",
+        "可将智能体接入 Telegram、Discord、Slack、Signal、Matrix 等消息渠道远程交互",
+        "Night Shift 无人值守模式、Recipes 多步配方、Skills 技能与 cron 定时调度",
+        "支持 MCP 连接器、语音输入输出、OUTBOX 交付物与真实花费账本"
       ],
       "tech_stack": [
         "JavaScript",
         "Node.js",
         "Tauri",
         "Rust",
-        "Vanilla JavaScript",
-        "NDJSON/SSE",
-        "Ollama"
+        "SSE/NDJSON",
+        "Ollama",
+        "MCP"
       ],
-      "highlights": "空间站布局即工作流：房间代表能力受限的团队、走廊代表授权交接通道、摆放的物件代表真实能力授权；界面只呈现运行时能够证明的状态，不做模拟。",
-      "target_audience": "希望本地优先、自带密钥运行多智能体协作的开发者，以及对像素风可视化与桌面端 AI 工具感兴趣的工程师。",
+      "highlights": "空间站布局即工作流：房间代表能力范围团队、走廊代表授权交接通道、摆放的物件代表真实能力授权，界面只呈现运行时能证明的状态，不做任何模拟。",
+      "target_audience": "希望本地优先、自带密钥运行多智能体自动化工作流的开发者与 AI 智能体爱好者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 316,
+    "stars_at_analysis": 567,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-25T13:56:08+00:00",
+    "analyzed_at": "2026-09-26T07:50:46+00:00",
     "readme_available": true
   },
   "fastapi/full-stack-fastapi-template": {
