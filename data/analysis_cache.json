@@ -1418,32 +1418,32 @@
   },
   "cockroachdb/cockroach": {
     "analysis": {
-      "one_liner": "云原生分布式 SQL 数据库，具备高可用、弹性扩展与强一致事务能力",
+      "one_liner": "云原生分布式 SQL 数据库，具备高可用、水平扩展与强一致事务能力。",
       "core_features": [
-        "基于强一致事务型键值存储构建的分布式 SQL 数据库",
-        "支持水平扩展，可自动应对磁盘、机器、机架乃至数据中心级故障",
-        "提供强一致性的 ACID 事务支持",
-        "兼容 PostgreSQL 通信协议，可复用 PostgreSQL 客户端驱动与 ORM",
-        "支持数据复制、自动再均衡与容错恢复等核心能力"
+        "基于强一致事务型键值存储的分布式 SQL 引擎",
+        "支持水平扩展，自动数据再平衡",
+        "可容忍磁盘、机器、机架乃至数据中心级故障",
+        "支持强一致 ACID 事务",
+        "兼容 PostgreSQL 线协议，可复用其客户端驱动与 ORM"
       ],
       "tech_stack": [
         "Go",
-        "PostgreSQL 通信协议",
+        "PostgreSQL 线协议",
         "分布式一致性协议",
-        "云原生部署与编排系统"
+        "SQL"
       ],
-      "highlights": "在分布式架构下同时实现强一致 ACID 事务、水平扩展与自动故障恢复，且兼容 PostgreSQL 生态，降低迁移与接入成本",
-      "target_audience": "需要构建高可用、可弹性扩展数据密集型应用的开发者，以及关注分布式数据库与分布式系统实现的工程师",
+      "highlights": "以强一致分布式键值存储为底座提供 SQL 接口，兼顾高可用、弹性扩展与数据放置控制，并兼容 PostgreSQL 生态。",
+      "target_audience": "需要构建高可用、可水平扩展数据密集型应用的开发者，以及关注分布式数据库与共识算法实现的工程师。",
       "scores": {
-        "innovation": 5,
+        "innovation": 4,
         "practicality": 5,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 32550,
+    "stars_at_analysis": 32517,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-17T07:50:54+00:00",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
     "readme_available": true
   },
   "sharkdp/fd": {
@@ -3555,32 +3555,32 @@
   },
   "yuliskov/smarttube": {
     "analysis": {
-      "one_liner": "面向 Android TV 的开源媒体客户端，可自定义规则浏览和播放公开媒体内容。",
+      "one_liner": "面向 Android TV 的开源媒体客户端，可自定义规则浏览播放公开来源内容。",
       "core_features": [
         "TV 优化的简洁界面",
-        "SponsorBlock 集成与可调播放速度",
-        "支持 8K 分辨率、60fps 与 HDR",
-        "可查看直播聊天并自定义按钮",
+        "集成 SponsorBlock 跳过赞助片段",
+        "支持 8K、60fps、HDR 播放",
+        "可调节播放速度与自定义按钮",
         "无需 Google 服务即可运行"
       ],
       "tech_stack": [
         "Java",
         "Android TV",
         "F-Droid",
-        "Gradle"
+        "VirusTotal"
       ],
-      "highlights": "无需 Google 服务即可在 Android TV 上运行，支持 8K/HDR/60fps 与 SponsorBlock，内置更新器，兼容 Android 4.3 及以上的电视与电视盒子。",
-      "target_audience": "使用 Android TV 或电视盒子、希望获得可定制且无 Google 服务依赖媒体播放体验的开发者与用户。",
+      "highlights": "无需 Google 服务即可在 Android TV 上使用，支持 8K/HDR/60fps 与 SponsorBlock，兼容 Android 4.3 及以上的老旧电视盒子。",
+      "target_audience": "拥有 Android TV 或电视盒子、希望获得可自定义且无广告播放体验的开发者与进阶用户。",
       "scores": {
-        "innovation": 4,
+        "innovation": 3,
         "practicality": 5,
-        "learning_value": 4
+        "learning_value": 3
       }
     },
-    "stars_at_analysis": 33774,
+    "stars_at_analysis": 34205,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-17T07:50:54+00:00",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
     "readme_available": true
   },
   "dietrichgebert/ponytail": {
@@ -4887,30 +4887,30 @@
   },
   "django/django": {
     "analysis": {
-      "one_liner": "Django 是一个鼓励快速开发与干净务实设计的高级 Python Web 框架。",
+      "one_liner": "Django 是一个鼓励快速开发与简洁实用设计的高级 Python Web 框架。",
       "core_features": [
-        "提供完整的 Web 开发框架，支持快速开发",
-        "强调干净、务实的设计理念",
-        "配套详尽且持续更新的官方文档与教程",
-        "拥有活跃的社区支持（Discord、论坛）",
-        "提供完善的测试套件与贡献指南"
+        "提供完整的官方文档与入门教程，覆盖安装、部署与专题指南",
+        "内置测试套件，支持开发者运行单元测试",
+        "拥有活跃的社区支持渠道，包括 Discord 与论坛",
+        "提供规范的贡献流程与内部开发文档",
+        "由 Django 软件基金会支持，接受社区捐赠以推动发展"
       ],
       "tech_stack": [
         "Python",
         "Django Web 框架"
       ],
-      "highlights": "拥有极高的社区认可度（超 9 万 Star、3.4 万 Fork），文档严谨且持续更新，是成熟稳定的 Web 开发框架。",
-      "target_audience": "使用 Python 进行 Web 开发的开发者，尤其是追求快速开发与规范设计的团队。",
+      "highlights": "作为成熟且广泛使用的高级 Python Web 框架，拥有超过 9 万 Star 与完善的文档、测试和社区生态，是 Web 开发领域的经典项目。",
+      "target_audience": "使用 Python 进行 Web 开发的开发者，尤其是追求快速开发与整洁设计的后端工程师。",
       "scores": {
-        "innovation": 4,
+        "innovation": 3,
         "practicality": 5,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 91093,
+    "stars_at_analysis": 91210,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-17T07:50:54+00:00",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
     "readme_available": true
   },
   "github/awesome-copilot": {
@@ -9910,33 +9910,33 @@
   },
   "freecodecamp/freecodecamp": {
     "analysis": {
-      "one_liner": "免费开源的全栈编程学习平台与课程体系，帮助成人转行进入科技行业。",
+      "one_liner": "免费开源的全栈编程与计算机科学学习平台，提供交互式课程与认证。",
       "core_features": [
-        "提供响应式网页设计、JavaScript、Python、关系型数据库等免费认证课程",
-        "包含交互式编程挑战、工作坊、实验、测验与项目实战",
+        "提供响应式网页设计、JavaScript、Python、后端开发等免费认证课程",
+        "包含数千个交互式编程挑战、工作坊、实验和测验",
         "提供英语、西班牙语、中文等语言认证课程",
-        "社区支持包括论坛、Discord、YouTube 频道和技术出版物",
-        "支持贡献者参与开源协作，对新手友好"
+        "社区支持包括论坛、Discord、YouTube 频道和教程文章",
+        "支持通过完成项目与考试获得可验证的认证证书"
       ],
       "tech_stack": [
         "TypeScript",
         "Node.js",
         "React",
         "MongoDB",
-        "Docker"
+        "Express"
       ],
-      "highlights": "全球最大的开源编程教育项目之一，拥有超过 45 万 Star，课程完全免费且自定进度，已帮助超过 10 万人获得第一份开发者工作。",
-      "target_audience": "希望免费学习编程并转行科技行业的成人学习者，以及想参与大型开源教育项目贡献的开发者。",
+      "highlights": "拥有超过 45 万 Star 的全球最大开源编程教育项目之一，课程完全免费且自定进度，已帮助超过 10 万人获得第一份开发者工作。",
+      "target_audience": "希望免费学习编程、数学和计算机科学的初学者及转行开发者，以及愿意参与开源教育贡献的志愿者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 455667,
+    "stars_at_analysis": 456321,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
     "readme_available": true
   },
   "larksuite/cli": {
@@ -14056,11 +14056,11 @@
     "analysis": {
       "one_liner": "一款用于发现、分类、验证和分析泄露凭据的开源密钥扫描工具",
       "core_features": [
-        "在 Git、聊天、Wiki、日志、对象存储、文件系统等多处扫描密钥",
+        "在 Git、聊天、Wiki、日志、对象存储、文件系统等多处发现密钥",
         "分类超过 800 种密钥类型并映射到所属身份",
-        "对可分类的密钥进行登录验证，确认是否仍然有效",
+        "对可分类的密钥进行登录验证，确认是否为有效凭据",
         "对常见泄露凭据类型进行深度分析，了解创建者、可访问资源与权限",
-        "支持 Docker、Homebrew、二进制发布、源码编译及安装脚本等多种安装方式"
+        "支持 GitHub 组织、仓库扫描，可排除归档仓库并输出 JSON"
       ],
       "tech_stack": [
         "Go",
@@ -14068,18 +14068,18 @@
         "Cosign",
         "GoReleaser"
       ],
-      "highlights": "不仅能发现密钥，还能分类、验证其是否仍然有效，并对常见凭据类型进行深度分析，帮助判断是否存在真实威胁",
-      "target_audience": "安全工程师、DevSecOps 从业者、需要检测代码库或系统中泄露凭据的开发者",
+      "highlights": "不仅发现密钥，还能验证密钥是否仍然有效，并对常见凭据类型做权限与资源分析，覆盖 800 多种密钥类型。",
+      "target_audience": "安全工程师、DevSecOps 从业者、需要检测代码库或系统中凭据泄露的开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 27990,
+    "stars_at_analysis": 28110,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-19T07:24:29+00:00",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
     "readme_available": true
   },
   "zcshou/gogogo": {
@@ -23199,31 +23199,32 @@
   },
   "paperclipai/paperclip": {
     "analysis": {
-      "one_liner": "一个开源的多智能体编排平台，用任务管理器的方式管理 AI 代理团队并追踪目标与成本。",
+      "one_liner": "一个开源的多智能体编排平台，用任务管理器的方式管理 AI 代理团队并追踪成本。",
       "core_features": [
-        "跨提供方接入多种代理（OpenClaw、Claude Code、Codex、Cursor 等），统一到一张组织架构图中",
-        "以目标为导向的任务管理：任务、审批与评审门禁，可审计的例程与工作流",
-        "代理组织架构：角色、权限、汇报线与治理，支持人类与代理混合团队",
-        "成本控制与预算：按代理设置月度预算，超限即停止",
-        "心跳调度与全链路审计：代理按计划唤醒执行，工具调用可追溯"
+        "自带代理接入：支持 OpenClaw、Claude Code、Codex、Cursor、Bash、HTTP 等任意代理运行时",
+        "目标对齐与心跳机制：任务可追溯到组织使命，代理按计划唤醒并执行、上下级委派",
+        "成本控制与治理：按代理设置月度预算，超限即停，可审批、暂停或终止代理",
+        "组织架构图：为人类与代理定义角色、权限、汇报线与职责边界",
+        "工单与审计：对话线程化、完整工具调用追踪与不可变审计日志"
       ],
       "tech_stack": [
         "TypeScript",
         "Node.js",
-        "React"
+        "React",
+        "MCP"
       ],
-      "highlights": "把 AI 代理当作员工来管理，提供组织架构、预算、治理与目标对齐，强调从业务目标而非拉取请求出发进行编排。",
-      "target_audience": "希望构建自主 AI 组织、同时协调多种代理并需要监控成本与审计工作的开发者与团队。",
+      "highlights": "把 AI 代理当作员工来管理，提供组织架构、预算、治理与目标对齐，强调可审计与成本可控的自主代理组织。",
+      "target_audience": "需要协调多个 AI 代理、希望自主运行并监控成本与产出的开发者、团队管理者及平台运维人员。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 83655,
+    "stars_at_analysis": 88692,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-25T13:56:08+00:00",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
     "readme_available": true
   },
   "anthropics/claude-plugins-official": {
@@ -23610,35 +23611,35 @@
   },
   "mvschwarz/openrig": {
     "analysis": {
-      "one_liner": "用 YAML 定义多智能体团队，一条命令启动 Claude Code 与 Codex 协同工作",
+      "one_liner": "用 YAML 定义多智能体团队，把 Claude Code 与 Codex 作为统一系统编排运行。",
       "core_features": [
-        "YAML 定义智能体团队并一键启动",
-        "Claude Code 与 Codex 在同一 rig 中统一管理",
-        "主智能体协调跨团队专家并汇总结果与待决策事项",
-        "基于 tmux 的持久化会话与共享 TUI 仪表盘",
-        "内置任务队列与消息发送机制"
+        "用 YAML 定义智能体团队，一条命令启动整个 rig",
+        "同一 rig 内混合运行 Claude Code 与 Codex 两种 harness",
+        "通过 lead agent 协调跨团队专家并汇总结果与待决策项",
+        "提供 TUI 共享仪表盘查看座位、运行时、模型与上下文状态",
+        "基于 tmux 会话与队列消息机制管理持久化智能体团队"
       ],
       "tech_stack": [
         "TypeScript",
-        "Node.js",
+        "Node.js 20/22/24",
         "tmux",
         "SQLite",
+        "npm/Bun",
         "Claude Code",
-        "Codex",
-        "cmux"
+        "Codex"
       ],
-      "highlights": "把零散的终端 AI 会话组织成持久化、可协调的多智能体团队，并统一管理 Claude Code 与 Codex 两套 harness",
-      "target_audience": "希望用多智能体协作完成仓库级编码任务的开发者，以及需要统一管理多种 AI 编码代理的团队",
+      "highlights": "把散落的终端会话变成持久化、有组织的智能体团队，并支持异构 harness 统一编排，同时明确披露对机器上 provider 配置与信任设置的改动。",
+      "target_audience": "希望用多智能体协作完成编码任务、且已在用 Claude Code 或 Codex 的开发者与团队。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 391,
+    "stars_at_analysis": 657,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-25T13:56:08+00:00",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
     "readme_available": true
   },
   "vega-org/vega-app": {
@@ -25730,6 +25731,356 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-09-27T08:20:44+00:00",
+    "readme_available": true
+  },
+  "git-bug/git-bug": {
+    "analysis": {
+      "one_liner": "一个完全集成在 git 中、分布式且支持离线的 bug 追踪器",
+      "core_features": [
+        "bug 数据直接存储在 git 仓库中，不污染项目文件",
+        "通过 git remote 推送和拉取 bug，实现分布式协作",
+        "完全离线可用，支持 CLI、终端 UI 和 Web UI 多种界面",
+        "提供 GraphQL API 便于与现有工具集成",
+        "支持与 GitHub、GitLab、Jira、Launchpad 等平台双向桥接"
+      ],
+      "tech_stack": [
+        "Go",
+        "GraphQL",
+        "Git"
+      ],
+      "highlights": "将 bug 追踪数据以 DAG 实体格式存储在 git 中，实现去中心化、离线优先且防止供应商锁定的问题管理方式",
+      "target_audience": "偏好命令行与 git 工作流、重视数据自主权和离线协作的开发者与团队",
+      "scores": {
+        "innovation": 5,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 10596,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "daeuniverse/dae": {
+    "analysis": {
+      "one_liner": "基于 eBPF 的 Linux 高性能透明代理方案，实现真正的直连流量分流。",
+      "core_features": [
+        "通过 eBPF 实现 Real Direct 流量分流，直连流量绕过代理转发，性能损耗极低",
+        "支持按本机进程名和局域网 MAC 地址进行流量分流",
+        "支持反向匹配规则与按策略自动切换节点（自动测试 TCP/UDP/IPv4/IPv6 延迟）",
+        "支持高级 DNS 解析流程",
+        "支持 shadowsocks、trojan(-go)、socks5 的 full-cone NAT 及多种主流代理协议"
+      ],
+      "tech_stack": [
+        "Go",
+        "eBPF",
+        "Linux 内核透明代理与流量分流套件"
+      ],
+      "highlights": "作为 v2rayA 的继任者，放弃 v2ray-core，利用 eBPF 在内核层实现真正的直连流量分流，使直连流量几乎无性能损失和额外资源消耗。",
+      "target_audience": "需要在 Linux 上搭建高性能透明代理、关注流量分流与网络性能的开发者及进阶用户。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 6240,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "mlmvpn/mlmvpn_windows": {
+    "analysis": {
+      "one_liner": "面向 Windows 的多引擎反审查桌面客户端，集成干净 IP 扫描与 Cloudflare 基础设施管理。",
+      "core_features": [
+        "集成十四种代理/反审查引擎（Xray、sing-box、WARP、Psiphon、Tor 等），一键连接并自动选择可用线路",
+        "干净 IP 扫描器：扫描 Cloudflare、Fastly、Akamai 等 CDN 地址段，经真实健康测试后保留可用结果",
+        "Cloudflare 基础设施管理：部署与接管 Workers、管理 KV 与 D1、生成配置，支持 BPB 与 Zeus 面板",
+        "按应用分流与全隧道模式，含 kill switch 与 DNS 防护，改动前先落盘系统状态以便回滚",
+        "本机实时测量延迟、吞吐、抖动与丢包，并提供游戏延迟优化管线与对局卡顿归因"
+      ],
+      "tech_stack": [
+        "Electron",
+        "JavaScript",
+        "Node.js",
+        "Xray-core",
+        "sing-box",
+        "WireGuard/AmneziaWG",
+        "Cloudflare WARP",
+        "OpenVPN",
+        "Tor",
+        "Psiphon"
+      ],
+      "highlights": "把十四种反审查引擎并排放在同一桌面环境里，在本机实测并告知当前网络下真正可用的是哪一个；同时提供干净 IP 扫描与自有 Cloudflare 账号的 Workers/KV/D1 管理，全部流量走用户自己的基础设施，不经过项目方服务器。",
+      "target_audience": "需要在 Windows 上对抗网络审查、愿意自行准备服务器或使用免费公共网络的进阶用户，以及关注多引擎代理架构与 Electron 桌面网络工具实现的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 148,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "meteordevelopment/meteor-client": {
+    "analysis": {
+      "one_liner": "基于 Fabric 的 Minecraft 无政府服务器实用工具模组。",
+      "core_features": [
+        "面向无政府服务器的游戏内实用功能模组",
+        "基于 Fabric 加载器与 Yarn 映射构建",
+        "使用 Gradle 构建，支持源码编译安装",
+        "提供 Discord 社区、问题追踪与贡献指南",
+        "遵循 GPLv3 开源许可，禁止闭源使用其代码"
+      ],
+      "tech_stack": [
+        "Java",
+        "Fabric",
+        "Yarn",
+        "Gradle",
+        "Baritone"
+      ],
+      "highlights": "面向无政府服务器的 Fabric 工具模组，社区活跃（近四千 Star、上千 Fork），集成 Baritone，采用 GPLv3 严格开源许可。",
+      "target_audience": "对 Minecraft 模组开发、Fabric 生态及游戏工具类项目感兴趣的 Java 开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 3879,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "infinityloop1308/pipepipe": {
+    "analysis": {
+      "one_liner": "基于 NewPipe 深度定制的开源安卓应用，可自由浏览 YouTube 等平台的视频内容。",
+      "core_features": [
+        "集成 SponsorBlock 跳过赞助片段，并用 ReturnYouTubeDislike 恢复 YouTube 点踩数",
+        "支持弹幕式实时聊天叠加、AV1/VP9 编解码与后台音乐播放模式",
+        "提供关键词/频道过滤、屏蔽 Shorts 与付费视频等高级搜索过滤",
+        "支持滑动手势跳转、长按加速、睡眠定时等播放控制",
+        "支持整份播放列表批量下载，并可在本地播放列表与历史中搜索排序"
+      ],
+      "tech_stack": [
+        "Android",
+        "NewPipe",
+        "Shell",
+        "SponsorBlock",
+        "ReturnYouTubeDislike",
+        "AV1",
+        "VP9"
+      ],
+      "highlights": "从 NewPipe 硬分叉独立开发，以更快的修复节奏和更频繁的功能更新为特色，并加入登录访问受限内容、弹幕聊天等增强能力。",
+      "target_audience": "希望无广告、自由浏览 YouTube 等平台内容的安卓用户，以及想基于 NewPipe 生态做二次开发的开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 6420,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "microsoft/data-formulator": {
+    "analysis": {
+      "one_liner": "微软开源的 AI 驱动交互式数据分析与可视化工具，支持连接多种数据源并探索数据。",
+      "core_features": [
+        "通过自然语言与 UI 交互结合的方式探索数据并生成可视化图表",
+        "数据连接器支持文件、本地文件夹、数据库及 Databricks 等平台",
+        "Data Thread 支持分支探索不同问题、对比分析路径并保留上下文",
+        "支持从截图、文本、CSV 或数据库等多种格式的数据起步",
+        "内置 30+ 图表类型与样式优化智能体，可生成并分享报告"
+      ],
+      "tech_stack": [
+        "Python",
+        "DuckDB",
+        "LiteLLM",
+        "Flint 图表引擎",
+        "uv / pip"
+      ],
+      "highlights": "由微软研究院推出，将 UI 交互与自然语言结合，用 Data Thread 管理探索分支，并基于自研 Flint 图表语言生成高质量可视化。",
+      "target_audience": "数据分析师、数据科学家以及希望用 AI 辅助数据探索与可视化的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 17404,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "expo/expo": {
+    "analysis": {
+      "one_liner": "基于 React 构建可同时运行于 Android、iOS 和 Web 的通用原生应用的开源框架。",
+      "core_features": [
+        "提供跨平台通用运行时，一套代码运行于 Android、iOS 和 Web",
+        "包含 Expo SDK 与 Modules API，可用 React 和 JavaScript 编写原生应用",
+        "提供 Expo Go 客户端，可即时预览运行应用",
+        "包含 CLI、Router、模板与文档等配套工具链",
+        "与 EAS 托管服务深度集成，支持构建、发布与迭代"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "React",
+        "React Native",
+        "Expo SDK",
+        "Expo CLI",
+        "Expo Router",
+        "CocoaPods",
+        "Xcode"
+      ],
+      "highlights": "拥有超过 5.2 万 Star 的成熟跨平台框架，覆盖 SDK、运行时、CLI、Router、文档与 Expo Go 客户端，形成完整的通用原生应用开发生态。",
+      "target_audience": "希望用 React 与 JavaScript 一次编写、多端发布的移动与 Web 应用开发者，以及需要自定义原生模块的进阶开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 52459,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "ebookfoundation/free-programming-books": {
+    "analysis": {
+      "one_liner": "汇集多语言免费编程书籍与学习资源的开源清单，由非营利基金会维护。",
+      "core_features": [
+        "按编程语言和主题分类的免费编程书籍清单",
+        "覆盖中文、阿拉伯语、孟加拉语等数十种语言的资源列表",
+        "提供静态网站与动态搜索站点两种浏览方式",
+        "面向新手的贡献指南、行为准则与多语言翻译",
+        "通过 Hacktoberfest 等活动持续接受社区贡献"
+      ],
+      "tech_stack": [
+        "Markdown",
+        "Python",
+        "GitHub Pages",
+        "GitHub Actions"
+      ],
+      "highlights": "近 40 万 Star 的 GitHub 顶级仓库，以社区协作方式长期维护多语言免费学习资源索引，并配有独立搜索站点。",
+      "target_audience": "希望免费获取编程书籍与学习资源的学习者，以及愿意参与开源文档贡献的开发者。",
+      "scores": {
+        "innovation": 2,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 397938,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "fishjar/kiss-translator": {
+    "analysis": {
+      "one_liner": "一款简约开源的双语对照翻译浏览器扩展与油猴脚本，支持多种翻译服务与场景。",
+      "core_features": [
+        "网页双语对照翻译、输入框翻译、划词翻译、鼠标悬停翻译",
+        "YouTube 字幕翻译，支持字幕合并断句与 AI 断句",
+        "支持 Google、OpenAI、DeepL、Ollama 等多种翻译服务及自定义接口",
+        "支持自定义翻译规则、术语词典与规则订阅分享",
+        "跨客户端数据同步，支持 KISS-Worker 与 WebDAV"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "浏览器扩展",
+        "油猴脚本",
+        "Cloudflare Worker",
+        "WebDAV"
+      ],
+      "highlights": "覆盖网页、输入框、划词、悬停、字幕等多种翻译场景，接口高度可扩展，支持自定义规则、AI 上下文记忆与流式传输，并适配多浏览器与移动端。",
+      "target_audience": "需要双语对照阅读网页的普通用户，以及希望自定义翻译规则、接入自有翻译接口的开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 12650,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "dagucloud/dagu": {
+    "analysis": {
+      "one_liner": "单二进制、无外部数据库的自托管工作流编排器，用声明式 YAML 编排脚本、容器与 SSH 命令。",
+      "core_features": [
+        "声明式 YAML 定义 DAG，支持依赖、并行与并发控制",
+        "原生运行 Shell 命令、Docker 容器、Kubernetes Job 和 SSH 远程命令",
+        "内置 Web UI，提供日志、运行历史、重试、通知与 Webhook 触发",
+        "支持 cron 语法调度、时区、重叠策略与补跑窗口",
+        "内置 MCP 服务器，可检查工作流与运行、维护 Wiki 页面并控制运行"
+      ],
+      "tech_stack": [
+        "Go",
+        "YAML",
+        "Docker",
+        "Kubernetes",
+        "SSH",
+        "Helm",
+        "MCP"
+      ],
+      "highlights": "单个二进制即可运行，无需外部数据库或消息中间件，工作流结构与业务逻辑解耦，删除 YAML 后原有脚本仍可独立运行，适合资源受限或内网环境。",
+      "target_audience": "需要为现有脚本和容器添加调度、重试与可观测性，但不想运维 Airflow 等重型平台的运维与后端开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 4158,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "readme_available": true
+  },
+  "abdurazaaqmohammed/mp-manager": {
+    "analysis": {
+      "one_liner": "一款免费的双窗格 Material Design 安卓文件管理器，专注于 APK 处理，目标是成为 MT Manager 的开源替代品。",
+      "core_features": [
+        "双窗格文件浏览，支持书签、历史、过滤、排序、隐藏文件与高级搜索",
+        "内置音视频播放器与图片查看器，支持 EXIF 元数据",
+        "APK 信息查看、安装、签名（JKS/PKCS12/PK8/PEM）、反编译、构建、合并、保护与克隆",
+        "快速编辑 APK 属性（图标、名称、版本、SDK 等）及清单树视图编辑",
+        "基于 Sora Editor 的文本编辑器（支持 AXML 解码）与文本、ZIP/APK、resources.arsc 对比工具"
+      ],
+      "tech_stack": [
+        "Java",
+        "Android",
+        "Material Design",
+        "REAndroid APKEditor",
+        "Sora Editor",
+        "DEX Editor Pro",
+        "ApkCloner"
+      ],
+      "highlights": "将文件管理与 APK 逆向工程工具深度整合，提供签名、反编译、Dex 编辑、资源对比等一站式功能，且完全开源免费。",
+      "target_audience": "需要处理 APK 的安卓开发者、逆向工程爱好者，以及寻找 MT Manager 开源替代品的用户。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 81,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-09-27T14:06:33+00:00",
     "readme_available": true
   }
 }
