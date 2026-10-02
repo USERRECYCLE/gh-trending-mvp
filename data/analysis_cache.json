@@ -31644,5 +31644,39 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-10-02T19:24:04+00:00",
     "readme_available": true
+  },
+  "webbrain-one/webbrain": {
+    "analysis": {
+      "one_liner": "开源 AI 浏览器智能体扩展，可在侧边栏对话页面、自动执行任务并运行多步工作流。",
+      "core_features": [
+        "通过无障碍树读取页面文本、链接、表单、表格与 PDF，并支持点击、输入、滚动、导航、上传下载等操作",
+        "Ask/Act/Dev 三种权限模式控制智能体可执行的动作范围",
+        "多步自主工具调用循环，可配置步数上限并支持计划审批",
+        "支持本地模型（llama.cpp、Ollama、vLLM 等）与多家云 API，含免配置默认模型",
+        "保存可复用工作流、定时任务与页面监控，以及按标签页独立会话与上下文自动压缩"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Chrome/Firefox/Edge 浏览器扩展",
+        "OpenAI 兼容 API",
+        "llama.cpp",
+        "Ollama",
+        "vLLM",
+        "SGLang",
+        "WebGPU"
+      ],
+      "highlights": "模型选择高度自由，从免配置默认模型到本地推理与 112 个内置云服务商卡片；以无障碍树替代脆弱选择器，并提供计划审批、分模式权限与按站点授权等安全控制。",
+      "target_audience": "希望构建或使用浏览器自动化智能体的前端与全栈开发者，以及关注本地大模型集成和隐私可控 AI 工具的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 1185,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-02T23:51:22+00:00",
+    "readme_available": true
   }
 }
