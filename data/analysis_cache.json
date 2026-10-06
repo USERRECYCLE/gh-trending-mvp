@@ -6379,33 +6379,34 @@
   },
   "aprilnea/openlogi": {
     "analysis": {
-      "one_liner": "用 Rust 编写的原生本地化罗技外设管理工具，替代 Logitech Options+，支持按键重映射、DPI 与 SmartShift 调节。",
+      "one_liner": "用 Rust 编写的本地优先罗技外设管理工具，替代 Logitech Options+，支持按键重映射、DPI 与 SmartShift 调节。",
       "core_features": [
-        "通过 HID++ 重映射鼠标按键、DPI 与 SmartShift 滚轮模式",
-        "支持手势绑定、Actions Ring 八槽动作环与按应用自动切换配置",
-        "键盘 F 键全局重映射与静态 RGB 灯效控制",
-        "罗技 UVC 摄像头图像参数调节与一键预设",
-        "纯文本 TOML 配置，可跨设备同步，并提供 CLI 与 GUI"
+        "通过 HID++ 与 UVC 管理罗技鼠标、键盘和摄像头，显示电量与充电状态",
+        "按键重映射：内置动作目录与自定义快捷键，支持短按/长按与按住不放组合",
+        "按应用自动切换配置的配置文件叠加层（macOS、Windows 及 Linux X11/XWayland）",
+        "鼠标 DPI 预设、SmartShift 滚轮模式与灵敏度、手势绑定及 Actions Ring 八槽动作环",
+        "Litra 灯光与罗技 UVC 摄像头控制，含实时预览与一键配置快照"
       ],
       "tech_stack": [
         "Rust",
         "GPUI",
         "HID++",
         "UVC",
-        "TOML"
+        "TOML",
+        "CLI"
       ],
-      "highlights": "原生 Rust 实现、本地优先、无账号无遥测，且将 Linux 作为一等平台，弥补了官方 Options+ 的不足。",
-      "target_audience": "使用罗技鼠标、键盘或摄像头的开发者，尤其是 Linux 用户和偏好本地化、可脚本化配置的高级用户。",
+      "highlights": "原生 Rust 实现、本地优先、无账号无遥测，Linux 为一等平台，配置为纯文本 TOML 可同步，同时提供 GUI 与 CLI。",
+      "target_audience": "希望摆脱 Logitech Options+ 的罗技外设用户，尤其是 Linux 用户、喜欢纯文本配置与脚本化的开发者，以及对 Rust 桌面与 HID 协议开发感兴趣的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 22154,
+    "stars_at_analysis": 22974,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-25T07:57:47+00:00",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
     "readme_available": true
   },
   "majd/ipatool": {
@@ -9603,20 +9604,20 @@
         "Node.js",
         "Model Context Protocol SDK",
         "Docker",
-        "npm/npx"
+        "npm"
       ],
-      "highlights": "把 12306 余票查询能力封装成标准 MCP 工具，可被大模型直接调用，并支持过站与中转查询等实用场景。",
-      "target_audience": "对大模型工具调用、MCP 协议感兴趣，或想为 AI 助手接入出行查询能力的开发者。",
+      "highlights": "将 12306 车票查询能力封装为 MCP 工具，使大模型可直接调用，并同时提供 CLI 与 Docker 部署方式。",
+      "target_audience": "对大模型工具调用、MCP 协议及出行信息查询感兴趣的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 1599,
+    "stars_at_analysis": 2218,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-17T13:35:25+00:00",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
     "readme_available": true
   },
   "strands-agents/harness-sdk": {
@@ -14685,28 +14686,28 @@
       "one_liner": "用 Rust 编写的高性能 Unix 链接器，可无缝替换现有链接器以大幅加速构建。",
       "core_features": [
         "作为现有 Unix 链接器的直接替代品，无需修改构建配置",
-        "在基准测试中链接速度中位数比 LLVM lld 快 4.9 倍、比 wild 快 1.9 倍",
-        "支持 x86-64、i386、ARM 32/64、RISC-V 32/64、PowerPC 32/64、s390x、LoongArch 32/64、SPARC64、m68k、SH-4 等多种架构",
-        "通过大规模并行与高效数据结构算法实现加速",
-        "提供 Linux 各架构预编译二进制及多种系统发行版软件包"
+        "在基准测试中链接速度中位数达 LLVM lld 的 4.9 倍",
+        "支持 x86-64、ARM、RISC-V、PowerPC、s390x、LoongArch、SPARC64、m68k、SH-4 等多种架构",
+        "通过广泛并行化与高效数据结构算法实现高速链接",
+        "自 2021 年起已在生产环境使用，是许多大型开源项目的默认链接器"
       ],
       "tech_stack": [
         "Rust",
         "Cargo",
         "LLVM lld（作者背景）"
       ],
-      "highlights": "由 LLVM lld 原作者从零重写，自 2021 年起投入生产使用，已成为许多大型开源项目的默认链接器并被多家公司内部采用。",
-      "target_audience": "使用 C、C++ 或 Rust 等编译型语言、关注构建速度的开发者，尤其是需要频繁调试-编辑-重建循环的大型项目开发者。",
+      "highlights": "由 LLVM lld 原作者从零设计，摆脱了 lld 的架构限制；在大型程序（如 Chromium、TensorFlow）上相比 lld 有数倍到十几倍的链接加速，且已被众多大型开源项目采用为默认链接器。",
+      "target_audience": "使用 C、C++ 或 Rust 等编译型语言、关注构建速度的开发者，尤其是需要频繁调试-编辑-重编译循环的大型项目开发者与系统工具链维护者。",
       "scores": {
-        "innovation": 4,
+        "innovation": 5,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 17143,
+    "stars_at_analysis": 17499,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-19T12:33:54+00:00",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
     "readme_available": true
   },
   "nvidia/tensorrt-llm": {
@@ -20336,32 +20337,33 @@
   },
   "simohypers/limusic": {
     "analysis": {
-      "one_liner": "基于 Tauri + Rust + SvelteKit 的原生桌面 YouTube Music 客户端，无广告、无 Electron。",
+      "one_liner": "基于 Tauri + Rust + SvelteKit 的原生 YouTube Music 桌面客户端，无广告、不依赖 Electron。",
       "core_features": [
-        "直连 YouTube 内部 API 实现无广告播放，音频由 libmpv 输出",
-        "支持账号登录、音乐库管理、历史记录与搜索浏览",
-        "无缝播放、响度归一化、队列与电台自动续播",
+        "无广告播放，通过 libmpv 实现无缝播放与响度归一化",
+        "搜索浏览歌曲、专辑、艺人、歌单及首页推荐，支持多账号登录与库管理",
         "逐词同步歌词、音乐视频、迷你播放器与影院模式",
-        "Last.fm 记录与 Discord Rich Presence 集成"
+        "Last.fm 记录与 Discord Rich Presence 集成",
+        "系统托盘、媒体键、Listen Together 同步收听及十五种语言支持"
       ],
       "tech_stack": [
-        "Tauri 2",
         "Rust",
+        "Tauri 2",
         "SvelteKit",
-        "libmpv"
+        "libmpv",
+        "Weblate"
       ],
-      "highlights": "用 Rust + Tauri 替代 Electron 构建原生桌面客户端，直接对接 YouTube 内部 API 实现无广告播放，并集成 Last.fm、Discord Rich Presence、系统托盘与多平台媒体键等桌面级功能。",
-      "target_audience": "关注原生桌面应用开发、Rust/Tauri 技术栈，以及希望获得无广告 YouTube Music 桌面体验的开发者与用户。",
+      "highlights": "用 Rust + Tauri 替代 Electron 实现原生桌面体验，直接对接 YouTube 内部 API 播放音频，功能覆盖歌词、视频、多账号、社交集成与主题定制，完成度接近商业客户端。",
+      "target_audience": "希望学习 Tauri/Rust 桌面开发、关注原生替代 Electron 方案，以及需要无广告 YouTube Music 桌面客户端的开发者与用户。",
       "scores": {
         "innovation": 4,
-        "practicality": 4,
+        "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 553,
+    "stars_at_analysis": 850,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-23T07:50:10+00:00",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
     "readme_available": true
   },
   "keeperorowner/nagramxf": {
@@ -26820,32 +26822,32 @@
   },
   "0x4m4/hexstrike-ai": {
     "analysis": {
-      "one_liner": "一个基于MCP协议的AI安全自动化平台，让AI代理自主调用150+安全工具完成渗透测试与漏洞挖掘。",
+      "one_liner": "基于 MCP 协议让 AI 代理自主调用 150+ 安全工具，实现自动化渗透测试与漏洞发现。",
       "core_features": [
-        "通过MCP协议连接Claude、GPT、Copilot等AI代理，实现自主安全测试",
-        "集成150+专业安全工具，覆盖网络侦察、Web应用、云安全、二进制分析、CTF与OSINT",
-        "内置12+自主AI代理，如BugBounty、CTF Solver、CVE情报与漏洞利用生成代理",
-        "智能决策引擎负责工具选择、参数优化与攻击链发现",
+        "通过 MCP 协议连接 Claude、GPT、Copilot 等 AI 客户端",
+        "集成 150+ 网络安全工具，覆盖网络、Web、云、二进制、CTF、OSINT",
+        "内置 12+ 自主 AI 代理，如 BugBounty、CTF Solver、CVE 情报与漏洞利用生成",
+        "智能决策引擎自动选择工具、优化参数并发现攻击链",
         "提供实时可视化仪表盘、漏洞卡片与风险分析报告"
       ],
       "tech_stack": [
         "Python",
         "FastMCP",
-        "MCP协议",
-        "Claude/GPT/Copilot等AI客户端"
+        "MCP 协议",
+        "Nmap、SQLMap、Ghidra、Prowler 等安全工具"
       ],
-      "highlights": "将大语言模型与真实攻防安全工具链打通，通过多智能体架构实现从目标分析到漏洞发现的自动化渗透流程，并支持多种主流AI客户端接入。",
-      "target_audience": "从事渗透测试、漏洞挖掘、Bug Bounty与安全研究的开发者，以及希望将AI代理接入安全工具链的安全工程师。",
+      "highlights": "将 LLM 与真实攻防工具链打通，用多代理架构实现自主渗透测试流程，工具覆盖面广且支持主流 AI 客户端集成。",
+      "target_audience": "安全研究人员、渗透测试工程师、漏洞赏金猎人以及希望将 AI 代理接入安全工具链的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 12229,
+    "stars_at_analysis": 12458,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-29T08:41:57+00:00",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
     "readme_available": true
   },
   "axorax/awesome-free-apps": {
@@ -27480,33 +27482,33 @@
   },
   "topoteretes/cognee": {
     "analysis": {
-      "one_liner": "开源 AI 记忆平台，为智能体提供跨会话的持久长期记忆，可本地免费运行。",
+      "one_liner": "开源 AI 记忆平台，为智能体提供跨会话的持久长期记忆，可本地免费运行",
       "core_features": [
-        "将文档、代码与对话转化为可检索的知识图谱",
-        "为智能体提供跨会话的持久长期记忆",
-        "无需 LLM 密钥即可用本地小模型完成抽取与嵌入",
+        "将文档、代码和对话转化为可自托管的知识图谱",
+        "为 AI 智能体提供跨会话的持久长期记忆",
+        "无需 API Key，使用本地小模型在 CPU 上运行",
         "支持自定义数据模型与本体来组织记忆",
-        "提供 CLI、插件与 MCP 方式接入已有智能体"
+        "提供 CLI 与 Python API，可接入现有智能体"
       ],
       "tech_stack": [
         "Python",
         "GLiNER 本地抽取模型",
         "本地嵌入模型",
         "知识图谱",
-        "OpenAI/Ollama 等 LLM 提供商"
+        "OpenAI 或本地 Ollama 等 LLM 提供商"
       ],
-      "highlights": "无需 API 密钥即可在本地用 CPU 小模型构建知识图谱记忆，兼顾自托管与免费使用，并配有研究论文支撑。",
-      "target_audience": "需要为智能体添加长期记忆的 AI 应用开发者，以及关注知识图谱与 LLM 结合、希望自托管记忆系统的工程师。",
+      "highlights": "无需 API Key 即可本地免费运行，用小型模型在 CPU 上完成知识图谱抽取与嵌入，把非结构化内容变成智能体可检索复用的自托管记忆",
+      "target_audience": "构建 AI 智能体、需要为智能体添加长期记忆或搭建企业知识大脑的 Python 开发者",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 31189,
+    "stars_at_analysis": 31481,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-29T08:41:57+00:00",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
     "readme_available": true
   },
   "fish2018/pansou": {
@@ -33762,6 +33764,137 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-10-06T09:06:39+00:00",
+    "readme_available": true
+  },
+  "morluto/rea": {
+    "analysis": {
+      "one_liner": "通过 MCP 让 AI Agent 逆向分析二进制、应用与运行时行为，从应用功能一路深入到原生二进制层。",
+      "core_features": [
+        "以 MCP 方式把逆向分析工具接入 Claude Code、Cursor、Codex 等 AI Agent",
+        "支持原生二进制、JavaScript/Electron 应用、.NET 程序集、网站、APK 与固件等多种目标",
+        "分析在本地运行，结论附带证据、限制与未知项",
+        "可复用已有的 Hopper、Ghidra 或 IDA Pro 作为原生分析引擎",
+        "提供命令行接口与 setup、doctor 等安装诊断流程"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Node.js 22+",
+        "MCP",
+        "npm",
+        "Hopper",
+        "Ghidra",
+        "IDA Pro",
+        "JADX",
+        "Binwalk",
+        "Unblob"
+      ],
+      "highlights": "把逆向工程能力封装成统一的 MCP 工具目录，让 AI Agent 能自动完成从应用行为到二进制层的调查，并强调本地执行与证据可追溯。",
+      "target_audience": "需要理解第三方应用实现、进行安全研究或二进制逆向的开发者与安全研究人员，尤其是已在用 AI 编码助手的用户。",
+      "scores": {
+        "innovation": 5,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 8357,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
+    "readme_available": true
+  },
+  "raullenchai/rapid-mlx": {
+    "analysis": {
+      "one_liner": "面向 Apple Silicon 的本地 LLM 推理服务器，兼容 OpenAI 与 Anthropic 接口，专注编码智能体的可靠工具调用。",
+      "core_features": [
+        "兼容 OpenAI 与 Anthropic Messages 的本地 API 接口",
+        "基于 MLX 的 Apple Silicon 推理，同权重下比 mlx-lm 最高快 4 倍",
+        "27 个工具调用解析模块，含自动检测回退，保障编码智能体工具调用",
+        "连续批处理与 Radix 前缀缓存，KV 缓存量化并支持磁盘持久化",
+        "提供 macOS 桌面应用与 Homebrew、PyPI 安装方式"
+      ],
+      "tech_stack": [
+        "Python 3.10+",
+        "MLX",
+        "OpenAI / Anthropic 兼容 API",
+        "Homebrew",
+        "PyPI"
+      ],
+      "highlights": "在相同模型与权重下通过投机解码（MTP 加 prompt lookup）实现显著加速，并针对编码智能体的工具调用做了大量解析适配，同时兼容主流云端 API 协议，便于直接替换本地后端。",
+      "target_audience": "在 Apple Silicon 上做本地大模型推理、开发编码智能体或需要 OpenAI/Anthropic 兼容本地后端的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 3914,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
+    "readme_available": true
+  },
+  "llm-d/llm-d-router": {
+    "analysis": {
+      "one_liner": "面向 LLM 推理请求的智能入口路由，实现负载与前缀缓存感知的调度和流量控制。",
+      "core_features": [
+        "基于 Endpoint Picker（EPP）的智能路由，考虑 KV 缓存局部性、当前负载与优先级",
+        "通过 ext-proc 协议与 Envoy 等生产级代理集成",
+        "提供 InferenceObjective 与 InferenceModelRewrite 请求管理 API，支持优先级与模型名重写",
+        "支持 P/D 与 E/P/D 多阶段推理生命周期的 Disaggregation Sidecar",
+        "支持 Standalone 模式与基于 Kubernetes Gateway API 的 Gateway 模式部署"
+      ],
+      "tech_stack": [
+        "Go",
+        "Envoy",
+        "ext-proc",
+        "Kubernetes Gateway API",
+        "Helm",
+        "OpenTelemetry"
+      ],
+      "highlights": "将推理调度智能从数据平面解耦，通过 EPP 与 ext-proc 注入实时信号，并支持前缀缓存感知路由与 P/D 分离编排。",
+      "target_audience": "构建 LLM 推理服务平台、需要 Kubernetes 与 Gateway API 流量治理能力的后端与基础设施开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 374,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
+    "readme_available": true
+  },
+  "deepseek-ai/deepgemm": {
+    "analysis": {
+      "one_liner": "DeepSeek 开源的高性能 GPU 张量核心算子库，统一覆盖 LLM 训练与推理的核心 GEMM 与 MoE 计算。",
+      "core_features": [
+        "支持 FP8、FP4、BF16 多种精度的 GEMM 内核，覆盖 NT/NN/TN/TT 内存布局",
+        "提供分组 GEMM（连续布局与掩码布局），适配 MoE 专家计算场景",
+        "Mega MoE 将 EP 分发、线性层、SwiGLU 与合并融合为单个大内核并重叠通信",
+        "为 DeepSeek V3.2 闪电索引器提供 MQA 打分内核（非分页与分页版本）",
+        "通过 DeepJIT 在运行时编译内核，安装时无需 CUDA 编译"
+      ],
+      "tech_stack": [
+        "CUDA",
+        "CUTLASS",
+        "CuTe",
+        "PyTorch",
+        "Python",
+        "DeepJIT"
+      ],
+      "highlights": "以极简的代码结构实现与专家调优库相当甚至更优的性能，H800 上可达 1550 TFLOPS，且是学习 NVIDIA GPU 内核优化的清晰范例。",
+      "target_audience": "从事大模型训练与推理系统优化、CUDA 内核开发及高性能计算的研究者与工程师。",
+      "scores": {
+        "innovation": 5,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 8646,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-06T19:36:14+00:00",
     "readme_available": true
   }
 }
