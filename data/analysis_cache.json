@@ -1582,31 +1582,32 @@
     "analysis": {
       "one_liner": "Vercel 推出的文件系统优先的持久化 AI Agent 构建框架",
       "core_features": [
-        "以文件系统作为编写界面，agent 目录约定式组织项目结构",
-        "instructions.md 定义常驻系统提示词，tools 目录放置带类型校验的可调用函数",
-        "skills 目录按需加载流程性知识，channels 支持 HTTP、Slack、Discord 等消息通道",
-        "schedules 目录配置周期性 cron 任务，支持子代理与人工介入提示",
-        "提供 npx eve init 脚手架命令，可初始化新项目或接入现有项目"
+        "以文件系统作为编写界面，agent 目录约定式组织配置",
+        "instructions.md 定义常驻系统提示词",
+        "tools 目录提供带类型校验的可调用函数",
+        "skills 按需加载的过程性知识",
+        "channels 支持 HTTP、Slack、Discord 等消息通道及定时任务"
       ],
       "tech_stack": [
         "TypeScript",
         "Node.js",
-        "npm/npx",
         "Zod",
-        "Vercel AI Gateway"
+        "npm/npx",
+        "Vercel AI Gateway",
+        "Vercel 部署平台"
       ],
-      "highlights": "用目录约定替代复杂配置，让 Agent 项目更易检查、扩展和运维，并将完整文档打包进 npm 包供编码 Agent 本地读取",
-      "target_audience": "希望快速构建可维护、可持久运行 AI Agent 的 TypeScript 开发者与团队",
+      "highlights": "用目录约定替代复杂配置，让 Agent 项目更易检查、扩展与运维，并内置完整文档供编码 Agent 本地读取",
+      "target_audience": "希望快速构建和部署持久化 AI Agent 的 TypeScript 开发者",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 5317,
+    "stars_at_analysis": 5482,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-17T07:50:54+00:00",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
     "readme_available": true
   },
   "projectdiscovery/nuclei": {
@@ -3150,37 +3151,37 @@
   },
   "reconurge/flowsint": {
     "analysis": {
-      "one_liner": "面向网络安全分析师的开源 OSINT 图谱调查平台，通过可视化图谱与自动化富化器探索实体关系。",
+      "one_liner": "面向网络安全分析师的开源 OSINT 图谱调查平台，通过可视化图形界面探索实体关系。",
       "core_features": [
-        "可视化图谱界面探索实体间关系",
-        "覆盖域名、IP、ASN、CIDR、社交、组织、加密货币、网站、邮箱、电话等多类富化器",
-        "模块化架构，分为 core、types、enrichers、api、app 五层",
-        "支持 N8n 工作流集成连接器",
-        "Docker 一键部署，数据全部本地存储保障隐私"
+        "基于图形的可视化调查界面，展示实体间关系",
+        "内置大量自动化 Enricher，覆盖域名、IP、ASN、CIDR、社交媒体、组织、加密货币、网站、邮箱、电话等",
+        "支持 Docker 一键部署，数据全部存储在本地以保障隐私",
+        "模块化架构，分为 core、types、enrichers、api、app 五个独立模块",
+        "支持团队/服务器网络部署，并提供 N8n 集成连接器"
       ],
       "tech_stack": [
         "TypeScript",
         "FastAPI",
-        "Pydantic",
-        "PostgreSQL",
         "Neo4j",
+        "PostgreSQL",
         "Redis",
-        "Celery",
         "Docker",
-        "Nginx"
+        "Nginx",
+        "Pydantic",
+        "Celery"
       ],
-      "highlights": "以图谱为核心组织 OSINT 调查流程，内置大量开箱即用的富化器，并强调本地化部署与隐私保护，同时提供团队/服务器部署方案与 Host 头白名单等安全设计。",
-      "target_audience": "网络安全分析师、OSINT 调查人员，以及关注图谱可视化与情报富化流程的后端与全栈开发者。",
+      "highlights": "将 OSINT 调查与图谱可视化结合，内置丰富的自动化 Enricher 生态，且强调本地存储与伦理使用规范，兼顾隐私与可扩展性。",
+      "target_audience": "网络安全分析师、OSINT 调查人员、威胁情报研究者，以及希望构建图谱化调查工具的开发者。",
       "scores": {
         "innovation": 4,
-        "practicality": 4,
+        "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 8900,
+    "stars_at_analysis": 9504,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-17T07:50:54+00:00",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
     "readme_available": true
   },
   "cilium/cilium": {
@@ -26023,13 +26024,13 @@
   },
   "abdurazaaqmohammed/mp-manager": {
     "analysis": {
-      "one_liner": "一款免费的双窗格 Material Design 安卓文件管理器，专注于 APK 处理，目标是成为 MT Manager 的开源替代品。",
+      "one_liner": "一款免费开源的双窗格 Android 文件管理器，专注 APK 编辑与签名，目标是成为 MT Manager 的开源替代品。",
       "core_features": [
-        "双窗格文件浏览，支持书签、历史、过滤、排序、隐藏文件与高级搜索",
-        "内置音视频播放器与图片查看器，支持 EXIF 元数据",
-        "APK 信息查看、安装、签名（JKS/PKCS12/PK8/PEM）、反编译、构建、合并、保护与克隆",
-        "快速编辑 APK 属性（图标、名称、版本、SDK 等）及清单树视图编辑",
-        "基于 Sora Editor 的文本编辑器（支持 AXML 解码）与文本、ZIP/APK、resources.arsc 对比工具"
+        "双窗格文件浏览，支持复制、移动、书签、历史记录、过滤排序与高级搜索",
+        "APK 工具：查看信息、安装（含分拆 APK）、签名、反编译、构建、合并、混淆资源重命名与保护",
+        "快速编辑 APK 属性（图标、应用名、版本号、SDK 等）及清单树视图编辑",
+        "APK 优化与克隆、Dex 编辑、文本编辑器（支持 AXML 解码）与文件对比工具",
+        "内置音视频播放器与图片查看器（含 EXIF 信息）"
       ],
       "tech_stack": [
         "Java",
@@ -26037,21 +26038,20 @@
         "Material Design",
         "REAndroid APKEditor",
         "Sora Editor",
-        "DEX Editor Pro",
-        "ApkCloner"
+        "DEX Editor Pro"
       ],
-      "highlights": "将文件管理与 APK 逆向工程工具深度整合，提供签名、反编译、Dex 编辑、资源对比等一站式功能，且完全开源免费。",
-      "target_audience": "需要处理 APK 的安卓开发者、逆向工程爱好者，以及寻找 MT Manager 开源替代品的用户。",
+      "highlights": "将文件管理与 APK 逆向工程工具深度整合，提供签名、反编译、Dex 编辑、AXML 编辑和文件对比等一站式功能，且完全免费开源。",
+      "target_audience": "需要频繁处理 APK 的 Android 开发者、逆向工程爱好者，以及寻找 MT Manager 开源替代方案的用户。",
       "scores": {
         "innovation": 3,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 81,
+    "stars_at_analysis": 155,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-27T14:06:33+00:00",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
     "readme_available": true
   },
   "huilang-me/cf-server-monitor": {
@@ -32367,33 +32367,32 @@
   },
   "boykopovar/anyps5": {
     "analysis": {
-      "one_liner": "将 PS5 可执行文件自动移植到 Linux 和 Windows 的工具，通过重链接而非模拟运行。",
+      "one_liner": "将 PS5 可执行文件自动移植到 Linux 和 Windows 的工具，无需模拟器或独立运行时进程。",
       "core_features": [
-        "重链接器将 PS5 可执行文件转换为目标系统原生格式",
-        "实现适用于动态链接的系统 prx 库",
+        "relinker 将可执行文件转换为目标系统原生格式",
+        "实现系统 prx 库以支持动态链接",
         "着色器重编译器生成 SPIR-V 并可用 Spirv-Tools 验证",
-        "支持 SDL 手柄及键盘鼠标输入映射配置",
-        "提供已验证游戏兼容性列表与进度追踪"
+        "支持 SDL 映射手柄及键鼠输入配置文件",
+        "提供游戏兼容性列表与已验证游戏记录"
       ],
       "tech_stack": [
         "C++",
         "SPIR-V",
         "Spirv-Tools",
-        "SDL",
-        "GNU GPL v2"
+        "SDL"
       ],
-      "highlights": "不依赖模拟器或独立运行时进程，而是通过重链接和原生库实现直接移植，着色器重编译已能产出经验证的 SPIR-V。",
-      "target_audience": "对主机移植、逆向工程、系统兼容层和图形着色器重编译感兴趣的研究型开发者。",
+      "highlights": "不依赖模拟或独立运行时进程，通过重链接与原生库实现移植，并附带着色器重编译与进度追踪徽章。",
+      "target_audience": "对主机移植、逆向工程、系统兼容层与图形着色器重编译感兴趣的研究型开发者。",
       "scores": {
-        "innovation": 5,
+        "innovation": 4,
         "practicality": 3,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 5230,
+    "stars_at_analysis": 9818,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-06T09:06:39+00:00",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
     "readme_available": true
   },
   "denoland/deno": {
@@ -32430,32 +32429,33 @@
   },
   "tester-army/e2e": {
     "analysis": {
-      "one_liner": "用自然语言描述测试目标，AI 代理驱动 Web 与移动应用完成端到端测试。",
+      "one_liner": "面向 Web 与移动应用的下一代端到端测试框架，用自然语言驱动 AI 代理完成测试目标。",
       "core_features": [
-        "用自然语言描述目标，由 agent 驱动应用执行操作",
-        "在同一测试中结合 locator 与断言校验结果",
-        "agent 步骤会被记录并在下次运行中回放，应用变化前无需调用模型",
+        "用自然语言描述测试目标，由 AI 代理驱动应用完成操作",
+        "在同一测试中结合定位器与断言校验结果",
+        "代理步骤会被记录并在应用未变化时回放，无需重复调用模型",
         "支持 Web（Chromium、Firefox、WebKit）与移动端（iOS 模拟器、Android 模拟器）",
-        "提供 CLI 初始化、GitHub PR 评论报告器与决策模型执行器"
+        "提供 CLI 初始化、GitHub PR 评论报告与决策模型执行器"
       ],
       "tech_stack": [
         "TypeScript",
         "Playwright",
         "Node.js CLI",
-        "npm 包体系"
+        "npm 多包架构",
+        "GitHub 集成"
       ],
-      "highlights": "将自然语言 agent 操作与确定性断言结合，并通过录制回放机制在应用未变化时避免重复调用大模型，兼顾灵活性与测试稳定性。",
-      "target_audience": "需要为 Web 或移动应用编写端到端测试的前端、移动端与测试工程师。",
+      "highlights": "将自然语言代理操作与传统断言结合，并支持动作录制回放，减少重复模型调用；同时覆盖 Web 与移动端，且可自带模型或本地模型。",
+      "target_audience": "需要为 Web 或移动应用编写端到端测试的前端、移动端与测试工程师，以及希望引入 AI 代理测试的团队。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 4595,
+    "stars_at_analysis": 7259,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-05T21:31:17+00:00",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
     "readme_available": true
   },
   "bennettxai/founderos-demo": {
@@ -33206,29 +33206,31 @@
   },
   "storytold/artcraft": {
     "analysis": {
-      "one_liner": "面向艺术家、设计师和电影人的交互式 AI 图像与视频创作 IDE，用可视化工具把提示词变成可控的创作。",
+      "one_liner": "面向艺术家、设计师和电影人的交互式AI图像与视频创作IDE，用可视化工具把提示词变成可控的创作。",
       "core_features": [
-        "2D 与 3D 图像合成，支持图层、背景去除与绘制工具",
-        "图像转 3D 网格、角色摆姿与身份迁移",
-        "场景搭建与 Kitbashing，控制机位、物体位置与景深",
-        "文本生成图像与提示词驱动的图像编辑",
-        "图像转场景，在同一环境中规划多个镜头"
+        "2D与3D图像合成，支持图层、背景移除与绘制工具",
+        "图像转3D网格，可精确定位、旋转与取景",
+        "角色摆姿与身份迁移，生成前先设定相机与构图",
+        "场景搭建与Kitbashing，用3D资产套件控制机位、物体位置与景深",
+        "文生图与提示词驱动的图像编辑，支持多种模型选择"
       ],
       "tech_stack": [
-        "Rust"
+        "Rust",
+        "2D/3D图形渲染",
+        "AI图像与视频生成模型集成"
       ],
-      "highlights": "把 AI 生成从单纯提示词升级为可视化、可复现的“手工创作”流程，在生成前先搭建 2D/3D 场景，强调构图、角色一致性与机位控制。",
-      "target_audience": "从事 AI 图像与视频创作的艺术家、设计师、电影人，以及关注创意工具与 Rust 桌面应用开发的工程师。",
+      "highlights": "把生成式AI从单纯提示词转向可预先搭建场景、摆姿、控机位的\"crafting\"工作流，强调精确与可重复的结果。",
+      "target_audience": "需要精确控制构图与角色一致性的艺术家、设计师、电影人，以及关注Rust图形与AI工具集成的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
-        "learning_value": 3
+        "learning_value": 4
       }
     },
-    "stars_at_analysis": 2477,
+    "stars_at_analysis": 4473,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-05T21:31:17+00:00",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
     "readme_available": true
   },
   "qeeqbox/social-analyzer": {
@@ -33769,13 +33771,13 @@
   },
   "morluto/rea": {
     "analysis": {
-      "one_liner": "通过 MCP 让 AI Agent 逆向分析二进制、应用与运行时行为，从应用功能一路深入到原生二进制层。",
+      "one_liner": "通过 MCP 让 AI 智能体逆向分析二进制、应用与运行时行为，并给出带证据的结论。",
       "core_features": [
-        "以 MCP 方式把逆向分析工具接入 Claude Code、Cursor、Codex 等 AI Agent",
-        "支持原生二进制、JavaScript/Electron 应用、.NET 程序集、网站、APK 与固件等多种目标",
-        "分析在本地运行，结论附带证据、限制与未知项",
-        "可复用已有的 Hopper、Ghidra 或 IDA Pro 作为原生分析引擎",
-        "提供命令行接口与 setup、doctor 等安装诊断流程"
+        "以 MCP 方式把逆向分析工具接入各类 AI 编码助手",
+        "支持原生二进制、JavaScript/Electron 应用、.NET 程序集与网站分析",
+        "分析在本地运行，结论附带证据与局限性说明",
+        "提供命令行工具，可脱离 MCP 直接分析 JavaScript/Electron 应用",
+        "可对接 Hopper、Ghidra、IDA 等现有分析引擎，并提供 doctor 就绪检查"
       ],
       "tech_stack": [
         "TypeScript",
@@ -33784,23 +33786,20 @@
         "npm",
         "Hopper",
         "Ghidra",
-        "IDA Pro",
-        "JADX",
-        "Binwalk",
-        "Unblob"
+        "IDA"
       ],
-      "highlights": "把逆向工程能力封装成统一的 MCP 工具目录，让 AI Agent 能自动完成从应用行为到二进制层的调查，并强调本地执行与证据可追溯。",
-      "target_audience": "需要理解第三方应用实现、进行安全研究或二进制逆向的开发者与安全研究人员，尤其是已在用 AI 编码助手的用户。",
+      "highlights": "把逆向工程能力封装成统一的 MCP 工具目录，让智能体在无源码情况下调查应用功能，并强调本地执行与证据可追溯。",
+      "target_audience": "希望借助 AI 智能体理解第三方应用实现、进行二进制与应用逆向分析的开发者与安全研究人员。",
       "scores": {
-        "innovation": 5,
+        "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 8357,
+    "stars_at_analysis": 14034,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-06T19:36:14+00:00",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
     "readme_available": true
   },
   "raullenchai/rapid-mlx": {
@@ -34342,6 +34341,157 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-10-07T08:51:25+00:00",
+    "readme_available": true
+  },
+  "allenai/olmocr": {
+    "analysis": {
+      "one_liner": "将 PDF 等图像文档转换为干净 Markdown 文本的工具包，用于 LLM 数据集构建与训练。",
+      "core_features": [
+        "将 PDF、PNG、JPEG 文档转换为干净的 Markdown",
+        "支持公式、表格、手写体与复杂排版",
+        "自动去除页眉页脚，按自然阅读顺序输出",
+        "支持多栏布局、插图和内嵌图",
+        "转换成本低，每百万页低于 200 美元"
+      ],
+      "tech_stack": [
+        "Python",
+        "vLLM",
+        "PyTorch",
+        "CUDA",
+        "Docker",
+        "poppler-utils"
+      ],
+      "highlights": "基于 7B 参数视觉语言模型，配套 olmOCR-Bench 基准（1400 文档、7000+ 测试用例），在多项 OCR 评测中表现领先，并提供训练代码与 FP8 模型。",
+      "target_audience": "需要为 LLM 构建高质量文档数据集的开发者，以及从事 OCR、文档解析与多模态模型训练的研究人员。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 19723,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
+    "readme_available": true
+  },
+  "gin-gonic/gin": {
+    "analysis": {
+      "one_liner": "Go 语言编写的高性能 HTTP Web 框架，API 类似 Martini 但性能最高快 40 倍。",
+      "core_features": [
+        "零分配路由，内存效率极高",
+        "中间件系统，支持认证、日志、CORS 等扩展",
+        "内置恢复中间件防止 panic 导致服务崩溃",
+        "JSON 请求/响应自动绑定与校验",
+        "路由分组、集中式错误管理与 JSON/XML/HTML 渲染"
+      ],
+      "tech_stack": [
+        "Go",
+        "httprouter",
+        "net/http"
+      ],
+      "highlights": "基于 httprouter 的零分配路由带来极高吞吐性能，API 简洁易用，生态成熟，社区中间件丰富，是 Go 生态中最主流的 Web 框架之一。",
+      "target_audience": "使用 Go 构建 REST API、Web 应用与微服务的后端开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 89293,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
+    "readme_available": true
+  },
+  "liyupi/ai-guide": {
+    "analysis": {
+      "one_liner": "程序员鱼皮出品的免费 AI 知识库与 Vibe Coding 零基础教程，汇总 AI 工具、教程与变现指南。",
+      "core_features": [
+        "Vibe Coding 零基础入门教程，覆盖基础必读、项目实战、经验技巧与产品变现",
+        "AI 工具测评与使用指南，涵盖 Cursor、Claude Code、TRAE、Codex、Copilot 等",
+        "AI 知识百科，讲解 Agent Skills、RAG、MCP、A2A 等概念",
+        "AI 开发框架教程，包括 Spring AI 与 LangChain",
+        "AI 资讯、Prompt 提示词大全与资源宝库汇总"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Markdown 文档",
+        "VitePress 类文档站点（在线阅读平台）"
+      ],
+      "highlights": "完全免费开放，上千张图、几十万字，结合作者两年半 AI 编程与产品变现经验，从零基础到产品上线变现一条龙，并提供配套视频教程与多语言翻译。",
+      "target_audience": "零基础想入门 Vibe Coding 的新手、想提升 AI 编程效率的开发者，以及关注 AI 工具选型与产品变现的技术人群。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 20778,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
+    "readme_available": true
+  },
+  "mdx-tom/gpt-instruct": {
+    "analysis": {
+      "one_liner": "面向 Codex 的破甲提示词与可复现评测工具链，含多版本提示词与 A/B/C 发布门禁。",
+      "core_features": [
+        "提供 gpt-5.6-sol 稳定版与 gpt-6-astra、gpt-6.1-sol 两条预发布优化线的提示词 ZIP",
+        "通过 codex-instruct.py 一键部署、预览、重置与回滚 Codex 模型指令配置",
+        "A/B/C 三级发布门禁：A 双次 fresh 探针、B 66 例回归、C 120 例原始测试",
+        "按 epoch/beta 迭代并保留 parent、提示词、证据与人工结论",
+        "提供版本迭代通过率趋势图与 SHA256 校验"
+      ],
+      "tech_stack": [
+        "Python 3.8+",
+        "Codex 官方配置机制（config.toml / model_instructions_file）",
+        "Markdown 提示词与 ZIP 分发包",
+        "Shell 脚本评测工具链"
+      ],
+      "highlights": "把提示词工程做成带门禁、可复现、可回滚的工程化流程，并公开逐例人工评测证据与版本趋势。",
+      "target_audience": "研究提示词工程、AI 安全评测与 Codex 定制配置的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 3,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 9315,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
+    "readme_available": true
+  },
+  "elder-plinius/g0dm0d3": {
+    "analysis": {
+      "one_liner": "一个开源多模型 AI 聊天界面，主打红队测试与无限制交互。",
+      "core_features": [
+        "多提供商支持，可接入 OpenRouter、Venice 及本地模型",
+        "GODMODE CLASSIC：5 组模型与提示词组合并行竞速",
+        "ULTRAPLINIAN：跨 5 个层级的多模型评估与复合打分",
+        "Parseltongue：33 种输入扰动技术用于红队研究",
+        "AutoTune：根据 20 种查询上下文自动调整采样参数"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "单文件 index.html",
+        "Cloudflare Pages Functions",
+        "React/Next.js（可选前端）",
+        "Ollama/LM Studio/llama.cpp/vLLM"
+      ],
+      "highlights": "单文件核心 UI 无需构建即可运行，支持本地模型与隐私控制，并公开说明数据流向而非笼统宣称零遥测。",
+      "target_audience": "红队研究者、AI 认知研究者、黑客与系统调优爱好者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 11550,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-07T20:01:19+00:00",
     "readme_available": true
   }
 }
