@@ -1697,13 +1697,13 @@
   },
   "panniantong/agent-reach": {
     "analysis": {
-      "one_liner": "为 AI Agent 一键接入互联网，免费读取与搜索 Twitter、Reddit、YouTube、GitHub、B站、小红书等平台。",
+      "one_liner": "为 AI Agent 一键接入互联网能力的开源 CLI 工具，覆盖多平台内容读取与搜索且零 API 费用。",
       "core_features": [
-        "一条命令安装，Agent 自动完成配置与体检",
-        "多平台内容读取与搜索：网页、YouTube、RSS、GitHub、Twitter、B站、Reddit、小红书等",
-        "每个平台采用首选加备选多后端路由，接入方式失效自动切换",
-        "agent-reach doctor 诊断各渠道连通状态与修复方式",
-        "兼容 Claude Code、OpenClaw、Cursor、Windsurf 等可执行命令行的 Agent"
+        "统一 CLI 接入 Twitter、Reddit、YouTube、GitHub、B站、小红书等十余个平台",
+        "零配置即用网页阅读、YouTube 字幕、RSS、GitHub 公开仓库等渠道",
+        "多后端路由与持续换代，接入方式失效时自动切换备选方案",
+        "agent-reach doctor 一键诊断各渠道连通状态与修复建议",
+        "通过一句话指令让 Agent 自动完成安装、配置与更新"
       ],
       "tech_stack": [
         "Python 3.10+",
@@ -1711,22 +1711,22 @@
         "MCP",
         "yt-dlp",
         "feedparser",
-        "gh CLI",
+        "Whisper",
         "Node.js",
-        "Whisper"
+        "gh CLI"
       ],
-      "highlights": "零 API 费用、Cookie 仅存本地、平台风控变化由项目方持续修复，用户无需自行维护接入方式。",
-      "target_audience": "需要让 AI Agent 获取互联网实时信息的开发者，尤其是使用 Claude Code、OpenClaw、Cursor 等命令行 Agent 的用户。",
+      "highlights": "把各平台繁琐的 API 付费、风控封锁、登录态与数据清洗问题统一封装成一句话安装，并采用首选加备选的多后端路由持续跟进平台变化，用户无需自行维护。",
+      "target_audience": "需要为 AI Agent 补充互联网信息获取能力的开发者，以及使用 Claude Code、OpenClaw、Cursor、Windsurf 等可执行命令行 Agent 的用户。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 88384,
+    "stars_at_analysis": 93719,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-02T19:24:04+00:00",
+    "analyzed_at": "2026-10-08T09:08:51+00:00",
     "readme_available": true
   },
   "mintplex-labs/anything-llm": {
@@ -10965,33 +10965,31 @@
   },
   "open-telemetry/opentelemetry-collector-contrib": {
     "analysis": {
-      "one_liner": "OpenTelemetry Collector 的贡献组件仓库，提供核心仓库之外的大量接收器、处理器、导出器与扩展。",
+      "one_liner": "OpenTelemetry Collector 的贡献组件仓库，汇集核心仓库之外的大量采集、处理与导出组件。",
       "core_features": [
-        "托管不适合放入 Collector 核心仓库的组件",
-        "包含 Jaeger、Prometheus 等核心发行版组件及大量仅 contrib 发行版可用的组件",
-        "每个组件按信号（traces/metrics/logs）分别标注稳定性等级",
-        "支持通过 OpenTelemetry Collector Builder 构建自定义发行版",
-        "部分功能通过 feature gate 控制，处于不同生命周期阶段"
+        "托管不适合放入 Collector 核心仓库的各类组件",
+        "组件按信号（traces/metrics/logs）分别定义稳定性级别",
+        "部分功能通过 feature gate 控制，处于不同生命周期阶段",
+        "支持用 OpenTelemetry Collector Builder 构建自定义发行版",
+        "组件由社区维护者或特定厂商分别提供支持"
       ],
       "tech_stack": [
         "Go",
         "OpenTelemetry Collector",
-        "OpenTelemetry Collector Builder",
-        "GitHub Actions",
-        "Codecov"
+        "OpenTelemetry Collector Builder"
       ],
-      "highlights": "作为 OpenTelemetry Collector 的官方贡献仓库，汇聚了社区与厂商维护的丰富组件，并允许用户按需组合核心、contrib 及第三方组件构建自定义发行版。",
-      "target_audience": "需要扩展 OpenTelemetry Collector 采集与导出能力的可观测性工程师，以及希望贡献或维护 Collector 组件的 Go 开发者。",
+      "highlights": "作为官方核心仓库之外的组件集散地，覆盖 Jaeger、Prometheus 等大量组件，是构建自定义 Collector 发行版的主要组件来源。",
+      "target_audience": "需要扩展或定制 OpenTelemetry Collector 采集能力的可观测性工程师，以及希望贡献 Collector 组件的 Go 开发者。",
       "scores": {
-        "innovation": 4,
+        "innovation": 3,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 4963,
+    "stars_at_analysis": 4980,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-01T09:04:37+00:00",
+    "analyzed_at": "2026-10-08T09:08:51+00:00",
     "readme_available": true
   },
   "tikv/tikv": {
@@ -19485,32 +19483,31 @@
     "analysis": {
       "one_liner": "开源事件驱动编排与调度平台，用声明式 YAML 统一数据、AI 与基础设施工作流。",
       "core_features": [
-        "声明式 YAML 定义工作流，支持定时与事件驱动两种触发方式",
-        "YAML 编辑器、无代码编辑器与 AI Copilot 三种方式编辑同一份流程并保持同步",
-        "内置数百个插件，可连接数据库、云存储与 API，并运行任意语言脚本",
-        "AI 原生能力：AI Agents、RAG 工作流、MCP 服务器与 Agent Skills",
-        "支持命名空间、子流程、重试、超时、错误处理、回填、动态任务与并行执行等编排能力"
+        "声明式 YAML 定义工作流，支持定时与事件驱动触发",
+        "YAML 编辑器、无代码编辑器与 AI Copilot 三种方式编辑同一流程",
+        "内置 AI Agents、RAG 工作流与 MCP 服务器等 AI 原生能力",
+        "丰富的插件生态，可连接数据库、云存储、API 并运行任意语言脚本",
+        "支持命名空间、重试、超时、错误处理、子流程、回填与并行任务等编排能力"
       ],
       "tech_stack": [
         "Java",
-        "YAML",
         "gRPC",
-        "Git 版本控制集成",
-        "MCP",
-        "AI Copilot"
+        "YAML",
+        "Git 版本控制",
+        "MCP"
       ],
-      "highlights": "以代码为核心（Everything as Code）却同时提供 UI、无代码与 AI 三种构建方式，YAML 始终为唯一事实来源；并率先将 AI Agent、RAG 与 MCP 作为一等编排对象，兼顾可扩展性与高可用。",
-      "target_audience": "需要编排数据管道、AI 工作流或基础设施自动化的数据工程师、平台工程师与 DevOps 开发者。",
+      "highlights": "将基础设施即代码理念引入数据与微服务管道，UI、API、CI/CD 与 AI 工具对同一份声明式 YAML 保持同步，并原生集成 AI Agent 与 MCP。",
+      "target_audience": "需要编排数据管道、AI 工作流与基础设施自动化的数据工程师、平台工程师和 DevOps 开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 28573,
+    "stars_at_analysis": 29388,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-01T09:04:37+00:00",
+    "analyzed_at": "2026-10-08T09:08:51+00:00",
     "readme_available": true
   },
   "superdesigndev/treg": {
@@ -20107,33 +20104,33 @@
   },
   "aquasecurity/trivy": {
     "analysis": {
-      "one_liner": "一款全能安全扫描器，可检测容器、K8s、代码仓库等目标中的漏洞、配置错误与密钥。",
+      "one_liner": "一款综合安全扫描器，可检测容器、K8s、代码仓库等目标中的漏洞、配置错误与密钥。",
       "core_features": [
         "扫描容器镜像、文件系统、Git 仓库、虚拟机镜像和 Kubernetes",
-        "检测已知漏洞（CVE）与软件依赖并生成 SBOM",
-        "发现 IaC 配置错误与敏感信息、密钥泄露",
-        "支持软件许可证检测",
-        "提供 CLI 及 GitHub Actions、K8s Operator、VS Code 等集成"
+        "检测已知漏洞（CVE）并生成 SBOM",
+        "发现 IaC 配置错误与敏感信息/密钥泄露",
+        "检查软件许可证",
+        "支持多种编程语言、操作系统和平台"
       ],
       "tech_stack": [
         "Go",
-        "Docker",
+        "容器镜像",
         "Kubernetes",
         "GitHub Actions",
-        "Rego/Open Policy Agent"
+        "VS Code 插件"
       ],
-      "highlights": "覆盖多种扫描目标与扫描器，支持主流语言、操作系统和平台，生态集成丰富，是云原生安全领域应用广泛的开源工具。",
-      "target_audience": "从事云原生安全、DevSecOps、容器与 Kubernetes 运维的开发者及安全工程师。",
+      "highlights": "覆盖多种扫描目标与扫描器，集成生态丰富，支持容器、K8s、代码仓库等场景，是 Aqua Security 维护的知名开源安全工具。",
+      "target_audience": "DevOps 工程师、安全工程师、云原生开发者以及需要集成安全扫描到 CI/CD 的团队。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 38163,
+    "stars_at_analysis": 38293,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-01T09:04:37+00:00",
+    "analyzed_at": "2026-10-08T09:08:51+00:00",
     "readme_available": true
   },
   "drakkan/sftpgo": {
@@ -23409,32 +23406,35 @@
   },
   "mattpocock/skills": {
     "analysis": {
-      "one_liner": "面向真实工程开发的 AI 编码代理技能集合，强调可控、可组合、可改造。",
+      "one_liner": "为真实工程场景打造的 AI 编码代理技能集合，小巧可组合、不接管流程。",
       "core_features": [
-        "通过 /grill-me 与 /grill-with-docs 在动手前与代理对齐需求",
-        "用共享语言与 ADR 文档减少代理啰嗦、统一命名",
-        "提供 /tdd 技能引导红-绿-重构的测试循环",
-        "提供 /diagnosing-bugs 技能以分阶段纪律化流程调试",
-        "支持 Claude Code 插件或 skills.sh 两种安装方式，可订阅也可自行改造"
+        "提供 /grill-me 与 /grill-with-docs 技能，在动手前通过提问让代理与开发者对齐需求",
+        "通过共享语言与术语表减少代理啰嗦表达，统一命名并降低 token 消耗",
+        "提供 /tdd 技能，引导红-绿-重构循环，为代理建立稳定的反馈回路",
+        "提供 /triage 与 /setup-matt-pocock-skills 等技能，接入 issue 跟踪与标签流程",
+        "支持 Claude Code、Codex、GitHub Copilot、Gemini CLI 等多种代理安装方式"
       ],
       "tech_stack": [
         "Shell",
-        "Claude Code 插件",
-        "skills.sh 安装器",
+        "Claude Code",
+        "Codex",
+        "GitHub Copilot",
+        "Gemini CLI",
+        "skills.sh",
         "npx skills"
       ],
-      "highlights": "技能刻意保持小而可组合，不接管流程、不剥夺控制权，兼容任意模型，并基于作者多年工程经验，可自由修改为自己的版本。",
-      "target_audience": "使用 Claude Code、Codex 等编码代理进行真实应用开发、希望保持流程控制权的工程师。",
+      "highlights": "技能设计强调小而可组合、可自由改造，不接管开发流程，保留开发者控制权，并基于数十年工程经验沉淀出对齐、共享语言与反馈回路三类实践。",
+      "target_audience": "使用 AI 编码代理进行真实应用开发、希望保留流程控制权并改善代理协作效果的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 274584,
+    "stars_at_analysis": 280304,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-02T19:24:04+00:00",
+    "analyzed_at": "2026-10-08T09:08:51+00:00",
     "readme_available": true
   },
   "nginxproxymanager/nginx-proxy-manager": {
@@ -29146,13 +29146,13 @@
   },
   "debezium/debezium": {
     "analysis": {
-      "one_liner": "基于Kafka Connect的低延迟变更数据捕获平台，监控多种数据库的行级变更并输出统一事件流。",
+      "one_liner": "基于 Kafka Connect 的开源变更数据捕获平台，实时捕获多种数据库的行级变更并流式输出。",
       "core_features": [
-        "监控多种数据库的行级变更并生成统一格式的变更事件",
-        "仅捕获已提交变更，应用无需处理事务或回滚",
-        "借助Kafka与Kafka Connect实现持久化、可复制、容错的日志记录",
-        "支持嵌入式连接器引擎，可直接在应用内运行连接器",
-        "提供通用模块与针对特定数据库定制的专用模块"
+        "监控多种数据库的行级变更，仅暴露已提交的变更事件",
+        "提供统一的数据变更事件模型，屏蔽不同数据库差异",
+        "通过 Kafka 持久化变更日志，支持断点续传与事件顺序保证",
+        "支持 Kafka Connect 分布式部署，也支持嵌入式连接器引擎",
+        "覆盖缓存失效、数据集成、CQRS 等典型场景"
       ],
       "tech_stack": [
         "Java",
@@ -29160,20 +29160,20 @@
         "Kafka Connect",
         "Maven",
         "Docker",
-        "Antlr（DDL解析）"
+        "Antlr"
       ],
-      "highlights": "复用Kafka与Kafka Connect实现持久、可靠、容错的CDC，提供跨数据库的统一变更事件模型，并支持嵌入式运行方式。",
-      "target_audience": "需要实现缓存失效、数据集成、CQRS或微服务解耦的Java后端与数据平台开发者。",
+      "highlights": "复用 Kafka 与 Kafka Connect 实现持久、可靠、容错的 CDC，提供跨数据库的统一变更事件模型，并支持嵌入式运行方式。",
+      "target_audience": "需要实现数据库变更捕获、数据同步、缓存失效或 CQRS 架构的后端与数据工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 13174,
+    "stars_at_analysis": 13199,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-01T09:04:37+00:00",
+    "analyzed_at": "2026-10-08T09:08:51+00:00",
     "readme_available": true
   },
   "firebase/firebase-ios-sdk": {
@@ -30671,35 +30671,33 @@
   },
   "autumn-27/artex": {
     "analysis": {
-      "one_liner": "LLM 多 agent 驱动的自主渗透测试系统，Go 后端内嵌 Next.js 前端，含资产图与探索图双图架构。",
+      "one_liner": "基于 LLM 多 Agent 的自主渗透测试系统，Go 后端内嵌 Next.js 前端，支持资产探索与漏洞复测。",
       "core_features": [
-        "多 agent 协作：planner 规划、worker 执行、mainagent 人在环路对话",
-        "双图架构：资产图与探索图，支持资产覆盖图力导向布局与已测高亮",
-        "流量录制代理（MITM + CA 留痕）与工具调用拦截审批门",
-        "漏洞手动复测：独立复测 Agent 会话，结论分为仍可复现/已修复/无法确认",
-        "支持从 ScopeSentry 同步资产，一键导入按公司资产范围归并"
+        "LLM 多 Agent 驱动的自主渗透探索，支持任务会话、工具调用与探索链路可视化",
+        "资产同步与资产覆盖图，可从 ScopeSentry 导入域名、IP、端口、站点等资产",
+        "人在环路对话与拦截审批，支持审批记录详情查看",
+        "流量录制代理与漏洞手动复测，复测结论自动同步漏洞状态",
+        "一键安装脚本、页面一键更新与失败自动回滚机制"
       ],
       "tech_stack": [
         "Go",
         "Next.js",
         "PostgreSQL",
-        "Docker Compose",
-        "norma SDK",
-        "SSE",
-        "JWT"
+        "Docker",
+        "norma SDK"
       ],
-      "highlights": "百度“agent+”攻防挑战赛冠军项目，将 LLM 多 agent 自主渗透流程工程化落地，具备双图架构、过程级信息交换与多轮共享 todolist 稳定攻击链路，并提供一键安装、页面一键更新与自动回滚机制。",
-      "target_audience": "对 AI Agent 编排、自动化安全测试与攻防工具链感兴趣的安全工程师、红队成员及 Go/全栈开发者。",
+      "highlights": "百度“agent+”攻防挑战赛冠军项目，将 LLM 多 Agent 编排、权限审批、流量录制与资产图整合为可一键部署的渗透测试平台，并内置页面一键更新与自动回滚。",
+      "target_audience": "从事安全攻防、渗透测试与自动化安全工具开发，且希望用 LLM Agent 提升测试效率的开发者与安全研究人员。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 1343,
+    "stars_at_analysis": 2220,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-02T08:39:16+00:00",
+    "analyzed_at": "2026-10-08T09:08:51+00:00",
     "readme_available": true
   },
   "fmtlib/fmt": {
