@@ -32351,32 +32351,33 @@
   },
   "boykopovar/anyps5": {
     "analysis": {
-      "one_liner": "将 PS5 可执行文件自动移植到 Linux 和 Windows 的工具，无需模拟器或独立运行时进程。",
+      "one_liner": "将 PS5 可执行文件自动移植到 Linux 和 Windows 的工具，无需模拟器或独立运行时。",
       "core_features": [
         "relinker 将可执行文件转换为目标系统原生格式",
-        "实现系统 prx 库以支持动态链接",
+        "实现适用于动态链接的系统 prx 库",
         "着色器重编译器生成 SPIR-V 并可用 Spirv-Tools 验证",
-        "支持 SDL 映射手柄及键鼠输入配置文件",
-        "提供游戏兼容性列表与已验证游戏记录"
+        "支持 SDL 手柄及键鼠输入映射配置",
+        "提供游戏兼容性列表与库/着色器进度徽章"
       ],
       "tech_stack": [
         "C++",
         "SPIR-V",
         "Spirv-Tools",
-        "SDL"
+        "SDL",
+        "GNU GPL v2"
       ],
-      "highlights": "不依赖模拟或独立运行时进程，通过重链接与原生库实现移植，并附带着色器重编译与进度追踪徽章。",
-      "target_audience": "对主机移植、逆向工程、系统兼容层与图形着色器重编译感兴趣的研究型开发者。",
+      "highlights": "不依赖模拟或独立运行时进程，而是通过重链接与原生系统库实现移植，属于互操作性、研究与保存方向的工作。",
+      "target_audience": "对主机移植、逆向工程、系统库重实现与图形着色器重编译感兴趣的研究型开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 3,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 9818,
+    "stars_at_analysis": 14769,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-07T20:01:19+00:00",
+    "analyzed_at": "2026-10-08T19:59:45+00:00",
     "readme_available": true
   },
   "denoland/deno": {
