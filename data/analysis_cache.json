@@ -33758,13 +33758,13 @@
   },
   "morluto/rea": {
     "analysis": {
-      "one_liner": "通过 MCP 让 AI 代理逆向分析二进制、应用与运行时行为，从应用功能一路追溯到原生二进制。",
+      "one_liner": "通过 MCP 让 AI 智能体逆向分析原生二进制、JS/Electron 应用、.NET 程序集与网站，并给出带证据的结论。",
       "core_features": [
-        "以 MCP 服务器形式接入 Claude Code、Cursor、Codex 等代理，并附带配套工作流指令",
-        "支持原生二进制分析，返回伪代码、汇编、字符串、符号与调用引用",
-        "支持 JavaScript/Electron 应用分析，提取模块、导入、source map、路由与 IPC 关系",
-        "支持 .NET 程序集、网站、EVM 字节码与 Linux 崩溃记录等目标",
-        "分析在本地运行，结论附带证据与局限性说明，并提供终端 CLI 命令"
+        "以 MCP 服务器形式接入 Claude Code、Codex、Cursor、Gemini CLI 等智能体",
+        "分析原生二进制，返回伪代码、汇编、字符串、符号、调用与引用",
+        "分析 JavaScript/Electron 应用，识别模块、导入、source map、路由与 IPC",
+        "支持 .NET 程序集、网站、EVM 字节码、ELF 布局与 Linux 崩溃记录分析",
+        "同时提供 CLI 命令，分析在本地运行并附带证据与局限说明"
       ],
       "tech_stack": [
         "TypeScript",
@@ -33776,18 +33776,18 @@
         "IDA",
         "pwntools"
       ],
-      "highlights": "把逆向工程能力封装成统一的 MCP 工具集，让 AI 代理在本地完成从应用行为到原生二进制的跨层分析，并强制输出证据与局限，兼顾可验证性与自动化。",
-      "target_audience": "需要研究第三方应用实现、做安全分析或二进制逆向的开发者，以及希望把逆向能力接入 AI 代理工作流的工程师。",
+      "highlights": "把逆向工程能力封装成统一的 MCP 工具集，让智能体在本地完成从应用行为到二进制层面的分析，并强调结论附带证据与局限，而非黑盒输出。",
+      "target_audience": "需要借鉴他人产品功能实现的开发者、从事逆向与安全分析的研究人员，以及希望让 AI 智能体直接操作逆向工具的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 26171,
+    "stars_at_analysis": 32661,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-09T00:28:21+00:00",
+    "analyzed_at": "2026-10-09T09:15:46+00:00",
     "readme_available": true
   },
   "raullenchai/rapid-mlx": {
