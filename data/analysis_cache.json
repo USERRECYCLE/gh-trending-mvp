@@ -13812,31 +13812,30 @@
   },
   "elastic/elasticsearch": {
     "analysis": {
-      "one_liner": "免费开源的分布式 RESTful 搜索引擎，用于大规模数据的存储、检索与分析。",
+      "one_liner": "免费开源的分布式 RESTful 搜索引擎，基于 Java 构建。",
       "core_features": [
-        "分布式架构，支持水平扩展与副本容错",
-        "RESTful API 提供搜索与数据操作接口",
-        "全文检索与结构化查询能力",
-        "近实时索引与聚合分析",
-        "开源免费，社区生态庞大"
+        "分布式架构，支持水平扩展",
+        "RESTful API 进行搜索与索引操作",
+        "全文检索与结构化查询",
+        "开源免费，社区活跃"
       ],
       "tech_stack": [
         "Java",
         "RESTful API",
         "分布式系统"
       ],
-      "highlights": "Star 数与 Fork 数极高，是搜索与日志分析领域事实上的基础设施级项目，生态成熟、社区活跃。",
-      "target_audience": "需要构建搜索、日志分析或大规模数据检索能力的后端与大数据开发者。",
+      "highlights": "Star 数超过 7.8 万、Fork 超 2.6 万，是搜索与日志分析领域最主流的开源基础设施之一。",
+      "target_audience": "需要构建搜索、日志分析或数据检索能力的后端与大数据开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 78182,
+    "stars_at_analysis": 78223,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-03T08:17:08+00:00",
+    "analyzed_at": "2026-10-10T08:38:56+00:00",
     "readme_available": false
   },
   "guohuiyuan/go-music-dl": {
@@ -28700,32 +28699,33 @@
   },
   "ifixai-ai/ifixai": {
     "analysis": {
-      "one_liner": "面向 AI Agent 的独立审计工具，120 秒内判断 Agent 是否在做它该做的事。",
+      "one_liner": "对 AI Agent 进行独立审计，判断其是否按业务目标与组织职责行事，120 秒内给出结论。",
       "core_features": [
-        "以业务 KPI 与组织结构为基准审计 Agent 行为，而非仅评估 token、延迟等技术指标",
+        "独立审计 AI Agent 是否完成其应做的工作，而非仅评估技术指标",
         "提供 CLI 引导向导、显式参数脚本化、插件/Skill 三种运行方式",
-        "内置 60 项检查（单次运行执行 32 项），覆盖五大支柱并输出 A–F 评分卡",
-        "支持自评、单一独立厂商或多元裁判组合进行打分",
-        "输出 JSON、Markdown 报告与终端评分卡，可接入 CI 与自动化流程"
+        "支持自评、单一独立厂商或多评审集成打分",
+        "输出 JSON、Markdown 报告与终端可视化评分卡",
+        "提供 smoke、strategic、core、extended、all 多档测试套件"
       ],
       "tech_stack": [
         "Python 3.10+",
-        "pip / uvx 安装与打包",
-        "Claude Code、Codex 等 Agent 插件与 Skill 机制",
-        "多模型提供商（OpenAI、Anthropic、Gemini 等）"
+        "PyPI 包 ifixai",
+        "Claude Code / Codex 插件",
+        "uvx 技能脚手架",
+        "CI（GitHub Actions）"
       ],
-      "highlights": "把 AI 红队测试与运营保障结合，聚焦“Agent 是否达成业务目标”这一被现有 Eval、红队与可观测性工具忽略的问题，并以 120 秒内出结果和 A–F 评分卡降低使用门槛。",
-      "target_audience": "需要验证 AI Agent 业务对齐性的开发者、负责 Agent 上线与运营保障的工程与质量团队，以及希望把 Agent 审计接入 CI 的自动化实践者。",
+      "highlights": "在 AI 红队测试与运营保障之间取得平衡，聚焦于业务 KPI 与组织架构层面的对齐问题，而非仅关注 token 效率、延迟或提示注入等纯技术指标。",
+      "target_audience": "需要验证 AI Agent 业务行为正确性的开发者、负责 Agent 上线前质量与合规审计的团队，以及希望在 CI 中自动化 Agent 审计的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 17908,
+    "stars_at_analysis": 23197,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-01T09:04:37+00:00",
+    "analyzed_at": "2026-10-10T08:38:56+00:00",
     "readme_available": true
   },
   "nomadamas/k-skill": {
@@ -33194,31 +33194,28 @@
   },
   "storytold/artcraft": {
     "analysis": {
-      "one_liner": "面向艺术家、设计师和电影人的交互式AI图像与视频创作IDE，用可视化工具把提示词变成可控的创作。",
+      "one_liner": "面向艺术家、设计师和电影人的AI图像与视频创作IDE，用可视化工具将提示词变成可控的创作。",
       "core_features": [
         "2D与3D图像合成，支持背景移除与绘制工具",
-        "图像转3D网格、角色摆姿与角色身份迁移",
-        "场景搭建与Kitbashing，控制机位、物体位置与景深",
-        "文生图与提示词驱动的图像编辑，可切换多种模型",
-        "先搭建场景再生成，实现精确可复现的创作流程"
+        "图像转3D网格、角色摆姿与身份迁移",
+        "场景搭建与Kitbashing，精确控制机位与景深",
+        "文生图与提示词驱动的图像编辑，支持多模型选择"
       ],
       "tech_stack": [
-        "Rust",
-        "3D场景与合成渲染",
-        "AI图像与视频生成模型集成"
+        "Rust"
       ],
-      "highlights": "把提示词生成升级为可视化“手工创作”：先在2D/3D中搭建场景、摆好角色与机位，再调用模型生成，兼顾创意探索与精确可控。",
-      "target_audience": "艺术家、设计师、影视创作者，以及关注AI生成内容与图形工具开发的工程师。",
+      "highlights": "把生成式AI从单纯提示词升级为可视化、可复现的创作流程，先搭场景再生成，兼顾2D与3D工作流。",
+      "target_audience": "从事AI图像与视频创作的艺术家、设计师、电影人，以及关注生成式AI创意工具的开发者。",
       "scores": {
-        "innovation": 4,
+        "innovation": 5,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 7892,
+    "stars_at_analysis": 12445,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-09T00:28:21+00:00",
+    "analyzed_at": "2026-10-10T08:38:56+00:00",
     "readme_available": true
   },
   "qeeqbox/social-analyzer": {
@@ -33759,13 +33756,13 @@
   },
   "morluto/rea": {
     "analysis": {
-      "one_liner": "通过 MCP 让 AI 代理逆向分析原生二进制、JS/Electron 应用、.NET 程序集与网站，并给出带证据的结论。",
+      "one_liner": "通过 MCP 让 AI 代理逆向分析二进制、应用与运行时行为，并给出带证据的结论。",
       "core_features": [
-        "以 MCP 服务器形式接入 Claude Code、Cursor、Gemini CLI 等代理",
-        "逆向分析原生二进制，输出伪代码、汇编、字符串、符号与调用引用",
-        "静态分析 JavaScript/Electron 应用，识别模块、导入、路由、IPC 与原生插件关系",
-        "支持 .NET 程序集、网站、EVM 字节码、ELF 布局与 Linux 崩溃记录分析",
-        "同时提供终端 CLI 命令，分析结果附带证据与局限性说明"
+        "以 MCP 服务器形式接入 Claude Code、Cursor 等代理，提供逆向分析工具",
+        "分析原生二进制，返回伪代码、汇编、字符串、符号与调用引用",
+        "分析 JavaScript/Electron 应用，识别模块、导入、路由、IPC 与原生插件关系",
+        "支持离线 ELF 布局、EVM 字节码与 Linux 崩溃记录等目标",
+        "分析本地运行，结论附带证据与局限性说明"
       ],
       "tech_stack": [
         "TypeScript",
@@ -33777,18 +33774,18 @@
         "IDA",
         "pwntools"
       ],
-      "highlights": "把逆向工程能力封装成 MCP 工具，让 AI 代理在本地完成从应用行为到二进制层面的分析，并强调结论必须附带证据与局限性。",
-      "target_audience": "希望借助 AI 代理理解第三方应用实现、进行二进制与前端逆向分析的开发者、安全研究人员与逆向工程爱好者。",
+      "highlights": "把逆向工程能力封装成 MCP 工具交给 AI 代理调用，覆盖从应用行为到原生二进制的多层目标，并强调本地分析与证据可追溯。",
+      "target_audience": "希望借助 AI 代理理解第三方应用实现、进行安全研究或二进制逆向的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 45435,
+    "stars_at_analysis": 56483,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-10T00:05:30+00:00",
+    "analyzed_at": "2026-10-10T08:38:56+00:00",
     "readme_available": true
   },
   "raullenchai/rapid-mlx": {
