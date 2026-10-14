@@ -2072,13 +2072,13 @@
   },
   "debpalash/voicestudio": {
     "analysis": {
-      "one_liner": "完全本地运行的开源 ElevenLabs 替代品，支持语音克隆、设计、配音、听写与有声书制作。",
+      "one_liner": "完全本地运行的开源语音克隆与配音工具，支持646种语言的转录、听写与有声书制作。",
       "core_features": [
         "语音克隆与自定义语音设计",
-        "视频配音，支持时间轴对齐的语音合成",
-        "听写、转录与有声书、故事批量生成",
-        "本地 API 与 MCP 集成，可接入智能体",
-        "本地模型管理与多引擎切换"
+        "视频配音与定时语音合成",
+        "听写、转录与有声书批量制作",
+        "本地模型管理与多引擎切换",
+        "本地API与MCP供智能体调用"
       ],
       "tech_stack": [
         "Python",
@@ -2086,20 +2086,20 @@
         "Bun",
         "Rust/Cargo",
         "PyTorch",
-        "CUDA/Metal(MPS)"
+        "CUDA/Metal"
       ],
-      "highlights": "完全本地运行、覆盖 646 种语言，并同时提供语音克隆、配音、听写、有声书等完整音频工作流，还支持本地 API 与 MCP 供智能体调用。",
-      "target_audience": "需要本地化语音合成能力、注重数据隐私的开发者，以及希望集成语音功能的 AI 应用与智能体开发者。",
+      "highlights": "作为ElevenLabs的本地开源替代方案，覆盖语音克隆、配音、转录等完整工作流，支持646种语言，数据全部在本地硬件运行，并提供API与MCP集成。",
+      "target_audience": "需要本地化语音合成与配音能力的开发者、内容创作者，以及关注隐私与离线部署的AI应用开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 59435,
+    "stars_at_analysis": 65099,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-12T09:24:17+00:00",
+    "analyzed_at": "2026-10-14T13:50:53+00:00",
     "readme_available": true
   },
   "mozilla/pdf.js": {
@@ -33759,13 +33759,13 @@
   },
   "morluto/rea": {
     "analysis": {
-      "one_liner": "通过 MCP 让 AI 代理逆向分析原生二进制、JS/Electron 应用、.NET 程序集与网站，并给出带证据的结论。",
+      "one_liner": "通过 MCP 让 AI Agent 逆向分析二进制、应用与运行时行为，从应用功能一路追溯到原生二进制。",
       "core_features": [
-        "以 MCP 服务器形式接入 Claude Code、Codex、Cursor、Gemini CLI 等代理",
-        "覆盖原生二进制、JavaScript/Electron 应用、.NET 程序集与网站等多类目标",
-        "分析在本地运行，结论附带证据与局限性说明",
-        "原生分析可复用已有的 Hopper、Ghidra 或 IDA 安装",
-        "提供 CLI 命令，可在终端直接执行分析并输出 JSON 结果"
+        "以 MCP 服务器形式接入 Claude Code、Codex、Cursor、Gemini CLI 等 Agent",
+        "分析原生二进制，返回伪代码、汇编、字符串、符号、调用与引用",
+        "静态分析 JavaScript 与 Electron 应用（含 ASAR），输出模块、导入与 Electron 边界",
+        "支持 .NET 程序集与网站分析，覆盖多种目标类型",
+        "分析在本地运行，结论附带证据与局限性说明，并提供等价 CLI 命令"
       ],
       "tech_stack": [
         "TypeScript",
@@ -33777,18 +33777,18 @@
         "IDA",
         "JADX"
       ],
-      "highlights": "把逆向工程能力封装成统一的 MCP 工具集，让 AI 代理能跨二进制、应用与运行时行为做调查，并强调本地执行与证据可追溯。",
-      "target_audience": "希望借助 AI 代理理解他人产品实现、进行逆向工程与安全分析，或需要跨二进制与应用层调查的开发者。",
+      "highlights": "把逆向工程能力封装成统一的 MCP 工具集，让 Agent 在无源码情况下调查目标应用并给出可追溯的证据，同时保留 CLI 使用方式。",
+      "target_audience": "需要做逆向工程、竞品功能调研、二进制与 Electron 应用分析，并希望借助 AI Agent 自动化调查流程的开发者与安全研究人员。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 219855,
+    "stars_at_analysis": 229328,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-14T07:47:14+00:00",
+    "analyzed_at": "2026-10-14T13:50:53+00:00",
     "readme_available": true
   },
   "raullenchai/rapid-mlx": {
