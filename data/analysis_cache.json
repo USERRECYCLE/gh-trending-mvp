@@ -33724,36 +33724,36 @@
   },
   "morluto/rea": {
     "analysis": {
-      "one_liner": "通过 MCP 让 AI 代理逆向分析原生二进制、JS/Electron 应用、.NET 程序集与网站。",
+      "one_liner": "通过 MCP 让 AI 代理逆向分析二进制、应用与运行时行为并给出证据。",
       "core_features": [
         "以 MCP 服务器形式接入 Claude Code、Codex、Cursor 等代理",
-        "分析原生二进制，返回伪代码、汇编、字符串、符号与调用引用",
-        "静态分析 JavaScript/Electron 应用与 ASAR，识别模块、导入与 Electron 边界",
+        "分析原生二进制，输出伪代码、汇编、字符串、符号与调用关系",
+        "静态分析 JavaScript/Electron 应用与 ASAR，识别模块、导入和 Electron 边界",
         "支持 .NET 程序集与网站分析，可复用 Hopper、Ghidra、IDA 等引擎",
-        "本地运行分析，结论附带证据与局限性，并提供 CLI 命令"
+        "提供 CLI 命令，分析在本地运行并附带证据与局限说明"
       ],
       "tech_stack": [
         "TypeScript",
         "Node.js",
-        "MCP",
         "npm",
+        "MCP",
         "Hopper",
         "Ghidra",
         "IDA",
         "JADX"
       ],
-      "highlights": "把逆向工程能力封装成统一的 MCP 工具集，让 AI 代理在本地完成从应用行为到二进制层的分析，并输出可追溯的证据。",
-      "target_audience": "需要借鉴他人功能实现、研究二进制或应用内部机制的开发者，以及使用 AI 代理做安全与逆向分析的工程师。",
+      "highlights": "把多种逆向工具统一封装成 MCP 接口，让 AI 代理在本地完成从应用行为到原生二进制的分层分析，并输出可追溯的证据。",
+      "target_audience": "希望借助 AI 代理理解第三方应用实现、进行安全研究或复刻功能的开发者与逆向工程人员。",
       "scores": {
-        "innovation": 4,
+        "innovation": 5,
         "practicality": 4,
-        "learning_value": 4
+        "learning_value": 5
       }
     },
-    "stars_at_analysis": 295060,
+    "stars_at_analysis": 303634,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-17T07:02:44+00:00",
+    "analyzed_at": "2026-10-17T17:18:35+00:00",
     "readme_available": true
   },
   "raullenchai/rapid-mlx": {
@@ -41162,6 +41162,36 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-10-17T12:15:31+00:00",
+    "readme_available": true
+  },
+  "lionsoul2014/ip2region": {
+    "analysis": {
+      "one_liner": "离线IP地址定位库与IP数据管理框架，支持IPv4/IPv6，查询达10微秒级。",
+      "core_features": [
+        "提供IPv4与IPv6离线定位数据及xdb文件，支持城市级查询",
+        "xdb数据管理框架支持亿级IP段与自定义区域信息扩展",
+        "自动合并相邻IP段并对相同区域信息去重压缩",
+        "支持vIndex索引缓存与全文件内存缓存两种加速查询方式",
+        "提供统一API同时查询IPv4与IPv6并返回统一数据"
+      ],
+      "tech_stack": [
+        "Go",
+        "xdb数据格式",
+        "多语言查询客户端绑定",
+        "多语言xdb生成程序"
+      ],
+      "highlights": "查询效率达10微秒级，支持IPv4/IPv6，覆盖14种以上语言的查询客户端与多种生成程序，数据格式可自定义扩展。",
+      "target_audience": "需要离线IP定位能力的后端开发者、多语言服务端开发者及需要自建IP数据管理体系的团队",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 19687,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-17T17:18:35+00:00",
     "readme_available": true
   }
 }
