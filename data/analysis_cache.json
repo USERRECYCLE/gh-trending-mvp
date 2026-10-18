@@ -3582,32 +3582,32 @@
   },
   "dietrichgebert/ponytail": {
     "analysis": {
-      "one_liner": "让 AI 编程助手像最懒的资深开发者那样思考，只写任务真正需要的最少代码。",
+      "one_liner": "让 AI 编程代理像最懒的资深开发者一样思考，只写任务真正需要的代码。",
       "core_features": [
-        "以“阶梯式”决策顺序优先复用现有代码、标准库与平台原生能力，最后才写最小实现",
-        "提供 /ponytail-review 代码审查，检查 bug、安全、性能、缺失测试并给出修复建议",
-        "提供 /ponytail-audit 全仓库审计，先梳理代码结构与数据流，再按优先级排序问题",
-        "在减少代码量的同时保留校验、错误处理、安全与可访问性，并要求关键逻辑附带测试",
-        "兼容多种 AI 编程代理，以技能形式集成到现有工作流"
+        "以“最懒资深开发者”风格约束 AI 代理，减少冗余代码与依赖",
+        "提供 /ponytail-review 代码审查，检查 diff 之外的关联代码与风险",
+        "提供 /ponytail-audit 全仓库审计，按优先级排序待修问题",
+        "在 Claude Code 中显示成本、token、复用率与测试状态的提示条",
+        "兼容约 20 种 AI 代理，支持多语言文档"
       ],
       "tech_stack": [
         "JavaScript",
-        "Node.js",
-        "npm 包 @dietrichgebert/ponytail",
-        "AI 编程代理技能（如 Claude Code）"
+        "npm 包分发",
+        "Claude Code 技能集成",
+        "MIT 许可证"
       ],
-      "highlights": "用基准测试量化收益：代码量减少约 53%、耗时减少 41%、成本减少 26%、token 减少 45%，同时风险逻辑带测试比例从 68% 提升到 98%，安全任务全部通过，说明“少写代码”不等于降低质量。",
-      "target_audience": "使用 AI 编程代理的开发者、希望控制 AI 生成代码规模与成本的团队，以及关注代码审查与仓库审计自动化的工程师。",
+      "highlights": "官方基准显示代码量减少约 53%、耗时减少 41%、成本减少 26%、token 减少 45%，同时风险逻辑带测试比例达 98%（无技能时 68%），安全任务全部通过，说明“少写”不等于牺牲质量。",
+      "target_audience": "使用 AI 编程代理的开发者、追求代码精简与成本控制的团队，以及关注 AI 生成代码审查与安全性的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 161421,
+    "stars_at_analysis": 166429,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-12T09:24:17+00:00",
+    "analyzed_at": "2026-10-18T07:18:00+00:00",
     "readme_available": true
   },
   "heygen-com/hyperframes": {
@@ -28025,28 +28025,27 @@
   },
   "yash-srivastava/overdrive-release": {
     "analysis": {
-      "one_liner": "为比亚迪车辆提供高级哨兵模式功能的开源项目",
+      "one_liner": "为比亚迪车辆提供高级哨兵模式的开源Java应用",
       "core_features": [
-        "车辆哨兵模式监控",
-        "比亚迪车辆适配",
+        "车辆哨兵监控模式",
         "基于Java开发",
-        "可能支持事件记录与告警"
+        "面向比亚迪车型的定制功能"
       ],
       "tech_stack": [
         "Java"
       ],
-      "highlights": "针对比亚迪车型的哨兵模式增强方案，填补特定品牌车辆安防需求",
-      "target_audience": "比亚迪车主开发者、车载应用开发者、Android/Java开发者",
+      "highlights": "针对比亚迪车主的细分场景工具，社区关注度尚可（369星、106分支），填补了原厂哨兵功能之外的扩展需求",
+      "target_audience": "比亚迪车主及车载应用开发者",
       "scores": {
         "innovation": 3,
-        "practicality": 4,
-        "learning_value": 3
+        "practicality": 3,
+        "learning_value": 2
       }
     },
-    "stars_at_analysis": 334,
+    "stars_at_analysis": 369,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-07T08:51:25+00:00",
+    "analyzed_at": "2026-10-18T07:18:00+00:00",
     "readme_available": false
   },
   "bytedance/deer-flow": {
@@ -33725,36 +33724,36 @@
   },
   "morluto/rea": {
     "analysis": {
-      "one_liner": "通过 MCP 让 AI 代理逆向分析二进制、应用与运行时行为并给出证据。",
+      "one_liner": "通过 MCP 让 AI 代理逆向分析二进制、应用与运行时行为并给出证据",
       "core_features": [
-        "以 MCP 服务器形式接入 Claude Code、Codex、Cursor 等代理",
-        "分析原生二进制，输出伪代码、汇编、字符串、符号与调用关系",
-        "静态分析 JavaScript/Electron 应用与 ASAR，识别模块、导入和 Electron 边界",
-        "支持 .NET 程序集与网站分析，可复用 Hopper、Ghidra、IDA 等引擎",
-        "提供 CLI 命令，分析在本地运行并附带证据与局限说明"
+        "以 MCP 服务器形式接入 Claude Code、Cursor 等 AI 代理",
+        "分析原生二进制、JavaScript/Electron 应用、.NET 程序集与网站",
+        "可复用已有的 Hopper、Ghidra、IDA 作为原生分析引擎",
+        "分析结果附带证据与局限性说明，支持追问与实现",
+        "同时提供 CLI 命令，可在终端直接执行分析"
       ],
       "tech_stack": [
         "TypeScript",
         "Node.js",
-        "npm",
         "MCP",
+        "npm",
         "Hopper",
         "Ghidra",
         "IDA",
         "JADX"
       ],
-      "highlights": "把多种逆向工具统一封装成 MCP 接口，让 AI 代理在本地完成从应用行为到原生二进制的分层分析，并输出可追溯的证据。",
-      "target_audience": "希望借助 AI 代理理解第三方应用实现、进行安全研究或复刻功能的开发者与逆向工程人员。",
+      "highlights": "把逆向工程能力封装成统一的 MCP 工具集，让 AI 代理在本地完成从应用行为到原生二进制的分析，并输出可追溯的证据链",
+      "target_audience": "需要借鉴他人产品功能、研究应用实现细节的开发者，以及使用 AI 代理做逆向与安全分析的工程师",
       "scores": {
         "innovation": 5,
         "practicality": 4,
-        "learning_value": 5
+        "learning_value": 4
       }
     },
-    "stars_at_analysis": 303634,
+    "stars_at_analysis": 311829,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-17T17:18:35+00:00",
+    "analyzed_at": "2026-10-18T07:18:00+00:00",
     "readme_available": true
   },
   "raullenchai/rapid-mlx": {
