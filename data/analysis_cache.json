@@ -719,13 +719,13 @@
   },
   "krahets/hello-algo": {
     "analysis": {
-      "one_liner": "开源免费、动画图解的数据结构与算法入门教程，支持多语言与多编程语言代码实现。",
+      "one_liner": "开源免费、动画图解、可一键运行的多语言数据结构与算法入门教程",
       "core_features": [
         "全书采用动画图解讲解数据结构与算法，学习曲线平滑",
-        "源代码支持一键运行，覆盖多种数据结构与算法实现",
-        "提供 Python、Java、C++、C、C#、JS、Go、Swift、Rust、Ruby、Kotlin、TS、Dart 等 12 门以上语言代码",
-        "支持简体中文、繁体中文、English、日本語、Русский 多语言阅读",
-        "提供在线网页阅读与 PDF、EPUB 下载，并开放社区评论互助学习"
+        "源代码支持一键运行，覆盖12门编程语言实现",
+        "提供在线阅读与PDF、EPUB下载",
+        "支持简中、繁中、英文、日文、俄文多语言",
+        "评论区互助学习与社区贡献机制"
       ],
       "tech_stack": [
         "Java",
@@ -742,18 +742,18 @@
         "TypeScript",
         "Dart"
       ],
-      "highlights": "以动画图解降低算法学习门槛，代码可一键运行并覆盖十余种编程语言，获得清华大学邓俊辉教授与亚马逊李沐推荐，社区贡献者众多。",
-      "target_audience": "数据结构与算法初学者、准备面试的开发者、希望用母语或多语言对照学习算法的编程爱好者。",
+      "highlights": "以动画图解降低算法学习门槛，同时提供12门语言的代码实现并支持一键运行，获清华大学邓俊辉教授与亚马逊李沐推荐，Star数超13万",
+      "target_audience": "算法与数据结构初学者、准备面试的开发者、希望用多语言对照学习算法的程序员",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 130549,
+    "stars_at_analysis": 130844,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-11T18:59:57+00:00",
+    "analyzed_at": "2026-10-19T07:55:01+00:00",
     "readme_available": true
   },
   "multimodal-art-projection/yue": {
@@ -3890,34 +3890,34 @@
   },
   "stablyai/orca": {
     "analysis": {
-      "one_liner": "Orca 是一个面向并行 AI 编码代理的 ADE，可在多工作树中同时运行多个代理并统一管理。",
+      "one_liner": "Orca 是一个多 AI 编码代理编排器，可在并行 worktree 中同时运行多个 CLI 代理并统一管理。",
       "core_features": [
-        "并行工作树：一条提示分发给多个代理，各自独立 git worktree，比较结果后合并胜者",
-        "移动伴侣应用：在手机上监控和指挥代理，代理完成时收到通知并发送后续指令",
-        "终端分屏：WebGL 渲染的 Ghostty 级终端，支持无限分屏与重启后保留回滚",
-        "设计模式：在 Chromium 窗口中点击 UI 元素，将其 HTML、CSS 与截图直接送入代理提示",
-        "SSH 工作树与 CLI：在远程机器上运行代理，并可用 orca 命令脚本化工作流"
+        "并行 worktree：将同一提示分发给多个代理，各自在隔离的 git worktree 中运行并对比结果",
+        "移动端伴侣应用：在手机上监控、通知并跟进代理任务",
+        "Ghostty 级终端：WebGL 渲染、无限分屏、重启后保留滚动历史",
+        "设计模式：点击 Chromium 窗口中的 UI 元素，将其 HTML/CSS 与截图送入代理提示",
+        "SSH 远程 worktree 与 GitHub/Linear 原生集成，支持 diff 注释回传代理"
       ],
       "tech_stack": [
         "TypeScript",
-        "Electron（桌面端）",
-        "Chromium",
-        "WebGL",
+        "Electron 桌面应用（macOS/Windows/Linux）",
+        "Chromium 内嵌浏览器",
+        "Ghostty 终端与 WebGL 渲染",
         "Git worktree",
-        "SSH"
+        "Orca CLI"
       ],
-      "highlights": "将多个编码代理的并行编排、工作树隔离、终端、浏览器与移动端监控整合进一个 ADE，并支持自带订阅运行任意 CLI 代理。",
-      "target_audience": "需要同时调度多个 AI 编码代理、追求高吞吐开发流程的开发者与团队。",
+      "highlights": "以 worktree 隔离实现多代理并行对比与择优合并，并打通桌面、移动端与远程运行时，形成完整的代理编排工作流。",
+      "target_audience": "需要同时调度多个 AI 编码代理、追求高吞吐开发流程的工程师与团队",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 91896,
+    "stars_at_analysis": 97218,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-14T07:47:14+00:00",
+    "analyzed_at": "2026-10-19T07:55:01+00:00",
     "readme_available": true
   },
   "argoproj/argo-cd": {
@@ -4732,34 +4732,34 @@
   },
   "earthtojake/text-to-cad": {
     "analysis": {
-      "one_liner": "为 AI 智能体赋予 CAD 超能力，通过自然语言生成 3D 模型与工程图纸。",
+      "one_liner": "为 AI 智能体提供本地 CAD 能力，用文本生成可制造的 3D 模型文件。",
       "core_features": [
-        "通过文本生成 STEP、GLB、STL、3MF 等格式的 3D 模型",
-        "提供面向制造的设计检查（DFM）",
-        "自动生成工程图纸",
-        "连接主流 3D 打印、钣金与 CNC 加工服务",
-        "以插件或 skills 形式集成到各类 AI 智能体中"
+        "将自然语言描述转换为 STEP、GLB、STL、3MF 等 3D 模型文件",
+        "内置面向制造的设计检查与工程图纸生成",
+        "对接主流 3D 打印、钣金与 CNC 加工服务",
+        "以插件或 skills 形式接入 Claude Code、Codex、Cursor、Gemini、Grok 等智能体",
+        "提供本地 MCP 服务器与模型查看器，可在对话中预览模型"
       ],
       "tech_stack": [
-        "Python",
+        "Python 3.11+",
         "build123d",
         "Open CASCADE",
-        "uv",
-        "Node.js",
+        "uv / uvx",
+        "Node.js 20+",
         "MCP"
       ],
-      "highlights": "将 CAD 建模能力以插件和 skills 形式接入 Claude Code、Codex、Cursor、Gemini、Grok 等主流智能体，并打通从建模到制造服务的完整链路。",
-      "target_audience": "希望用自然语言驱动 3D 建模的工程师、硬件开发者，以及为智能体扩展 CAD 能力的开发者。",
+      "highlights": "把 CAD 建模能力封装成智能体插件，覆盖从文本生成模型到可制造性检查、工程图纸与加工服务对接的完整链路，并兼容多个主流智能体平台。",
+      "target_audience": "希望用 AI 智能体辅助机械设计、快速原型与 3D 打印的工程师和开发者",
       "scores": {
-        "innovation": 5,
+        "innovation": 4,
         "practicality": 4,
-        "learning_value": 4
+        "learning_value": 3
       }
     },
-    "stars_at_analysis": 19205,
+    "stars_at_analysis": 21542,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-11T18:59:57+00:00",
+    "analyzed_at": "2026-10-19T07:55:01+00:00",
     "readme_available": true
   },
   "pdone/lx-music-source": {
@@ -11699,31 +11699,31 @@
   },
   "spicetify/cli": {
     "analysis": {
-      "one_liner": "一个跨平台的命令行工具，用于自定义官方 Spotify 客户端的外观与功能。",
+      "one_liner": "跨平台命令行工具，用于深度定制官方 Spotify 客户端界面与功能。",
       "core_features": [
-        "修改用户界面各处的颜色",
+        "修改界面配色主题",
         "注入 CSS 实现高级自定义",
-        "注入扩展以扩展功能、操作界面和控制播放器",
+        "注入扩展以扩展功能、操控 UI 与播放器",
         "注入自定义应用",
-        "支持 Windows、macOS 和 Linux"
+        "支持 Windows、macOS、Linux"
       ],
       "tech_stack": [
         "JavaScript",
         "Go",
-        "CSS"
+        "命令行工具"
       ],
-      "highlights": "通过命令行注入 CSS、扩展和自定义应用，让用户完全掌控官方 Spotify 客户端，且跨三大桌面平台。",
-      "target_audience": "希望深度定制 Spotify 客户端外观与功能的开发者和高级用户。",
+      "highlights": "通过命令行注入 CSS、扩展与自定义应用，让用户完全掌控官方 Spotify 客户端，社区活跃且跨平台支持完善。",
+      "target_audience": "希望个性化定制 Spotify 客户端界面的用户，以及熟悉命令行、对前端注入与主题定制感兴趣的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 24928,
+    "stars_at_analysis": 25088,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-11T18:59:57+00:00",
+    "analyzed_at": "2026-10-19T07:55:01+00:00",
     "readme_available": true
   },
   "bjarneo/cliamp": {
@@ -30912,37 +30912,37 @@
   },
   "zitadel/zitadel": {
     "analysis": {
-      "one_liner": "面向开发者的开源身份与访问管理平台，提供SSO、MFA、多租户等完整IAM能力。",
+      "one_liner": "开源身份与访问管理平台，提供SSO、MFA、多租户与API优先的IAM基础设施。",
       "core_features": [
-        "SSO、Passkeys、MFA（OTP、U2F、邮件/短信OTP）等认证方式",
-        "OIDC认证、SAML 2.0、LDAP及社交/企业IdP集成",
-        "原生多租户层级：实例、组织、项目，支持B2B组织与自助入驻",
-        "API优先设计，提供connectRPC、gRPC和HTTP/JSON接口",
-        "基于事件流的完整审计追踪与Actions/Webhooks扩展"
+        "SSO、Passkeys、MFA（OTP/U2F/邮件/短信）及OIDC、SAML、LDAP等身份认证",
+        "原生多租户层级：实例、组织、项目，支持B2B自助入驻与委派角色管理",
+        "API优先，所有资源可通过connectRPC、gRPC与HTTP/JSON访问",
+        "事件驱动架构，完整不可变审计事件流，可通过Webhook外发",
+        "Docker Compose与Kubernetes自托管，支持零停机更新与水平扩展"
       ],
       "tech_stack": [
         "Go",
-        "connectRPC",
         "gRPC",
-        "REST/JSON",
+        "connectRPC",
+        "HTTP/JSON API",
         "Docker Compose",
         "Kubernetes",
         "OIDC",
         "SAML",
         "SCIM"
       ],
-      "highlights": "关系型内核加事件驱动架构，所有变更以不可变事件记录形成完整审计流；实例级多租户模型支持高扩展性，且SaaS与自托管使用同一代码库，无供应商锁定。",
-      "target_audience": "需要为SaaS、B2B平台或自托管生产环境构建身份认证与访问管理的后端及平台开发者、架构师。",
+      "highlights": "关系型核心加事件驱动设计，每次变更写入不可变事件形成完整审计流；严格多租户层级与API优先设计，SaaS与自托管同一代码库，无厂商锁定。",
+      "target_audience": "需要自托管IAM的SaaS与B2B平台团队、构建多租户产品的后端与架构师、希望替代Keycloak或Auth0的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 15279,
+    "stars_at_analysis": 15345,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-11T18:59:57+00:00",
+    "analyzed_at": "2026-10-19T07:55:01+00:00",
     "readme_available": true
   },
   "fluxcd/flux2": {
@@ -33720,13 +33720,13 @@
   },
   "morluto/rea": {
     "analysis": {
-      "one_liner": "通过 MCP 让 AI 代理逆向分析二进制、应用与运行时行为并给出证据",
+      "one_liner": "通过 MCP 让 AI 代理逆向分析二进制、应用与运行时行为的工具",
       "core_features": [
-        "以 MCP 服务器形式接入 Claude Code、Cursor 等 AI 代理",
+        "以 MCP 服务形式接入 AI 代理，支持 Claude Code、Codex、Cursor、Gemini CLI 等",
         "分析原生二进制、JavaScript/Electron 应用、.NET 程序集与网站",
         "可复用已有的 Hopper、Ghidra、IDA 作为原生分析引擎",
-        "分析结果附带证据与局限性说明，支持追问与实现",
-        "同时提供 CLI 命令，可在终端直接执行分析"
+        "本地运行分析，结论附带证据与局限性说明",
+        "提供终端 CLI 命令，与代理共用同一套工作流"
       ],
       "tech_stack": [
         "TypeScript",
@@ -33738,18 +33738,18 @@
         "IDA",
         "JADX"
       ],
-      "highlights": "把逆向工程能力封装成统一的 MCP 工具集，让 AI 代理在本地完成从应用行为到原生二进制的分析，并输出可追溯的证据链",
-      "target_audience": "需要借鉴他人产品功能、研究应用实现细节的开发者，以及使用 AI 代理做逆向与安全分析的工程师",
+      "highlights": "把逆向工程能力封装成 MCP 工具供 AI 代理调用，覆盖从应用行为到原生二进制的多层级分析，并强调结论可溯源、本地执行",
+      "target_audience": "希望借助 AI 代理理解第三方应用实现、进行安全研究或功能借鉴的开发者与逆向工程从业者",
       "scores": {
-        "innovation": 5,
+        "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 311829,
+    "stars_at_analysis": 327557,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-18T07:18:00+00:00",
+    "analyzed_at": "2026-10-19T07:55:01+00:00",
     "readme_available": true
   },
   "raullenchai/rapid-mlx": {
@@ -37687,35 +37687,37 @@
   },
   "copilotkit/openintelligentui": {
     "analysis": {
-      "one_liner": "一个开源生成式 UI 框架，让聊天回答变成可交互的解释、对比与实用工具。",
+      "one_liner": "开源生成式UI框架，让聊天回答变成可交互的解释、对比与工具",
       "core_features": [
-        "根据用户提问由智能体自动选择纯文本、原生组件或自定义交互式 UI 作答",
-        "支持 3D 解释、表格转图表、计算器、地图行程等多种交互式回答场景",
-        "内置可视化路由（Jev）决定使用基础表格还是复杂图表、示意图、计算器与地图",
-        "支持用户自带 OpenAI 与 Jev API 密钥，密钥仅存于浏览器内存",
-        "提供流式回答、阅读位置保持、复制操作等聊天交互细节"
+        "智能体按任务自动选择文本、原生组件或自定义交互UI作答",
+        "支持3D解释、表格转图表、计算器、地图等多种交互场景",
+        "内置可视化路由，基础表格用A2UI，复杂图表与地图用Open Generative UI",
+        "支持用户自带OpenAI与Jev密钥，密钥仅存于浏览器内存",
+        "流式回答保持阅读位置并逐步展示内容"
       ],
       "tech_stack": [
         "TypeScript",
         "CopilotKit",
         "AG-UI",
-        "Python Deep Agent",
         "Node.js",
         "pnpm",
-        "uv"
+        "Python",
+        "uv",
+        "OpenAI",
+        "Jev"
       ],
-      "highlights": "把生成式 UI 与智能体结合，让回答不再只是文字，而是可操作的工具与可视化界面，并内置可视化路由来挑选最合适的呈现方式。",
-      "target_audience": "希望构建交互式 AI 聊天界面、探索生成式 UI 与智能体结合方式的 TypeScript 与 Python 开发者。",
+      "highlights": "将生成式UI落地为可运行的完整应用，智能体根据问题动态决定回答形态，从纯文本扩展到3D、图表、计算器和地图等可操作界面",
+      "target_audience": "构建AI聊天与智能体前端、探索生成式UI与交互式回答的Web前端及全栈开发者",
       "scores": {
-        "innovation": 4,
+        "innovation": 5,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 2609,
+    "stars_at_analysis": 3453,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-11T18:59:57+00:00",
+    "analyzed_at": "2026-10-19T07:55:01+00:00",
     "readme_available": true
   },
   "lyogavin/airllm": {
@@ -37944,31 +37946,32 @@
   },
   "0xjacky/nginx-ui": {
     "analysis": {
-      "one_liner": "基于 Go 开发的 Nginx 图形化管理界面，通过 Web UI 管理 Nginx 配置与运行状态。",
+      "one_liner": "基于 Go 的 Nginx Web 管理界面，提供可视化配置与运维能力。",
       "core_features": [
-        "通过 Web 界面管理 Nginx 配置文件",
-        "提供在线配置编辑与操作界面",
-        "支持多语言国际化",
-        "提供 Docker 镜像部署方式",
-        "支持可执行文件与 systemd 方式运行"
+        "通过 Web UI 管理 Nginx 配置",
+        "支持 Docker 镜像部署",
+        "提供多语言国际化界面",
+        "支持可执行文件与 systemd 方式运行",
+        "集成文档站点与社区支持"
       ],
       "tech_stack": [
         "Go",
         "Docker",
-        "systemd"
+        "systemd",
+        "Web UI"
       ],
-      "highlights": "以 Go 语言实现，提供 Docker 镜像与多语言支持，社区活跃度高（Star 超 1.1 万），并有官方文档站点与社区群。",
+      "highlights": "以 Go 编写、星标超一万的 Nginx 可视化管理面板，部署方式灵活且社区活跃，配套完整文档与多语言支持。",
       "target_audience": "需要可视化管理 Nginx 的运维人员与后端开发者",
       "scores": {
         "innovation": 3,
-        "practicality": 4,
+        "practicality": 5,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 11601,
+    "stars_at_analysis": 11644,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-11T18:59:57+00:00",
+    "analyzed_at": "2026-10-19T07:55:01+00:00",
     "readme_available": true
   },
   "littledivy/mimic": {
@@ -41643,6 +41646,36 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-10-18T12:39:24+00:00",
+    "readme_available": true
+  },
+  "yujunzhixue/dsh-purge": {
+    "analysis": {
+      "one_liner": "为 DeepSeek Harness 提供可切换提示词的本机红队评测插件，用于分离宿主拦截与模型拒绝。",
+      "core_features": [
+        "按模型分组管理并切换破甲提示词",
+        "清洗侧栏支持补丁应用、还原与卸载",
+        "内置演练台查看本机资产、技能与环境",
+        "调整宿主默认文案、权限策略与工具上限",
+        "启动时自动复查并重新应用补丁"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Node.js",
+        "DeepSeek Harness 插件体系",
+        "npm"
+      ],
+      "highlights": "把 Harness 宿主层的提示词改写、审批门与沙箱拦截同模型本身的拒绝行为分开，便于做受控的鲁棒性评测，并支持 Web 与桌面端分别安装。",
+      "target_audience": "做大模型安全红队评测、提示词鲁棒性研究，以及在本机官方 Harness 上做受控测试的安全研究者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 3,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 7268,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-19T07:55:01+00:00",
     "readme_available": true
   }
 }
