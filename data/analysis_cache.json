@@ -581,7 +581,7 @@
   },
   "supabase/supabase": {
     "analysis": {
-      "one_liner": "基于 Postgres 的开源开发平台，用企业级开源工具实现 Firebase 式体验。",
+      "one_liner": "基于 Postgres 的开源开发平台，用开源工具提供 Firebase 式后端能力。",
       "core_features": [
         "托管 Postgres 数据库",
         "认证与授权",
@@ -596,21 +596,20 @@
         "GoTrue",
         "Realtime",
         "pg_graphql",
-        "postgres-meta",
         "Envoy"
       ],
-      "highlights": "以 Postgres 为核心，整合多个企业级开源组件，提供 Firebase 式开发体验，支持托管、自托管与本地开发。",
-      "target_audience": "需要快速构建 Web、移动与 AI 应用并希望使用开源数据库后端的开发者。",
+      "highlights": "以企业级开源组件组合复刻 Firebase 体验，同时保留 Postgres 的开放性与可自托管能力。",
+      "target_audience": "需要快速搭建 Web、移动端与 AI 应用后端的开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 111337,
+    "stars_at_analysis": 112669,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-11T09:03:03+00:00",
+    "analyzed_at": "2026-10-21T13:56:10+00:00",
     "readme_available": true
   },
   "fleetbase/fleetbase": {
@@ -5037,35 +5036,33 @@
   },
   "apache/doris": {
     "analysis": {
-      "one_liner": "Apache Doris 是一款基于 MPP 架构的高性能实时分析数据库，支持亚秒级查询与湖仓分析。",
+      "one_liner": "Apache Doris 是面向 AI Agent 的实时分析与混合搜索数据库，基于 MPP 架构，具备高性能与易用性。",
       "core_features": [
-        "基于 MPP 架构的实时分析数据库，海量数据下亚秒级返回查询结果",
-        "支持高并发点查询与高吞吐复杂分析两类场景",
-        "提供实时报表、即席查询、用户画像与行为分析等能力",
-        "支持湖仓查询加速与多数据源联邦分析",
-        "兼容 MySQL 协议与标准 SQL，可无缝对接 BI 工具"
+        "亚秒级响应的实时分析查询，支持高并发点查与高吞吐复杂分析",
+        "支持实时报表、Ad Hoc 查询、用户画像与行为分析等场景",
+        "湖仓查询加速与多数据源联邦分析",
+        "基于 SQL 的日志与事件可观测性分析",
+        "兼容 MySQL 协议与语法，可无缝对接 BI 工具"
       ],
       "tech_stack": [
         "Java",
         "MPP 架构",
         "MySQL 协议",
         "标准 SQL",
-        "Apache Hive",
-        "Apache Iceberg",
-        "Apache Hudi"
+        "BDB JE 元数据同步"
       ],
-      "highlights": "采用存储计算一体架构，仅需 FE 与 BE 两类进程即可部署，FE 支持 Master、Follower、Observer 多角色实现元数据高可用，兼顾易用性与极致查询性能。",
-      "target_audience": "需要构建实时数据仓库、进行 BI 报表与即席分析、湖仓查询加速或日志可观测性分析的数据工程师与后端开发者。",
+      "highlights": "采用存储计算一体架构，仅需 FE 与 BE 两类进程即可部署维护，兼顾高并发点查与高吞吐复杂分析，并覆盖实时分析与湖仓联邦查询场景。",
+      "target_audience": "需要构建实时数据仓库、报表分析与湖仓查询加速的数据平台开发者及数据分析工程师",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 16044,
+    "stars_at_analysis": 16108,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-10T00:05:30+00:00",
+    "analyzed_at": "2026-10-21T13:56:10+00:00",
     "readme_available": true
   },
   "viarotel-org/escrcpy": {
@@ -8037,13 +8034,13 @@
   },
   "openai/codex": {
     "analysis": {
-      "one_liner": "OpenAI 推出的本地终端编码智能体，用 Rust 编写，可在命令行中直接调用 AI 辅助编程。",
+      "one_liner": "OpenAI 推出的本地终端编码智能体，用 Rust 编写，可在命令行中直接调用。",
       "core_features": [
         "在终端本地运行的编码智能体，直接执行编码任务",
         "支持通过 ChatGPT 账号登录，也可使用 API Key",
-        "提供 Mac、Linux、Windows 多平台安装脚本与二进制包",
-        "支持 npm 与 Homebrew 等包管理器安装",
-        "可切换至 IDE 插件或桌面应用、云端 Codex Web 形态"
+        "提供 macOS、Linux、Windows 的安装脚本与包管理器安装方式",
+        "提供多平台预编译二进制发布包",
+        "可扩展至 IDE 与桌面应用形态"
       ],
       "tech_stack": [
         "Rust",
@@ -8051,18 +8048,18 @@
         "Homebrew",
         "ChatGPT/OpenAI API"
       ],
-      "highlights": "由 OpenAI 官方开源，以 Rust 实现轻量级终端编码智能体，并与 ChatGPT 订阅体系及多端产品线（IDE、桌面、云端）打通。",
-      "target_audience": "习惯在终端工作、希望用 AI 辅助编码的开发者，以及关注 AI 编码智能体实现方式的学习者。",
+      "highlights": "由 OpenAI 官方出品，采用 Rust 实现，以轻量终端形态提供编码智能体能力，并可直接复用 ChatGPT 订阅计划，安装与分发渠道完善。",
+      "target_audience": "习惯命令行工作流、希望在本机终端中集成 AI 编码助手的开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
-        "learning_value": 4
+        "learning_value": 3
       }
     },
-    "stars_at_analysis": 128389,
+    "stars_at_analysis": 130264,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-10T00:05:30+00:00",
+    "analyzed_at": "2026-10-21T13:56:10+00:00",
     "readme_available": true
   },
   "drklo/telegram": {
@@ -17195,28 +17192,28 @@
   },
   "hmcl-dev/hmcl": {
     "analysis": {
-      "one_liner": "一款多功能、跨平台的 Minecraft 启动器，基于 Java 开发。",
+      "one_liner": "一款多功能、跨平台的 Minecraft 启动器",
       "core_features": [
-        "跨平台运行，支持多种操作系统",
-        "多功能启动与管理 Minecraft 游戏",
-        "基于 Java 构建，便于扩展与维护",
-        "拥有较高社区关注度与用户基础"
+        "Minecraft 游戏启动与管理",
+        "跨平台运行支持",
+        "多功能集成",
+        "多版本游戏管理"
       ],
       "tech_stack": [
         "Java"
       ],
-      "highlights": "在 Minecraft 启动器领域拥有超过一万 Star，跨平台且功能丰富，社区活跃度高。",
-      "target_audience": "Minecraft 玩家、Java 桌面应用开发者、对启动器实现感兴趣的学习者",
+      "highlights": "Star 数超过一万且持续增长，社区活跃度高，是较受欢迎的 Minecraft 启动器之一",
+      "target_audience": "Minecraft 玩家及对 Java 桌面应用开发感兴趣的开发者",
       "scores": {
         "innovation": 3,
         "practicality": 5,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 10164,
+    "stars_at_analysis": 10519,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-02T19:24:04+00:00",
+    "analyzed_at": "2026-10-21T13:56:10+00:00",
     "readme_available": false
   },
   "vshulcz/deja-vu": {
@@ -42024,42 +42021,44 @@
   },
   "strelov1/freehire": {
     "analysis": {
-      "one_liner": "开源IT职位搜索引擎，直接从公司招聘页抓取330万+实时职位",
+      "one_liner": "开源IT职位搜索引擎，直连公司ATS抓取330万+实时岗位并去重聚合",
       "core_features": [
-        "从Workday、Greenhouse、Lever等92个ATS平台直接抓取职位，链接原始发布页",
-        "统一schema归一化并按稳定键去重，同一职位多平台发布合并为一条",
-        "基于Meilisearch的分面全文搜索，支持地区、工作模式、职级、技能、薪资筛选",
-        "除搜索外还提供简历构建、投递追踪、邮件收件箱关联、AI匹配分析等求职工作流",
-        "提供公开HTTP API、CLI、MCP服务器和浏览器扩展等构建接口"
+        "从Workday、Greenhouse、Lever等124个ATS平台直接爬取职位，链接原始发布页",
+        "统一schema归一化并按稳定键去重，跨平台重复岗位合并为一条",
+        "按地区、工作模式、职级、技能、薪资的分面全文搜索",
+        "提供公开HTTP API、CLI、MCP服务器与Telegram摘要",
+        "内置简历构建、投递追踪与AI匹配分析等求职工作流"
       ],
       "tech_stack": [
         "Go",
         "Fiber v2",
-        "PostgreSQL + pgvector",
+        "PostgreSQL",
+        "pgvector",
         "sqlc",
         "Meilisearch",
         "langchaingo",
         "Bifrost",
         "Langfuse",
-        "SvelteKit 2 / Svelte 5",
+        "SvelteKit 2",
         "Tailwind 4",
         "Redis",
         "S3兼容对象存储",
-        "Prometheus + Grafana",
+        "Prometheus",
+        "Grafana",
         "Docker Compose"
       ],
-      "highlights": "数据直采自公司自有ATS而非聚合转帖，覆盖225个实时源、29.4万家公司，去重与归一化做得扎实；且在同一仓库内把搜索、投递、追踪、AI助手串成完整求职闭环，MIT开源可自托管",
-      "target_audience": "寻找IT职位的求职者，以及想自建职位搜索、研究爬虫与数据管道、或基于职位数据做二次开发的Go开发者",
+      "highlights": "数据直采自公司官方ATS而非聚合转帖，330万+岗位经统一归一化与去重，且管线与数据完全开源、MIT许可、可自托管，并围绕同一份数据延伸出简历、投递追踪与AI代理等完整求职闭环。",
+      "target_audience": "寻找IT岗位的求职者，以及希望自建职位搜索、研究爬虫与数据管线、或基于其API构建求职工具的Go开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 1367,
+    "stars_at_analysis": 2059,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-19T15:43:22+00:00",
+    "analyzed_at": "2026-10-21T13:56:10+00:00",
     "readme_available": true
   },
   "croffasia/itsaplan": {
@@ -42733,6 +42732,65 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-10-21T07:48:15+00:00",
+    "readme_available": true
+  },
+  "kksimp/mac.apk": {
+    "analysis": {
+      "one_liner": "在 Apple Silicon Mac 上原生运行 Android 应用，无需模拟器或虚拟机。",
+      "core_features": [
+        "直接以原生 macOS 进程运行 Android 应用，无模拟器、无虚拟机、无 Linux 内核",
+        "应用拥有独立窗口、Dock 图标，支持明暗主题、缩放旋转与返回按钮",
+        "支持 .apk、.apkm、.xapk、.apks、.apkx 多种安装包格式",
+        "自行实现 Android 应用环境，包括框架重实现、原生运行时、arm64 加载器与 ARM32 重编译器",
+        "提供兼容性列表、标志位与开发者菜单等高级设置"
+      ],
+      "tech_stack": [
+        "Java",
+        "macOS 原生运行时",
+        "arm64 加载器与 Bionic shim",
+        "ARM32 重编译器"
+      ],
+      "highlights": "不依赖模拟器或虚拟机，直接在 macOS 上实现 Android 应用环境，让应用以原生速度运行并融入 Mac 窗口体系，工程难度与创新性突出。",
+      "target_audience": "希望在 Mac 上使用 Android 应用的普通用户，以及对 Android 运行时、二进制翻译和系统兼容层感兴趣的系统开发者。",
+      "scores": {
+        "innovation": 5,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 1888,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-21T13:56:10+00:00",
+    "readme_available": true
+  },
+  "xmanrui/dsh-im": {
+    "analysis": {
+      "one_liner": "通过扫码或凭据把九大IM渠道的机器人接入DeepSeek Harness，统一管理会话与模型。",
+      "core_features": [
+        "支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord、WhatsApp等九大IM渠道接入",
+        "扫码、App Manifest或机器人凭据三种接入方式",
+        "每个渠道可接入多个机器人，连接状态、工作区、模型与会话绑定彼此独立",
+        "飞书支持实时直播、过程卡与语音交互，钉钉用AI Card流式展示回答",
+        "本机Harness主动连接公网AI Office，一个插件统一管理渠道与连接器"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "DeepSeek Harness插件体系",
+        "各IM平台长连接/WebSocket/长轮询SDK"
+      ],
+      "highlights": "覆盖九大主流IM渠道且单渠道支持多机器人隔离管理，获得DeepSeek Harness官方Token赞助，接入方式对非技术用户友好（扫码即可）。",
+      "target_audience": "希望把DeepSeek能力接入日常IM工作流的企业与个人开发者，以及需要多平台机器人统一管理的团队。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 2258,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-21T13:56:10+00:00",
     "readme_available": true
   }
 }
