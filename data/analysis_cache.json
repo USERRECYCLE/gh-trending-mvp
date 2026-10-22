@@ -1,33 +1,33 @@
 {
   "alibaba/open-code-review": {
     "analysis": {
-      "one_liner": "阿里开源的企业级 AI 代码审查 CLI 工具，用确定性流水线加 LLM Agent 混合架构实现行级精准评论。",
+      "one_liner": "阿里巴巴开源AI代码审查CLI工具，用确定性流水线加LLM Agent实现行级精准评论",
       "core_features": [
-        "读取 Git diff，通过具备工具调用能力的 Agent 生成行级精准的审查评论",
-        "内置多语言规则集，覆盖 NPE、线程安全、XSS、SQL 注入等缺陷类型",
-        "确定性工程保障：精准文件筛选、智能文件打包、细粒度规则匹配、独立定位与反思模块",
-        "ocr scan 支持对无 diff 的整文件或目录进行审查",
-        "兼容 OpenAI 与 Anthropic 模型接口，支持 Claude Code、Codex、Cursor、Kimi Code 等 Agent"
+        "读取Git diff并生成行级精准的结构化审查评论",
+        "Agent可读取完整文件、搜索代码库、查看其他变更文件获取上下文",
+        "内置多语言规则集覆盖NPE、线程安全、XSS、SQL注入等缺陷",
+        "ocr scan支持对无diff的整文件或目录进行审计式审查",
+        "支持OpenAI与Anthropic兼容的模型端点配置"
       ],
       "tech_stack": [
         "Go",
         "LLM Agent",
-        "OpenAI / Anthropic 兼容接口",
-        "npm 包分发",
-        "Git diff"
+        "OpenAI/Anthropic兼容API",
+        "npm分发",
+        "模板引擎规则匹配"
       ],
-      "highlights": "源自阿里内部服务数万开发者、发现数百万缺陷的实战验证；在自建 AACR-Bench 基准上相比通用 Agent 精度与 F1 更高，token 消耗约为其九分之一，且以牺牲召回率换取低误报。",
-      "target_audience": "需要在 CI 流程或本地集成自动化代码审查的研发团队与工程师，尤其是关注多语言安全规则、希望降低 LLM 审查成本与误报的开发者。",
+      "highlights": "源自阿里内部大规模验证的AI代码审查助手，采用确定性工程与Agent混合架构，在自建AACR-Bench基准上相比通用Agent精度与F1更高且token消耗约为其九分之一",
+      "target_audience": "需要在CI流程中集成自动化代码审查的团队、关注AI代码审查工程化落地的开发者、以及希望审计陌生代码库的工程师",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 46363,
+    "stars_at_analysis": 48026,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-12T09:24:17+00:00",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
     "readme_available": true
   },
   "cloudflare/security-audit-skill": {
@@ -7879,33 +7879,32 @@
   },
   "pnpm/pnpm": {
     "analysis": {
-      "one_liner": "快速、节省磁盘空间的 Node.js 包管理器，通过内容寻址存储与硬链接优化依赖安装。",
+      "one_liner": "快速、节省磁盘空间的 Node.js 包管理器，支持 monorepo 与严格依赖隔离。",
       "core_features": [
-        "安装速度最高可达同类工具的 2 倍",
-        "node_modules 文件通过单一内容寻址存储硬链接，节省磁盘空间",
-        "严格依赖管理，包只能访问 package.json 中声明的依赖",
-        "提供 pnpm-lock.yaml 锁文件保证确定性安装",
-        "支持 monorepo 工作区，并可作为 Node.js 版本管理器"
+        "基于内容寻址存储的硬链接机制，节省磁盘空间",
+        "安装速度最高可达同类工具的两倍",
+        "严格依赖访问，仅允许使用 package.json 中声明的依赖",
+        "内置 workspace 支持，适合 monorepo",
+        "提供 pnpm-lock.yaml 实现确定性安装，并可兼作 Node.js 版本管理器"
       ],
       "tech_stack": [
-        "Rust",
+        "Rust（实验性 pacquet 移植）",
         "Node.js",
         "pnpm-lock.yaml",
-        "内容寻址存储",
-        "硬链接"
+        "Windows/Linux/macOS 跨平台"
       ],
-      "highlights": "采用内容寻址存储与硬链接实现磁盘高效与快速安装，严格依赖隔离避免幽灵依赖，并包含实验性 Rust 移植版 pacquet。",
-      "target_audience": "Node.js 开发者、monorepo 维护者、追求安装速度与磁盘效率的前端/全栈工程师。",
+      "highlights": "自 2016 年起在生产环境久经考验，被微软 Rush 等大型 monorepo 采用，并包含用 Rust 重写 CLI 的实验性移植。",
+      "target_audience": "需要提升安装速度与磁盘效率的 Node.js 开发者，以及维护大型 monorepo 的团队。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 36737,
+    "stars_at_analysis": 36893,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-04T08:31:48+00:00",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
     "readme_available": true
   },
   "tencent/ai-infra-guard": {
@@ -8494,13 +8493,13 @@
   },
   "nautechsystems/nautilus_trader": {
     "analysis": {
-      "one_liner": "生产级 Rust 原生事件驱动交易引擎，支持研究、回测与实盘统一架构",
+      "one_liner": "生产级 Rust 原生多资产多场所交易引擎，支持回测与实盘统一事件驱动架构",
       "core_features": [
-        "Rust 原生核心，使用 tokio 异步网络与 mimalloc 分配器，性能高",
-        "同一策略代码可在回测与实盘间复用，减少部署差异",
-        "多资产、多场所支持，模块化适配器可接入任意 REST 或 WebSocket 数据源",
-        "支持高级订单类型与执行指令，如 IOC、FOK、GTC、OCO、OUO、OTO、冰山单等",
-        "Python 作为控制平面，通过 PyO3 绑定，策略可用 Python 或纯 Rust 编写"
+        "Rust 原生核心，Python 作为策略控制面，同一策略代码可跨回测与实盘运行",
+        "支持多资产、多场所，通过模块化适配器接入 REST API 与 WebSocket 行情",
+        "纳秒级分辨率回测，支持多场所多策略同时仿真",
+        "丰富订单类型与执行指令，含 IOC、FOK、GTC、冰山单及 OCO、OUO、OTO 条件单",
+        "可选 Redis 状态持久化，支持 Docker 部署与跨平台运行"
       ],
       "tech_stack": [
         "Rust",
@@ -8508,20 +8507,21 @@
         "PyO3",
         "tokio",
         "mimalloc",
-        "Redis"
+        "Redis",
+        "Docker"
       ],
-      "highlights": "Rust 原生事件驱动架构兼顾性能与安全，Python 控制平面保留策略开发灵活性，实现研究到实盘的无缝迁移",
-      "target_audience": "量化交易开发者、需要多场所多资产交易系统的团队、希望用 Rust 与 Python 混合开发策略的工程师",
+      "highlights": "用 Rust 编译型核心保证性能与类型/线程安全，同时以 Python 提供策略开发灵活性，消除研究向量化与生产事件驱动之间的重写鸿沟，并声明遵循 Soundness Pledge",
+      "target_audience": "需要从研究平滑过渡到实盘、构建多场所多资产交易系统或训练 AI 交易代理的量化开发者与交易系统工程师",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 29889,
+    "stars_at_analysis": 30590,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-12T22:10:11+00:00",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
     "readme_available": true
   },
   "jundot/omlx": {
@@ -11978,13 +11978,13 @@
   },
   "carterperez-dev/cybersecurity-projects": {
     "analysis": {
-      "one_liner": "一个包含70个从入门到进阶的网络安全实战项目、认证路线图与学习资源的开源合集。",
+      "one_liner": "面向网络安全学习者的70个分级实战项目合集，含认证路线图与学习资源。",
       "core_features": [
-        "70个网络安全项目，按Foundations、Beginner、Intermediate、Advanced四个难度分层",
-        "每个项目提供完整源码与learn文档，Foundations层代码带大量教学注释",
-        "10条认证职业路线图，覆盖SOC分析师、渗透测试、安全工程师等方向",
-        "汇总工具、课程、认证、社区与框架等学习资源",
-        "项目持续更新，当前正在构建DDoS缓解工具"
+        "70个网络安全项目按Foundations、Beginner、Intermediate、Advanced四级分层",
+        "提供完整源码与learn文档，讲解Python与安全概念",
+        "10条认证职业路线图，覆盖SOC分析师、渗透测试等方向",
+        "汇总工具、课程、认证与社区等学习资源",
+        "项目含哈希识别、HTTP头扫描、密码管理器、端口扫描等"
       ],
       "tech_stack": [
         "Go",
@@ -11994,18 +11994,18 @@
         "Argon2id",
         "AES-GCM"
       ],
-      "highlights": "以游戏化方式组织网络安全学习路径，项目按难度分级并配有从零讲解的learn文档，Foundations层采用生产级代码配合初学者级解释，兼顾可直接参考使用与系统学习。",
-      "target_audience": "从零基础编程新手到进阶安全从业者，以及准备考取安全认证、需要实战项目参考的开发者。",
+      "highlights": "以游戏化分级方式组织学习路径，Foundations层面向零基础，代码为生产级质量但配大量教学注释与从零讲解文档，兼顾可学习性与可复用性。",
+      "target_audience": "网络安全初学者、转行者、准备安全认证的开发者，以及需要参考实现的安全从业者。",
       "scores": {
         "innovation": 3,
         "practicality": 4,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 7638,
+    "stars_at_analysis": 8452,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-02T08:39:16+00:00",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
     "readme_available": true
   },
   "fission-ai/openspec": {
@@ -22380,13 +22380,13 @@
   },
   "z4nzu/hackingtool": {
     "analysis": {
-      "one_liner": "面向授权安全测试的 AI 引导一体化工具集，整合 21 类共 215 款工具。",
+      "one_liner": "AI 引导的一体化安全测试工具箱，整合 219 款工具覆盖 21 类攻防场景。",
       "core_features": [
-        "215 款精选工具按 21 个类别统一安装与运行",
-        "AI 引导：用自然语言匹配工具并给出确切命令",
-        "/find 先查本地目录再检索 GitHub 补充缺失工具",
-        "/goal 将目标拆解为分步执行计划并汇总结果",
-        "默认安全：固定版本加 SHA-256 校验、无 curl | bash、不强制 sudo"
+        "AI 引导工作流：用自然语言描述需求，映射到合适工具并给出确切命令",
+        "219 款精选工具、21 个分类，单一交互式控制台内搜索、安装与运行",
+        "/find 先检索本地目录再查 GitHub API，推荐真实维护的项目",
+        "/goal 按目标分步规划执行，并汇总发现、起草报告",
+        "默认安全：下载固定并 SHA-256 校验、列表式 subprocess、不强制 sudo、签名发布与 SBOM"
       ],
       "tech_stack": [
         "Python 3.10+",
@@ -22394,20 +22394,20 @@
         "Docker",
         "tmux",
         "GitHub API",
-        "OpenAI 或本地模型"
+        "AI/LLM（自带密钥或本地模型）"
       ],
-      "highlights": "把分散的安全工具收敛到一个控制台，并叠加 AI 意图映射与目标规划层，同时强调不自动执行、不编造结果，且提供签名发布与 SBOM 等供应链安全措施。",
-      "target_audience": "渗透测试人员、红队与蓝队/SOC 及 DFIR 分析人员、OSINT 研究者、漏洞赏金猎人与 CTF 选手、安全研究者与学生。",
+      "highlights": "把分散的渗透测试工具聚合为统一 TUI，并叠加 AI 层将自然语言意图转为具体工具与命令，同时强调不自动执行、不编造结果与供应链安全校验。",
+      "target_audience": "渗透测试人员、红队、蓝队/SOC 与取证响应分析师、OSINT 研究者、漏洞赏金猎人、CTF 玩家及安全专业学生",
       "scores": {
-        "innovation": 3,
-        "practicality": 4,
+        "innovation": 4,
+        "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 80026,
+    "stars_at_analysis": 81245,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-02T08:39:16+00:00",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
     "readme_available": true
   },
   "alchemy-run/alchemy": {
@@ -30776,32 +30776,33 @@
   },
   "genspark-ai/genoffice": {
     "analysis": {
-      "one_liner": "免费开源的 AI 办公套件，可本地编辑 Word、Excel、PPT、PDF 等真实格式文件并内置 AI 代理。",
+      "one_liner": "开源全功能 AI 办公套件，支持原生 Office 格式编辑与内置 AI 代理。",
       "core_features": [
-        "打开并保存原生 .docx/.xlsx/.pptx 文件，仅重写被编辑部分，其余字节保持不变",
-        "内置 AI 代理，编辑以修订和差异形式呈现，支持一键回滚",
-        "本地完成文件打开、编辑、保存与格式转换，仅 AI 调用联网",
+        "打开并保存原生 .docx/.xlsx/.pptx 文件，仅重写编辑部分，其余字节保留",
+        "内置 AI 代理以修订和差异形式呈现编辑，支持一键回滚",
+        "本地完成 PDF 转 Word/Excel/PPT、Markdown 转 Word 等格式转换",
         "基于本地 SQLite 索引按文件名与全文搜索文档，支持中日韩文字",
-        "提供 genoffice CLI 与 agent skill，供 Claude Code、Codex、Cursor 等创建和编辑 Office 文件"
+        "提供 genoffice CLI 与 agent skill，供编码代理本地创建和编辑 Office 文件"
       ],
       "tech_stack": [
         "TypeScript",
-        "Rust（xlsx 引擎）",
+        "Rust",
         "SQLite",
-        "Electron 类桌面应用（macOS/Windows/Linux）"
+        "Electron",
+        "MCP"
       ],
-      "highlights": "以字节保留方式编辑真实 Office 格式，AI 编辑可审阅可回滚，且完全本地运行、支持自带 API Key 与多种模型供应商。",
-      "target_audience": "需要本地处理 Office 文档并希望用 AI 辅助编辑的开发者，以及使用 Claude Code、Codex、Cursor 等编码代理自动化生成 Office 文件的用户。",
+      "highlights": "字节级保留的原生格式编辑与可审阅、可回滚的 AI 编辑流程，加上本地优先设计与面向编码代理的 CLI/skill 集成。",
+      "target_audience": "需要开源 Office 替代品的普通用户，以及希望让编码代理本地操作 Office 文件的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 8370,
+    "stars_at_analysis": 10455,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-02T08:39:16+00:00",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
     "readme_available": true
   },
   "lharries/whatsapp-mcp": {
@@ -43067,6 +43068,134 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-10-22T07:44:12+00:00",
+    "readme_available": true
+  },
+  "php/php-src": {
+    "analysis": {
+      "one_liner": "PHP 官方解释器源码仓库，用 C 实现通用脚本语言，尤其适合 Web 开发。",
+      "core_features": [
+        "PHP 语言解释器完整实现（Zend 引擎、运行时与标准库）",
+        "内置大量核心扩展，支持通过 PIE/PECL 安装额外扩展",
+        "自带完整测试套件，支持 make test 并行运行",
+        "提供从源码构建、调试与安装的完整流程",
+        "通过 RFC 流程管理新特性，GitHub PR 接受社区贡献"
+      ],
+      "tech_stack": [
+        "C",
+        "autoconf",
+        "bison",
+        "re2c",
+        "libxml2",
+        "libsqlite3",
+        "GitHub Actions",
+        "OSS-Fuzz"
+      ],
+      "highlights": "全球最流行 Web 脚本语言的官方实现，拥有 4 万余 Star 与庞大社区；源码是学习语言解释器、虚拟机与 C 语言工程实践的经典范本，且贡献流程规范透明。",
+      "target_audience": "语言/编译器研究者、PHP 扩展与内核开发者、希望深入理解解释器实现或参与大型 C 开源项目的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 40860,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
+    "readme_available": true
+  },
+  "adobe/skills": {
+    "analysis": {
+      "one_liner": "Adobe 官方为 AI 编码代理提供的技能插件集合，覆盖分析、AEM、Workfront 等产品。",
+      "core_features": [
+        "以插件形式提供 Adobe Analytics、CJA、Workfront、AEM 等产品技能",
+        "支持 Claude Code、GitHub Copilot CLI、Vercel Skills、upskill 等多种安装方式",
+        "技能对接 Adobe 官方 MCP 服务器，完成 KPI 监控、漏斗分析、分段对比等任务",
+        "stardust 技能可抓取现有站点设计系统并生成静态 HTML 现代化方案",
+        "提供 Workfront Planning 方案架构与 Fusion 场景优化等咨询型技能"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Claude Code 插件市场",
+        "GitHub Copilot CLI",
+        "MCP 服务器",
+        "Vercel Skills (npx skills)",
+        "Cursor 插件清单"
+      ],
+      "highlights": "由 Adobe 官方维护，将企业级产品能力封装为可被多种 AI 编码代理直接调用的技能插件，并统一通过 MCP 服务器对接真实数据。",
+      "target_audience": "使用 Claude Code、Copilot 等 AI 编码代理的 Adobe 产品开发者、数据分析师与解决方案架构师",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 294,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
+    "readme_available": true
+  },
+  "flowable/flowable-engine": {
+    "analysis": {
+      "one_liner": "紧凑高效的 Java 工作流与 BPM 平台，内置 BPMN、CMMN、DMN 引擎",
+      "core_features": [
+        "BPMN 流程引擎，支持人工与系统活动编排",
+        "CMMN 案例引擎与 DMN 规则引擎",
+        "可嵌入 Java 应用或作为服务运行于服务器、集群和云",
+        "与 Spring 深度集成，提供丰富的 Java 与 REST API",
+        "支持 Docker 部署与 Flowable Design 在线建模"
+      ],
+      "tech_stack": [
+        "Java",
+        "Spring",
+        "REST API",
+        "Docker",
+        "Maven"
+      ],
+      "highlights": "三大引擎（BPMN/CMMN/DMN）一体化，Apache 2.0 开源，社区成熟，可嵌入亦可集群化部署",
+      "target_audience": "需要构建审批流、业务流程管理或规则引擎的 Java 后端开发者与系统管理员",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 9611,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
+    "readme_available": true
+  },
+  "redlib-org/redlib": {
+    "analysis": {
+      "one_liner": "用 Rust 编写的 Reddit 隐私前端，无广告、无追踪、无 JavaScript。",
+      "core_features": [
+        "代理所有请求（含媒体）以隐藏用户真实 IP",
+        "无 JavaScript、无广告、无追踪的轻量浏览体验",
+        "OAuth 令牌伪装与定期刷新以规避 Reddit 限流",
+        "强内容安全策略阻止浏览器直连 Reddit",
+        "支持 Docker、Podman、二进制与源码等多种部署方式"
+      ],
+      "tech_stack": [
+        "Rust",
+        "Hyper",
+        "Askama",
+        "Rustls",
+        "Docker"
+      ],
+      "highlights": "以 Rust 实现高性能与内存安全，通过令牌伪装和请求头模拟绕过 Reddit 限制，并宣称生产环境零日志，隐私保护彻底。",
+      "target_audience": "注重隐私的 Reddit 用户、自托管爱好者，以及希望学习 Rust Web 开发与反向代理前端的开发者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 3874,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-22T13:54:34+00:00",
     "readme_available": true
   }
 }
