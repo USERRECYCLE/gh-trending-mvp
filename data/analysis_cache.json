@@ -2955,36 +2955,35 @@
   },
   "openbmb/voxcpm": {
     "analysis": {
-      "one_liner": "VoxCPM2 是无分词器的多语言 TTS 系统，支持语音设计、可控克隆与 48kHz 高保真合成。",
+      "one_liner": "无分词器的多语言TTS系统，支持语音设计、可控克隆与48kHz高保真合成",
       "core_features": [
-        "无分词器端到端扩散自回归架构，直接生成连续语音表示",
-        "支持 30 种语言及多种中文方言，无需语言标签",
-        "语音设计：仅凭自然语言描述即可创建全新音色",
-        "可控克隆与极致克隆：参考音频克隆并保留音色、节奏与情感细节",
-        "48kHz 录音室级音频输出，支持实时流式推理"
+        "无分词器扩散自回归架构，直接生成连续语音表示",
+        "支持30种语言及多种中文方言，无需语言标签",
+        "仅凭自然语言描述即可设计全新音色",
+        "基于短参考音频的可控声音克隆，可调节情感与语速",
+        "48kHz工作室级音频输出，内置超分辨率，支持实时流式合成"
       ],
       "tech_stack": [
         "Python",
         "PyTorch",
-        "MiniCPM-4 骨干网络",
+        "MiniCPM-4",
         "AudioVAE V2",
-        "Nano-vLLM",
-        "vLLM-Omni",
+        "vLLM/Nano-vLLM",
         "Hugging Face",
         "ModelScope"
       ],
-      "highlights": "2B 参数、超 200 万小时多语言数据训练，无分词器扩散自回归架构，Apache-2.0 开源可商用，RTF 低至约 0.3 并支持 vLLM 加速。",
-      "target_audience": "从事语音合成、多语言 TTS、语音克隆与实时语音服务的算法工程师和研究者。",
+      "highlights": "2B参数、200万小时多语言数据训练，Apache-2.0开源可商用，RTF低至约0.3并支持vLLM加速部署，兼具语音设计与高保真克隆能力",
+      "target_audience": "语音合成研究者、多语言TTS应用开发者、需要商用级语音克隆与配音能力的产品团队",
       "scores": {
         "innovation": 5,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 39166,
+    "stars_at_analysis": 40036,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-12T22:10:11+00:00",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   },
   "hashicorp/vault": {
@@ -4709,31 +4708,31 @@
   },
   "bazelbuild/bazel": {
     "analysis": {
-      "one_liner": "一个快速、可扩展、多语言且可扩展的构建与测试系统，支持增量构建和分布式缓存。",
+      "one_liner": "一个快速、可扩展、多语言且可扩展的构建与测试系统",
       "core_features": [
-        "增量构建与测试，仅重建必要部分",
-        "支持多语言（Java、C++、Android、iOS、Go 等）",
-        "跨平台运行（Windows、macOS、Linux）",
-        "可扩展的规则系统，支持自定义语言和平台",
-        "支持大型代码库和单体仓库，具备本地与分布式缓存"
+        "增量构建，只重建必要部分，支持本地与分布式缓存",
+        "支持 Java、C++、Android、iOS、Go 等多语言构建与测试",
+        "可扩展至任意规模代码库，支持多仓库与大型 monorepo",
+        "跨平台运行于 Windows、macOS、Linux",
+        "通过扩展语言自定义新语言与平台规则，并复用社区规则"
       ],
       "tech_stack": [
         "Java",
-        "Starlark（扩展语言）",
+        "Starlark 扩展语言",
         "Buildkite（CI）"
       ],
-      "highlights": "强调“快速与正确”的权衡，通过高级缓存和依赖分析实现高效构建，适合大规模代码库和单体仓库。",
-      "target_audience": "需要管理大型多语言代码库、追求构建速度和可扩展性的开发团队与工程师。",
+      "highlights": "以“快速且正确”为核心理念，结合优化的依赖分析、并行执行与分布式缓存，兼顾多语言与超大规模代码库的构建需求",
+      "target_audience": "需要管理大型或多语言代码库、追求构建速度与一致性的工程团队与构建系统开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
-        "learning_value": 4
+        "learning_value": 5
       }
     },
-    "stars_at_analysis": 25913,
+    "stars_at_analysis": 25982,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-02T08:39:16+00:00",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   },
   "earthtojake/text-to-cad": {
@@ -5855,13 +5854,13 @@
   },
   "snailsploit/claude-red": {
     "analysis": {
-      "one_liner": "为 Claude 技能系统提供 78 个攻击性安全 SKILL.md 文件，让 Claude 化身红队专家。",
+      "one_liner": "为 Claude 提供 78 个结构化攻击性安全技能文件，覆盖红队各攻击面。",
       "core_features": [
-        "78 个结构化 SKILL.md 技能文件，覆盖 23 个安全领域",
-        "按对话触发词按需加载技能，不占用无关上下文",
-        "涵盖 Web、无线、AD、云、移动、IoT、漏洞开发等攻击面",
-        "提供安装脚本与 Claude Code、Claude.ai 多种接入方式",
-        "每个技能包含方法论、工具、边界情况与提权路径"
+        "78 个 SKILL.md 技能文件，覆盖 23 个安全类别",
+        "按对话触发条件按需加载，不占用未使用技能的上下文",
+        "涵盖 Web、无线、AD、云、移动、IoT、漏洞开发、免杀等攻击面",
+        "支持 Claude Skills 系统、Claude Code 与 Claude.ai 多种接入方式",
+        "提供安装脚本与按类别稀疏检出安装"
       ],
       "tech_stack": [
         "Python",
@@ -5870,18 +5869,18 @@
         "Markdown (SKILL.md)",
         "Shell 安装脚本"
       ],
-      "highlights": "将红队方法论封装为可即插即用的 Claude 技能，按需加载节省上下文，覆盖从 SQLi 到 EDR 规避、ADCS 滥用的完整攻击链。",
-      "target_audience": "授权红队成员、漏洞赏金猎人、安全研究人员、CTF 选手及希望系统化学习攻击面方法论的安全从业者。",
+      "highlights": "将专家级红队方法论封装为可即插即用的技能文件，按需加载节省上下文，类别覆盖广且结构统一，适合作为 LLM 辅助安全测试的知识库。",
+      "target_audience": "授权红队成员、漏洞赏金研究者、安全研究员、CTF 选手及希望用 Claude 辅助安全测试的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
-        "learning_value": 5
+        "learning_value": 4
       }
     },
-    "stars_at_analysis": 7418,
+    "stars_at_analysis": 8084,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-11T18:59:57+00:00",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   },
   "first-tech-challenge/ftcrobotcontroller": {
@@ -9549,33 +9548,34 @@
   },
   "opendataloader-project/opendataloader-pdf": {
     "analysis": {
-      "one_liner": "开源 PDF 解析器，将 PDF 转为 AI 可用的 Markdown/JSON/HTML，并自动生成无障碍 Tagged PDF。",
+      "one_liner": "开源PDF解析器，将PDF转为AI可用的结构化数据，并自动化PDF无障碍标签生成。",
       "core_features": [
-        "提取文本、表格、图片、公式，输出 Markdown、带边界框的 JSON 和 HTML",
-        "确定性本地解析模式，配合混合 AI 模式处理复杂表格、扫描件 OCR 与图表描述",
-        "自动将无标签 PDF 转换为屏幕阅读器可用的 Tagged PDF",
-        "提供 Python、Node.js、Java 三种 SDK，支持批量转换",
-        "内置页眉页脚水印过滤与提示注入安全过滤"
+        "提取Markdown、JSON（含边界框）和HTML，支持正确阅读顺序与标题层级识别",
+        "混合AI模式处理复杂表格、扫描件OCR、公式与图表描述",
+        "将无标签PDF自动转换为Tagged PDF，服务无障碍合规",
+        "提供Python、Node.js、Java多语言SDK，支持批量转换",
+        "内置AI安全过滤，过滤提示注入及页眉页脚水印"
       ],
       "tech_stack": [
         "Java 11+",
         "Python",
         "Node.js",
-        "Apache 2.0",
-        "LangChain 集成"
+        "Apache-2.0",
+        "LangChain集成",
+        "veraPDF"
       ],
-      "highlights": "在 200 份真实 PDF 基准测试中综合准确率排名第一（0.907），是首个端到端开源生成 Tagged PDF 的工具，并与 PDF Association、veraPDF 团队合作遵循 Well-Tagged PDF 规范。",
-      "target_audience": "构建 RAG/LLM 数据管道的开发者，以及需要批量处理 PDF 无障碍合规的团队。",
+      "highlights": "基准测试整体提取准确率排名第一（0.907），是首个端到端开源生成Tagged PDF的工具，并与PDF Association及veraPDF开发方合作，遵循Well-Tagged PDF规范。",
+      "target_audience": "构建RAG/LLM数据管道的AI开发者，以及需要批量处理PDF无障碍合规的企业与开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 29656,
+    "stars_at_analysis": 29975,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-12T22:10:11+00:00",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   },
   "joooook/12306-mcp": {
@@ -13070,13 +13070,13 @@
   },
   "fleetdm/fleet": {
     "analysis": {
-      "one_liner": "面向IT与安全团队的开源设备管理平台，统一管理多操作系统终端设备。",
+      "one_liner": "开源设备管理平台，统一实现MDM、补丁、软件部署与合规审计",
       "core_features": [
-        "跨平台设备管理（MDM），支持Linux、macOS、Windows、Chromebook、iOS、Android等",
-        "通过GitOps、YAML、REST API、webhook和fleetctl命令行进行基础设施即代码管理",
-        "设备可见性与合规检查，内置macOS和Windows的CIS基准",
-        "软件部署与补丁管理，支持Munki、Chef、Puppet、Ansible等工具集成",
-        "与Snowflake、Splunk、GitHub Actions、Vanta、Elastic、Jira、Zendesk等企业工具集成"
+        "跨平台设备管理，支持Linux、macOS、Windows、Chromebook、iOS、Android等",
+        "通过GitOps、YAML、REST API、webhook和fleetctl命令行实现基础设施即代码",
+        "提供CIS基准与数百项设备属性报告，支持可见性与合规审计",
+        "内置MDM、补丁管理、软件部署与验证能力，模块化可裁剪",
+        "与Snowflake、Splunk、GitHub Actions、Vanta、Elastic等企业工具集成"
       ],
       "tech_stack": [
         "Go",
@@ -13085,23 +13085,20 @@
         "Nudge",
         "swiftDialog",
         "REST API",
-        "YAML",
-        "GitOps",
-        "webhook",
-        "fleetctl"
+        "YAML/GitOps"
       ],
-      "highlights": "基于osquery构建，开源透明，可管理数十万级设备，免费版永久免费，采用类似GitLab的商业模式，支持纯API与GitOps驱动。",
-      "target_audience": "需要大规模管理终端设备的IT运维与安全团队，以及偏好开源、API优先和基础设施即代码的开发者。",
+      "highlights": "开源透明、仅采集管理所需数据，免费版永久免费，可支撑数十万级设备的大规模生产部署",
+      "target_audience": "需要统一管理大量终端设备的IT运维与安全团队，以及关注开源设备管理与Go后端架构的开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 6879,
+    "stars_at_analysis": 7037,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-09-18T13:01:01+00:00",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   },
   "remorses/gpuix": {
@@ -19741,13 +19738,13 @@
   },
   "mailcow/mailcow-dockerized": {
     "analysis": {
-      "one_liner": "基于 Docker 的一体化开源邮件服务器套件，提供完整的自托管邮件解决方案。",
+      "one_liner": "基于 Docker 的一体化开源邮件服务器套件，可快速自建完整邮件系统。",
       "core_features": [
-        "Docker 容器化部署，一键搭建完整邮件服务器",
-        "集成邮件收发、反垃圾邮件、反病毒等核心组件",
-        "提供 Web 管理后台进行域名、邮箱和用户管理",
-        "支持多域名与多用户管理",
-        "内置翻译与社区支持体系"
+        "通过 Docker 容器化部署完整邮件服务栈",
+        "集成 SMTP、IMAP 等邮件收发与存储组件",
+        "提供 Web 管理界面进行域名、邮箱与配置管理",
+        "支持多语言界面与社区翻译",
+        "提供官方文档与社区支持渠道"
       ],
       "tech_stack": [
         "Docker",
@@ -19755,18 +19752,18 @@
         "JavaScript",
         "GNU GPL v3"
       ],
-      "highlights": "将复杂的邮件服务器搭建流程通过 Docker 容器化大幅简化，拥有超过 1.3 万 Star 的活跃社区和商业支持背书。",
-      "target_audience": "希望自托管邮件服务器、注重数据隐私的系统管理员与运维开发者。",
+      "highlights": "将复杂的邮件服务器组件打包为 Docker 化方案，大幅降低自建邮件系统的部署与运维门槛，社区活跃且 Star 数较高。",
+      "target_audience": "需要自建邮件服务器的运维人员、中小企业 IT 管理员及注重数据隐私的自托管爱好者",
       "scores": {
         "innovation": 3,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 13576,
+    "stars_at_analysis": 13667,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-09T00:28:21+00:00",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   },
   "nasiko-labs/nasiko": {
@@ -28716,12 +28713,12 @@
   },
   "ai-dynamo/dynamo": {
     "analysis": {
-      "one_liner": "面向数据中心规模的分布式推理服务编排框架，统一调度多节点 GPU 推理引擎。",
+      "one_liner": "面向数据中心的分布式推理编排层，将多种推理引擎整合为多节点协同推理系统。",
       "core_features": [
-        "分离式 Prefill/Decode 服务，两阶段独立扩缩容",
-        "KV 感知路由，避免重复预填充计算",
-        "多级 KV 缓存与 SLA 驱动的自动扩缩容规划器",
-        "支持多模态、工具调用与快速冷启动",
+        "分离式服务，prefill 与 decode 可独立扩缩容",
+        "KV 感知路由，避免重复 prefill 计算",
+        "多级 KV 缓存与 KVBM 缓存管理",
+        "基于 SLA 的自动扩缩容规划器",
         "兼容 SGLang、TensorRT-LLM、vLLM 等推理引擎"
       ],
       "tech_stack": [
@@ -28731,18 +28728,18 @@
         "TensorRT-LLM",
         "vLLM"
       ],
-      "highlights": "不替代推理引擎，而是在其之上做集群级编排，官方数据显示可显著提升吞吐、降低首 token 延迟并减少 SLA 违约。",
-      "target_audience": "需要在多 GPU 或多节点上部署 LLM、推理、多模态及视频生成服务的基础设施与推理平台开发者。",
+      "highlights": "不替代推理引擎，而是在其之上做编排，统一实现分离式服务、智能路由、多级 KV 缓存与自动扩缩容，由 NVIDIA 主导且社区活跃。",
+      "target_audience": "需要在多 GPU 或多节点上部署 LLM、推理、多模态与视频生成服务，并关注吞吐、延迟与 TCO 的推理基础设施开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 8308,
+    "stars_at_analysis": 8372,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-16T07:19:26+00:00",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   },
   "wesselkroos/youtube-ambilight": {
@@ -35318,32 +35315,33 @@
   },
   "vincentwei1021/video-shotcraft": {
     "analysis": {
-      "one_liner": "面向 Claude Code 与 Codex 的 AI 视频技能，用 Remotion 生成电影级产品宣传片。",
+      "one_liner": "面向 Claude Code 与 Codex 的 AI 视频技能，用 Remotion 代码化生成电影级产品宣传片。",
       "core_features": [
-        "152 张镜头配方卡与 209 个动态预览，可直接被 Agent 调用",
-        "内置 Ink Press 成品模板，36.2 秒 1080p 30fps 十镜头纸墨风格",
-        "Motion Workbench 浏览器剪辑台，可改文案、字体、颜色并导出",
-        "支持导出剪映（CapCut CN）可编辑草稿，字幕与音效分轨",
-        "一键切换九种影片主题，保留已有编辑"
+        "152 张镜头配方卡与 209 个动效预览组成的镜头库",
+        "自动抓取真实页面截图并编排分镜、按节拍剪辑与音效设计",
+        "基于 Remotion 逐帧代码渲染，输出可继续编辑的 MP4",
+        "Motion Workbench 浏览器编辑器与剪映草稿导出",
+        "提供开箱即用的生产级模板与逐帧质检"
       ],
       "tech_stack": [
         "TypeScript",
         "Remotion",
-        "Claude Code / Codex Agent Skill",
+        "Claude Code",
+        "Codex",
         "Node.js"
       ],
-      "highlights": "把 Agent 变成动态设计工作室：配方卡加 Remotion 组件的工作流，配合成品模板与浏览器剪辑台，从分镜到音效设计全流程自动化，且预览与渲染逐帧一致。",
-      "target_audience": "需要快速产出产品宣传片、发布视频的开发者与独立创作者，以及使用 Claude Code 或 Codex 的 Agent 工作流用户。",
+      "highlights": "不是黑盒视频生成器，每一帧都由代码从自有截图与文案绘制，画面清晰、品牌一致且完全可编辑，并配套庞大的镜头配方库与成品模板。",
+      "target_audience": "需要快速产出产品宣传片的开发者、独立开发者与小型团队，以及使用 Claude Code 或 Codex 的 AI 编程用户",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 10886,
+    "stars_at_analysis": 13155,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-09T00:28:21+00:00",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   },
   "external-secrets/external-secrets": {
@@ -38353,13 +38351,13 @@
   },
   "baidu/unlimited-ocr": {
     "analysis": {
-      "one_liner": "百度开源的长视野OCR模型，支持单次超长文档与多页PDF解析。",
+      "one_liner": "百度推出的长文档OCR模型，支持单次解析超长多页文档与PDF。",
       "core_features": [
-        "单图支持gundam与base两种解析配置",
-        "多页图像与PDF批量解析",
+        "单图文档解析，支持gundam与base两种配置",
+        "多页图片与PDF一次性长程解析",
         "支持Transformers、vLLM、SGLang多种推理后端",
-        "支持ms-swift训练与ModelScope、百度云部署",
-        "内置no_repeat_ngram抑制重复生成"
+        "支持ms-swift训练与百度云、ModelScope、Hugging Face部署",
+        "提供重复n-gram抑制等长文本生成控制"
       ],
       "tech_stack": [
         "Python",
@@ -38370,18 +38368,18 @@
         "PyMuPDF",
         "ms-swift"
       ],
-      "highlights": "在DeepSeek-OCR基础上进一步推进，主打一次性长视野解析，并快速获得vLLM、SGLang、ms-swift等主流生态适配。",
-      "target_audience": "从事文档解析、OCR应用开发及大模型推理部署的开发者与研究者。",
+      "highlights": "以一次性长程解析为核心，将DeepSeek-OCR思路推进一步，兼容主流推理与训练生态，工程落地路径完整。",
+      "target_audience": "需要处理长文档、多页PDF批量OCR的算法工程师与文档智能应用开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 27323,
+    "stars_at_analysis": 28260,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-14T07:47:14+00:00",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   },
   "truelockmc/streambert": {
@@ -43445,6 +43443,69 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-10-23T07:41:45+00:00",
+    "readme_available": true
+  },
+  "sehajveersingh2005/bloom": {
+    "analysis": {
+      "one_liner": "一款用物理动效重塑 Windows 桌面交互的桌面伴侣，包含灵动岛与可替换任务栏的 Dock。",
+      "core_features": [
+        "顶部灵动岛支持音乐、控制中心、状态、日历四种模式切换",
+        "音乐可视化随五个频段与弹簧物理实时响应",
+        "Dock 替代原生 Windows 任务栏，支持拖拽排序、窗口预览与右键菜单",
+        "Rust 后端通过全局钩子、WASAPI、COM、WMI 深度对接 Windows 系统",
+        "按需休眠的资源调度，如无音频时暂停可视化、失焦时才刷新缩略图"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Rust",
+        "Tauri",
+        "Bun",
+        "WASAPI",
+        "COM",
+        "WMI"
+      ],
+      "highlights": "用弹簧物理动画与多窗口架构重做桌面外壳，并以 Rust 直接调用 Windows 底层接口实现音频可视化与系统控制，交互质感接近原生。",
+      "target_audience": "对桌面美化与交互体验感兴趣的 Windows 用户，以及想学习 Tauri、Rust 与 Windows 系统集成的前端和全栈开发者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 328,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
+    "readme_available": true
+  },
+  "projectdiscovery/nuclei-templates": {
+    "analysis": {
+      "one_liner": "为 nuclei 扫描引擎提供社区维护的安全漏洞检测模板库",
+      "core_features": [
+        "收录大量 HTTP、文件、网络、云、DNS 等类型的漏洞检测模板",
+        "覆盖 CISA KEV 与 VulnCheck KEV 等已知被利用漏洞",
+        "按标签、作者、目录、严重等级分类统计模板",
+        "支持社区通过 PR 或 Issue 提交新模板",
+        "提供模板构建文档与示例模板"
+      ],
+      "tech_stack": [
+        "Nuclei 扫描引擎",
+        "YAML 模板",
+        "JavaScript",
+        "GitHub 社区协作流程"
+      ],
+      "highlights": "模板数量庞大且持续更新，对已知被利用漏洞有专门覆盖，是 nuclei 生态的核心资产",
+      "target_audience": "安全研究人员、渗透测试人员、漏洞赏金猎人和 DevSecOps 工程师",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 13191,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-23T13:35:26+00:00",
     "readme_available": true
   }
 }
