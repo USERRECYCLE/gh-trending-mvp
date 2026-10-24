@@ -29189,32 +29189,32 @@
     "analysis": {
       "one_liner": "AWS 官方推出的 MCP 服务器、技能与插件工具包，帮助 AI 编码代理在 AWS 上构建、部署和管理应用。",
       "core_features": [
-        "提供官方支持的 AWS MCP 服务器，让代理访问 AWS API、沙箱脚本执行与实时文档搜索",
-        "提供 aws-core、aws-agents、aws-data-analytics 等多个插件，覆盖服务选型、CDK/CloudFormation、无服务器、容器、存储、可观测性、计费与部署",
-        "提供本地技能（skills）机制，按任务自动激活对应的代理指导",
-        "支持从 AWS CLI 直接使用工具包",
-        "兼容 Claude Code、Codex、Cursor、Kiro、fx 等主流编码代理"
+        "提供 AWS MCP Server，让代理访问 AWS API、沙箱脚本执行与实时文档检索",
+        "提供 aws-core、aws-agents、aws-data-analytics、aws-agents-for-devsecops、aws-startup-advisor 等插件",
+        "以技能（SKILL.md）形式提供任务相关的代理指导，可按需加载",
+        "支持通过 AWS CLI 直接使用 agent-toolkit 命令",
+        "覆盖服务选型、CDK/CloudFormation、无服务器、容器、存储、可观测性、计费与部署等场景"
       ],
       "tech_stack": [
         "Python",
         "MCP（Model Context Protocol）",
         "AWS CLI",
         "uv/uvx",
-        "npx skills",
-        "CDK/CloudFormation"
+        "CDK/CloudFormation",
+        "Amazon Bedrock 与 AgentCore"
       ],
-      "highlights": "由 AWS 官方维护并已 GA，把 AWS 服务知识、API 访问与安全护栏统一封装成 MCP 服务器、插件和技能，可无缝接入开发者已在使用的多种 AI 编码代理。",
-      "target_audience": "使用 AI 编码代理在 AWS 上开发、部署和运维应用的开发者，以及需要为代理提供 AWS 上下文与护栏的团队。",
+      "highlights": "由 AWS 官方支持并已 GA，同时适配 Claude Code、Codex、Cursor、Devin、Kiro、fx 等主流编码代理，把 MCP 服务器、技能与插件打包成开箱即用的工具链。",
+      "target_audience": "使用 AI 编码代理在 AWS 上开发、部署和运维应用的开发者，以及构建 AI Agent、数据分析与 DevSecOps 流程的团队。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 2880,
+    "stars_at_analysis": 2976,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-15T07:33:42+00:00",
+    "analyzed_at": "2026-10-24T12:46:18+00:00",
     "readme_available": true
   },
   "rubys/roundhouse": {
