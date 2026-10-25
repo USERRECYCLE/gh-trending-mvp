@@ -45237,5 +45237,38 @@
     "model": "deepseek-chat",
     "analyzed_at": "2026-10-25T13:14:23+00:00",
     "readme_available": true
+  },
+  "jub0t/concat": {
+    "analysis": {
+      "one_liner": "免费开源、本地优先的跨平台视频编辑器，CapCut 替代品，支持 MCP 与 JSON-RPC 脚本化。",
+      "core_features": [
+        "本地 Whisper 自动字幕、文本转语音与声音克隆",
+        "背景移除、关键帧动画、100 种 GPU 特效与转场",
+        "多轨多时间线剪辑，支持分割、波纹、变速、冻结帧",
+        "H.264/HEVC/AV1 导出，最高 4K 60 与 10bit 色彩",
+        "内置 MCP 服务器与 JSON-RPC API，可供 AI 代理和脚本调用"
+      ],
+      "tech_stack": [
+        "Rust",
+        "FFmpeg",
+        "GPU 合成器",
+        "Whisper",
+        "MCP",
+        "JSON-RPC",
+        "gRPC"
+      ],
+      "highlights": "完全本地运行、无水印无账号无订阅，原生 Rust 引擎加 GPU 合成，同时把视频剪辑能力开放给 AI 代理与脚本自动化。",
+      "target_audience": "需要免费无水印剪辑工具的短视频创作者，以及希望用脚本或 AI 代理自动化视频处理的开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 11527,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-10-25T22:39:09+00:00",
+    "readme_available": true
   }
 }
