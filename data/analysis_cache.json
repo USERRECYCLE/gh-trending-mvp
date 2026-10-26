@@ -2063,34 +2063,35 @@
   },
   "debpalash/voicestudio": {
     "analysis": {
-      "one_liner": "完全本地运行的开源 ElevenLabs 替代方案，支持语音克隆、配音、听写与有声书制作。",
+      "one_liner": "完全本地运行的开源语音克隆与配音工具，支持646种语言，是ElevenLabs的替代方案。",
       "core_features": [
         "语音克隆与自定义音色设计",
         "视频配音与定时语音合成",
-        "听写、转录与有声书/批量任务生成",
+        "听写、转录与有声书制作",
         "本地模型管理与多引擎切换",
-        "本地 API 与 MCP 供智能体集成"
+        "本地API与MCP供智能体调用"
       ],
       "tech_stack": [
         "Python",
         "Electron",
-        "Bun",
         "PyTorch",
-        "CUDA/Metal(MPS)",
-        "Docker"
+        "CUDA/Metal/Vulkan",
+        "Bun",
+        "OmniVoice",
+        "whisper.cpp"
       ],
-      "highlights": "完全本地化运行、覆盖 646 种语言，并提供桌面应用、本地 API 与 MCP 集成，是闭源语音合成服务的开源替代。",
-      "target_audience": "需要私有化语音合成能力的开发者、内容创作者，以及关注本地 AI 语音工作流的工程师。",
+      "highlights": "完全本地化运行，数据不出设备，覆盖646种语言，并集成语音克隆、配音、转录、有声书等完整工作流，同时提供本地API与MCP接口。",
+      "target_audience": "需要本地隐私化语音合成能力的开发者、内容创作者，以及希望自建ElevenLabs替代方案的团队。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 82129,
+    "stars_at_analysis": 87507,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-23T07:41:45+00:00",
+    "analyzed_at": "2026-10-26T07:54:49+00:00",
     "readme_available": true
   },
   "mozilla/pdf.js": {
@@ -42181,33 +42182,32 @@
   },
   "renhuai123/ziwei-doushu": {
     "analysis": {
-      "one_liner": "基于倪海厦《天纪》体系的紫微斗数开源排盘引擎，附完整算法、四化系统与大规模解读数据集。",
+      "one_liner": "基于倪海厦《天纪》体系的紫微斗数开源排盘引擎，含完整算法、四化系统与格局知识库。",
       "core_features": [
-        "完整紫微斗数排盘算法，含四化系统与格局知识库",
-        "真太阳时校正、中国夏令时处理、农历公历互转与闰月边界",
-        "十二神煞、运限上下文（含童限）等辅助模块",
-        "13 维解读数据集（67.5 万命盘 × 13 维，按年份分卷发布）",
-        "古籍原文数据与倪师《天纪》原话语料（1848 条，可回放定位）"
+        "完整紫微斗数排盘算法，支持真太阳时校正、中国夏令时、农历公历互转与闰月边界处理",
+        "四化系统与格局知识库，星曜亮度支持多流派配置",
+        "十二神煞、运限上下文（含童限）等扩展模块",
+        "开源 13 维解读数据集，67.5 万张命盘、877 万段解读，按年份分文件发布",
+        "倪师《天纪》原话语料 1848 条，逐条注明集数与时间码"
       ],
       "tech_stack": [
         "TypeScript",
         "Next.js",
-        "Node.js",
-        "GitHub Actions CI",
-        "zstd 压缩数据分发"
+        "GitHub Actions",
+        "zstd"
       ],
-      "highlights": "把排盘算法、四化体系、古籍引证与大规模确定性生成的解读数据集一起开源，数据按年份分卷、可校验，且断语逐句对照倪师原话与《全书》原文校正，工程规范（测试、CI、许可分层）较完整。",
-      "target_audience": "对紫微斗数或传统术数数字化感兴趣的开发者、需要排盘能力的应用开发者、研究命理数据与知识库构建的工程师。",
+      "highlights": "算法与知识库开源、解读数据集可自由商用（CC BY 4.0），断语按倪师原话与《紫微斗数全书》逐句校正并标注出处，工程上补齐回归测试与 CI。",
+      "target_audience": "对传统命理数字化感兴趣的开发者、需要紫微斗数排盘能力的应用开发者，以及研究倪海厦体系的学习者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 5253,
+    "stars_at_analysis": 8021,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-20T07:44:10+00:00",
+    "analyzed_at": "2026-10-26T07:54:49+00:00",
     "readme_available": true
   },
   "gogs/gogs": {
@@ -44575,13 +44575,13 @@
   },
   "jetbrains/thinkrail": {
     "analysis": {
-      "one_liner": "JetBrains 推出的智能体 IDE，围绕 pi 编码代理构建，能随使用习惯自我定制。",
+      "one_liner": "JetBrains 推出的智能体 IDE，围绕 pi 编码代理构建，通过活规格与技能持续学习你的项目。",
       "core_features": [
-        "基于 git worktree 的隔离工作区，支持多个代理并行开发",
-        "围绕 pi 代理的完整 IDE：Monaco 编辑器、文件树、终端和差异视图",
-        "多个并发聊天会话，可实时查看 token 与成本，并支持共享计划",
-        "以 SPEC.md 构成规格图，作为持久项目知识，由代理维护",
-        "支持 Agent Skills、MCP 服务器、扩展管理及多语言界面"
+        "基于 git worktree 的隔离工作区，支持多代理并行开发与分支合并",
+        "围绕代理的可拆分 IDE 工作台：Monaco 编辑器、文件树、终端、差异对比与评论",
+        "多路并发 pi 会话，支持模型切换、token 与成本实时显示、子代理与共享计划",
+        "以 SPEC.md 图作为项目知识的活规格，代理通过专用工具读取与维护",
+        "支持 Agent Skills、MCP 服务器、扩展开关与多语言界面"
       ],
       "tech_stack": [
         "TypeScript",
@@ -44589,20 +44589,20 @@
         "Monaco 编辑器",
         "git worktree",
         "MCP",
-        "Tauri 桌面应用"
+        "Tauri 风格桌面端与 CLI"
       ],
-      "highlights": "把编码代理放进真正的 IDE 中，并用隔离工作区、持久规格图和可复用技能解决代理上下文丢失与并行协作问题，同时支持自带模型凭证。",
-      "target_audience": "希望用 AI 代理进行多任务并行开发、重视项目知识与工作流沉淀的开发者，尤其是 JetBrains 生态用户。",
+      "highlights": "由 JetBrains 孵化，把编码代理放进真正的 IDE 中，并用活规格与可复用技能让代理获得持久项目知识，同时以隔离工作区解决并行开发冲突。",
+      "target_audience": "希望用 AI 代理并行开发、重视项目知识沉淀与 IDE 体验的开发者，尤其是 JetBrains 生态用户。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 1156,
+    "stars_at_analysis": 2123,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-25T13:14:23+00:00",
+    "analyzed_at": "2026-10-26T07:54:49+00:00",
     "readme_available": true
   },
   "maboloshi/github-chinese": {
