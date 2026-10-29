@@ -4018,13 +4018,13 @@
   },
   "github/spec-kit": {
     "analysis": {
-      "one_liner": "为 AI 编码代理提供结构化流程、可复用模板与可扩展机制的规范驱动开发工具包。",
+      "one_liner": "为 AI 编码代理提供结构化流程、可复用模板与可记录成果的开源工具包。",
       "core_features": [
-        "规范驱动开发流程：从宪法、规格、计划、任务到实现与收敛",
-        "内置缺陷修复与想法评估扩展流程",
-        "通过扩展、预设、工作流、Bundle 和目录自定义流程",
-        "支持多种 AI 编码代理集成与切换",
-        "支持离线、私有目录与制品溯源"
+        "规格驱动开发流程：从规格到计划、任务、实现与收敛",
+        "缺陷修复流程：评估原因、限定修复范围并记录验证",
+        "想法评估流程：基于证据给出推进、澄清或停止决策",
+        "扩展、预设、工作流与目录等可组合机制，支持自定义流程",
+        "多编码代理集成与离线/私有目录支持"
       ],
       "tech_stack": [
         "Python",
@@ -4032,18 +4032,18 @@
         "Specify CLI",
         "GitHub Copilot 等 AI 编码代理"
       ],
-      "highlights": "由 GitHub 官方推出，把规范驱动开发（SDD）工程化为可组合、可扩展的代理流程体系，并提供丰富的自定义与集成机制。",
-      "target_audience": "使用 AI 编码代理进行开发、希望以规范驱动方式提升流程可控性与质量的开发者及团队",
+      "highlights": "由 GitHub 官方推出，把 SDD 等流程产品化为可安装、可扩展、可定制的工具链，并提供扩展、预设、工作流、目录等组合原语。",
+      "target_audience": "使用 AI 编码代理进行规格驱动开发、希望规范流程与团队协作的开发者及团队",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 142354,
+    "stars_at_analysis": 143772,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-22T07:44:12+00:00",
+    "analyzed_at": "2026-10-29T08:38:45+00:00",
     "readme_available": true
   },
   "nodejs/node": {
@@ -9496,33 +9496,33 @@
   },
   "multica-ai/multica": {
     "analysis": {
-      "one_liner": "开源可自托管的工作空间，让AI编码代理像团队成员一样领取任务、汇报进度并交付代码审查。",
+      "one_liner": "把 AI 编码代理当作团队成员，在可自托管的工作区中分配、跟踪和审查任务。",
       "core_features": [
-        "将Issue分配给AI代理，代理自动领取并执行任务",
-        "支持Claude Code、Codex、Cursor等多种代理CLI作为运行时",
-        "执行日志可回放每次工具调用、命令与错误，并支持运行中干预",
-        "支持自托管部署（Docker Compose/Helm）与自有Git托管集成",
-        "提供技能、小队、定时任务、用量分析与审查门禁等协作能力"
+        "将 Issue 分配给 AI 代理，代理自动接手并汇报进度",
+        "支持 Claude Code、Codex、Cursor 等多种代理 CLI 作为运行时",
+        "执行日志回放、成本统计与人工审查关卡",
+        "定时任务、聊天、项目上下文与技能复用",
+        "自托管部署，支持多种 Git 托管与团队协作渠道"
       ],
       "tech_stack": [
         "Go",
         "Docker Compose",
         "Helm",
-        "GitHub/GitLab/Gitea/Forgejo集成",
-        "Slack/飞书/钉钉/企业微信/Telegram集成"
+        "GitHub/GitLab/Gitea/Forgejo",
+        "Slack/飞书/钉钉/企业微信/Telegram"
       ],
-      "highlights": "把AI代理当作看板上的正式成员来分配任务，意图、运行过程、决策与代码差异都关联到同一Issue，且完全可自托管、不锁定代理厂商，代码不离开自有机器。",
-      "target_audience": "希望将多个AI编码代理纳入团队协作流程的研发团队，以及注重数据自主可控、需要自托管方案的企业开发者。",
+      "highlights": "让多个异构 AI 编码代理以队友身份进入统一看板，任务意图、运行过程、决策与代码差异全程关联，并强调自托管与无锁定。",
+      "target_audience": "希望将 AI 编码代理纳入团队协作流程、重视数据自主可控的工程团队与平台开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 53498,
+    "stars_at_analysis": 54201,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-22T07:44:12+00:00",
+    "analyzed_at": "2026-10-29T08:38:45+00:00",
     "readme_available": true
   },
   "nvidia/openshell": {
