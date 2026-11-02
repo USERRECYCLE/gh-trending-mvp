@@ -2072,35 +2072,35 @@
   },
   "debpalash/voicestudio": {
     "analysis": {
-      "one_liner": "完全本地运行的开源 ElevenLabs 替代品，支持语音克隆、设计、配音、听写与转录。",
+      "one_liner": "完全本地运行的开源 ElevenLabs 替代品，支持语音克隆、设计、配音与转录",
       "core_features": [
-        "语音克隆与自定义音色设计",
-        "视频配音与多说话人定时语音",
-        "听写悬浮组件与音频转录",
-        "有声书、故事与批量任务生成",
-        "本地 API 与 MCP 供智能体调用，支持可复用配方与监听文件夹"
+        "语音克隆：用参考录音生成熟悉音色的语音",
+        "视频配音：翻译并按时长对齐配音",
+        "语音设计：用文字描述生成声音",
+        "听写与转录：浮动听写组件与本地转录",
+        "有声书与批量任务：故事、有声书与队列作业"
       ],
       "tech_stack": [
         "Python",
         "Electron",
-        "OmniVoice (k2-fsa)",
-        "whisper.cpp",
-        "GGUF 本地推理引擎",
-        "Docker",
-        "Bun"
+        "k2-fsa/OmniVoice",
+        "NVIDIA CUDA",
+        "AMD ROCm",
+        "Metal (MPS)",
+        "Docker"
       ],
-      "highlights": "完全本地离线运行，无需账号与 API 密钥，数据不出设备；支持 646 种语言，覆盖桌面、手机与 Docker 多平台，并提供 CUDA、Metal、ROCm、Vulkan 多种加速方案。",
-      "target_audience": "注重隐私与数据本地化的开发者、需要自建语音合成与配音工具的内容创作者，以及希望在本地集成语音能力的 AI 应用开发者。",
+      "highlights": "完全本地化运行，无需云端即可完成语音克隆与合成，覆盖 646 种语言，支持多平台与多种本地模型引擎选择",
+      "target_audience": "关注隐私与本地部署的语音 AI 开发者、内容创作者与需要自建语音合成能力的团队",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 92974,
+    "stars_at_analysis": 98384,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-29T00:03:55+00:00",
+    "analyzed_at": "2026-11-02T09:39:17+00:00",
     "readme_available": true
   },
   "mozilla/pdf.js": {
@@ -2734,34 +2734,32 @@
   },
   "wshobson/agents": {
     "analysis": {
-      "one_liner": "跨多种 AI 编码工具共享的插件、智能体与技能市场",
+      "one_liner": "跨多个 AI 编程工具的插件市场，统一提供 agent、skill 与命令。",
       "core_features": [
-        "94 个插件，含 202 个智能体、185 个技能、105 个命令",
-        "同一 Markdown 源适配 Claude Code、Codex CLI、Cursor、OpenCode、Copilot、Pi 等工具",
-        "支持插件市场安装、单独安装技能、克隆后按工具生成安装",
-        "提供结构校验、生成与 plugin-eval 静态技能检查",
-        "覆盖 Python、JavaScript、代码审查、测试、安全、基础设施等场景"
+        "一套 Markdown 源同时适配 Claude Code、Codex CLI、Cursor、OpenCode、Copilot 等七种工具",
+        "包含 94 个插件、202 个 agent、185 个 skill 和 105 个命令",
+        "支持插件市场安装、仅安装 skill 以及从克隆仓库安装三种方式",
+        "提供插件结构校验、生成产物校验与静态 skill 评分工具"
       ],
       "tech_stack": [
         "Python",
-        "Markdown",
         "Make",
         "uv",
-        "GitHub CLI",
-        "npx skills"
+        "Markdown",
+        "Node.js/npm"
       ],
-      "highlights": "用单一 Markdown 源和适配器生成各编码工具的插件格式，实现跨工具复用同一套智能体、技能与命令",
-      "target_audience": "使用 Claude Code、Codex、Cursor 等 AI 编码工具并希望复用标准化智能体与技能的开发者",
+      "highlights": "用单一 Markdown 源加适配器生成各工具所需格式，解决多 harness 生态碎片化问题，并配套质量评估工具。",
+      "target_audience": "使用多种 AI 编程助手、希望复用统一 agent 与 skill 配置的开发者及团队。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 41516,
+    "stars_at_analysis": 42095,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-22T07:44:12+00:00",
+    "analyzed_at": "2026-11-02T09:39:17+00:00",
     "readme_available": true
   },
   "desktop/desktop": {
@@ -41590,13 +41588,13 @@
   },
   "yujunzhixue/dsh-purge": {
     "analysis": {
-      "one_liner": "面向 DeepSeek Harness 的本地红队插件，可替换提示词与主机策略，实现多模型破甲。",
+      "one_liner": "面向 DeepSeek Harness 的本地红队插件，可替换提示词与主机策略，实现模型破甲。",
       "core_features": [
-        "dsh-purge 侧边栏面板，含 Clean 与 Drill 两个页面",
-        "Clean 页支持补丁状态查看、Apply/Restore/Uninstall 与提示词编辑",
-        "支持多套规则集，可为不同模型切换不同提示词",
-        "启动时自动检查并重新应用补丁，避免 npm 覆盖后手动修改",
-        "限制仅允许本地回环与 RFC1918 私有地址，禁止联网与游戏作弊用途"
+        "在会话标题旁提供 dsh-purge 侧边栏，含 Clean 与 Drill 两个页面",
+        "支持按模型切换多套提示词规则集，默认提示词面向国模小码酱",
+        "可应用、恢复、卸载对官方 @deepseek-ai 包与本地配置的补丁",
+        "启动时自动检查并重新应用补丁，避免 npm 覆盖 node_modules 后手动改文件",
+        "限制仅允许回环与 RFC1918 本地实验地址，并拦截游戏作弊类请求"
       ],
       "tech_stack": [
         "JavaScript",
@@ -41604,18 +41602,18 @@
         "DeepSeek Harness 插件体系",
         "Apache-2.0 许可"
       ],
-      "highlights": "把主机层策略拦截与模型拒答区分开，在用户本机官方 Harness 上做受控评估；提供可切换提示词与自动重应用机制，Star 与 Fork 数较高。",
-      "target_audience": "研究大模型安全与红队评估、使用 DeepSeek Harness 并希望在本地受控环境测试提示词与策略边界的安全研究者。",
+      "highlights": "把主机层拦截与模型拒答区分开，在用户本机官方 Harness 上做受控安全评估；同时通过本地网络限制与免责声明约束使用范围，并明确禁止转售、要求二开署名。",
+      "target_audience": "做大模型安全评估与红队测试的研究者，以及希望研究提示词注入与主机策略边界的 DeepSeek Harness 用户。",
       "scores": {
-        "innovation": 3,
+        "innovation": 4,
         "practicality": 3,
-        "learning_value": 3
+        "learning_value": 4
       }
     },
-    "stars_at_analysis": 10759,
+    "stars_at_analysis": 15852,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-27T14:39:31+00:00",
+    "analyzed_at": "2026-11-02T09:39:17+00:00",
     "readme_available": true
   },
   "smg-project/smg": {
@@ -43688,32 +43686,31 @@
   },
   "anomalyco/hex": {
     "analysis": {
-      "one_liner": "基于 Rust 的本地优先语音听写工具，按住快捷键说话即可转写并粘贴到任意应用。",
+      "one_liner": "跨平台的本地语音听写工具，按住快捷键说话即可转写并粘贴到任意应用。",
       "core_features": [
-        "按住快捷键说话，松开后本地转写并粘贴到当前焦点应用",
-        "设备端语音识别，普通听写无需云端服务",
-        "支持自定义快捷键、语言、模型与录音行为",
-        "Modes 支持纠错、按应用定制行为及可选文本处理",
-        "提供 macOS 正式版及 Windows、Linux 测试版"
+        "按住快捷键说话，松开后自动转写并粘贴到当前应用",
+        "完全本地转写，首次下载语音模型后数据不出本机",
+        "支持 macOS、Windows、Linux 多平台及多种安装包格式",
+        "提供 Labs 实验性功能入口",
+        "提供稳定版与自动更新的开发版双通道"
       ],
       "tech_stack": [
         "Rust",
         "本地语音识别模型",
-        "TypeScript SDK",
-        "macOS/Windows/Linux 原生应用"
+        "Homebrew/AUR/Nix 等分发渠道"
       ],
-      "highlights": "完全本地化的语音转写流程，隐私友好且延迟低；用 Rust 实现跨平台原生应用，并提供 TypeScript SDK 与可选的 OpenCode 后处理能力。",
-      "target_audience": "注重隐私、希望在任何应用中快速语音输入的开发者与效率工具用户，以及关注 Rust 桌面应用与本地语音识别实现的工程师。",
+      "highlights": "隐私优先的本地语音转写，覆盖三大桌面平台，安装方式丰富，社区热度增长快。",
+      "target_audience": "需要高效语音输入、注重隐私的桌面用户，以及关注 Rust 桌面应用与本地语音识别实现的开发者。",
       "scores": {
-        "innovation": 4,
+        "innovation": 3,
         "practicality": 5,
-        "learning_value": 4
+        "learning_value": 3
       }
     },
-    "stars_at_analysis": 2368,
+    "stars_at_analysis": 3730,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-01T09:23:37+00:00",
+    "analyzed_at": "2026-11-02T09:39:17+00:00",
     "readme_available": true
   },
   "liguobao/ds-harness-remote": {
@@ -48892,6 +48889,35 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-11-01T18:59:35+00:00",
+    "readme_available": true
+  },
+  "deanchensj/jiangshan-map": {
+    "analysis": {
+      "one_liner": "可交互的中国历史地图时间轴，覆盖公元前403年至今18个朝代、164个疆域快照与古今地名沿革。",
+      "core_features": [
+        "拖动时间轴查看各朝代疆域变迁、多政权并立与虚线疆域差异对比",
+        "点击古城或关隘查看2400年行政区沿革、地名演变与当地重大历史事件",
+        "人物纪年：搜索历史人物并在地图上绘制其生平轨迹",
+        "时间轴内联显示在位君主与年号，支持现代省界透视镜叠加",
+        "动态呈现黄河改道、古湖泊、长城、运河与丝路等地理要素"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "Web 地图可视化",
+        "交互式时间轴"
+      ],
+      "highlights": "将2400年中国历史疆域、政区沿革、地名谱系与诗词战场地标整合进单一交互地图，并支持古今对照与人物轨迹追踪。",
+      "target_audience": "对中国历史地理、古代地名沿革与历史教学可视化感兴趣的开发者与历史爱好者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 3309,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-02T09:39:17+00:00",
     "readme_available": true
   }
 }
