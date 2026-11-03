@@ -523,33 +523,33 @@
       "core_features": [
         "开箱即用，无需配置即可远程控制桌面",
         "支持自建 rendezvous/relay 服务器，数据完全自主掌控",
-        "跨平台桌面客户端，提供 Flutter 与 Sciter 两种 GUI",
-        "提供 Docker 构建方式与多平台构建脚本",
-        "支持多语言界面与文档翻译"
+        "跨平台桌面客户端，提供 Flutter 与 Sciter 两种 GUI 方案",
+        "提供 Docker 构建方式与多语言界面支持",
+        "可自行编写 rendezvous/relay 服务端"
       ],
       "tech_stack": [
         "Rust",
         "Flutter",
         "Sciter",
         "vcpkg",
+        "Docker",
         "libvpx",
         "libyuv",
         "opus",
-        "aom",
-        "Docker"
+        "aom"
       ],
-      "highlights": "以 Rust 实现高性能远程桌面，强调自托管与数据隐私，社区规模庞大（超 12 万 Star），并提供可自行编写的中继服务器方案。",
-      "target_audience": "需要私有化部署远程桌面方案的企业与个人开发者，以及对 Rust 音视频传输与跨平台桌面开发感兴趣的学习者。",
+      "highlights": "以 Rust 实现高性能远程桌面，核心价值在于可自托管、数据自主可控，并提供完整服务端方案，是 TeamViewer 的开源替代。",
+      "target_audience": "需要自托管远程桌面方案的企业与个人开发者，以及对 Rust 音视频传输与网络编程感兴趣的学习者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 127216,
+    "stars_at_analysis": 127981,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-27T08:01:26+00:00",
+    "analyzed_at": "2026-11-03T09:42:19+00:00",
     "readme_available": true
   },
   "papermc/paper": {
@@ -13613,32 +13613,32 @@
   },
   "hmjz100/linkswift": {
     "analysis": {
-      "one_liner": "基于 JavaScript 的油猴脚本，为九大网盘页面获取文件直链并支持多种下载器。",
+      "one_liner": "基于 JavaScript 的油猴脚本，为九大网盘页面获取文件直链并推送至多种下载器。",
       "core_features": [
-        "支持百度网盘、阿里云盘、移动云盘、天翼云盘、迅雷云盘、夸克网盘、UC网盘、123云盘、光鸭云盘等九大网盘直链获取",
-        "提供复制链接、Aria2、cURL 命令行及推送 IDM 等多种下载方式",
+        "支持百度、阿里、移动、天翼、迅雷、夸克、UC、123、光鸭等九大网盘的直链获取",
+        "提供 UI 美化与浮动提示框，在网盘页面内直接操作",
+        "支持推送到 IDM、Aria2、ABDM 等下载器，并可复制 Aria2、cURL 命令行",
         "增强下载支持多块多线程与进度条显示",
-        "页面 UI 美化与浮动提示、链接缓存等交互优化",
-        "基于公开 API 接口获取下载地址，并适配各网盘页面改版"
+        "提供正式版与金丝雀版双通道，兼容 Chrome、Edge 及多平台"
       ],
       "tech_stack": [
         "JavaScript",
         "Tampermonkey 用户脚本",
         "ESLint",
-        "各大网盘公开 API"
+        "GreasyFork/脚本猫/OpenUserJS 分发"
       ],
-      "highlights": "在开源直链下载助手基础上持续适配九大网盘并扩展下载器推送能力，星标超 3.2 万、社区活跃，且明确声明技术中立、不涉及破解限速。",
-      "target_audience": "需要绕过官方客户端下载网盘文件的普通用户，以及学习用户脚本开发、网盘 API 调用与页面适配的开发者。",
+      "highlights": "单文件用户脚本覆盖九大网盘，并持续跟进各网盘接口与页面改版；Star 数超 3.7 万且周期内新增八千余，社区活跃度高。",
+      "target_audience": "需要绕过官方客户端下载网盘文件、熟悉油猴脚本安装的普通用户，以及想学习用户脚本开发与网盘 API 适配的开发者。",
       "scores": {
         "innovation": 3,
         "practicality": 5,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 32518,
+    "stars_at_analysis": 37554,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-27T14:39:31+00:00",
+    "analyzed_at": "2026-11-03T09:42:19+00:00",
     "readme_available": true
   },
   "goharbor/harbor": {
@@ -16414,31 +16414,31 @@
   },
   "mnfst/awesome-free-llm-apis": {
     "analysis": {
-      "one_liner": "汇总提供永久免费额度的 LLM API 服务商清单，含模型、上下文与限流信息",
+      "one_liner": "汇总提供永久免费额度的 LLM API 服务商清单，附模型、上下文与限流信息。",
       "core_features": [
-        "按官方 Provider 与第三方推理平台分类整理免费 LLM API",
-        "列出各服务商的模型名称、上下文长度、最大输出与模态",
-        "标注速率限制、是否需信用卡及免费额度说明",
-        "提供各服务商的 API Key 获取入口与 Base URL",
-        "注明是否兼容 OpenAI SDK"
+        "按官方厂商 API 与第三方推理平台分类整理免费 LLM API",
+        "列出各服务商免费额度、是否需信用卡及限流规则",
+        "提供模型名称、上下文长度、最大输出与模态对照表",
+        "标注原生与 OpenAI 兼容的 Base URL 差异",
+        "链接直达各服务商的 API Key 申请页面"
       ],
       "tech_stack": [
         "JavaScript",
         "Markdown",
         "Awesome List"
       ],
-      "highlights": "聚焦永久免费额度而非试用，信息结构化程度高，覆盖 Cohere、Google Gemini、Mistral、Zhipu、Cloudflare Workers AI 等主流服务商，并标注限流与数据使用条款，便于快速选型",
-      "target_audience": "需要低成本调用 LLM 的独立开发者、做原型验证的创业者、学习 AI 应用开发的学生与爱好者",
+      "highlights": "聚焦“永久免费”而非试用额度，并给出可直接对接的模型参数与限流细节，对低成本原型开发极具参考价值。",
+      "target_audience": "需要免费 LLM 额度做原型验证、个人项目或学习实验的开发者",
       "scores": {
         "innovation": 2,
         "practicality": 5,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 11370,
+    "stars_at_analysis": 12029,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-27T08:01:26+00:00",
+    "analyzed_at": "2026-11-03T09:42:19+00:00",
     "readme_available": true
   },
   "termux/termux-api": {
@@ -23104,30 +23104,30 @@
     "analysis": {
       "one_liner": "Anthropic 官方维护的 Claude Code 高质量插件目录与市场",
       "core_features": [
-        "收录 Anthropic 内部开发与第三方提交的插件",
-        "支持通过 /plugin install 命令或 Discover 界面直接安装",
-        "定义标准插件结构，包含命令、代理、技能与 MCP 配置",
-        "插件名称不可变，并提供 renames 映射实现自动迁移",
-        "支持无清单文件的 skill-bundle 插件声明方式"
+        "收录 Anthropic 内部插件与第三方社区插件两类目录",
+        "支持通过 /plugin install 命令或 Discover 界面直接安装插件",
+        "定义标准插件结构，包含 plugin.json、MCP 配置、命令、代理与技能",
+        "插件名称不可变，并提供 renames 映射实现旧名自动迁移",
+        "支持无 manifest 的 skill-bundle 插件，通过 strict:false 显式声明技能列表"
       ],
       "tech_stack": [
         "Python",
         "Claude Code 插件系统",
         "MCP",
-        "JSON 配置清单"
+        "JSON 插件清单"
       ],
-      "highlights": "由 Anthropic 官方背书并统一管理，为插件生态建立标准化结构、命名规范与迁移机制，是 Claude Code 插件分发的核心入口",
-      "target_audience": "使用 Claude Code 的开发者、希望发布插件的第三方合作伙伴与社区贡献者",
+      "highlights": "由 Anthropic 官方托管并审核，为 Claude Code 生态提供统一的插件分发入口与规范化的插件结构约定",
+      "target_audience": "使用 Claude Code 并希望扩展其能力的开发者，以及希望发布插件的第三方合作伙伴与社区贡献者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 44812,
+    "stars_at_analysis": 45907,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-27T08:01:26+00:00",
+    "analyzed_at": "2026-11-03T09:42:19+00:00",
     "readme_available": true
   },
   "nobodywho-ooo/nobodywho": {
@@ -31768,34 +31768,33 @@
   },
   "samwhosung/benilla": {
     "analysis": {
-      "one_liner": "用 Rust 和 Bevy 从零实现的完整《魔兽世界》1.12.1 客户端",
+      "one_liner": "用 Rust 和 Bevy 从零实现的完整魔兽世界 1.12.1 客户端",
       "core_features": [
-        "从零实现 MPQ、BLP、DBC、ADT、M2、WMO 等全部资源格式读取，并接入 Bevy 资源系统",
-        "完整世界渲染：地形流式加载、室内光照、水面、天空天气、昼夜光照与雾效",
-        "GPU 蒙皮 M2 模型与完整动画控制器，角色自定义、护甲合成、武器附魔光效、坐骑与潜行",
-        "双向网络移动同步、SRP6 认证与世界会话加密，覆盖战斗、法术、任务、交易、邮件、拍卖行与战场",
-        "FrameXML 与 Lua 界面引擎，可运行原版 1.12 界面及 Questie、pfUI 等第三方插件"
+        "从零实现 MPQ、BLP、DBC、ADT、M2、WMO 等全部资源格式读取",
+        "地形流式加载、室内光照、水面、天空天气与昼夜光照渲染",
+        "GPU 蒙皮 M2 模型、完整动画控制器、粒子与法术特效",
+        "SRP6 认证与世界会话加密，覆盖战斗、法术、任务、交易、拍卖行、战场等网络协议",
+        "FrameXML 与 Lua 引擎，可运行原版界面及 Questie、pfUI 等第三方插件"
       ],
       "tech_stack": [
         "Rust",
         "Bevy",
-        "FrameXML",
-        "Lua",
-        "MPQ/BLP/DBC/ADT/M2/WMO 格式解析",
-        "SRP6 网络协议"
+        "wgpu",
+        "Lua/FrameXML",
+        "kira 音频引擎"
       ],
-      "highlights": "在无任何原客户端代码、无第三方 WoW crate、不打包游戏资源的前提下，从零重写文件格式、网络协议与界面引擎，并已完整可玩，还配套独立逆向工程仓库作为依据",
-      "target_audience": "对游戏客户端逆向与重写、Rust 与 Bevy 游戏引擎、MMORPG 网络协议和 UI 引擎实现感兴趣的开发者",
+      "highlights": "完全从零重写文件格式、网络协议与界面引擎，不含任何原客户端代码或第三方 WoW 库，可连接 vmangos 等 1.12.1 服务器完整游玩，并附有逆向工程仓库作为依据",
+      "target_audience": "对游戏客户端架构、图形渲染、网络协议逆向与 Rust/Bevy 游戏开发感兴趣的中高级开发者",
       "scores": {
         "innovation": 5,
         "practicality": 4,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 825,
+    "stars_at_analysis": 921,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-26T15:17:19+00:00",
+    "analyzed_at": "2026-11-03T09:42:19+00:00",
     "readme_available": true
   },
   "agno-agi/agno": {
@@ -41719,31 +41718,31 @@
   },
   "rclone/rclone": {
     "analysis": {
-      "one_liner": "命令行工具，像 rsync 一样在数十种云存储之间同步文件",
+      "one_liner": "命令行工具，用于在数十种云存储服务之间同步、复制和挂载文件。",
       "core_features": [
-        "支持数十种云存储与协议（S3、Google Drive、Dropbox、OneDrive、Azure、WebDAV、FTP、SFTP 等）",
-        "提供 sync、copy、mount、check 等 rsync 风格命令，实现文件同步与校验",
-        "可将云存储挂载为本地文件系统",
-        "支持加密、压缩、分块上传与大文件传输",
-        "跨平台单二进制分发，并提供 Docker 镜像"
+        "在本地与多种云存储之间双向同步文件和目录",
+        "支持数十种存储后端（S3、Google Drive、Dropbox、OneDrive、Azure、Swift 等）",
+        "提供类 rsync 的校验、增量传输与过滤规则",
+        "支持挂载云存储为本地文件系统",
+        "提供 HTTP、FTP、WebDAV 等多种协议接入"
       ],
       "tech_stack": [
         "Go",
         "命令行 CLI",
         "Docker"
       ],
-      "highlights": "以统一的抽象层兼容极广泛的存储后端，是云存储迁移与备份的事实标准工具，社区活跃、Star 数高",
-      "target_audience": "需要跨云存储迁移、备份、同步的运维与后端开发者，以及做数据管道和自动化脚本的工程师",
+      "highlights": "以统一抽象层覆盖极广泛的云存储后端，是云存储迁移与同步的事实标准工具，社区活跃、文档完善。",
+      "target_audience": "需要跨云存储迁移或备份数据的运维与后端开发者，以及做数据同步自动化的工程师",
       "scores": {
-        "innovation": 4,
+        "innovation": 3,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 60567,
+    "stars_at_analysis": 60762,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-27T08:01:26+00:00",
+    "analyzed_at": "2026-11-03T09:42:19+00:00",
     "readme_available": true
   },
   "mewx/light-novel-library_wenku8_android": {
@@ -47256,33 +47255,33 @@
   },
   "orkas-ai/orkas": {
     "analysis": {
-      "one_liner": "本地优先的开源多智能体桌面应用，由指挥官把目标拆成待办并协调16个专家智能体完成工作。",
+      "one_liner": "本地优先的多智能体桌面应用，由指挥官把目标拆解为待办并调度16个专家智能体协作完成。",
       "core_features": [
-        "指挥官将目标拆解为待办，并调度16个内置专家智能体及Claude Code、Codex等外部编码智能体协作",
-        "项目机制保存目标、规则、记忆与文件，支持待办分配与自动推进",
-        "定时自动化可按小时、天、周、月重复执行任务",
-        "连接器集成Gmail、Notion、Slack、Shopify、Stripe等服务，默认操作前确认",
-        "覆盖视频、配音、图像、研究报告、PPT、Office文档、UI与代码、电商等多类交付物"
+        "指挥官将目标拆解为待办并协调16个内置专家智能体",
+        "集成Claude Code、Codex、OpenCode、OpenClaw、Hermes等外部编码与个人智能体",
+        "项目机制保存目标、规则、记忆与文件，支持待办与自动推进",
+        "支持按小时、天、周、月运行的定时自动化任务",
+        "连接Gmail、Notion、Slack、Shopify、Stripe等外部服务，默认操作前确认"
       ],
       "tech_stack": [
         "JavaScript",
-        "桌面应用（macOS与Windows）",
+        "Electron桌面应用（macOS与Windows）",
         "多智能体编排",
-        "本地优先存储",
-        "第三方模型API与本地OpenAI兼容端点"
+        "本地优先数据存储",
+        "可接入Claude、OpenAI、Gemini、DeepSeek等模型API"
       ],
-      "highlights": "将多智能体协作与项目管理、定时自动化、连接器结合，形成可持续推进工作的本地AI团队，且数据留在本机、成果需人工审核。",
-      "target_audience": "希望用AI团队承接持续业务工作的个人开发者、小团队与运营人员，以及关注多智能体编排的开发者。",
+      "highlights": "以项目为单位持续推动工作而非单次问答，结合自动推进、定时自动化与多智能体分工，数据保存在本地，并兼容用户已有的编码智能体。",
+      "target_audience": "希望用AI团队处理持续业务工作的个人开发者、独立创业者与小型团队，以及关注多智能体编排的开发者",
       "scores": {
         "innovation": 4,
-        "practicality": 5,
+        "practicality": 4,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 5566,
+    "stars_at_analysis": 8788,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-31T08:32:47+00:00",
+    "analyzed_at": "2026-11-03T09:42:19+00:00",
     "readme_available": true
   },
   "crossplane/crossplane": {
@@ -48834,34 +48833,34 @@
   },
   "vercel-labs/agent-desktop": {
     "analysis": {
-      "one_liner": "让 AI 代理通过操作系统无障碍树读取并操作桌面应用，用稳定 ref 替代像素猜测。",
+      "one_liner": "让 AI 代理通过操作系统无障碍树读取并操作桌面应用的 CLI 与 C 库",
       "core_features": [
         "snapshot 返回带 ref 的 JSON 无障碍树，代理按 ref 操作后再次快照验证",
-        "提供 60 个命令，覆盖观察、点击输入、窗口管理、通知、剪贴板与等待",
-        "ref 绑定快照，UI 变化时返回 STALE_REF 或 AMBIGUOUS_TARGET 以保证安全重试",
-        "默认无头操作，不移动指针、不抢焦点，可选 --headed 物理输入",
-        "内置版本匹配的 agent 技能文档，并提供 C 库 FFI 供进程内调用"
+        "覆盖点击、输入、键盘鼠标、窗口管理、通知、剪贴板等 56 个可执行命令",
+        "默认无头模式，通过无障碍 API 操作，不移动指针、不抢焦点",
+        "跨 macOS、Windows、Linux 平台支持，含 AT-SPI 与 X11/Wayland 适配",
+        "提供 libagent_desktop_ffi 供进程内调用，并内置面向代理的 skills 文档"
       ],
       "tech_stack": [
         "Rust",
-        "Node.js/npm 分发",
-        "macOS Accessibility API",
-        "Windows UI Automation",
-        "Linux AT-SPI",
-        "X11/Wayland"
+        "npm 分发",
+        "C FFI",
+        "macOS Accessibility",
+        "Windows UIA",
+        "Linux AT-SPI"
       ],
-      "highlights": "用 OS 无障碍树而非像素识别实现可靠的 computer use，ref 与快照绑定避免误操作，且跨 macOS、Windows、Linux 三平台统一 JSON 契约。",
-      "target_audience": "构建桌面自动化代理的 AI 工程师，以及需要跨平台 GUI 自动化的 Rust 与 Node.js 开发者。",
+      "highlights": "用无障碍树加 ref 的观察-操作-再观察闭环替代像素匹配，逻辑留在代理侧；每次调用独立进程且默认无头，避免干扰用户桌面",
+      "target_audience": "构建桌面自动化与 computer-use 代理的开发者，以及需要跨平台桌面控制能力的 Rust 与 AI 应用工程师",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 6481,
+    "stars_at_analysis": 11270,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-01T18:59:35+00:00",
+    "analyzed_at": "2026-11-03T09:42:19+00:00",
     "readme_available": true
   },
   "memvid/memvid": {
