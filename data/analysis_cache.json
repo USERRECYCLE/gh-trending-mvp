@@ -5974,36 +5974,36 @@
   },
   "google/skills": {
     "analysis": {
-      "one_liner": "为 Google 产品与技术（含 Google Cloud）提供 Agent Skills 的开源技能库。",
+      "one_liner": "面向 Google 产品与技术的 Agent Skills 集合，覆盖 Google Cloud 与 AI/ML 场景。",
       "core_features": [
-        "通过 npx skills add google/skills 一键安装并选择技能",
-        "覆盖 Google Cloud 入门、IAM 认证与 onboarding 技能",
-        "提供多产品解决方案架构类技能，如构建部署 AI Agent、RAG 企业搜索",
-        "包含大量 AI/ML 技能，如 Gemini API、Genkit 多语言开发、Agent Platform 管理",
-        "涵盖基础设施技能，如 GKE 集群创建、网络、存储、扩缩容与故障排查"
+        "提供 Google Cloud 入门、IAM 认证授权与 onboarding 技能",
+        "覆盖 GKE、Cloud Storage、Filestore、Compute Engine 等基础设施技能",
+        "包含 Gemini、Genkit、Agent Platform 等 AI/ML 开发技能",
+        "提供多产品解决方案架构与安全、RAG、数据分析工作流",
+        "通过 npx 命令安装、更新并选择目标 agent 与安装范围"
       ],
       "tech_stack": [
         "Python",
         "Node.js/npx",
         "Google Cloud",
-        "Gemini API",
-        "Genkit",
         "GKE",
+        "Gemini",
+        "Genkit",
         "BigQuery",
         "AlloyDB"
       ],
-      "highlights": "由 Google 官方维护，将 Google Cloud 与 AI/ML 的复杂操作封装为可被 Agent 直接调用的技能，数量多、覆盖面广且持续更新。",
-      "target_audience": "使用 AI Agent 开发或运维 Google Cloud、Gemini、GKE、BigQuery 等 Google 技术的开发者与云工程师。",
+      "highlights": "由 Google 官方维护，将大量 Google Cloud 与 AI 产品知识封装为可被 agent 直接加载的技能，并通过统一 CLI 安装管理。",
+      "target_audience": "使用 AI agent 开发或运维 Google Cloud 应用、需要快速获取官方最佳实践的开发者与架构师",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 21215,
+    "stars_at_analysis": 22302,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-12T22:10:11+00:00",
+    "analyzed_at": "2026-11-05T21:07:38+00:00",
     "readme_available": true
   },
   "openobserve/openobserve": {
@@ -14558,11 +14558,11 @@
     "analysis": {
       "one_liner": "开源无内容过滤的AI图像与视频生成工作室，聚合600+模型，支持自托管。",
       "core_features": [
-        "聚合600+图像与视频生成模型，覆盖Flux、Midjourney、Kling、Sora、Veo等",
-        "提供14个工作室场景，含图像、视频、音频、对口型、Cinema、工作流等",
-        "无内容过滤，MIT许可自托管部署",
-        "提供在线托管版与macOS/Windows/Linux桌面安装包",
-        "支持白标转售，可自定义品牌、域名与定价"
+        "聚合600+图像与视频模型（Flux、Midjourney、Kling、Sora、Veo等）",
+        "14个工作室覆盖图像、视频、音频、对口型、影院、工作流等场景",
+        "无内容过滤，MIT协议自托管部署",
+        "提供网页在线版与macOS/Windows/Linux桌面安装包",
+        "支持白标转售，可自定义品牌与定价"
       ],
       "tech_stack": [
         "JavaScript",
@@ -14570,18 +14570,18 @@
         "Electron",
         "MuAPI"
       ],
-      "highlights": "以MIT许可开源并提供无内容过滤的生成能力，同时打通600+主流模型与多工作室场景，还支持白标商业化转售，兼顾自托管自由度与产品化路径。",
-      "target_audience": "希望自托管AI生成工作室的开发者、想基于开源快速搭建自有AI产品并商业化的小团队，以及需要无过滤生成能力的创作者。",
+      "highlights": "以开源方式复刻商业AI视频平台体验，模型覆盖广、无内容审查，并提供桌面端与白标商业化路径，Star数超3.2万。",
+      "target_audience": "希望自托管AI生成工作室、做二次开发或白标商业化的开发者与创业者",
       "scores": {
         "innovation": 3,
         "practicality": 4,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 30855,
+    "stars_at_analysis": 32528,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-19T15:43:22+00:00",
+    "analyzed_at": "2026-11-05T21:07:38+00:00",
     "readme_available": true
   },
   "vercel-labs/json-render": {
@@ -36518,31 +36518,31 @@
   },
   "chaolucky18/xuexitongscript": {
     "analysis": {
-      "one_liner": "学习通自动刷课脚本，自动播放视频并切换到下一小节",
+      "one_liner": "学习通自动刷课脚本，自动播放视频并切换下一小节",
       "core_features": [
-        "自动播放视频并识别iframe内真实视频元素",
-        "视频结束后自动定位并切换到下一小节",
-        "章节测验页面受限跳转，最多尝试3次防止循环",
-        "从学习目标步骤自动切换到视频步骤",
-        "支持控制台执行与Tampermonkey油猴两种使用方式"
+        "自动播放iframe内视频并支持中断恢复",
+        "视频结束后自动定位并进入下一小节",
+        "章节测验页面受限跳转，最多尝试3次",
+        "学习目标页自动切换到视频步骤",
+        "提供控制台执行与油猴脚本两种使用方式"
       ],
       "tech_stack": [
         "JavaScript",
         "Tampermonkey",
         "Node.js构建脚本"
       ],
-      "highlights": "以稳定性为核心，精简掉后台保活等附加层，采用单一源码加构建脚本生成油猴版，并提供语法与一致性验证",
-      "target_audience": "对前端自动化、油猴脚本开发及页面行为分析感兴趣的开发者",
+      "highlights": "聚焦稳定播放与课程导航，精简掉复杂附加层以减少冲突，并提供构建与验证脚本保证两个入口一致",
+      "target_audience": "对前端自动化与页面行为分析感兴趣、需要课程播放自动化的开发者",
       "scores": {
         "innovation": 2,
         "practicality": 4,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 2758,
+    "stars_at_analysis": 3807,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-10T00:05:30+00:00",
+    "analyzed_at": "2026-11-05T21:07:38+00:00",
     "readme_available": true
   },
   "makecindy/cindy": {
@@ -46149,37 +46149,38 @@
   },
   "nvidia/auto-ontology": {
     "analysis": {
-      "one_liner": "NVIDIA 开源的企业语义本体层框架，为 LLM 与 Agent 工作流提供可解释、确定性的数据查询与上下文检索。",
+      "one_liner": "NVIDIA 开源的企业语义本体层框架，为 LLM 与 Agent 提供可解释、可校验的数据查询上下文。",
       "core_features": [
-        "从企业元数据自动生成本体，并连接已有本体与语义模型构建知识图谱",
-        "为 Agent 提供指标、实体与关系的可信业务语义，并跨系统调和定义冲突",
-        "基于认证定义与血缘校验生成的查询，返回结果时附带来源溯源",
-        "通过 MCP、CLI 与 API 向任意 Agent 框架暴露上下文",
-        "将人工修正与使用反馈回灌本体，使共享上下文持续改进"
+        "从企业元数据自动生成本体与知识图谱，并接入已有语义模型",
+        "为指标、实体和关系提供可信业务语义，跨系统调和定义冲突",
+        "用认证定义与血缘校验生成的 SQL，并返回溯源信息",
+        "通过 MCP、CLI 和 API 向任意 Agent 框架暴露上下文",
+        "将人工修正与使用反馈回写本体，持续改进共享上下文"
       ],
       "tech_stack": [
         "Python",
         "FastAPI",
         "LangChain",
         "Next.js 16 / React 19 / TypeScript",
-        "Postgres + pgvector",
+        "Tailwind CSS 4",
         "Prisma",
         "Better Auth",
+        "Postgres + pgvector",
         "NVIDIA NIM",
         "Docker Compose / Helm"
       ],
-      "highlights": "由 NVIDIA 出品，把语义本体作为 Agent 的上下文与校验层，强调确定性查询生成、定义调和与可溯源可解释，而非单纯的自然语言转 SQL，直击 Agent 分析可靠性痛点。",
-      "target_audience": "构建企业级数据分析 Agent、需要可信语义层与 NL-to-SQL 能力的后端与数据平台开发者，以及关注 LLM 可解释性的 AI 工程师。",
+      "highlights": "由 NVIDIA 出品，把语义本体作为 Agent 的上下文层，强调确定性查询生成、定义调和与答案溯源，直击 Agent 数据分析的可靠性问题，并提供完整 Web UI 与部署方案。",
+      "target_audience": "构建企业级数据分析 Agent、NL-to-SQL 与语义层应用的后端与数据平台开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 4646,
+    "stars_at_analysis": 7111,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-04T20:50:55+00:00",
+    "analyzed_at": "2026-11-05T21:07:38+00:00",
     "readme_available": true
   },
   "raktim94/nodedr-restaurant-pos": {
@@ -48834,32 +48835,33 @@
     "analysis": {
       "one_liner": "让 AI 代理通过操作系统无障碍树读取并操作桌面应用的 CLI 与 C 库",
       "core_features": [
-        "snapshot 返回带 ref 的 JSON 无障碍树，代理按 ref 操作后再次快照验证",
-        "覆盖点击、输入、键盘鼠标、窗口管理、通知、剪贴板等 56 个可执行命令",
-        "默认无头模式，通过无障碍 API 操作，不移动指针、不抢焦点",
-        "跨 macOS、Windows、Linux 平台支持，含 AT-SPI 与 X11/Wayland 适配",
-        "提供 libagent_desktop_ffi 供进程内调用，并内置面向代理的 skills 文档"
+        "将桌面应用的无障碍树读取为 JSON，并为每个可操作元素生成 ref",
+        "基于 ref 执行点击、输入、滚动、拖拽等操作，再重新观察以验证结果",
+        "提供 60 个命令，覆盖观察、操作、窗口管理、通知、剪贴板、等待与会话",
+        "以 MCP 服务形式暴露全部命令，便于接入代理框架",
+        "内置面向 AI 代理的技能指南与平台差异说明"
       ],
       "tech_stack": [
         "Rust",
-        "npm 分发",
-        "C FFI",
-        "macOS Accessibility",
-        "Windows UIA",
+        "Node.js/npm 分发",
+        "C 库",
+        "MCP",
+        "macOS AX API",
+        "Windows UI Automation",
         "Linux AT-SPI"
       ],
-      "highlights": "用无障碍树加 ref 的观察-操作-再观察闭环替代像素匹配，逻辑留在代理侧；每次调用独立进程且默认无头，避免干扰用户桌面",
-      "target_audience": "构建桌面自动化与 computer-use 代理的开发者，以及需要跨平台桌面控制能力的 Rust 与 AI 应用工程师",
+      "highlights": "不依赖截图与像素匹配，而是通过系统无障碍树进行结构化操作；默认无头执行，不移动指针或抢占焦点；ref 与快照绑定，UI 变化时返回 STALE_REF 等明确错误，便于代理可靠重试",
+      "target_audience": "构建桌面端 computer use 能力的 AI 代理开发者，以及需要跨平台桌面自动化工具链的工程师",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 11270,
+    "stars_at_analysis": 16690,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-03T09:42:19+00:00",
+    "analyzed_at": "2026-11-05T21:07:38+00:00",
     "readme_available": true
   },
   "memvid/memvid": {
@@ -50363,6 +50365,69 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-11-05T09:38:19+00:00",
+    "readme_available": true
+  },
+  "hashicorp/terraform-provider-azurerm": {
+    "analysis": {
+      "one_liner": "Terraform 官方 Azure Resource Manager 提供商，用声明式配置管理 Azure 资源。",
+      "core_features": [
+        "以 HCL 声明式定义并管理 Azure 资源",
+        "支持 Azure CLI、托管标识、服务主体等多种认证方式",
+        "通过 features 块调整提供商行为",
+        "提供资源组、虚拟网络等丰富资源类型与示例",
+        "配套 Terraform Registry 文档与贡献者指南"
+      ],
+      "tech_stack": [
+        "Go",
+        "Terraform",
+        "Azure Resource Manager",
+        "HCL"
+      ],
+      "highlights": "由 HashiCorp 官方维护、与 Terraform 核心深度集成，是 Azure 基础设施即代码的主流入口，生态成熟、文档完善。",
+      "target_audience": "使用 Terraform 做 Azure 基础设施即代码的运维与平台工程师，以及需要开发或维护 Provider 的 Go 贡献者。",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 4982,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-05T21:07:38+00:00",
+    "readme_available": true
+  },
+  "openremote/core": {
+    "analysis": {
+      "one_liner": "100%开源的物联网平台，用于集成设备、添加智能并构建自定义应用",
+      "core_features": [
+        "设备管理与自动配置，支持自定义资产类型",
+        "通过when-then、流程、JavaScript和Groovy规则实现自动化",
+        "多协议连接代理及MQTT、HTTP/REST、WS等管理API",
+        "多租户（realm）与用户角色管理",
+        "边缘网关、前端Web组件控制台与Insights仪表盘构建器"
+      ],
+      "tech_stack": [
+        "Java",
+        "Groovy",
+        "TypeScript",
+        "Gradle",
+        "Docker",
+        "PostgreSQL",
+        "OpenTelemetry"
+      ],
+      "highlights": "完全开源且功能覆盖设备接入、规则自动化、多租户、边缘网关到可视化仪表盘的完整IoT解决方案，支持Docker快速部署与多架构镜像",
+      "target_audience": "需要构建物联网设备管理平台的开发者、系统集成商及希望自托管IoT方案的企业团队",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 2072,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-05T21:07:38+00:00",
     "readme_available": true
   }
 }
