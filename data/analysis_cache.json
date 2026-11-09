@@ -2739,32 +2739,34 @@
   },
   "wshobson/agents": {
     "analysis": {
-      "one_liner": "跨多个 AI 编程工具的插件市场，统一提供 agent、skill 与命令。",
+      "one_liner": "一套用 Markdown 编写、经适配器生成并校验的插件、代理、技能与命令集合，可跨多个 AI 编码工具复用。",
       "core_features": [
-        "一套 Markdown 源同时适配 Claude Code、Codex CLI、Cursor、OpenCode、Copilot 等七种工具",
-        "包含 94 个插件、202 个 agent、185 个 skill 和 105 个命令",
-        "支持插件市场安装、仅安装 skill 以及从克隆仓库安装三种方式",
-        "提供插件结构校验、生成产物校验与静态 skill 评分工具"
+        "以 Markdown 单源维护插件、代理、技能和命令，适配器生成各工具所需格式",
+        "覆盖 Claude Code、Codex CLI、Cursor、OpenCode、Antigravity CLI、GitHub Copilot、Pi 等工具",
+        "提供 94 个插件，含 202 个代理、185 个技能、105 个命令",
+        "CI 重新生成并校验各工具产物，并通过已安装 CLI 运行部分产物",
+        "plugin-eval 提供静态技能检查，另有实验性 LLM 评审与蒙特卡洛评估"
       ],
       "tech_stack": [
         "Python",
+        "Markdown",
         "Make",
         "uv",
-        "Markdown",
-        "Node.js/npm"
+        "GitHub CLI",
+        "npx skills"
       ],
-      "highlights": "用单一 Markdown 源加适配器生成各工具所需格式，解决多 harness 生态碎片化问题，并配套质量评估工具。",
-      "target_audience": "使用多种 AI 编程助手、希望复用统一 agent 与 skill 配置的开发者及团队。",
+      "highlights": "一次编写、多工具适配的设计，加上生成、校验与评估流水线，解决了 AI 编码工具生态碎片化的问题。",
+      "target_audience": "使用多种 AI 编码工具、希望统一维护代理与技能资产的开发者，以及需要为团队搭建跨工具工作流的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 42095,
+    "stars_at_analysis": 42344,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-02T09:39:17+00:00",
+    "analyzed_at": "2026-11-09T09:55:59+00:00",
     "readme_available": true
   },
   "desktop/desktop": {
@@ -20339,13 +20341,13 @@
   },
   "pbakaus/impeccable": {
     "analysis": {
-      "one_liner": "为编码智能体提供设计词汇与命令，用于指导、审查并拦截AI生成的模板化界面。",
+      "one_liner": "为编码智能体提供设计词汇与命令集，用于指导、评审和检测界面设计质量。",
       "core_features": [
-        "24个斜杠命令，覆盖bolder、quieter、polish、critique、audit等设计指导与审查动作",
-        "62条确定性规则检测AI模板化设计痕迹与质量问题，无需LLM或API密钥",
-        "init生成PRODUCT.md、document生成DESIGN.md，为项目提供设计上下文",
-        "live模式在浏览器中选中元素并热切换变体，接受后写回源码",
-        "支持CLI与CI扫描目录或渲染页面，输出JSON与GitHub Actions注解"
+        "24 个设计命令，涵盖 bolder、quieter、polish、critique、audit 等方向",
+        "62 条确定性规则检测 AI 生成界面的套路化设计问题，无需 LLM 或 API 密钥",
+        "critique 按可用性启发式评分并排序修复优先级，audit 输出 P0-P3 技术质量报告",
+        "live 模式在浏览器中选中元素并热切换设计变体，可写回源码",
+        "通过 init 与 document 生成 PRODUCT.md 和 DESIGN.md 上下文文件"
       ],
       "tech_stack": [
         "Rust",
@@ -20354,24 +20356,20 @@
         "Cursor",
         "Codex CLI",
         "GitHub Copilot",
-        "Vite",
-        "Next",
-        "SvelteKit",
-        "Astro",
-        "Nuxt"
+        "Vite/Next/SvelteKit/Astro/Nuxt"
       ],
-      "highlights": "用一套共享设计词汇把模糊的“让它更出彩”转化为可执行的命令，并以确定性规则在智能体交付前拦截AI模板化设计，同时兼容大量主流编码工具。",
-      "target_audience": "使用AI编码智能体进行前端与界面开发、希望提升设计质量与一致性的开发者及设计工程师",
+      "highlights": "把模糊的设计诉求转化为可执行的命令词汇，并用确定性规则在智能体提交前拦截套路化设计，覆盖 20 余种编码工具。",
+      "target_audience": "使用 AI 编码智能体做前端与界面开发、关注设计质量与可访问性的开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 101380,
+    "stars_at_analysis": 106483,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-03T20:31:25+00:00",
+    "analyzed_at": "2026-11-09T09:55:59+00:00",
     "readme_available": true
   },
   "apache/kafka": {
@@ -46139,38 +46137,37 @@
   },
   "nvidia/auto-ontology": {
     "analysis": {
-      "one_liner": "NVIDIA 开源的企业语义本体层框架，为 LLM 与 Agent 提供可解释、可校验的数据查询上下文。",
+      "one_liner": "NVIDIA 开源框架，从企业元数据构建语义本体层，为 LLM 与 Agent 提供可解释、可校验的数据查询上下文。",
       "core_features": [
-        "从企业元数据自动生成本体与知识图谱，并接入已有语义模型",
-        "为指标、实体和关系提供可信业务语义，跨系统调和定义冲突",
-        "用认证定义与血缘校验生成的 SQL，并返回溯源信息",
-        "通过 MCP、CLI 和 API 向任意 Agent 框架暴露上下文",
+        "从元数据自动生成企业本体，并接入已有本体与语义模型",
+        "跨系统对齐指标、实体与关系的业务定义",
+        "基于认证定义与血缘校验生成的 SQL，并返回溯源信息",
+        "通过 MCP、CLI 与 API 向任意 Agent 框架暴露上下文",
         "将人工修正与使用反馈回写本体，持续改进共享上下文"
       ],
       "tech_stack": [
-        "Python",
+        "Python 3.12+",
         "FastAPI",
         "LangChain",
         "Next.js 16 / React 19 / TypeScript",
-        "Tailwind CSS 4",
+        "Postgres + pgvector",
         "Prisma",
         "Better Auth",
-        "Postgres + pgvector",
         "NVIDIA NIM",
         "Docker Compose / Helm"
       ],
-      "highlights": "由 NVIDIA 出品，把语义本体作为 Agent 的上下文层，强调确定性查询生成、定义调和与答案溯源，直击 Agent 数据分析的可靠性问题，并提供完整 Web UI 与部署方案。",
-      "target_audience": "构建企业级数据分析 Agent、NL-to-SQL 与语义层应用的后端与数据平台开发者。",
+      "highlights": "以本体与知识图谱作为 Agent 的语义上下文层，强调确定性查询生成与答案可溯源，并支持 MCP 等标准接口对接多种 Agent 框架。",
+      "target_audience": "构建 Agent 数据分析、NL-to-SQL 与语义层应用的后端与数据平台开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 7111,
+    "stars_at_analysis": 10723,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-05T21:07:38+00:00",
+    "analyzed_at": "2026-11-09T09:55:59+00:00",
     "readme_available": true
   },
   "raktim94/nodedr-restaurant-pos": {
@@ -48897,29 +48894,30 @@
     "analysis": {
       "one_liner": "可交互的中国历史地图时间轴，覆盖公元前403年至今18个朝代、164个疆域快照与古今地名沿革。",
       "core_features": [
-        "拖动时间轴查看各朝代疆域变迁、多政权并立与虚线疆域差异对比",
-        "点击古城或关隘查看2400年行政区沿革、地名演变与当地重大历史事件",
-        "人物纪年：搜索历史人物并在地图上绘制其生平轨迹",
-        "时间轴内联显示在位君主与年号，支持现代省界透视镜叠加",
-        "动态呈现黄河改道、古湖泊、长城、运河与丝路等地理要素"
+        "拖动时间轴浏览18个历史时期的疆域演变，多政权同屏对比并高亮定位",
+        "多阶段疆域快照与虚线“幽灵边界差异”，直观显示疆域得失",
+        "点击古城或关隘查看2400年行政沿革、地名变迁与当地重大历史事件",
+        "时间轴内联显示在位君主与年号，悬停查看一级行政区并可用现代省界透视镜对比",
+        "动态呈现黄河改道、古代湖泊、长城、运河、丝绸之路与郑和下西洋航线"
       ],
       "tech_stack": [
         "JavaScript",
         "Web 地图可视化",
-        "交互式时间轴"
+        "交互式时间轴",
+        "静态站点部署"
       ],
-      "highlights": "将2400年中国历史疆域、政区沿革、地名谱系与诗词战场地标整合进单一交互地图，并支持古今对照与人物轨迹追踪。",
-      "target_audience": "对中国历史地理、古代地名沿革与历史教学可视化感兴趣的开发者与历史爱好者",
+      "highlights": "将2400年中国历史疆域、古今地名沿革、君主年号与诗词战场地标整合进单一交互式羊皮纸地图，并以“幽灵边界差异”和现代省界透视镜等设计降低历史地理的理解门槛。",
+      "target_audience": "对中国历史、历史地理与古典诗词感兴趣的开发者，以及需要地图可视化与时间轴交互参考的前端开发者",
       "scores": {
         "innovation": 4,
-        "practicality": 4,
+        "practicality": 3,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 3309,
+    "stars_at_analysis": 4908,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-02T09:39:17+00:00",
+    "analyzed_at": "2026-11-09T09:55:59+00:00",
     "readme_available": true
   },
   "egoist/kero": {
