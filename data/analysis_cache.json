@@ -12130,35 +12130,35 @@
   },
   "nvidia/skillspector": {
     "analysis": {
-      "one_liner": "扫描 AI 智能体技能的安全漏洞与恶意模式，安装前评估风险",
+      "one_liner": "扫描 AI 代理技能的安全工具，在安装前检测漏洞、恶意模式与供应链风险。",
       "core_features": [
-        "支持 Git 仓库、URL、zip、目录、单文件等多格式输入扫描",
-        "覆盖 17 类共 71 种漏洞模式，含提示注入、数据外泄、供应链风险等",
+        "支持 Git 仓库、URL、zip、目录、单文件等多种输入格式扫描",
+        "内置 71 种漏洞模式，覆盖提示注入、数据外泄、权限提升、供应链等 17 类风险",
         "两阶段分析：快速静态分析加可选 LLM 语义评估",
-        "实时查询 OSV.dev 获取 CVE 数据并支持离线回退",
-        "输出终端、JSON、Markdown、SARIF 多种格式并给出 0-100 风险评分"
+        "实时查询 OSV.dev 获取 CVE 数据，支持离线回退",
+        "输出终端、JSON、Markdown、SARIF 多种报告格式，并提供 0-100 风险评分"
       ],
       "tech_stack": [
         "Python 3.12+",
-        "LLM 语义分析",
-        "YARA 签名",
-        "AST 分析",
-        "SARIF",
+        "LLM 语义分析（支持 Anthropic 等提供商）",
+        "OSV.dev",
+        "YARA",
+        "AST 静态分析",
         "Docker",
-        "MCP"
+        "SARIF"
       ],
-      "highlights": "由 NVIDIA 维护并接入其 Verified Skills 流水线，基于大规模数据集实证显示 26.1% 技能存在漏洞、5.2% 疑似恶意，提供基线抑制与 CI 集成能力",
-      "target_audience": "使用 Claude Code、Codex、MCP 等智能体技能的开发者，以及需要在 CI 中把关技能安装安全的团队",
+      "highlights": "由 NVIDIA 维护，属于 Verified Skills 流水线；基于 3 万余技能的研究数据揭示 26.1% 存在漏洞、5.2% 疑似恶意，并提供基线抑制与 CI 集成能力。",
+      "target_audience": "使用 Claude Code、Codex、MCP 等 AI 代理技能的开发者，以及需要在 CI/CD 中把关技能安装安全的团队。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 24006,
+    "stars_at_analysis": 25146,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-02T22:48:41+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "nvlabs/cuda-oxide": {
@@ -13621,32 +13621,32 @@
   },
   "hmjz100/linkswift": {
     "analysis": {
-      "one_liner": "基于 JavaScript 的油猴脚本，为九大网盘页面获取文件直链并推送至多种下载器。",
+      "one_liner": "基于 JavaScript 的油猴脚本，为九大网盘页面获取文件直链并推送到下载器。",
       "core_features": [
-        "支持百度、阿里、移动、天翼、迅雷、夸克、UC、123、光鸭等九大网盘的直链获取",
-        "提供 UI 美化与浮动提示框，在网盘页面内直接操作",
-        "支持推送到 IDM、Aria2、ABDM 等下载器，并可复制 Aria2、cURL 命令行",
-        "增强下载支持多块多线程与进度条显示",
-        "提供正式版与金丝雀版双通道，兼容 Chrome、Edge 及多平台"
+        "支持百度、阿里、移动、天翼、迅雷、夸克、UC、123、光鸭等网盘直链获取",
+        "支持推送到 IDM、Aria2 等下载器并生成 cURL 命令",
+        "提供多块多线程增强下载与进度条",
+        "对网盘页面进行 UI 美化与浮动提示",
+        "提供正式版与金丝雀版双更新通道"
       ],
       "tech_stack": [
         "JavaScript",
         "Tampermonkey 用户脚本",
         "ESLint",
-        "GreasyFork/脚本猫/OpenUserJS 分发"
+        "各网盘公开 API"
       ],
-      "highlights": "单文件用户脚本覆盖九大网盘，并持续跟进各网盘接口与页面改版；Star 数超 3.7 万且周期内新增八千余，社区活跃度高。",
-      "target_audience": "需要绕过官方客户端下载网盘文件、熟悉油猴脚本安装的普通用户，以及想学习用户脚本开发与网盘 API 适配的开发者。",
+      "highlights": "近四万 Star 的成熟用户脚本，长期跟进各大网盘接口变动，并明确声明仅调用公开 API、不涉及破解限速，合规态度清晰。",
+      "target_audience": "需要绕过官方客户端下载网盘文件的普通用户，以及想学习用户脚本开发与网盘 API 适配的开发者。",
       "scores": {
         "innovation": 3,
         "practicality": 5,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 37554,
+    "stars_at_analysis": 39170,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-03T09:42:19+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "goharbor/harbor": {
@@ -16414,31 +16414,31 @@
   },
   "mnfst/awesome-free-llm-apis": {
     "analysis": {
-      "one_liner": "汇总提供永久免费额度的 LLM API 服务商清单，附模型、上下文与限流信息。",
+      "one_liner": "汇总提供永久免费额度的 LLM API 服务商清单，含模型、上下文与限流信息。",
       "core_features": [
-        "按官方厂商 API 与第三方推理平台分类整理免费 LLM API",
-        "列出各服务商免费额度、是否需信用卡及限流规则",
-        "提供模型名称、上下文长度、最大输出与模态对照表",
-        "标注原生与 OpenAI 兼容的 Base URL 差异",
-        "链接直达各服务商的 API Key 申请页面"
+        "按官方 Provider 与第三方推理平台分类列出免费 LLM API",
+        "标注各服务商 Base URL、模型名称、上下文长度与最大输出",
+        "列出速率限制与免费额度（如 RPM、每日 token 数）",
+        "注明是否需信用卡及免费额度数据使用条款",
+        "提供术语表与 OpenAI 兼容端点说明"
       ],
       "tech_stack": [
         "JavaScript",
         "Markdown",
         "Awesome List"
       ],
-      "highlights": "聚焦“永久免费”而非试用额度，并给出可直接对接的模型参数与限流细节，对低成本原型开发极具参考价值。",
-      "target_audience": "需要免费 LLM 额度做原型验证、个人项目或学习实验的开发者",
+      "highlights": "聚焦“永久免费”而非试用额度，信息结构化程度高，并区分原生与 OpenAI 兼容端点，便于直接接入开发。",
+      "target_audience": "需要低成本调用 LLM 的独立开发者、做原型验证的创业者及学习 AI 应用开发的学生",
       "scores": {
         "innovation": 2,
         "practicality": 5,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 12029,
+    "stars_at_analysis": 12802,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-03T09:42:19+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "termux/termux-api": {
@@ -23109,32 +23109,32 @@
   },
   "anthropics/claude-plugins-official": {
     "analysis": {
-      "one_liner": "Anthropic 官方维护的 Claude Code 高质量插件目录与市场",
+      "one_liner": "Anthropic 官方维护的 Claude Code 高质量插件目录与市场。",
       "core_features": [
-        "收录 Anthropic 内部插件与第三方社区插件两类目录",
-        "支持通过 /plugin install 命令或 Discover 界面直接安装插件",
-        "定义标准插件结构，包含 plugin.json、MCP 配置、命令、代理与技能",
-        "插件名称不可变，并提供 renames 映射实现旧名自动迁移",
-        "支持无 manifest 的 skill-bundle 插件，通过 strict:false 显式声明技能列表"
+        "提供官方内部插件与第三方外部插件两个分区",
+        "支持通过 /plugin install 或 Discover 浏览安装插件",
+        "定义标准插件结构（plugin.json、MCP 配置、commands、agents、skills）",
+        "插件名称不可变，并提供 renames 映射实现安装自动迁移",
+        "支持无 manifest 的 skill-bundle 插件声明方式"
       ],
       "tech_stack": [
         "Python",
         "Claude Code 插件系统",
         "MCP",
-        "JSON 插件清单"
+        "JSON 清单配置"
       ],
-      "highlights": "由 Anthropic 官方托管并审核，为 Claude Code 生态提供统一的插件分发入口与规范化的插件结构约定",
-      "target_audience": "使用 Claude Code 并希望扩展其能力的开发者，以及希望发布插件的第三方合作伙伴与社区贡献者",
+      "highlights": "由 Anthropic 官方背书并统一管理，为 Claude Code 生态建立插件规范、安装入口与质量审核机制，是插件分发的中心化枢纽。",
+      "target_audience": "Claude Code 用户、希望发布插件的第三方开发者与合作伙伴、以及构建 AI 编码代理扩展的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 45907,
+    "stars_at_analysis": 46694,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-03T09:42:19+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "nobodywho-ooo/nobodywho": {
@@ -24568,25 +24568,25 @@
       "one_liner": "通过用户名在多个社交网络上批量查找对应账号",
       "core_features": [
         "按用户名跨社交网络检索账号",
-        "批量检测多个平台是否存在同名用户",
-        "Python 命令行工具，便于脚本化调用",
-        "开源社区维护的平台站点列表"
+        "支持大量社交平台站点",
+        "Python 命令行工具",
+        "可批量查询多个用户名"
       ],
       "tech_stack": [
         "Python"
       ],
-      "highlights": "Star 数超过十万，社区活跃度高，是开源情报与账号排查场景中被广泛引用的工具",
-      "target_audience": "安全研究人员、开源情报分析人员及需要做账号排查的开发者",
+      "highlights": "Star 数极高、社区活跃，是跨平台用户名账号排查的常用工具",
+      "target_audience": "做开源情报调查、安全研究或账号排查的开发者",
       "scores": {
         "innovation": 3,
         "practicality": 5,
         "learning_value": 3
       }
     },
-    "stars_at_analysis": 102890,
+    "stars_at_analysis": 108043,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-08T18:53:14+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": false
   },
   "withastro/astro": {
@@ -25928,31 +25928,33 @@
     "analysis": {
       "one_liner": "一款免费的双窗格 Material Design 安卓文件管理器，专注 APK 处理，目标是成为 MT Manager 的开源替代品。",
       "core_features": [
-        "双窗格导航，支持两侧独立主目录、同步目录、前进后退与下拉刷新",
-        "APK/ZIP 处理：解压、添加文件、压缩选项、自动签名与 zipalign",
-        "高级搜索：支持正则、大小写匹配、文件内容搜索与大小范围过滤",
-        "Root 与 Shizuku 文件管理，可访问 Android/data、obb 及系统目录",
-        "内置音视频播放器、图片查看与 EXIF 编辑、批量重命名与校验和计算"
+        "双窗格导航，可分别设置主目录、同步窗格、书签与历史记录",
+        "高级搜索：支持正则、内容搜索、大小过滤，并可搜索 ZIP/APK 内部",
+        "文件操作：批量重命名、压缩解压、APK 自动签名与 zipalign、冲突处理",
+        "Root 与 Shizuku 文件管理，可访问 Android/data、obb 等受限目录",
+        "网络存储支持 FTP、WebDAV、SMB，并内置 PDF 查看器与校验和工具"
       ],
       "tech_stack": [
         "Java",
         "Android SDK",
         "Material Design",
         "Shizuku",
-        "Root/Shell"
+        "WebDAV",
+        "SMB",
+        "FTP"
       ],
-      "highlights": "功能覆盖度接近商业级文件管理器，尤其是 APK 自动签名与 zipalign、Root/Shizuku 访问受限目录、内容级搜索与可自定义文件菜单，且完全开源免费。",
-      "target_audience": "需要强大安卓文件管理能力的进阶用户、APK 修改与逆向爱好者、以及希望替代 MT Manager 的开源支持者。",
+      "highlights": "以开源方式对标 MT Manager，将 APK 编辑、签名、zipalign 与归档内搜索等逆向/打包常用能力集成进双窗格文件管理器，并同时支持 Root、Shizuku 与 DocumentsProvider 三种受限目录访问方式。",
+      "target_audience": "需要频繁处理 APK、归档与系统目录的安卓进阶用户、逆向与打包开发者，以及偏好开源替代商业文件管理器的开发者。",
       "scores": {
         "innovation": 3,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 383,
+    "stars_at_analysis": 536,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-10-25T07:40:06+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "huilang-me/cf-server-monitor": {
@@ -33675,13 +33677,13 @@
   },
   "morluto/rea": {
     "analysis": {
-      "one_liner": "通过 MCP 让 AI 代理逆向分析二进制、应用与运行时行为并给出证据",
+      "one_liner": "通过 MCP 让 AI 代理逆向分析二进制、应用与运行时行为并给出证据。",
       "core_features": [
-        "以 MCP 服务器形式接入 Claude Code、Codex、Cursor 等代理",
+        "以 MCP 服务接入 Claude Code、Codex、Cursor 等代理",
         "分析原生二进制、JavaScript/Electron 应用、.NET 程序集与网站",
+        "本地运行分析并输出结论对应的证据与局限",
         "支持 Hopper、Ghidra、IDA、Kuna 等原生分析引擎",
-        "提供终端 CLI 命令与 JSON 结构化输出",
-        "结论附带证据与局限性说明，分析在本地运行"
+        "提供终端 CLI 命令与 JSON 结构化结果"
       ],
       "tech_stack": [
         "TypeScript",
@@ -33693,18 +33695,18 @@
         "IDA",
         "JADX"
       ],
-      "highlights": "把逆向工程能力封装成统一的 MCP 工具集，让 AI 代理在无源码情况下分析应用并输出可追溯证据，同时兼容多种主流反汇编引擎",
-      "target_audience": "希望借助 AI 代理进行逆向分析、功能复刻与安全研究的开发者",
+      "highlights": "把逆向工程能力封装成统一的 MCP 工具集，让 AI 代理在无源码情况下理解功能实现，并强调结论可溯源、分析本地化。",
+      "target_audience": "希望借助 AI 代理做逆向分析、功能借鉴与安全研究的开发者，以及需要为代理构建逆向工作流的技术团队。",
       "scores": {
         "innovation": 5,
         "practicality": 4,
-        "learning_value": 4
+        "learning_value": 5
       }
     },
-    "stars_at_analysis": 443185,
+    "stars_at_analysis": 448304,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-08T18:53:14+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "raullenchai/rapid-mlx": {
@@ -41710,31 +41712,31 @@
   },
   "rclone/rclone": {
     "analysis": {
-      "one_liner": "命令行工具，用于在数十种云存储服务之间同步、复制和挂载文件。",
+      "one_liner": "rclone 是云存储领域的 rsync，用命令行在数十种云存储之间同步、复制和挂载文件。",
       "core_features": [
         "在本地与多种云存储之间双向同步文件和目录",
-        "支持数十种存储后端（S3、Google Drive、Dropbox、OneDrive、Azure、Swift 等）",
-        "提供类 rsync 的校验、增量传输与过滤规则",
-        "支持挂载云存储为本地文件系统",
-        "提供 HTTP、FTP、WebDAV 等多种协议接入"
+        "支持 Google Drive、S3、Dropbox、OneDrive、Azure、Swift 等大量存储后端",
+        "提供类 rsync 的复制、校验、去重与增量同步能力",
+        "可作为命令行工具集成到脚本和自动化流程中",
+        "提供 Docker 镜像与跨平台下载安装方式"
       ],
       "tech_stack": [
         "Go",
         "命令行 CLI",
         "Docker"
       ],
-      "highlights": "以统一抽象层覆盖极广泛的云存储后端，是云存储迁移与同步的事实标准工具，社区活跃、文档完善。",
-      "target_audience": "需要跨云存储迁移或备份数据的运维与后端开发者，以及做数据同步自动化的工程师",
+      "highlights": "以统一抽象层兼容数十种云存储服务，覆盖主流对象存储、网盘与 WebDAV 协议，生态成熟、社区活跃，Star 数超过 6 万。",
+      "target_audience": "需要跨云备份、迁移或同步数据的运维与后端开发者，以及编写自动化脚本和构建数据流水线的工程师。",
       "scores": {
-        "innovation": 3,
+        "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 60762,
+    "stars_at_analysis": 60912,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-03T09:42:19+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "mewx/light-novel-library_wenku8_android": {
@@ -43933,30 +43935,32 @@
       "one_liner": "谷歌开源的通用无损压缩算法，压缩率优于 deflate，已标准化为 RFC 7932。",
       "core_features": [
         "基于 LZ77 变体、Huffman 编码与二阶上下文建模的无损压缩",
-        "压缩率接近当前最佳通用压缩方法，速度与 deflate 相当",
+        "压缩率接近当前最佳通用压缩方法，速度与 deflate 相近",
         "提供 C 库、命令行工具及 Python 模块等多种使用方式",
         "支持 CMake、Bazel、vcpkg 等多种构建与包管理方式",
-        "格式规范由 RFC 7932 定义，并有独立解码器实现"
+        "遵循 RFC 7932 规范，并有独立解码器与多语言移植实现"
       ],
       "tech_stack": [
         "C",
-        "Python",
         "CMake",
         "Bazel",
-        "vcpkg"
+        "vcpkg",
+        "Python",
+        "GitHub Actions",
+        "OSS-Fuzz"
       ],
-      "highlights": "由 Google 维护并被广泛集成到 Web 与系统软件中的压缩格式，拥有正式 RFC 标准、成熟的多语言绑定和活跃的模糊测试保障。",
-      "target_audience": "需要高性能数据压缩的开发者、Web 服务器与浏览器工程师、以及研究压缩算法与格式实现的人员",
+      "highlights": "由 Google 维护并被广泛集成到各 Linux 发行版与包管理器，压缩率与 deflate 速度相当，是 Web 与系统级压缩的重要基础设施。",
+      "target_audience": "需要高压缩率传输或存储数据的后端与系统开发者、Web 性能优化工程师，以及研究压缩算法与格式规范的开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 15071,
+    "stars_at_analysis": 15104,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-01T09:23:37+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "agentskills/agentskills": {
@@ -45254,34 +45258,33 @@
     "analysis": {
       "one_liner": "开源社交媒体排程与自动化管理平台，支持多平台发布、分析与团队协作。",
       "core_features": [
-        "多平台社交媒体帖子排程发布",
-        "内容分析与效果度量",
+        "多平台社交媒体帖子排程与发布",
+        "内容分析与数据统计",
         "团队成员协作、评论与帖子交换",
-        "面向自动化的公开 API 与 N8N、Make.com 集成",
-        "集成多种 AI Agent 辅助内容创作与发布"
+        "AI 智能体与自动化集成（API、N8N、Make.com）",
+        "支持自托管部署与云托管两种模式"
       ],
       "tech_stack": [
         "TypeScript",
-        "NextJS",
+        "NextJS (React)",
         "NestJS",
-        "Prisma",
-        "PostgreSQL",
+        "Prisma (PostgreSQL)",
         "Temporal",
         "Pnpm workspaces",
         "Resend"
       ],
-      "highlights": "以 AGPL 开源方式提供可自托管的全功能社媒管理平台，覆盖十余个社交平台，并深度对接主流 AI Agent 与自动化工具，兼具 SaaS 与自部署两种形态。",
-      "target_audience": "需要自托管社媒管理工具的内容团队、做自动化与 AI 工作流的开发者，以及希望学习大型 TypeScript 全栈 Monorepo 架构的工程师。",
+      "highlights": "覆盖十余个主流社交平台，并深度集成多种 AI 智能体与自动化工具，同时提供开源自托管方案，兼具商业产品完整度与开源可定制性。",
+      "target_audience": "需要自建社交媒体管理工具的开发者、内容运营团队，以及希望基于成熟 SaaS 架构学习全栈 TypeScript 开发的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 40720,
+    "stars_at_analysis": 41240,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-02T22:48:41+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "eugeniughelbur/obsidian-second-brain": {
@@ -48327,34 +48330,35 @@
   },
   "beenuar/aisoc": {
     "analysis": {
-      "one_liner": "开源可自托管的AI安全运营中心，融合告警、LLM代理研判与可审计决策账本",
+      "one_liner": "开源可自托管的AI安全运营中心，融合告警、LLM代理研判、MITRE ATT&CK调查与可回放决策账本",
       "core_features": [
-        "多源安全遥测接入与归一化，内置87个可点击连接器",
-        "基于7015条规则库（2530条可执行）的检测与告警关联成事件",
-        "LLM代理自动研判，记录每步提示与工具调用形成可回放决策账本",
-        "结合MITRE ATT&CK与威胁情报（如CISA KEV）重新扫描历史数据",
-        "提供MCP服务器供Claude、Cursor、Continue集成，无需API密钥即可运行"
+        "多源安全遥测接入与归一化，7407条规则库中2966条可执行规则进行检测与关联",
+        "LLM代理自动研判告警，记录每一步提示与工具调用，形成可审计回放的决策账本",
+        "基于MITRE ATT&CK的调查流程，新威胁情报可回溯重扫历史数据",
+        "91个点击即连的数据连接器，支持推送与拉取两种接入方式",
+        "内置MCP服务器，可对接Claude、Cursor与Continue；无需API密钥即可本地运行"
       ],
       "tech_stack": [
         "Python",
         "Docker Compose",
         "Kafka",
-        "PostgreSQL",
+        "Postgres",
         "LLM本地模型",
-        "MCP协议"
+        "MCP",
+        "REST API"
       ],
-      "highlights": "每个AI代理步骤的提示与工具调用均可审计回放，且无需API密钥、可完全自托管，附带真实可验证的冒烟测试与诚实空状态设计",
-      "target_audience": "安全运营工程师、SOC团队、对AI代理可审计性感兴趣的安全开发者",
+      "highlights": "无需API密钥即可自托管运行，AI代理每一步推理与工具调用均可审计回放，且提供make smoke端到端验证流水线真实可用",
+      "target_audience": "安全运营工程师、SOC分析师、对AI代理可审计性感兴趣的安全开发者，以及希望自建检测与研判流水线的团队",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 6070,
+    "stars_at_analysis": 7002,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-01T18:59:35+00:00",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   },
   "mayswind/ezbookkeeping": {
@@ -52695,6 +52699,39 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-11-09T23:28:06+00:00",
+    "readme_available": true
+  },
+  "snap-stanford/memorilla": {
+    "analysis": {
+      "one_liner": "将整个文档集合压缩为固定数量的查询相关记忆令牌，供冻结 LLM 使用。",
+      "core_features": [
+        "从整个文档集合中提取信息，压缩为 16 个查询相关的记忆令牌",
+        "冻结 LLM 参数，仅训练记忆模块与编码器",
+        "支持多阶段训练与八个基准评测，含 FactKG、PersonaMem-v2 等",
+        "可扩展至百万级令牌，512 篇文档下响应时间保持 0.74 秒",
+        "支持在 TextWorld 上通过强化学习从自身历史中持续学习"
+      ],
+      "tech_stack": [
+        "Python 3.11",
+        "PyTorch",
+        "FlashAttention-2",
+        "vLLM",
+        "Qwen3-8B 与 Qwen3-Embedding-4B",
+        "uv",
+        "Weights & Biases"
+      ],
+      "highlights": "用极小的令牌预算超越全上下文与 Mem0、MemoRAG 等方法，在 FactKG 上准确率更高且令牌用量减少 108 倍，并展示出跨对话的隐式语义关联能力。",
+      "target_audience": "研究 LLM 长上下文与记忆机制的研究者，以及需要为智能体构建高效长期记忆系统的开发者。",
+      "scores": {
+        "innovation": 5,
+        "practicality": 4,
+        "learning_value": 5
+      }
+    },
+    "stars_at_analysis": 777,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-10T10:01:34+00:00",
     "readme_available": true
   }
 }
