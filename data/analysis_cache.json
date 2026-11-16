@@ -53141,35 +53141,36 @@
   },
   "tencent/loopforge": {
     "analysis": {
-      "one_liner": "自托管的编码智能体工作流平台，用沙箱、角色分工与人工审批门把需求交付成可合并代码。",
+      "one_liner": "自托管的编码智能体交付工作流平台，用 SOP 与人工审批门编排多种编码 CLI。",
       "core_features": [
-        "聊天式主机器人按需创建 Docker 沙箱、检出仓库并委派项目角色，最终产出 PR/MR",
-        "SOP 标准工作流引擎按序执行 Agent、脚本、人工审批门与子 SOP 节点",
-        "角色分离：规划、实现、评审、测试各自配置提示词、执行器、模型、规则与 MCP 工具",
-        "可观测可恢复：节点状态、工具轨迹、日志与产物集中展示，支持暂停、重试与从任意节点重跑",
-        "支持 CodeBuddy、Codex、Claude Code 等十种编码智能体 CLI 作为执行器，并提供本地工作流"
+        "聊天式主机器人按需创建 Docker 沙箱工作区并调用项目角色子代理",
+        "以 SOP 编排 Agent、脚本、人工审批门与子 SOP 节点，按序执行",
+        "角色分离：规划、实现、评审、测试各自独立提示词、执行器与模型",
+        "节点状态、工具轨迹、日志与产物可观测，支持暂停、重试与从任意节点重跑",
+        "支持 CodeBuddy、Codex、Claude Code 等十种编码智能体 CLI 作为执行器"
       ],
       "tech_stack": [
         "Go",
-        "Docker / Docker Compose",
+        "Docker",
+        "Docker Compose",
         "MySQL",
         "GitHub",
         "MCP",
         "Skills",
         "npm CLI"
       ],
-      "highlights": "把编码智能体的临时性对话沉淀为可复用、带人工审批门的 SOP，并统一追踪需求、成本与交付，全部运行在自有基础设施上，MIT 许可。",
-      "target_audience": "希望把编码智能体引入团队交付流程、需要可重复流程与审批管控的研发团队和平台工程师",
+      "highlights": "把编码智能体从一次性对话升级为可重复、带人工审批门与可观测性的团队交付流程，且完全自托管、MIT 许可。",
+      "target_audience": "希望将编码智能体引入团队交付流程、需要自托管与审批管控的研发团队和平台工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 1070,
+    "stars_at_analysis": 2081,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-16T09:54:43+00:00",
     "readme_available": true
   },
   "ja7ad/hydra": {
@@ -55521,6 +55522,37 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-11-16T00:01:35+00:00",
+    "readme_available": true
+  },
+  "simonlin1212/vibe-research": {
+    "analysis": {
+      "one_liner": "面向A股、美股、港股的本地化AI投研工作台，集行情、复盘、个股研究与回测于一体。",
+      "core_features": [
+        "自选与持仓管理，按交易流水计算成本盈亏并做持仓体检",
+        "每日复盘：涨跌面、量能、短线情绪、两融与行业资金",
+        "六阶段个股深度研究，生成带证据与计算过程的研究报告",
+        "对话式回测与多空辩论，结果对照指数并出图",
+        "研报库导入检索问答，回答可回查原文引用"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Claude Code",
+        "Codex",
+        "WorkBuddy",
+        "兼容Chat Completions的模型API"
+      ],
+      "highlights": "168个数据端点覆盖三地市场，AI可自选订阅或任意模型API，数据与记录全部保存在本地，回答中的数字均核对出处。",
+      "target_audience": "需要跨A股、美股、港股做基本面与量化验证的个人投资者、投研人员及希望自建本地AI投研工作流的开发者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 3741,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-16T09:54:43+00:00",
     "readme_available": true
   }
 }
