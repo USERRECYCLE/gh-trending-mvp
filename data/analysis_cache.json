@@ -1,33 +1,33 @@
 {
   "alibaba/open-code-review": {
     "analysis": {
-      "one_liner": "阿里开源的AI代码审查CLI工具，用确定性流水线加LLM Agent实现行级精准评论。",
+      "one_liner": "阿里巴巴开源的AI代码审查CLI工具，确定性流水线结合LLM Agent，实现行级精准评论。",
       "core_features": [
-        "读取Git diff并调用可配置LLM生成行级精准审查评论",
-        "Agent可读取完整文件、搜索代码库、参考其他变更文件获取上下文",
-        "内置多语言规则集，覆盖NPE、线程安全、XSS、SQL注入等缺陷",
-        "ocr scan支持对无有效diff的整文件或目录进行审查",
-        "支持OpenAI与Anthropic兼容的模型端点，兼容Claude Code、Codex、Cursor等Agent"
+        "读取Git diff，通过具备工具调用能力的Agent生成行级精准审查评论",
+        "内置多语言规则集，覆盖NPE、线程安全、XSS、SQL注入等问题",
+        "确定性工程负责文件筛选、智能文件分组、细粒度规则匹配与评论定位反思",
+        "支持ocr scan对整文件进行审查，适用于无有效diff的代码库审计",
+        "兼容OpenAI与Anthropic模型端点，支持Claude Code、Codex、Cursor等Agent"
       ],
       "tech_stack": [
         "Go",
         "LLM Agent",
         "OpenAI/Anthropic API",
-        "npm分发",
+        "npm 包分发",
         "Git diff"
       ],
-      "highlights": "源自阿里内部大规模验证的AI代码审查助手，采用确定性工程与Agent混合架构，在自建基准上相比通用Agent精度与F1更高且token消耗约为1/9。",
-      "target_audience": "需要将AI代码审查接入CI流程的团队开发者，以及希望审计陌生代码库、关注缺陷检测与误报控制的工程团队。",
+      "highlights": "源自阿里内部大规模实践，服务数万开发者并发现数百万缺陷；在自建AACR-Bench基准上相比通用Agent精度与F1更高，token消耗约为其1/9，且以确定性工程约束解决覆盖不全与位置漂移问题。",
+      "target_audience": "希望将AI代码审查集成到CI流程的团队、需要审计陌生代码库的开发者，以及关注Agent与确定性工程混合架构的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 49838,
+    "stars_at_analysis": 54166,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-11T21:27:35+00:00",
+    "analyzed_at": "2026-11-18T22:07:21+00:00",
     "readme_available": true
   },
   "cloudflare/security-audit-skill": {
@@ -20435,31 +20435,30 @@
     "analysis": {
       "one_liner": "为各类软件生成命令行接口，让AI Agent能直接操作任意软件。",
       "core_features": [
-        "为各类软件生成Agent可调用的CLI封装",
-        "CLI-Hub社区注册中心，支持浏览、安装与管理CLI",
-        "提供预览、实时预览与轨迹循环等Agent工作流",
-        "统一SKILL.md技能目录，支持技能安装",
-        "覆盖CAD、3D场景、图表、游戏、字幕等多类应用演示"
+        "为软件生成可被Agent调用的CLI封装（harness）",
+        "CLI-Hub注册中心支持浏览、安装和管理社区CLI",
+        "支持JSON与人类可读双输出格式",
+        "提供预览、实时预览与轨迹循环等Agent演示能力",
+        "统一SKILL.md技能安装与测试验证体系"
       ],
       "tech_stack": [
         "Python",
         "Click",
         "pytest",
-        "CLI-Hub",
-        "SKILL.md技能体系"
+        "pip/npx 分发"
       ],
-      "highlights": "以CLI作为AI Agent与现有软件之间的通用桥梁，配合社区CLI-Hub与大量测试验证，形成可扩展的Agent原生软件生态。",
-      "target_audience": "构建AI Agent工具的开发者、需要让Agent操作桌面或专业软件的工程师、以及希望贡献CLI封装的社区开发者",
+      "highlights": "以CLI作为AI Agent与现有软件之间的通用桥梁，配套社区注册中心、技能规范与大量测试，生态化程度高。",
+      "target_audience": "构建AI Agent工具的开发者、需要让软件被Agent自动化的工程师、CLI工具贡献者",
       "scores": {
         "innovation": 5,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 58582,
+    "stars_at_analysis": 59658,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-11T09:35:04+00:00",
+    "analyzed_at": "2026-11-18T22:07:21+00:00",
     "readme_available": true
   },
   "xiaomimimo/mimo-code": {
