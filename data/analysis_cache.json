@@ -54385,13 +54385,13 @@
   },
   "elementalsouls/claude-bughunter": {
     "analysis": {
-      "one_liner": "面向漏洞赏金与外部红队工作的 Claude Code 技能包，含 83 个技能与 681 条披露报告模式。",
+      "one_liner": "面向漏洞赏金与外部红队工作的 Claude Code 技能包，含 83 个技能与 681 条公开报告模式。",
       "core_features": [
         "83 个技能与 15 个斜杠命令，按主题自动加载",
-        "58 个 hunt-* 技能覆盖 24 类核心漏洞，含检测模式、载荷与绕过表",
-        "企业平台攻击链：M365/Entra、Okta、vCenter、SSL-VPN、SharePoint 等",
-        "侦察与 OSINT：子域名枚举、证书透明、JS 分析与密钥扫描",
-        "报告与证据卫生：VRT 感知定级、OOS 反驳、PII 脱敏"
+        "覆盖 24 类漏洞的 681 条公开披露报告模式与链式模板",
+        "企业身份与基础设施攻击矩阵（M365/Entra、Okta、vCenter、SSL VPN 等）",
+        "内置侦察、方法论、红队思维、三分类验证与证据卫生流程",
+        "支持 Burp MCP 集成与多智能体框架安装"
       ],
       "tech_stack": [
         "Python",
@@ -54400,18 +54400,18 @@
         "Burp MCP",
         "pipx CLI"
       ],
-      "highlights": "将 681 条公开披露报告模式整理为可审计的技能库，并支持 Claude Code、OpenCode、Codex CLI 等多个 agent 框架一次安装复用。",
-      "target_audience": "从事漏洞赏金、Web 渗透测试与外部红队评估的安全研究人员",
+      "highlights": "将公开披露报告沉淀为可审计的检测模式与链式模板，并跨 Claude Code、OpenCode、Codex CLI 等多个智能体框架复用同一知识层。",
+      "target_audience": "从事漏洞赏金、Web 应用渗透测试与外部红队评估的安全研究人员",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 10223,
+    "stars_at_analysis": 15786,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-18T10:20:52+00:00",
+    "analyzed_at": "2026-11-21T20:35:29+00:00",
     "readme_available": true
   },
   "verus-lang/verus": {
