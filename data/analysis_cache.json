@@ -4188,34 +4188,33 @@
   },
   "obra/superpowers": {
     "analysis": {
-      "one_liner": "为编码智能体提供可组合技能与完整软件开发方法论的框架。",
+      "one_liner": "为编码智能体提供可组合技能与完整软件开发方法论的开源框架。",
       "core_features": [
-        "从对话中提炼需求规格并分块呈现给用户确认",
-        "生成可执行的实现计划，强调红绿TDD、YAGNI与DRY",
-        "子智能体驱动开发，自动分配、检查与评审任务",
-        "技能自动触发，无需额外操作即可生效",
-        "支持多种编码智能体平台的插件式安装"
+        "从对话中提炼需求规格并分块展示给用户确认",
+        "生成可被初级工程师执行的实现计划，强调TDD、YAGNI、DRY",
+        "子智能体驱动的开发流程，自动分派任务、审查并持续推进",
+        "技能自动触发，无需额外操作即可让编码智能体获得能力",
+        "支持多种编码智能体平台的插件化安装"
       ],
       "tech_stack": [
         "Shell",
         "Claude Code 插件",
-        "Codex",
-        "Cursor",
-        "Gemini CLI",
-        "GitHub Copilot CLI"
+        "Codex 插件",
+        "Cursor 插件",
+        "Gemini CLI 扩展"
       ],
-      "highlights": "将完整软件开发方法论封装为可组合技能，让编码智能体先澄清需求再规划再执行，可自主连续工作数小时且不偏离计划。",
-      "target_audience": "使用AI编码智能体并希望规范其开发流程的开发者与团队",
+      "highlights": "将完整软件开发方法论封装为可组合技能，并适配十余种主流编码智能体平台，技能自动触发，可让智能体自主工作数小时不偏离计划。",
+      "target_audience": "使用编码智能体进行开发的工程师，以及希望规范智能体开发流程的团队",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 318899,
+    "stars_at_analysis": 323979,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-17T10:50:48+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "tauricresearch/tradingagents": {
@@ -14346,36 +14345,34 @@
     "analysis": {
       "one_liner": "基于 TDLib 的 Telegram 官方实验性 Android 客户端完整源码。",
       "core_features": [
-        "基于 TDLib 与 MTProto 协议的即时通讯客户端",
-        "提供 Gradle 多 flavor 构建，支持 legacy 与 latest 版本",
-        "集成 FFmpeg、libvpx、tlottie 等原生库构建流程",
-        "支持可复现构建以验证官方 APK 未注入额外代码",
-        "提供 APK 校验和查询与侧载 APK 验证机制"
+        "基于 TDLib 与 MTProto 协议实现 Telegram 客户端",
+        "提供可复现构建流程以验证官方 APK 未被注入代码",
+        "支持通过校验和与机器人验证侧载 APK 来源",
+        "包含 FFmpeg、libvpx、tlottie 等原生库构建任务",
+        "支持 legacy 分支以兼容 Android 4.x 旧设备"
       ],
       "tech_stack": [
         "Java",
-        "Android",
-        "TDLib",
-        "MTProto",
+        "Android SDK/NDK",
         "Gradle",
+        "TDLib",
         "Rust",
         "FFmpeg",
         "libvpx",
-        "tlottie",
-        "Firebase"
+        "tlottie"
       ],
-      "highlights": "官方替代客户端完整开源，并提供可复现构建与 APK 校验流程，可用于审计官方发行包的安全性。",
-      "target_audience": "Android 客户端开发者、即时通讯协议学习者、关注客户端安全与可复现构建的开发者",
+      "highlights": "官方开源完整客户端源码，并提供可复现构建与 APK 校验机制，可用于验证发布包安全性。",
+      "target_audience": "Android 客户端开发者、即时通讯协议学习者、关注构建可复现与 APK 安全验证的工程师",
       "scores": {
         "innovation": 3,
         "practicality": 4,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 6198,
+    "stars_at_analysis": 6234,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "trycua/cua": {
@@ -22859,13 +22856,13 @@
   },
   "anthropics/skills": {
     "analysis": {
-      "one_liner": "Anthropic 官方开源的 Claude Agent Skills 示例与规范仓库，用文件夹封装指令与脚本扩展 Claude 能力。",
+      "one_liner": "Anthropic 官方开源的 Claude Agent Skills 示例与规范仓库，用文件夹封装指令、脚本和资源。",
       "core_features": [
-        "以 SKILL.md 加 YAML frontmatter 定义可复用技能",
-        "提供创意设计、开发技术、企业沟通、文档处理等多类示例技能",
-        "开源 docx、pdf、pptx、xlsx 文档创建与编辑技能",
-        "包含 Agent Skills 规范与技能模板",
-        "支持在 Claude Code、Claude.ai 和 API 中安装使用"
+        "提供创意设计、开发技术、企业沟通、文档处理等多类技能示例",
+        "开源驱动 Claude 文档能力的 docx、pdf、pptx、xlsx 技能实现",
+        "包含 Agent Skills 规范文档与技能模板",
+        "支持通过 Claude Code 插件市场安装 document-skills 与 example-skills",
+        "每个技能以 SKILL.md 的 YAML frontmatter 加指令内容自包含组织"
       ],
       "tech_stack": [
         "Python",
@@ -22874,18 +22871,18 @@
         "Claude Code 插件市场",
         "Claude API"
       ],
-      "highlights": "由 Anthropic 官方维护，公开了驱动 Claude 文档能力的生产级技能实现，并配套规范与模板，是理解 Agent Skills 设计模式的权威参考。",
-      "target_audience": "希望为 Claude 构建自定义技能的开发者、研究 Agent 能力扩展的工程师，以及需要文档自动化处理能力的团队。",
+      "highlights": "由 Anthropic 官方维护，公开了生产环境中驱动 Claude 文档能力的真实技能实现，并配套规范与模板，是理解 Agent Skills 设计模式的一手参考。",
+      "target_audience": "希望为 Claude 构建自定义技能、研究 Agent 技能规范，或需要文档处理能力参考实现的 AI 应用开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 5
       }
     },
-    "stars_at_analysis": 194861,
+    "stars_at_analysis": 198694,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "etcd-io/etcd": {
@@ -24152,31 +24149,30 @@
   },
   "opensearch-project/opensearch": {
     "analysis": {
-      "one_liner": "开源的企业级分布式 RESTful 搜索与可观测性套件，用于处理大规模非结构化数据。",
+      "one_liner": "开源的企业级分布式搜索与可观测性套件，基于 RESTful 接口处理大规模非结构化数据。",
       "core_features": [
-        "分布式搜索与数据分析引擎",
-        "提供 RESTful API 接口",
-        "面向可观测性的日志与指标处理",
-        "企业级搜索能力",
-        "基于 Apache v2.0 开源许可"
+        "分布式搜索与 RESTful 接口",
+        "面向大规模非结构化数据的搜索引擎",
+        "企业级搜索与可观测性套件",
+        "基于 Apache v2.0 协议开源"
       ],
       "tech_stack": [
         "Java",
         "RESTful API",
-        "Apache Lucene 系搜索技术（基于 Elasticsearch 衍生代码）"
+        "Apache License 2.0"
       ],
-      "highlights": "由 Linux 基金会支持、源自 Elasticsearch 分支的成熟企业级搜索方案，社区活跃、治理规范，具备健康度与最佳实践认证。",
-      "target_audience": "需要自建搜索或可观测性平台的后端与平台工程师，以及关注开源搜索生态的开发者",
+      "highlights": "源自 Apache 许可的 Elasticsearch 代码分支，由 OpenSearch 基金会维护，具备企业级搜索与可观测能力，社区与治理体系成熟。",
+      "target_audience": "需要自建搜索或日志可观测平台的开发者、后端与运维工程师，以及关注开源搜索引擎生态的贡献者。",
       "scores": {
         "innovation": 3,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 14012,
+    "stars_at_analysis": 14048,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "alishahryar1/free-claude-code": {
@@ -25515,32 +25511,32 @@
   },
   "martin-olivier/airgorah": {
     "analysis": {
-      "one_liner": "基于 Rust 与 GTK4 的 Linux WiFi 安全审计工具，可抓包、发现客户端、执行去认证攻击并破解密码。",
+      "one_liner": "用 Rust 编写的 WiFi 安全审计软件，可抓包、发现客户端、执行去认证攻击并破解密码。",
       "core_features": [
-        "捕获附近 WiFi 流量并发现接入点下的客户端",
+        "捕获附近 WiFi 流量",
+        "发现接入点下的客户端",
         "执行去认证攻击",
         "捕获握手包与 PMKID",
-        "破解接入点密码",
-        "提供 GTK4 图形界面，通过 polkit 提权运行特权代理"
+        "破解接入点密码"
       ],
       "tech_stack": [
         "Rust",
         "GTK4",
-        "gtk-rs",
-        "polkit"
+        "polkit",
+        "airgorah-agent"
       ],
-      "highlights": "用 Rust 实现完整 WiFi 审计流程，图形界面以普通用户运行、按需通过 polkit 提权，兼顾易用性与权限安全。",
-      "target_audience": "从事无线网络安全测试、渗透测试与学习 WiFi 协议安全的研究人员及开发者",
+      "highlights": "用 Rust 与 GTK4 构建图形界面，通过 polkit 提权运行特权代理，兼顾易用性与权限隔离；仅限 Linux，需要支持监听模式与数据包注入的网卡。",
+      "target_audience": "从事无线网络安全测试与审计的安全研究人员，以及希望学习 Rust 桌面应用与 GTK4 开发的开发者",
       "scores": {
         "innovation": 3,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 6083,
+    "stars_at_analysis": 6820,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "router-for-me/easycliproxyapi": {
@@ -30004,33 +30000,36 @@
   },
   "ag-ui-protocol/ag-ui": {
     "analysis": {
-      "one_liner": "面向 AI Agent 与前端应用交互的开源事件协议，标准化 Agent 接入用户界面。",
+      "one_liner": "一个开放、轻量、基于事件的协议，标准化 AI Agent 与前端应用之间的双向连接。",
       "core_features": [
-        "基于约 16 种标准事件类型的 Agent 与前端通信协议",
-        "支持 SSE、WebSocket、Webhook 等多种事件传输的中间件层",
-        "实时流式对话与双向状态同步",
-        "生成式 UI、结构化消息与前端工具集成",
-        "人类在环协作与实时上下文增强"
+        "基于类型化事件流的双向通信协议，替代自定义接线",
+        "支持流式输出、工具调用、共享状态、人类介入与子 Agent",
+        "提供 TypeScript、Python、.NET 多语言 SDK，由 JSON Schema 生成",
+        "1.0 稳定规范，双向向后兼容 0.x",
+        "CLI 脚手架快速生成前端与 Agent 框架对接模板"
       ],
       "tech_stack": [
         "TypeScript",
-        "npm 包 @ag-ui/core",
-        "事件驱动协议",
-        "SSE/WebSocket",
-        "CopilotKit 生态"
+        "Python",
+        "FastAPI",
+        "Next.js",
+        "CopilotKit",
+        "JSON Schema",
+        "npm",
+        "PyPI"
       ],
-      "highlights": "与 MCP、A2A 互补，补齐 Agent 到用户界面的协议层，并已集成 LangChain、CrewAI、Google ADK、AWS Strands、Mastra、Pydantic AI 等主流框架。",
-      "target_audience": "构建 AI Agent 前端应用的开发者、需要将 Agent 后端接入 UI 的全栈工程师及框架集成贡献者。",
+      "highlights": "以事件流统一 Agent 到用户的交互层，与 MCP（工具）、A2A（Agent 间）互补，已被 Google、Microsoft、Amazon、Oracle 采用并内建于多数 Agent 框架，生态整合度高。",
+      "target_audience": "构建 AI Agent 前端应用的开发者、需要将多种 Agent 框架接入 Web/移动/终端客户端的全栈工程师，以及关注 Agent 交互协议标准的架构师。",
       "scores": {
-        "innovation": 4,
+        "innovation": 5,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 17496,
+    "stars_at_analysis": 21087,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "k3s-io/k3s": {
@@ -44501,13 +44500,13 @@
   },
   "fujiwarachoki/supoclip": {
     "analysis": {
-      "one_liner": "开源 AI 长视频切片工具，自动挑选高光片段并生成竖屏短视频",
+      "one_liner": "开源AI长视频切片工具，自动挑选高光片段并生成竖屏短视频",
       "core_features": [
-        "AI 从转录文本中挑选 3-7 个高光片段并做病毒传播评分",
+        "支持YouTube、Twitch、Kick链接导入及本地文件上传",
+        "LLM自动从转录文本中挑选3-7个高光片段并做病毒性评分",
         "人脸检测智能竖屏裁剪与词级同步字幕、钩子标题",
-        "可选 B-roll 素材叠加与转场效果",
-        "内置剪辑器支持裁剪、分割、合并并按平台预设导出",
-        "支持 YouTube、Twitch、Kick 导入及直连发布与数据回流"
+        "内置编辑器支持裁剪、分割、合并并按平台预设导出",
+        "连接YouTube、TikTok、Instagram直接发布并回流数据优化选片"
       ],
       "tech_stack": [
         "Python",
@@ -44516,20 +44515,21 @@
         "Next.js",
         "Docker Compose",
         "AssemblyAI",
-        "Gemini/GPT/Claude/Ollama"
+        "Gemini/GPT/Claude/Ollama",
+        "Pexels"
       ],
-      "highlights": "以 AGPL-3.0 开源复刻 OpusClip 核心流水线，可自托管、无水印、无平台锁定，并提供 MCP 服务与 REST API 扩展能力",
-      "target_audience": "希望自托管视频切片流水线的内容创作者、短视频运营者，以及想学习 AI 视频处理全链路架构的开发者",
+      "highlights": "对标OpusClip的开源自托管替代方案，无水印、无平台锁定，完整覆盖选片、字幕、裁剪、发布与数据反馈闭环，并提供MCP服务器与REST API",
+      "target_audience": "需要批量生产短视频的创作者、播客与直播主，以及希望自托管视频处理流水线的开发者",
       "scores": {
         "innovation": 3,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 3153,
+    "stars_at_analysis": 4025,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "jetbrains/thinkrail": {
@@ -53169,36 +53169,35 @@
   },
   "tencent/loopforge": {
     "analysis": {
-      "one_liner": "自托管的编码智能体交付工作流平台，用脚本和人工审批门编排多种编码CLI。",
+      "one_liner": "自托管的编码智能体交付工作台，用 SOP 编排 CodeBuddy、Codex、Claude Code 等并加入人工审批门。",
       "core_features": [
-        "聊天式主机器人按需创建Docker沙箱、检出仓库并委派项目角色",
-        "SOP标准工作流引擎按顺序执行Agent、脚本、人工审批门和子SOP节点",
-        "角色分离：规划、实现、评审、测试各自独立提示词、执行器、模型与工具",
-        "可观测可恢复：节点状态、工具轨迹、日志与产物集中展示，支持暂停、重试、从任意节点重跑",
-        "支持CodeBuddy、Codex、Claude Code等十种编码智能体CLI作为执行器"
+        "聊天式 Main Bot 按需创建 Docker 沙箱工作区，检出仓库并委派项目角色，最终产出 PR/MR",
+        "SOP 工作流引擎按序执行 Agent、脚本、人工审批门与子 SOP 节点，支持暂停、回退、重试与从任意节点重跑",
+        "角色分离：规划、实现、评审、测试各自拥有独立提示词、执行器、模型、规则、Skills 与 MCP 工具",
+        "可观测与可恢复：节点状态、工具调用轨迹、日志与产物集中呈现",
+        "支持十种编码智能体 CLI 作为执行器，GitHub、Skills、MCP 作为工具，Docker 沙箱或本机作为运行时"
       ],
       "tech_stack": [
         "Go",
         "Docker",
         "Docker Compose",
         "MySQL",
-        "GitHub",
+        "GitHub Actions",
         "MCP",
-        "Skills",
-        "npm CLI"
+        "Skills"
       ],
-      "highlights": "把编码智能体从一次性对话升级为可重复、带人工审批门和完整可观测性的团队交付流程，且完全自托管、MIT许可。",
-      "target_audience": "希望用编码智能体规范化团队交付流程、需要自托管与审批控制的研发团队和平台工程师。",
+      "highlights": "把一次性、结果不稳定的编码智能体对话，沉淀为可重复、带人工审批门与完整可观测性的标准交付流程，且完全自托管、MIT 许可。",
+      "target_audience": "希望将编码智能体引入团队交付流程、需要流程标准化与人工审批管控的研发团队与平台工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 4,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 3684,
+    "stars_at_analysis": 5580,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-18T10:20:52+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "ja7ad/hydra": {
@@ -54353,34 +54352,34 @@
   },
   "andrewyng/openworker": {
     "analysis": {
-      "one_liner": "一款本地运行的 AI 桌面工作助手，并提供构建智能体应用的 Harness SDK。",
+      "one_liner": "一款本地运行的AI桌面工作助手，并提供构建智能体应用的Harness SDK",
       "core_features": [
-        "桌面应用支持研究、写作、代码审查及跨工具任务处理",
-        "通过 MCP 连接 GitHub、Slack、邮件、日历等外部工具",
-        "支持云端模型与 Ollama、LM Studio、vLLM 等本地模型",
-        "审批机制、审计轨迹与 OpenShell 沙箱等治理控制",
-        "Harness SDK 提供 TypeScript 与 Rust 两种嵌入方式"
+        "桌面应用支持研究写作、代码审查、跨工具任务处理",
+        "通过MCP连接GitHub、Slack、邮件等外部工具",
+        "支持云端模型与Ollama等本地模型自由切换",
+        "审批机制、审计轨迹与OpenShell沙箱的安全治理",
+        "Harness SDK支持用TypeScript或Rust嵌入智能体能力"
       ],
       "tech_stack": [
         "Python",
         "TypeScript",
         "Rust",
-        "MCP",
         "Ollama",
+        "MCP",
         "NVIDIA OpenShell"
       ],
-      "highlights": "治理即架构：硬性底线、逐级授予的自主权、可追溯审计与沙箱隔离，使智能体无法自行提权，安全性设计较为突出。",
-      "target_audience": "希望用 AI 助手处理日常工作的普通用户，以及需要为桌面或 Web 应用嵌入智能体能力的开发者。",
+      "highlights": "将审批分级、审计轨迹和沙箱隔离作为架构核心而非插件，智能体无法自行提权，安全治理设计值得关注",
+      "target_audience": "希望用AI提升日常工作效率的个人用户，以及需要为桌面或Web应用嵌入智能体能力的开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 19266,
+    "stars_at_analysis": 19531,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "elementalsouls/claude-bughunter": {
@@ -54547,31 +54546,30 @@
     "analysis": {
       "one_liner": "Google 开源的自动化网页审计工具，采集性能指标并给出最佳实践建议。",
       "core_features": [
-        "集成于 Chrome DevTools 一键生成审计报告",
+        "在 Chrome DevTools 中一键生成审计报告",
         "提供 Chrome 扩展与 Node CLI 多种使用方式",
         "采集现代性能指标并给出开发者最佳实践洞察",
-        "支持自定义配置、预设与仅运行指定审计项",
-        "支持 JSON、HTML、CSV 多种报告输出格式"
+        "支持 JSON、HTML、CSV 多种报告输出格式",
+        "支持自定义配置、预设与自定义审计扩展"
       ],
       "tech_stack": [
         "JavaScript",
         "Node.js",
         "Chrome DevTools Protocol",
-        "Chrome DevTools",
-        "Chrome 扩展"
+        "npm"
       ],
-      "highlights": "由 Google Chrome 团队维护，深度集成 Chrome DevTools，是 Web 性能与质量审计领域的事实标准工具，生态成熟且被广泛集成。",
-      "target_audience": "关注 Web 性能优化的前端开发者、需要自动化质量审计的测试与 CI 工程师，以及构建性能监控服务的开发者。",
+      "highlights": "由 Google Chrome 团队维护，深度集成 Chrome DevTools，是 Web 性能与质量审计的事实标准工具。",
+      "target_audience": "关注 Web 性能优化的前端开发者、需要自动化质量审计的测试与 CI 工程师，以及 Web 性能服务集成方。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 31100,
+    "stars_at_analysis": 31181,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "rust-lang/rust-clippy": {
@@ -54642,33 +54640,34 @@
   },
   "microsoft/pyrit": {
     "analysis": {
-      "one_liner": "微软开源的生成式AI红队测试工具包，支持自动化扫描与多轮攻击。",
+      "one_liner": "微软开源生成式AI红队测试工具包，支持自动化扫描、多轮自适应攻击与图形界面。",
       "core_features": [
-        "命令行扫描器执行可重复的AI安全评估",
-        "CoPyRIT图形界面交互式测试与结果审查",
-        "可扩展的Python框架用于构建自定义红队工作流",
-        "自适应多轮攻击与人工主导测试",
-        "支持HTTP、WebSocket、Playwright浏览器等多种目标接入"
+        "命令行扫描器，可运行可重复的AI系统安全评估",
+        "CoPyRIT图形界面，在浏览器中交互式探索AI系统并查看结果",
+        "可扩展的Python框架，支持组合组件构建自定义红队工作流",
+        "多轮自适应攻击与人工主导测试",
+        "广泛模型与目标接入，包括HTTP、WebSocket、Playwright浏览器自动化及自定义目标"
       ],
       "tech_stack": [
         "Python",
-        "LiteLLM",
-        "Playwright",
         "命令行扫描器",
-        "Web GUI"
+        "CoPyRIT GUI",
+        "Playwright",
+        "LiteLLM适配器",
+        "HTTP/WebSocket目标接口"
       ],
-      "highlights": "由微软AI红队打造，同时提供CLI、GUI与Python框架三种使用形态，覆盖主流模型厂商并支持测试完整应用端点，兼具自动化与人工测试能力。",
-      "target_audience": "从事AI安全与红队测试的安全工程师、AI应用开发者以及需要评估生成式AI系统安全性的研究人员",
+      "highlights": "由微软AI红队打造，同时提供CLI、GUI与可扩展Python框架，覆盖主流模型厂商并支持对完整应用端到端测试，兼具自动化与人工红队能力。",
+      "target_audience": "从事生成式AI安全评估的安全研究员、红队工程师，以及需要为AI应用构建定制化安全测试流程的Python开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 4849,
+    "stars_at_analysis": 5020,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-15T09:36:24+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "cherryhq/cherry-studio": {
@@ -57208,33 +57207,32 @@
   },
   "mjmirza/app-store-compliance": {
     "analysis": {
-      "one_liner": "面向iOS与Android应用上架的开源合规手册与预提交扫描守卫，帮助开发者提前规避应用商店拒审。",
+      "one_liner": "帮助开发者在提交前发现并修复 App Store 与 Google Play 审核拒绝风险的开源合规手册与扫描工具。",
       "core_features": [
-        "收录117种有据可查的拒审模式及对应修复方案",
-        "提供隐私清单与数据安全声明的自动检查",
-        "追踪95项合规截止日期（欧盟AI法案、DSA、COPPA、年龄法规等）",
-        "提供预提交守卫脚本，扫描项目并输出BLOCKED/CLEAR/NOT CHECKED结论",
-        "可一键安装为AI编码工具的技能与钩子，在提交前自动拦截"
+        "预提交扫描守卫，按文件与行号定位关键拒绝风险并给出修复建议",
+        "收录 124 条有据可查的拒绝模式及对应修复方案",
+        "隐私清单与 Data safety 检查，覆盖各 SDK 的运行时声明",
+        "追踪 111 项合规截止日期，包括 EU AI Act、DSA、COPPA 与年龄相关法规",
+        "可安装到 Claude Code、Codex、Gemini CLI、Cursor 等 AI 编码工具，在提交前自动拦截"
       ],
       "tech_stack": [
         "Shell",
         "Bash",
         "Python 3",
-        "Git",
-        "Claude Code/Codex/Gemini CLI等AI编码工具集成"
+        "GitHub Actions CI"
       ],
-      "highlights": "把应用商店拒审转化为可提前设计规避的失败模式，每条规则都对应真实指南与来源，并可直接接入AI编码代理在提交命令前自动拦截。",
-      "target_audience": "iOS与Android应用开发者、独立开发者、发布负责人，以及使用AI编码工具并需要合规保障的团队",
+      "highlights": "把审核拒绝从提交后被动等待变成提交前可执行的检查，每条规则都对应真实指南条款，并明确区分扫描能证明什么、仍需人工确认什么，同时以 hook 形式接入主流 AI 编码工具。",
+      "target_audience": "准备提交 iOS 或 Android 应用的独立开发者、移动团队，以及使用 AI 编码工具并希望自动化合规检查的工程师。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 2287,
+    "stars_at_analysis": 3621,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-20T10:10:13+00:00",
+    "analyzed_at": "2026-11-22T09:55:27+00:00",
     "readme_available": true
   },
   "visgl/deck.gl": {
