@@ -20432,32 +20432,33 @@
   },
   "hkuds/cli-anything": {
     "analysis": {
-      "one_liner": "为各类软件生成命令行接口，让AI Agent能直接操作任意软件。",
+      "one_liner": "为各类软件生成 CLI 封装，让 AI Agent 能直接操作这些软件。",
       "core_features": [
-        "为软件生成可被Agent调用的CLI封装（harness）",
-        "CLI-Hub注册中心支持浏览、安装和管理社区CLI",
-        "支持JSON与人类可读双输出格式",
-        "提供预览、实时预览与轨迹循环等Agent演示能力",
-        "统一SKILL.md技能安装与测试验证体系"
+        "为软件生成 Agent 可直接调用的命令行接口（CLI harness）",
+        "CLI-Hub 注册表支持浏览、安装和管理社区构建的 CLI",
+        "提供预览、实时预览与轨迹循环，让 Agent 产出真实工件",
+        "统一 SKILL.md 技能目录，支持一键安装技能",
+        "内置大量单元与端到端测试保障质量"
       ],
       "tech_stack": [
         "Python",
         "Click",
         "pytest",
-        "pip/npx 分发"
+        "defusedxml",
+        "PyPI 包管理"
       ],
-      "highlights": "以CLI作为AI Agent与现有软件之间的通用桥梁，配套社区注册中心、技能规范与大量测试，生态化程度高。",
-      "target_audience": "构建AI Agent工具的开发者、需要让软件被Agent自动化的工程师、CLI工具贡献者",
+      "highlights": "把任意软件变成 Agent 原生可调用的 CLI，并配套社区注册表、技能体系与完整测试，是连接 AI Agent 与现有软件生态的桥梁。",
+      "target_audience": "构建 AI Agent 工具链的开发者、需要让 Agent 操作桌面或专业软件的工程师，以及愿意贡献 CLI 封装的开源贡献者。",
       "scores": {
         "innovation": 5,
-        "practicality": 4,
+        "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 59658,
+    "stars_at_analysis": 64701,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-18T22:07:21+00:00",
+    "analyzed_at": "2026-11-24T23:31:31+00:00",
     "readme_available": true
   },
   "xiaomimimo/mimo-code": {
@@ -37876,31 +37877,33 @@
   },
   "xiaoyouchr/ghost-downloader-3": {
     "analysis": {
-      "one_liner": "跨平台全能下载器，支持HTTP、BT、视频流等协议并集成浏览器嗅探。",
+      "one_liner": "一款跨平台全能下载器，支持 HTTP、BT、视频站点与流媒体等多种协议。",
       "core_features": [
         "智能分块下载，自动检测带宽，无需合并文件",
-        "支持HTTP、磁力/BT、FTP、M3U8、MPEG-DASH、eD2k等多种协议",
-        "集成YouTube、Bilibili、GitHub、HuggingFace下载与镜像加速",
-        "浏览器扩展嗅探页面媒体资源，一键接管下载",
-        "兼容aria2的RPC API，支持下载中修改URL、请求头或代理"
+        "支持 HTTP、Magnet/BT、FTP、M3U8、MPEG-DASH、eD2k 等协议",
+        "支持 YouTube、Bilibili 视频下载，可选清晰度、字幕与播放列表",
+        "浏览器扩展嗅探页面媒体，一键接管下载并沿用登录状态",
+        "兼容 aria2 的 RPC API，支持下载中修改 URL、请求头与代理"
       ],
       "tech_stack": [
         "Python",
         "Qt 6.6+",
-        "aria2 RPC"
+        "aria2 RPC",
+        "Crowdin 本地化",
+        "Android 原生集成"
       ],
-      "highlights": "一个应用覆盖几乎所有下载协议，跨Windows、macOS、Linux、Android四平台，并具备浏览器嗅探与插件生态。",
-      "target_audience": "需要统一管理多种下载协议、追求跨平台体验的普通用户与开发者",
+      "highlights": "单一应用覆盖几乎所有下载协议与主流视频站点，并原生支持 Windows、macOS、Linux、Android 四平台，还提供命令行工具与插件生态。",
+      "target_audience": "需要统一管理多协议下载任务、下载视频与流媒体、或希望集成 aria2 兼容接口的开发者与进阶用户。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 12247,
+    "stars_at_analysis": 17283,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-19T10:29:54+00:00",
+    "analyzed_at": "2026-11-24T23:31:31+00:00",
     "readme_available": true
   },
   "0xjacky/nginx-ui": {
@@ -54373,33 +54376,33 @@
   },
   "elementalsouls/claude-bughunter": {
     "analysis": {
-      "one_liner": "面向漏洞赏金与外部红队工作的 Claude Code 技能包，含 83 个技能与 681 条公开报告模式。",
+      "one_liner": "面向漏洞赏金与外部红队工作的 Claude Code 技能包，含 84 个技能与 681 条已披露报告模式。",
       "core_features": [
-        "83 个技能与 15 个斜杠命令，按主题自动加载",
-        "覆盖 24 类漏洞的 681 条公开披露报告模式与链式模板",
-        "企业身份与基础设施攻击矩阵（M365/Entra、Okta、vCenter、SSL VPN 等）",
-        "内置侦察、方法论、红队思维、三分类验证与证据卫生流程",
-        "支持 Burp MCP 集成与多智能体框架安装"
+        "84 个技能与 15 个斜杠命令，按主题自动加载，无需按名调用",
+        "58 个 hunt-* 技能覆盖 24 类核心漏洞，含检测模式、载荷与绕过表",
+        "企业身份与基础设施攻击链，覆盖 M365/Entra、Okta、vCenter、SSL VPN 等",
+        "triage-validation、报告撰写与证据卫生，含 7 问门禁与 VRT 严重性映射",
+        "Burp MCP 集成、engagement 目录脚手架与 cbh 命令行工具"
       ],
       "tech_stack": [
-        "Python",
         "Claude Code Skills",
-        "Agent Skills (SKILL.md)",
+        "Python",
         "Burp MCP",
-        "pipx CLI"
+        "HackerOne MCP",
+        "Agent Skills 格式"
       ],
-      "highlights": "将公开披露报告沉淀为可审计的检测模式与链式模板，并跨 Claude Code、OpenCode、Codex CLI 等多个智能体框架复用同一知识层。",
-      "target_audience": "从事漏洞赏金、Web 应用渗透测试与外部红队评估的安全研究人员",
+      "highlights": "将 681 条公开披露报告提炼为可审计的漏洞类检测模式与攻击链模板，并跨 Claude Code、OpenCode、Codex CLI 等多个 agent 框架复用同一套技能。",
+      "target_audience": "从事漏洞赏金、Web 应用渗透测试与外部红队评估的安全研究人员及开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 15786,
+    "stars_at_analysis": 21406,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-21T20:35:29+00:00",
+    "analyzed_at": "2026-11-24T23:31:31+00:00",
     "readme_available": true
   },
   "verus-lang/verus": {
@@ -57194,32 +57197,32 @@
   },
   "mjmirza/app-store-compliance": {
     "analysis": {
-      "one_liner": "帮助开发者在提交前发现并修复 App Store 与 Google Play 审核拒绝风险的开源合规手册与扫描工具。",
+      "one_liner": "预提交合规检查工具，提前发现 App Store 与 Google Play 的拒审风险",
       "core_features": [
-        "预提交扫描守卫，按文件与行号定位关键拒绝风险并给出修复建议",
-        "收录 124 条有据可查的拒绝模式及对应修复方案",
-        "隐私清单与 Data safety 检查，覆盖各 SDK 的运行时声明",
-        "追踪 111 项合规截止日期，包括 EU AI Act、DSA、COPPA 与年龄相关法规",
-        "可安装到 Claude Code、Codex、Gemini CLI、Cursor 等 AI 编码工具，在提交前自动拦截"
+        "内置 124 条已记录的拒审模式及对应修复方案",
+        "隐私清单与数据安全声明检查",
+        "跟踪 112 项合规截止日期（EU AI Act、DSA、COPPA、年龄法规等）",
+        "提供预提交检查清单与申诉手册",
+        "可作为钩子集成到多种 AI 编码工具，在提交前自动拦截"
       ],
       "tech_stack": [
         "Shell",
         "Bash",
-        "Python 3",
+        "Python",
         "GitHub Actions CI"
       ],
-      "highlights": "把审核拒绝从提交后被动等待变成提交前可执行的检查，每条规则都对应真实指南条款，并明确区分扫描能证明什么、仍需人工确认什么，同时以 hook 形式接入主流 AI 编码工具。",
-      "target_audience": "准备提交 iOS 或 Android 应用的独立开发者、移动团队，以及使用 AI 编码工具并希望自动化合规检查的工程师。",
+      "highlights": "把常见的应用商店拒审原因整理成可扫描的规则库，并直接接入 AI 编码工具，在提交前自动拦截关键风险，同时明确说明扫描能证明什么、哪些仍需人工判断",
+      "target_audience": "准备上架 iOS 或 Android 应用的开发者、使用 AI 编码工具的团队，以及需要走完提交流程的非开发人员",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 3621,
+    "stars_at_analysis": 5823,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-22T09:55:27+00:00",
+    "analyzed_at": "2026-11-24T23:31:31+00:00",
     "readme_available": true
   },
   "visgl/deck.gl": {
@@ -57727,6 +57730,37 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-11-24T01:43:32+00:00",
+    "readme_available": true
+  },
+  "ebony-vinyl/dsh-our-free-model": {
+    "analysis": {
+      "one_liner": "为 dsh 提供免登录、免 API Key 的免费前沿模型插件，并附带网关、看板与插件市场。",
+      "core_features": [
+        "免登录免 Key 接入免费模型车道，模型清单跟随上游实时刷新",
+        "本地 OpenAI 兼容转发端口与 Anthropic 原生接口，支持局域网中继",
+        "用量看板：Token 热力图、速度与首字延迟采样，数据仅存本机",
+        "多渠道路由降级链、思考强度档位与预算阶梯、省 Token 压缩",
+        "插件中心：签名校验、沙箱运行、一键升级与热重载"
+      ],
+      "tech_stack": [
+        "JavaScript",
+        "dsh 插件内核",
+        "OpenAI 兼容网关",
+        "Anthropic Messages API",
+        "Ed25519 签名与 Worker VM 沙箱"
+      ],
+      "highlights": "零依赖、无构建步骤的纯插件挂载，把多家免费与账号渠道聚合成统一模型清单，并配套本地网关、用量统计、降级路由与带签名校验的插件市场，工程完整度远超一般插件。",
+      "target_audience": "使用 dsh 且希望低成本调用前沿模型的开发者，以及需要本地统一模型网关与多渠道路由的 AI 应用开发者。",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 85999,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-24T23:31:31+00:00",
     "readme_available": true
   }
 }
