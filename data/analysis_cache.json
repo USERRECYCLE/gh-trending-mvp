@@ -1,33 +1,34 @@
 {
   "alibaba/open-code-review": {
     "analysis": {
-      "one_liner": "阿里巴巴开源的AI代码审查CLI工具，确定性流水线结合LLM Agent，实现行级精准评论。",
+      "one_liner": "阿里开源的AI代码审查CLI工具，确定性流水线结合LLM Agent，实现行级精准评论。",
       "core_features": [
-        "读取Git diff，通过具备工具调用能力的Agent生成行级精准审查评论",
+        "读取Git diff，通过具备工具调用能力的Agent生成结构化行级审查评论",
         "内置多语言规则集，覆盖NPE、线程安全、XSS、SQL注入等问题",
-        "确定性工程负责文件筛选、智能文件分组、细粒度规则匹配与评论定位反思",
-        "支持ocr scan对整文件进行审查，适用于无有效diff的代码库审计",
-        "兼容OpenAI与Anthropic模型端点，支持Claude Code、Codex、Cursor等Agent"
+        "确定性工程负责文件筛选、智能文件捆绑、细粒度规则匹配与评论定位反思",
+        "支持ocr scan对整文件或目录进行审查，适用于无有效diff的场景",
+        "兼容OpenAI与Anthropic模型接口，配置模型端点即可使用"
       ],
       "tech_stack": [
         "Go",
         "LLM Agent",
-        "OpenAI/Anthropic API",
-        "npm 包分发",
+        "OpenAI兼容接口",
+        "Anthropic兼容接口",
+        "npm分发",
         "Git diff"
       ],
-      "highlights": "源自阿里内部大规模实践，服务数万开发者并发现数百万缺陷；在自建AACR-Bench基准上相比通用Agent精度与F1更高，token消耗约为其1/9，且以确定性工程约束解决覆盖不全与位置漂移问题。",
-      "target_audience": "希望将AI代码审查集成到CI流程的团队、需要审计陌生代码库的开发者，以及关注Agent与确定性工程混合架构的工程师。",
+      "highlights": "源自阿里内部大规模实战验证，混合架构以确定性工程约束审查流程，相比通用Agent精度与F1更高且token消耗约为其九分之一，并配有AACR-Bench真实基准数据集。",
+      "target_audience": "希望在CI流程或本地集成AI代码审查的开发者与团队，以及关注Agent工程化与混合架构实践的后端和工具链开发者。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 54166,
+    "stars_at_analysis": 56347,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-18T22:07:21+00:00",
+    "analyzed_at": "2026-11-25T23:09:39+00:00",
     "readme_available": true
   },
   "cloudflare/security-audit-skill": {
@@ -28739,34 +28740,33 @@
   },
   "firecrawl/firecrawl": {
     "analysis": {
-      "one_liner": "将网站转为干净 Markdown 的知识基础设施，为 AI Agent 提供搜索、抓取与数据接入。",
+      "one_liner": "将网站转为干净 Markdown 的知识基础设施，为 AI 智能体提供搜索、抓取与数据接入。",
       "core_features": [
-        "Scrape 单页抓取，输出 Markdown、HTML、链接等 LLM 友好格式",
-        "Crawl 与 Map 整站爬取并列出站点全部 URL",
-        "Batch Scrape 批量抓取，支持 PDF 与 Office 文档解析",
-        "Search 网页搜索并返回结果全文内容",
-        "通过 MCP 服务器接入 Claude、Cursor 等 AI 工具，并提供本地 v2 API 服务"
+        "网页抓取、爬取、站点地图与批量抓取，输出 LLM 友好的 Markdown",
+        "本地单二进制运行，可作为 MCP 服务器接入 Claude、Cursor 等 AI 工具",
+        "通过统一 API 搜索网页并接入 550+ 数据提供方",
+        "支持 PDF 与 Office 文档解析，JS 页面本地渲染",
+        "提供云端托管、自托管与本地三种部署方式及多语言 SDK"
       ],
       "tech_stack": [
         "TypeScript",
         "Rust",
         "Node.js",
         "MCP",
-        "Chrome/Chromium",
         "Docker"
       ],
-      "highlights": "同时提供本地单二进制运行、云端托管与自托管三种形态，本地即可完成抓取爬取并通过 MCP 接入主流 AI 编程工具，云端再扩展搜索与 550+ 数据源。",
-      "target_audience": "构建 AI Agent 与 RAG 应用的开发者、需要网页数据采集与结构化处理的后端工程师，以及关注数据隐私希望本地部署的团队。",
+      "highlights": "同一套 API 覆盖本地、云端与自托管三种形态，本地模式无需数据库和容器即可运行，并能无缝接入主流 AI 编程工具作为 MCP 服务器。",
+      "target_audience": "构建 AI 智能体与 RAG 应用的开发者、需要大规模网页数据采集的团队，以及关注数据自主可控的自托管用户。",
       "scores": {
         "innovation": 4,
         "practicality": 5,
         "learning_value": 4
       }
     },
-    "stars_at_analysis": 204680,
+    "stars_at_analysis": 209988,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-20T10:10:13+00:00",
+    "analyzed_at": "2026-11-25T23:09:39+00:00",
     "readme_available": true
   },
   "go-chi/chi": {
@@ -57784,6 +57784,36 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-11-25T11:28:04+00:00",
+    "readme_available": true
+  },
+  "n8n-io/nod": {
+    "analysis": {
+      "one_liner": "n8n 推出的开源个人 AI 代理，自带浏览器与电脑，可代你在真实网站上处理事务并先征得同意。",
+      "core_features": [
+        "自带浏览器与虚拟电脑，可在真实网站上完成登录、填表等操作",
+        "跨 Gmail、Calendar、Slack、Notion 与网页执行任务，如催发票、准备通话简报、取消试用",
+        "行动前请求用户批准，支持审批后再发送或执行",
+        "持久记忆：记住用户偏好与任务步骤，可查看、编辑或遗忘每条记忆",
+        "支持定时任务与网页变更监控，仅在变化时通知"
+      ],
+      "tech_stack": [
+        "TypeScript",
+        "Electron 桌面应用（macOS/Windows/Linux）",
+        "可自选模型提供商（OpenAI、Anthropic 等）",
+        "本地运行架构"
+      ],
+      "highlights": "由 n8n 团队打造，把浏览器自动化、长期记忆与人工审批结合，数据与登录凭证留在本地，模型可自选，兼顾自主性与可控性。",
+      "target_audience": "希望用本地可控 AI 代理自动化日常办公事务的个人开发者与效率工具爱好者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 3556,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-25T23:09:39+00:00",
     "readme_available": true
   }
 }
