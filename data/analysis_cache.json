@@ -16736,32 +16736,36 @@
   },
   "zhouxiaoka/autoclip": {
     "analysis": {
-      "one_liner": "开源 AI 视频剪辑桌面工具，贴一个链接即可把长视频自动剪成适配多平台的短视频。",
+      "one_liner": "开源本地优先的 AI 长视频自动剪辑桌面工具，一键生成适配多平台的短视频。",
       "core_features": [
-        "输入链接一键生成短视频，自动完成剪辑",
-        "自动生成字幕、封面与发布文案",
-        "适配抖音、小红书、TikTok、Reels、YouTube Shorts、B 站等平台画幅",
-        "提供桌面端、CLI 与 MCP 三种使用方式",
-        "支持长视频队列处理与人物取景，可进入编辑器手动调整"
+        "将播客、访谈、课程、直播回放等长视频自动识别高光片段并剪辑成短视频",
+        "智能跟踪说话人并自动重构竖屏画面，烧录字幕、生成封面与发布文案",
+        "支持链接、本地文件与直播回放六种来源导入，含 OBS 自动采集与无损裁剪",
+        "内置 MCP 服务，可供 AI 智能体调用剪辑能力",
+        "支持接入自有 API Key 或 Ollama、LM Studio 配合 Whisper、SenseVoice 完全离线运行"
       ],
       "tech_stack": [
         "Python",
         "Tauri",
-        "MCP",
-        "CLI"
+        "Whisper",
+        "SenseVoice",
+        "Ollama",
+        "LM Studio",
+        "OBS WebSocket",
+        "MCP"
       ],
-      "highlights": "本地剪辑与渲染、云端模型按量计费，开源且提供真实成片案例库，覆盖从长视频到多平台短视频的完整再创作流程。",
-      "target_audience": "做播客、访谈、课程等内容再创作的自媒体创作者，以及需要批量产出短视频的开发者与运营团队。",
+      "highlights": "作为 OpusClip 的开源替代，剪辑与渲染全部在本地完成，零订阅无付费墙，MIT 协议；同时提供 MCP 服务让 AI 智能体直接调用，并支持完全离线运行。",
+      "target_audience": "内容创作者、播客与直播主播、短视频运营人员，以及希望集成 AI 剪辑能力的开发者",
       "scores": {
         "innovation": 4,
         "practicality": 5,
-        "learning_value": 3
+        "learning_value": 4
       }
     },
-    "stars_at_analysis": 11776,
+    "stars_at_analysis": 16896,
     "prompt_version": "v1",
     "model": "deepseek-chat",
-    "analyzed_at": "2026-11-20T10:10:13+00:00",
+    "analyzed_at": "2026-11-26T23:05:14+00:00",
     "readme_available": true
   },
   "significant-gravitas/autogpt": {
@@ -57815,6 +57819,98 @@
     "prompt_version": "v1",
     "model": "deepseek-chat",
     "analyzed_at": "2026-11-25T23:09:39+00:00",
+    "readme_available": true
+  },
+  "egoist/mygo": {
+    "analysis": {
+      "one_liner": "用 Go 开发桌面应用，支持原生 UI 或 Web 前端，并可打包为单一二进制。",
+      "core_features": [
+        "窗口可显示系统 WebView 网页或 GPU 绘制的原生 UI，且可混用",
+        "从 Go 代码生成 TypeScript 客户端，实现类型化 IPC",
+        "纯 Go 无 cgo，可跨平台构建，并支持 iOS 与 Android",
+        "内置 Go UI 工具包：flexbox/grid 布局、控件、动画、无障碍支持",
+        "提供桌面 API 与打包发布能力：安装包、签名、公证、增量自动更新"
+      ],
+      "tech_stack": [
+        "Go",
+        "TypeScript",
+        "Bun",
+        "WKWebView",
+        "WebKitGTK",
+        "WebView2"
+      ],
+      "highlights": "同一应用可混合 Web 前端与原生 GPU UI，纯 Go 无 cgo 跨平台构建，并覆盖移动端与完整发布链路。",
+      "target_audience": "希望用 Go 统一开发桌面与移动应用、并兼顾 Web 前端与原生 UI 的开发者",
+      "scores": {
+        "innovation": 4,
+        "practicality": 4,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 6920,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-26T23:05:14+00:00",
+    "readme_available": true
+  },
+  "morpheapp/morphe-patches": {
+    "analysis": {
+      "one_liner": "基于ReVanced工作的Morphe补丁集，为YouTube Music等应用提供功能增强补丁。",
+      "core_features": [
+        "为YouTube Music提供63个补丁，覆盖播放、界面、下载等增强",
+        "支持多版本YouTube Music（如9.47.51至9.15.51）",
+        "提供A-B循环、交叉淡入淡出、自定义品牌与字体等定制功能",
+        "支持通过应用内按钮或外部下载器下载歌曲、专辑和播放列表",
+        "包含Android Auto相关绕过与第三方应用支持补丁"
+      ],
+      "tech_stack": [
+        "Java",
+        "ReVanced补丁框架"
+      ],
+      "highlights": "继承ReVanced的补丁体系并扩展出266个补丁，覆盖YouTube Music的播放控制、界面定制、下载与Android Auto等场景，社区活跃度高。",
+      "target_audience": "希望定制和增强YouTube Music等Android应用功能的开发者与高级用户",
+      "scores": {
+        "innovation": 3,
+        "practicality": 5,
+        "learning_value": 3
+      }
+    },
+    "stars_at_analysis": 5194,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-26T23:05:14+00:00",
+    "readme_available": true
+  },
+  "obsidianmd/obsidian-skills": {
+    "analysis": {
+      "one_liner": "让各类 AI Agent 掌握 Obsidian 与 Markdown、Bases、JSON Canvas 等开放格式的技能包",
+      "core_features": [
+        "提供 obsidian-markdown 技能，创建编辑含 wikilink、嵌入、callout、属性的 Obsidian 风格 Markdown",
+        "提供 obsidian-bases 技能，创建编辑带视图、过滤、公式、汇总的 Bases 文件",
+        "提供 json-canvas 技能，创建编辑含节点、连线、分组的 JSON Canvas 文件",
+        "提供 obsidian-cli 与 obsidian-headless 技能，通过命令行操作仓库、同步与发布",
+        "提供 defuddle 网页正文提取与 knap 模板渲染批量生成技能"
+      ],
+      "tech_stack": [
+        "Agent Skills 规范",
+        "Shell",
+        "Obsidian CLI",
+        "Obsidian Headless",
+        "Defuddle",
+        "Knap"
+      ],
+      "highlights": "遵循通用 Agent Skills 规范，可跨 Claude Code、ChatGPT、Cursor、GitHub Copilot 等众多 Agent 客户端安装使用，并覆盖 Obsidian 生态的多种开放文件格式",
+      "target_audience": "使用 AI Agent 管理 Obsidian 笔记库、希望让 Agent 读写 Markdown、Bases、Canvas 等开放格式的开发者与知识管理用户",
+      "scores": {
+        "innovation": 4,
+        "practicality": 5,
+        "learning_value": 4
+      }
+    },
+    "stars_at_analysis": 53982,
+    "prompt_version": "v1",
+    "model": "deepseek-chat",
+    "analyzed_at": "2026-11-26T23:05:14+00:00",
     "readme_available": true
   }
 }
